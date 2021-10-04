@@ -1,0 +1,20 @@
+.container-fluid{
+    background-color: rgb(236, 234, 234);
+}
+.main{
+    background-color:burlywood;
+    border-bottom-right-radius: 30px ;
+    border-bottom-left-radius: 30px;
+}
+.heading{
+    text-align: center;
+}
+.hello{
+    border-radius: 30px;
+    background-color:white;
+    display: flex;
+}
+.image{
+    height: 60px;
+    width: 60px;
+}
