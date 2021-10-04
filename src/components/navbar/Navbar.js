@@ -4,13 +4,14 @@ import 'react-pro-sidebar/dist/css/styles.css';
 import { Offcanvas } from 'react-bootstrap';
 import { useState } from 'react';
 import Logo from '../../assets/Navbar/Logo.png'
+import abc from '../../assets/Navbar/abc.png'
 export default function Navbar() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
         <>
-        <div className='container-fluid'>
+         <div className='container-fluid'>
             <div className='container'>
                 <div className='row mt-3'>
                     <div className='col-sm-3'>
@@ -20,18 +21,18 @@ export default function Navbar() {
                         </a>
                     </div>
                     <div className='col-sm-6 text-center'>
-                        <h2>Traffic Info Dashboard</h2>
+                        <h2>Trafic Info Dashboard</h2>
                        
 
                     </div>
-                    <div className='col-sm-3 d-flex justify-content-end'>
+                    <div className='col-sm-2 d-flex justify-content-end'>
                     </div>
                 </div>
                 <Offcanvas show={show} onHide={handleClose}>
                     <Offcanvas.Header closeButton>
                    
                         <Offcanvas.Title>
-                        <img src={Logo}/>
+                        <img src={abc}/>
                              <span>Traffic Info</span></Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
