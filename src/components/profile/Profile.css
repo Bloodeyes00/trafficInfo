@@ -1,5 +1,43 @@
-.Data{
-    background-color: black;
-    width: 50vw;
+.Profile{
+   
+}
+.Profile h1{
+    color: purple;
+    text-transform: capitalize;
+    
+}
+.ProPic{
+    border-radius: 40px;
+    font-size: 60px;
+    size: 50px;
+   
+}
+.ProPic:hover{
+    border: solid grey;
+}
 
+.Data{
+    background-color: white;
+    color: purple;
+    width: 50vw;
+}
+.form-control{
+    border-radius: 50px;
+    border-top: aliceblue;
+    border-right: yellowgreen;
+    border-left: aliceblue
+}
+.form-control:focus{
+    border-top: aliceblue !important;
+    border-right: yellowgreen !important;
+    border-left: aliceblue !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.Button{
+    background-color: purple;
+    border: none;
+}
+.Button:hover{
+    background-color: green;
 }
