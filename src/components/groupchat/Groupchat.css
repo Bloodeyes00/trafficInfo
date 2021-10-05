@@ -1,0 +1,40 @@
+.container-fluid{
+    background-color: rgb(221, 221, 220);
+    }
+    .header{
+        background-color: #e7d5c7;
+        text-align: center;
+        padding: 20px;
+        border-radius: 30px;
+        
+    }
+    
+   
+    .groups{
+        text-align: left;
+    }
+    .btn{
+        padding: 3px;
+        margin: 3px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        color: #aa6b3b;
+        
+    }
+    .button{
+        display: flex;
+        
+           
+    }
+    
+    
+    
+    .imges{
+        width: 50px;
+        height: 50px;
+    }
+    .hi{
+        display: flex;
+        background-color: white;
+        border-radius: 30px;
+    }
