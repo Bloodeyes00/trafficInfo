@@ -2,7 +2,8 @@ import React from "react";
 import "../navbar/Navbar.css";
 import "react-pro-sidebar/dist/css/styles.css";
 import { Offcanvas } from "react-bootstrap";
-import { useState } from "react";
+import { useState, } from "react";
+import { useHistory } from "react-router-dom";
 import Logo from "../../assets/Navbar/profile.png";
 import { IoIosHome } from "react-icons/io";
 import { MdGroup } from "react-icons/md";
@@ -16,6 +17,7 @@ export default function Navbar() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  let history =  useHistory();
   return (
     <>
       <div className="container-fluid">
@@ -54,10 +56,15 @@ export default function Navbar() {
               <div className="container">
                 <div className="row">
                   <div className="offset-1">
-                    <span style={{ fontSize:'25px' }}>
+                    <span style={{ fontSize:'25px' }} onClick={()=>{
+                          history.push("./home")
+                        }} >
                       <IoIosHome />
                     </span>
                     <a
+                      onClick={()=>{
+                        history.push("./home")
+                      }} 
                       href="/#"
                       style={{ color: "black", textDecoration: "none" }}
                     >
@@ -66,29 +73,36 @@ export default function Navbar() {
                     </a>
                     <br />
                     <br />
-                    <span style={{ fontSize:'25px' }}>
+                    <span style={{ fontSize:'25px' }} onClick={()=>{
+                          history.push("./group")
+                        }} >
                       <MdGroup />
                     </span>
                     <a
-                      href="#"
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       MY GROUPS
                     </a>
                     <br />
                     <br />
-                    <span style={{ fontSize:'25px' }}>
+                    <span style={{ fontSize:'25px' }}onClick={()=>{
+                          history.push("./profile")
+                        }} >
                       <CgProfile />
                     </span>
                     <a
-                      href="#"
+                      onClick={()=>{
+                        history.push("./profile")
+                      }} 
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       PROFILE
                     </a>
                     <br />
                     <br />
-                    <span style={{ fontSize:'25px' }}>
+                    <span style={{ fontSize:'25px' }}onClick={()=>{
+                          history.push("./inbox")
+                        }} >
                       <RiInboxArchiveFill />
                     </span>
                     <a
@@ -99,18 +113,22 @@ export default function Navbar() {
                     </a>
                     <br />
                     <br />
-                    <span style={{ fontSize:'25px' }}>
+                    <span style={{ fontSize:'25px' }}onClick={()=>{
+                          history.push("./chatroom")
+                        }} >
                       <BsFillChatDotsFill />
                     </span>
                     <a
                       href="#"
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
-                      GENERAL CHAT
+                      GENERAL CHATROOM
                     </a>
                     <br />
                     <br />
-                    <span style={{ fontSize:'25px'}}>
+                    <span style={{ fontSize:'25px'}}onClick={()=>{
+                          history.push("./support")
+                        }} >
                       <MdOutlineSupportAgent />
                     </span>
                     <a
@@ -121,7 +139,9 @@ export default function Navbar() {
                     </a>
                     <br />
                     <br />
-                    <span style={{fontSize:'25px' }}>
+                    <span style={{fontSize:'25px' }} onClick={()=>{
+                          history.push("./signout")
+                        }} >
                       <GoSignOut />
                     </span>
                     <a
