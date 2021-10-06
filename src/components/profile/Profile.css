@@ -12,6 +12,9 @@
     size: 50px;
    
 }
+.photoicon a{
+    font-size: 25px;
+}
 .ProPic:hover{
     border: solid grey;
 }
@@ -34,9 +37,10 @@
     outline: none !important;
     box-shadow: none !important;
 }
-.Button{
-    background-color: purple;
+.Data .Button{
+    background-color:purple;
     border: none;
+    color: white;
 }
 .Button:hover{
     background-color: green;
