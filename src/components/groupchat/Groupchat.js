@@ -5,8 +5,12 @@ import logo from '../../assets/logo.png'
 export default function Groupchat() {
   return (
     <div className="container-fluid">
+      
       <div className="header sm">
          <div className="groups sm">
+         <h1 className="heading pt-3">
+          TRAFFIC INFO
+          </h1>
           <h3>MY GROUPS</h3>
         </div>
 

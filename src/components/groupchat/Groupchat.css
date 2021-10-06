@@ -2,10 +2,11 @@
     background-color: rgb(221, 221, 220);
     }
     .header{
-        background-color: #e7d5c7;
+        background-color: burlywood;
         text-align: center;
         padding: 20px;
-        border-radius: 30px;
+        border-bottom-right-radius: 30px ;
+        border-bottom-left-radius: 30px;
         
     }
     
