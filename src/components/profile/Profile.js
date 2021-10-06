@@ -3,7 +3,6 @@ import { useState } from "react";
 import firebase from "../../components/utils/firebase";
 import "../profile/Profile.css";
 import { MdAddAPhoto } from "react-icons/md";
-// import Logo from "../../assets/Profile/Icon.jpg"
 export default function Profile() {
   const [email, setEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
@@ -33,14 +32,14 @@ export default function Profile() {
             <b>Profile</b>
           </h1>
         </div>
-
-        <div className="photoicon d-flex flex-column align-items-center shadow-sm p-3  rounded-circle ">
+        <div className="photoicon d-flex flex-column align-items-center shadow-sm p-3  rounded-circle my-2">
           <input type="file" id="files" class="hidden" />
-          <a><MdAddAPhoto /></a>
+          <a>
+            <MdAddAPhoto />
+          </a>
         </div>
-        
         <div className="Data d-flex flex-column justify-content-center  align-items-center py-4">
-          <div class="mb-3">
+          <div class="mb-3 w-50">
             <label for="exampleInputEmail1" class="form-label float-start">
               <b>Email address</b>
             </label>
@@ -54,7 +53,7 @@ export default function Profile() {
               }}
             />
           </div>
-          <div class="mb-3">
+          <div class="mb-3 w-50">
             <label for="exampleInputPassword1" class="form-label float-start">
               <b> Password </b>
             </label>
@@ -67,7 +66,7 @@ export default function Profile() {
               }}
             />
           </div>
-          <div class="mb-3">
+          <div class="mb-3 w-50">
             <label for="exampleAddress" class="form-label float-start">
               <b> Address</b>
             </label>
@@ -81,7 +80,6 @@ export default function Profile() {
               }}
             />
           </div>
-
           <button
             type="submit"
             class=" Button w-25 form-control btn btn-danger mt-3 mb-3"

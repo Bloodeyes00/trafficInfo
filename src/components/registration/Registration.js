@@ -35,15 +35,15 @@ export default function Registration() {
   return (
     <div>
       <div className="registration">
-        <div className="Profile d-flex flex-column justify-content-center align-items-center ">
-          <div className="Heading d-flex justify-content-center mt-3">
+        <div className="Profile d-flex flex-column justify-content-center align-items-center pb-5 my-3">
+          <div className="Heading d-flex justify-content-center my-3">
             <h1>
               <b>Registration</b>
             </h1>
           </div>
           <div>
-            <div className="Data d-flex justify-content-center  align-items-center py-4">
-              <div class="mb-3">
+            <div className="Data d-flex flex-column align-items-center py-4">
+              <div class="mb-3 w-50">
                 <label for="exampleInputEmail1" class="form-label float-start">
                   <b>UserName</b>
                 </label>
@@ -57,7 +57,7 @@ export default function Registration() {
                   }}
                 />
               </div>
-              <div class="mb-3">
+              <div class="mb-3 w-50">
                 <label for="exampleInputEmail1" class="form-label float-start">
                   <b>Email</b>
                 </label>
@@ -71,7 +71,7 @@ export default function Registration() {
                   }}
                 />
               </div>
-              <div class="mb-3">
+              <div class="mb-3 w-50">
                 <label
                   for="exampleInputPassword1"
                   class="form-label float-start"
@@ -87,7 +87,7 @@ export default function Registration() {
                   }}
                 />
               </div>
-              <div class="mb-3">
+              <div class="mb-3 w-50">
                 <label
                   for="exampleInputPassword1"
                   class="form-label float-start"
@@ -103,7 +103,7 @@ export default function Registration() {
                   }}
                 />
               </div>
-              <div class="mb-3">
+              <div class="mb-3 w-50">
                 <label for="exampleAddress" class="form-label float-start">
                   <b> Company Name</b>
                 </label>
@@ -120,7 +120,7 @@ export default function Registration() {
 
               <button
                 type="submit"
-                class=" Button form-control btn btn-danger mt-3 mb-3"
+                class=" Button w-25 form-control btn btn-danger mt-3 mb-3"
                 onClick={() => {
                   handleSendMessage();
                 }}

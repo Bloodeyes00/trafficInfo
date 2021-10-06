@@ -56,21 +56,21 @@ export default function Login() {
   };
   return (
     <div>
-      <div className="Login">
-        <div className="Profile d-flex flex-column justify-content-center align-items-center ">
-          <div className="Heading d-flex justify-content-center mt-5">
-            <h1>
-              <b>Login</b>
-            </h1>
-          </div>
-          <div className="Data d-flex justify-content-center  align-items-center py-4">
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label float-start">
+      <div className="Profile d-flex flex-column align-items-center pb-5">
+        <div className="Heading d-flex justify-content-center mt-5 mb-3">
+          <h1>
+            <b>Login</b>
+          </h1>
+        </div>
+        <div className="Data d-flex flex-column align-items-center p-4 my-4">
+          <div className="Da d-flex flex-column align-items-center">
+            <div class="mb-3 w-100">
+              <label for="exampleInputEmail1" class="form-label  float-start">
                 <b>Email address</b>
               </label>
               <input
                 type="email"
-                class="form-control  d-flex  justify-content-center align-items-center "
+                class="form-control d-flex justify-content-center align-items-center"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 required
@@ -79,7 +79,7 @@ export default function Login() {
                 }}
               />
             </div>
-            <div class="mb-3">
+            <div class="mb-3 w-100">
               <label for="exampleInputPassword1" class="form-label float-start">
                 <b> Password </b>
               </label>
@@ -93,7 +93,7 @@ export default function Login() {
                 }}
               />
             </div>
-            <div class="mb-3">
+            <div class="mb-3 w-100">
               <label for="exampleAddress" class="form-label float-start">
                 <b>Company Name</b>
               </label>
@@ -108,12 +108,14 @@ export default function Login() {
                 }}
               />
             </div>
-            <button
-              onClick={() => login()}
-              class=" Button form-control btn btn-danger mt-3 mb-3"
-            >
-              Login
-            </button>
+            <div class="mb-3 w-75">
+              <button
+                onClick={() => login()}
+                class=" Button w-100 form-control btn btn-danger mt-3 mb-3"
+              >
+                Login
+              </button>
+            </div>
           </div>
         </div>
       </div>
