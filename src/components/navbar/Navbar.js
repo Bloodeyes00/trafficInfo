@@ -70,7 +70,7 @@ export default function Navbar() {
                       <MdGroup />
                     </span>
                     <a
-                      href="#"
+                      href="my groups"
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       MY GROUPS
@@ -81,7 +81,7 @@ export default function Navbar() {
                       <CgProfile />
                     </span>
                     <a
-                      href="#"
+                      href="profile"
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       PROFILE
@@ -92,7 +92,7 @@ export default function Navbar() {
                       <RiInboxArchiveFill />
                     </span>
                     <a
-                      href="#"
+                      href="groupchat"
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       INBOX
@@ -103,7 +103,7 @@ export default function Navbar() {
                       <BsFillChatDotsFill />
                     </span>
                     <a
-                      href="#"
+                      href="general chat"
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       GENERAL CHAT
@@ -114,7 +114,7 @@ export default function Navbar() {
                       <MdOutlineSupportAgent />
                     </span>
                     <a
-                      href="#"
+                      href="support"
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       SUPPORT
@@ -125,7 +125,7 @@ export default function Navbar() {
                       <GoSignOut />
                     </span>
                     <a
-                      href="#"
+                      href="sign out"
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       SIGN OUT

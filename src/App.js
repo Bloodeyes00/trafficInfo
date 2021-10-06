@@ -9,7 +9,6 @@ function App() {
     <div className="container-fluid">
      <BrowserRouter>
         <Navbar />
-         <Home/>
         <Routes />
       </BrowserRouter>
     </div>
