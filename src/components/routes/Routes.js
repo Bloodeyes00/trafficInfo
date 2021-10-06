@@ -4,6 +4,7 @@ import Login from '../login/Login';
 import Chatroom from '../Chatroom/Chatroom';
 import Profile from "../profile/Profile";
 import Registration from '../registration/Registration';
+import Home from '../Home/Home';
 export default function Routes() {
     return (
         <div>
@@ -12,6 +13,7 @@ export default function Routes() {
                 <Route path="/login" component={Login}/>
                 <Route path="/registration" component={Registration}/>
                 <Route path="/chatroom" component={Chatroom}/>
+                <Route path ="/" component={Home}/>
             </Switch>
         </div>
     )

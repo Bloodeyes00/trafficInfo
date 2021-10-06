@@ -9,8 +9,9 @@ import { IoIosHome } from "react-icons/io";
 import { MdGroup } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { BsFillChatDotsFill } from "react-icons/bs";
-import { MdOutlineSupportAgent } from "react-icons/md";
+import { MdOutlineSupportAgent , MdAppRegistration } from "react-icons/md";
 import { GoSignOut } from "react-icons/go";
+import {IoLogInOutline} from "react-icons/all"
 import { RiInboxArchiveFill } from "react-icons/ri";
 import { IoMdMenu } from "react-icons/io";
 export default function Navbar() {
@@ -48,7 +49,7 @@ export default function Navbar() {
                   />
                   <br />
                   <br />
-                  <span style={{ marginLeft: "30px" }}>Sohrab khan</span>
+                  <span style={{ marginLeft: "30px" }}>Traffic Info</span>
                 </div>
               </Offcanvas.Title>
             </Offcanvas.Header>
@@ -61,11 +62,10 @@ export default function Navbar() {
                         }} >
                       <IoIosHome />
                     </span>
-                    <a
+                    <a 
                       onClick={()=>{
                         history.push("./home")
                       }} 
-                      href="/#"
                       style={{ color: "black", textDecoration: "none" }}
                     >
                         &nbsp;&nbsp;
@@ -79,6 +79,9 @@ export default function Navbar() {
                       <MdGroup />
                     </span>
                     <a
+                    onClick={()=>{
+                      history.push("./profile")
+                    }}
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       MY GROUPS
@@ -105,8 +108,10 @@ export default function Navbar() {
                         }} >
                       <RiInboxArchiveFill />
                     </span>
-                    <a
-                      href="#"
+                    <a 
+                      onClick={()=>{
+                        history.push("./inbox")
+                      }}
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       INBOX
@@ -118,11 +123,43 @@ export default function Navbar() {
                         }} >
                       <BsFillChatDotsFill />
                     </span>
-                    <a
-                      href="#"
+                    <a 
+                      onClick={()=>{
+                        history.push("./chatroom")
+                      }}
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       GENERAL CHATROOM
+                    </a>
+                    <br />
+                    <br />
+                    <span style={{ fontSize:'25px'}}onClick={()=>{
+                          history.push("./login")
+                        }} >
+                      <IoLogInOutline />
+                    </span>
+                    <a 
+                      onClick={()=>{
+                        history.push("./login")
+                      }}
+                      style={{ color: "black", textDecoration: "none" }}
+                    > &nbsp;&nbsp;
+                      Login
+                    </a>
+                    <br />
+                    <br />
+                    <span style={{ fontSize:'25px'}}onClick={()=>{
+                          history.push("./registration")
+                        }} >
+                      <MdAppRegistration />
+                    </span>
+                    <a 
+                      onClick={()=>{
+                        history.push("./registration")
+                      }}
+                      style={{ color: "black", textDecoration: "none" }}
+                    > &nbsp;&nbsp;
+                      Registration
                     </a>
                     <br />
                     <br />
@@ -131,8 +168,10 @@ export default function Navbar() {
                         }} >
                       <MdOutlineSupportAgent />
                     </span>
-                    <a
-                      href="#"
+                    <a 
+                      onClick={()=>{
+                        history.push("./support")
+                      }}
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       SUPPORT
@@ -144,8 +183,10 @@ export default function Navbar() {
                         }} >
                       <GoSignOut />
                     </span>
-                    <a
-                      href="#"
+                    <a 
+                      onClick={()=>{
+                        history.push("./signout")
+                      }}
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       SIGN OUT
