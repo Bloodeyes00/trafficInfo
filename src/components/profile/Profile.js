@@ -1,33 +1,36 @@
 import React from "react";
-import { useState } from 'react'
-import firebase from '../../components/utils/firebase'
+import { useState } from "react";
+import firebase from "../../components/utils/firebase";
 import "../profile/Profile.css";
 import { MdAddAPhoto } from "react-icons/md";
-// import Logo from "../../assets/Profile/Icon.jpg"
 export default function Profile() {
-  const [email, setEmail] = useState('');
-  const [userPassword, setUserPassword] = useState('');
-    const [adress, setAdress] = useState('');
-    //function for sending message
-    const handleSendMessage = () => {
-        const firestore = firebase.database().ref('/UserInfo');
-        let data = {
-           
-            email: email,
-            userPassword: userPassword,
-            adress:adress,
-  
-        };
-        firestore.push(data).then(res => {
-            console.log('res ;', res);
-        }).catch(e => {
-            console.log('error in pushing data :', e)
-        })}
+  const [email, setEmail] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+  const [adress, setAdress] = useState("");
+  //function for sending message
+  const handleSendMessage = () => {
+    const firestore = firebase.database().ref("/UserInfo");
+    let data = {
+      email: email,
+      userPassword: userPassword,
+      adress: adress,
+    };
+    firestore
+      .push(data)
+      .then((res) => {
+        console.log("res ;", res);
+      })
+      .catch((e) => {
+        console.log("error in pushing data :", e);
+      });
+  };
   return (
     <div>
-      <div className="Profile d-flex flex-column justify-content-center align-items-center ">
-        <div className="Heading d-flex justify-content-center mt-3">
-          <h1><b>Profile</b></h1>
+      <div className="Profile d-flex flex-column justify-content-center align-items-center pb-5">
+        <div className="Heading d-flex justify-content-center  mt-3">
+          <h1>
+            <b>Profile</b>
+          </h1>
         </div>
 
         <div className=" d-flex justify-content-center  shadow-sm p-3  rounded-circle ">
