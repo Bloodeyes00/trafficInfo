@@ -80,7 +80,7 @@ export default function Navbar() {
                     </span>
                     <a
                     onClick={()=>{
-                      history.push("./profile")
+                      history.push("./group")
                     }}
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
