@@ -6,7 +6,6 @@ import Profile from "../profile/Profile";
 import Registration from '../registration/Registration';
 import Home from '../Home/Home';
 import Groupchat from '../groupchat/Groupchat';
-import Home from '../Home/Home';
 export default function Routes() {
     return (
         <div>

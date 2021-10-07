@@ -1,4 +1,5 @@
 import React from "react";
+import './Registration.css';
 import { useState } from "react";
 import firebase from "../../components/utils/firebase";
 export default function Registration() {
@@ -34,22 +35,22 @@ export default function Registration() {
   };
   return (
     <div>
-      <div className="registration">
-        <div className="Profile d-flex flex-column justify-content-center align-items-center pb-5 my-3">
-          <div className="Heading d-flex justify-content-center my-3">
+      <div className="registrationone offset-1   ">
+        <div className="Profile d-flex flex-column justify-content-center align-items-center ">
+          <div className="Heading d-flex justify-content-center mt-3">
             <h1>
               <b>Registration</b>
             </h1>
           </div>
           <div>
-            <div className="Data d-flex flex-column align-items-center py-4">
-              <div class="mb-3 w-50">
-                <label for="exampleInputEmail1" class="form-label float-start">
+            <div className="regist  flex-column justify-content-center  align-items-center py-4">
+              <div className="mb-3">
+                <label for="exampleInputEmail1" className="form-label float-start ps-1">
                   <b>UserName</b>
                 </label>
                 <input
                   type="text"
-                  class="form-control  d-flex  justify-content-center align-items-center "
+                  className="form-control  d-flex  justify-content-center align-items-center "
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   onChange={(e) => {
@@ -57,59 +58,48 @@ export default function Registration() {
                   }}
                 />
               </div>
-              <div class="mb-3 w-50">
-                <label for="exampleInputEmail1" class="form-label float-start">
-                  <b>Email</b>
-                </label>
-                <input
-                  type="email"
-                  class="form-control  d-flex  justify-content-center align-items-center "
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                />
+              <div className="mb-3">
+                
               </div>
-              <div class="mb-3 w-50">
+              <div className="mb-3">
                 <label
                   for="exampleInputPassword1"
-                  class="form-label float-start"
+                  className="form-label float-start ps-1"
                 >
                   <b> Password </b>
                 </label>
                 <input
                   type="password"
-                  class="form-control d-flex justify-content-center align-items-center"
+                  className="form-control d-flex justify-content-center align-items-center"
                   id="exampleInputPassword1"
                   onChange={(e) => {
                     setUserPassword(e.target.value);
                   }}
                 />
               </div>
-              <div class="mb-3 w-50">
+              <div className="mb-3">
                 <label
                   for="exampleInputPassword1"
-                  class="form-label float-start"
+                  className="form-label float-start ps-1"
                 >
                   <b>Re-type Password </b>
                 </label>
                 <input
                   type="password"
-                  class="form-control d-flex justify-content-center align-items-center"
+                  className="form-control d-flex justify-content-center align-items-center"
                   id="exampleInputPassword1"
                   onChange={(e) => {
                     setRetypePassword(e.target.value);
                   }}
                 />
               </div>
-              <div class="mb-3 w-50">
-                <label for="exampleAddress" class="form-label float-start">
+              <div className="mb-3">
+                <label for="exampleAddress" className="form-label float-start ps-1">
                   <b> Company Name</b>
                 </label>
                 <input
                   type="text"
-                  class="form-control d-flex justify-content-center align-items-center"
+                  className="form-control d-flex justify-content-center align-items-center"
                   id="exampleAddress"
                   aria-describedby="emailHelp"
                   onChange={(e) => {
@@ -117,16 +107,17 @@ export default function Registration() {
                   }}
                 />
               </div>
-
+                  <div className="regbutton ">
               <button
                 type="submit"
-                class=" Button w-25 form-control btn btn-danger mt-3 mb-3"
+                className=" Button form-control btn btn-danger mt-3 mb-3 ms-4"
                 onClick={() => {
                   handleSendMessage();
                 }}
               >
                 Register
               </button>
+              </div>
             </div>
           </div>
         </div>

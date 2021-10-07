@@ -1,4 +1,5 @@
 import React from "react";
+import './login.css'
 import { useState } from "react";
 import firebase from "../../components/utils/firebase";
 import { useHistory } from "react-router-dom";
@@ -55,37 +56,23 @@ export default function Login() {
       });
   };
   return (
-    <div>
-      <div className="Profile d-flex flex-column align-items-center pb-5">
-        <div className="Heading d-flex justify-content-center mt-5 mb-3">
-          <h1>
-            <b>Login</b>
-          </h1>
-        </div>
-        <div className="Data d-flex flex-column align-items-center p-4 my-4">
-          <div className="Da d-flex flex-column align-items-center">
-            <div class="mb-3 w-100">
-              <label for="exampleInputEmail1" class="form-label  float-start">
-                <b>Email address</b>
+    <div className=" col flex-coloumn col-sm-12">
+      <div className="Login">
+        <div className="Profile d-flex flex-column justify-content-center align-items-center ">
+          <div className="Heading d-flex justify-content-center mt-5">
+            <h1>
+              <b>Login</b>
+            </h1>
+          </div>
+          <div className="Data d-flex   align-items-center pt-4">
+          <div class="mb-3 col-sm-4"> 
+              <label for="exampleInputPassword1" class="form-label float-start ps-1">
+                <b> Email Address </b>
               </label>
+              &nbsp;
               <input
-                type="email"
-                class="form-control d-flex justify-content-center align-items-center"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                required
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-              />
-            </div>
-            <div class="mb-3 w-100">
-              <label for="exampleInputPassword1" class="form-label float-start">
-                <b> Password </b>
-              </label>
-              <input
-                type="password"
-                class="form-control d-flex justify-content-center align-items-center"
+                type="text  "
+                class="input form-control "
                 id="exampleInputPassword1"
                 required
                 onChange={(event) => {
@@ -93,29 +80,42 @@ export default function Login() {
                 }}
               />
             </div>
-            <div class="mb-3 w-100">
-              <label for="exampleAddress" class="form-label float-start">
-                <b>Company Name</b>
+            <div class="mb-3 col-sm-4"> 
+              <label for="exampleInputPassword1" class="form-label float-start ps-1">
+                <b> Enter Password </b>
               </label>
+              &nbsp;
               <input
-                type="text"
-                class="form-control d-flex justify-content-center align-items-center"
-                id="exampleAddress"
-                aria-describedby="emailHelp"
+                type="password"
+                class="input form-control "
+                id="exampleInputPassword1"
                 required
                 onChange={(event) => {
-                  setcompanyName(event.target.value);
+                  setUserPassword(event.target.value);
                 }}
               />
             </div>
-            <div class="mb-3 w-75">
-              <button
-                onClick={() => login()}
-                class=" Button w-100 form-control btn btn-danger mt-3 mb-3"
-              >
-                Login
-              </button>
+            <div class="mb-3 col-sm-4"> 
+              <label for="exampleInputPassword1" class="form-label float-start ps-1">
+                <b> Company Name </b>
+              </label>
+              &nbsp;
+              <input
+                type="text  "
+                class="input form-control "
+                id="exampleInputPassword1"
+                required
+                onChange={(event) => {
+                  setUserPassword(event.target.value);
+                }}
+              />
             </div>
+            <button 
+              onClick={() => login()}
+              className=" Button form-control btn btn-danger mt-3 mb-3 col-sm-4"
+            >
+              Login
+            </button>
           </div>
         </div>
       </div>
