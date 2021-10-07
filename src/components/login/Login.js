@@ -101,7 +101,7 @@ export default function Login() {
               </label>
               &nbsp;
               <input
-                type="text"
+                type="text  "
                 class="input form-control "
                 id="exampleInputPassword1"
                 required
