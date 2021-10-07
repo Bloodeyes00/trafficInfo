@@ -38,7 +38,7 @@ export default function Profile() {
         <div className="Data d-flex justify-content-center  align-items-center py-4">
           <form>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label float-start">
+              <label for="exampleInputEmail1" className="form-label float-start ps-1">
                 <b>Email address</b>
               </label>
               <input
@@ -49,7 +49,7 @@ export default function Profile() {
               />
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label float-start">
+              <label for="exampleInputPassword1" className="form-label float-start ps-1">
                <b> Password </b>
               </label>
               <input
@@ -59,7 +59,7 @@ export default function Profile() {
               /> 
             </div>
             <div class="mb-3">
-              <label for="exampleAddress" class="form-label float-start">
+              <label for="exampleAddress" className="form-label float-start ps-1">
                <b> Address</b>
               </label>
               <input
@@ -69,10 +69,11 @@ export default function Profile() {
                 aria-describedby="emailHelp"  onChange={(e) => { setAdress(e.target.value) }}
               />
             </div>
-           
-            <button type="submit" class=" Button form-control btn btn-danger mt-3 mb-3" onClick={() => {handleSendMessage()}}>
+           <div className="btn ps-2">
+            <button type="submit" className=" Button form-control btn btn-danger mt-3 mb-3 " onClick={() => {handleSendMessage()}}>
               Submit
             </button>
+            </div>
           </form>
         </div>
       </div>

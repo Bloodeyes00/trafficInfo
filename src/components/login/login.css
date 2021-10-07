@@ -1,0 +1,13 @@
+.Data{
+    background-color: lightgray;
+    flex-direction: column;
+    border-radius: 30px;
+    width: 73vw;
+}
+.Button{
+    width: 220px;
+    
+}
+.input{
+    width: 200px;
+}
