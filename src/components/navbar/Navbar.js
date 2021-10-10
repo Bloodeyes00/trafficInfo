@@ -23,18 +23,15 @@ export default function Navbar() {
     <>
       <div className="container-fluid">
         <div className="container">
-          <div className="row mt-3">
+          <div className="row pt-5 d-flex justify-content-center">
             <div className="col-sm-2">
               <a onClick={handleShow}>
               <span style={{ fontSize:'50px' }}>
                   <IoMdMenu/>
                   </span>
-                {/* <button type="button" class="btn btn-light">
-                  Side Menu
-                </button> */}
               </a>
             </div>
-            <div className="col-sm-6 text-center">
+            <div className="col-sm-6 d-flex justify-content-center">
               <h2>Trafic Info Dashboard</h2>
             </div>
             <div className="col-sm-2 d-flex justify-content-end"></div>
@@ -129,7 +126,7 @@ export default function Navbar() {
                       }}
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
-                      GENERAL CHATROOM
+                      CHATROOM
                     </a>
                     <br />
                     <br />

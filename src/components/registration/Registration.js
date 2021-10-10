@@ -35,22 +35,22 @@ export default function Registration() {
   };
   return (
     <div>
-      <div className="registrationone offset-1   ">
-        <div className="Profile d-flex flex-column justify-content-center align-items-center ">
+      <div>
+        <div className="Profile d-flex flex-column justify-content-center align-items-center mb-5">
           <div className="Heading d-flex justify-content-center mt-3">
             <h1>
               <b>Registration</b>
             </h1>
           </div>
           <div>
-            <div className="regist  flex-column justify-content-center  align-items-center py-4">
-              <div className="mb-3">
+            <div className="Data d-flex flex-column justify-content-center align-items-center py-5 mt-5 mb-5 ">
+              <div className="mb-3 input">
                 <label for="exampleInputEmail1" className="form-label float-start ps-1">
                   <b>UserName</b>
                 </label>
                 <input
                   type="text"
-                  className="form-control  d-flex  justify-content-center align-items-center "
+                  className="form-control"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   onChange={(e) => {
@@ -58,10 +58,7 @@ export default function Registration() {
                   }}
                 />
               </div>
-              <div className="mb-3">
-                
-              </div>
-              <div className="mb-3">
+              <div className="mb-3 input">
                 <label
                   for="exampleInputPassword1"
                   className="form-label float-start ps-1"
@@ -70,14 +67,14 @@ export default function Registration() {
                 </label>
                 <input
                   type="password"
-                  className="form-control d-flex justify-content-center align-items-center"
+                  className="form-control"
                   id="exampleInputPassword1"
                   onChange={(e) => {
                     setUserPassword(e.target.value);
                   }}
                 />
               </div>
-              <div className="mb-3">
+              <div className="mb-3 input">
                 <label
                   for="exampleInputPassword1"
                   className="form-label float-start ps-1"
@@ -86,20 +83,20 @@ export default function Registration() {
                 </label>
                 <input
                   type="password"
-                  className="form-control d-flex justify-content-center align-items-center"
+                  className="form-control"
                   id="exampleInputPassword1"
                   onChange={(e) => {
                     setRetypePassword(e.target.value);
                   }}
                 />
               </div>
-              <div className="mb-3">
+              <div className="mb-3 input">
                 <label for="exampleAddress" className="form-label float-start ps-1">
                   <b> Company Name</b>
                 </label>
                 <input
                   type="text"
-                  className="form-control d-flex justify-content-center align-items-center"
+                  className="form-control "
                   id="exampleAddress"
                   aria-describedby="emailHelp"
                   onChange={(e) => {
@@ -107,10 +104,10 @@ export default function Registration() {
                   }}
                 />
               </div>
-                  <div className="regbutton ">
+                  <div>
               <button
                 type="submit"
-                className=" Button form-control btn btn-danger mt-3 mb-3 ms-4"
+                className=" Button form-control mt-4 mb-2 ms-3"
                 onClick={() => {
                   handleSendMessage();
                 }}
