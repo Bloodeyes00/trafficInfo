@@ -64,7 +64,7 @@ export default function Login() {
               <b>Login</b>
             </h1>
           </div>
-          <div className="Data d-flex   align-items-center pt-4">
+          <div className="Data d-flex align-items-center pt-4">
           <div class="mb-3 col-sm-4"> 
               <label for="exampleInputPassword1" class="form-label float-start ps-1">
                 <b> Email Address </b>
