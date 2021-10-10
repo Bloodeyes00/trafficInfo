@@ -59,13 +59,13 @@ export default function Login() {
     <div className=" col flex-coloumn col-sm-12">
       <div className="Login">
         <div className="Profile d-flex flex-column justify-content-center align-items-center ">
-          <div className="Heading d-flex justify-content-center mt-5">
+          <div className="Heading d-flex justify-content-center mt-3 mb-5">
             <h1>
               <b>Login</b>
             </h1>
           </div>
-          <div className="Data d-flex align-items-center pt-4">
-          <div class="mb-3 col-sm-4"> 
+          <div className="Data d-flex align-items-center pt-4 mb-5">
+          <div class="mb-3 "> 
               <label for="exampleInputPassword1" class="form-label float-start ps-1">
                 <b> Email Address </b>
               </label>
@@ -80,7 +80,7 @@ export default function Login() {
                 }}
               />
             </div>
-            <div class="mb-3 col-sm-4"> 
+            <div class="mb-3"> 
               <label for="exampleInputPassword1" class="form-label float-start ps-1">
                 <b> Enter Password </b>
               </label>
@@ -95,7 +95,7 @@ export default function Login() {
                 }}
               />
             </div>
-            <div class="mb-3 col-sm-4"> 
+            <div class="mb-3"> 
               <label for="exampleInputPassword1" class="form-label float-start ps-1">
                 <b> Company Name </b>
               </label>
@@ -112,7 +112,7 @@ export default function Login() {
             </div>
             <button 
               onClick={() => login()}
-              className=" Button form-control btn btn-danger mt-3 mb-3 col-sm-4"
+              className=" Button form-control mt-3 mb-3 "
             >
               Login
             </button>

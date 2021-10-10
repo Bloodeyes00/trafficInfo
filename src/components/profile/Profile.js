@@ -33,12 +33,12 @@ export default function Profile() {
           </h1>
         </div>
 
-        <div className=" d-flex justify-content-center  shadow-sm p-3  rounded-circle ">
+        <div className=" d-flex justify-content-center  shadow-sm p-3 mb-3  rounded-circle ">
           <input type="file" id="files" class="hidden"  />
             <MdAddAPhoto/>
             </div>
 
-        <div className="Data d-flex justify-content-center  align-items-center py-4">
+        <div className="Data d-flex justify-content-center  align-items-center py-4 flex-wrap">
           <form>
             <div class="mb-3">
               <label for="exampleInputEmail1" className="form-label float-start ps-1">
@@ -72,8 +72,8 @@ export default function Profile() {
                 aria-describedby="emailHelp"  onChange={(e) => { setAdress(e.target.value) }}
               />
             </div>
-           <div className="btn ps-2">
-            <button type="submit" className=" Button form-control btn btn-danger mt-3 mb-3 " onClick={() => {handleSendMessage()}}>
+           <div className="d-flex justify-content-center">
+            <button type="submit" className="Button form-control my-3 " onClick={() => {handleSendMessage()}}>
               Submit
             </button>
             </div>

@@ -1,10 +1,9 @@
-.registrationone{
-    background-color: white;
+.Data{
+    background-color: rgb(255, 255, 255);
+    flex-direction: column;
     border-radius: 30px;
-    width: 73vw;    
-    justify-items: center;
-    justify-content: center;
-    text-align: center;
-    
+    width: 73vw;
 }
-
+.input{
+    width: 25vw;
+}
