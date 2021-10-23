@@ -1,5 +1,5 @@
 import React from "react";
-import './Registration.css';
+import "./Registration.css";
 import { useState } from "react";
 import firebase from "../../components/utils/firebase";
 export default function Registration() {
@@ -36,7 +36,7 @@ export default function Registration() {
   return (
     <div>
       <div>
-        <div className="Profile d-flex flex-column justify-content-center align-items-center mb-5">
+        <div className="Profile d-flex flex-column justify-content-center align-items-center pb-5">
           <div className="Heading d-flex justify-content-center mt-3">
             <h1>
               <b>Registration</b>
@@ -45,7 +45,10 @@ export default function Registration() {
           <div>
             <div className="Data d-flex flex-column justify-content-center align-items-center py-5 mt-5 mb-5 ">
               <div className="mb-3 input">
-                <label for="exampleInputEmail1" className="form-label float-start ps-1">
+                <label
+                  for="exampleInputEmail1"
+                  className="form-label float-start ps-1 ms-2"
+                >
                   <b>UserName</b>
                 </label>
                 <input
@@ -61,7 +64,7 @@ export default function Registration() {
               <div className="mb-3 input">
                 <label
                   for="exampleInputPassword1"
-                  className="form-label float-start ps-1"
+                  className="form-label float-start ps-1 ms-2"
                 >
                   <b> Password </b>
                 </label>
@@ -77,7 +80,7 @@ export default function Registration() {
               <div className="mb-3 input">
                 <label
                   for="exampleInputPassword1"
-                  className="form-label float-start ps-1"
+                  className="form-label float-start ps-1 ms-2"
                 >
                   <b>Re-type Password </b>
                 </label>
@@ -91,7 +94,10 @@ export default function Registration() {
                 />
               </div>
               <div className="mb-3 input">
-                <label for="exampleAddress" className="form-label float-start ps-1">
+                <label
+                  for="exampleAddress"
+                  className="form-label float-start ps-1 ms-2"
+                >
                   <b> Company Name</b>
                 </label>
                 <input
@@ -104,16 +110,16 @@ export default function Registration() {
                   }}
                 />
               </div>
-                  <div>
-              <button
-                type="submit"
-                className=" Button form-control mt-4 mb-2 ms-3"
-                onClick={() => {
-                  handleSendMessage();
-                }}
-              >
-                Register
-              </button>
+              <div>
+                <button
+                  type="submit"
+                  className=" Button form-control mt-4 mb-2 "
+                  onClick={() => {
+                    handleSendMessage();
+                  }}
+                >
+                  Register
+                </button>
               </div>
             </div>
           </div>
