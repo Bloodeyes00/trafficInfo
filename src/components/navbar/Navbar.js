@@ -86,7 +86,7 @@ export default function Navbar() {
                     <br />
                     <br />
                     <span style={{ fontSize:'25px' }}onClick={()=>{
-                          history.push("./profile")
+                          history.push("./groupchat")
                         }} >
                       <CgProfile />
                     </span>

@@ -1,6 +1,7 @@
 import React from "react";
 import './login.css'
 import { useState } from "react";
+import { auth } from '../../firebase'
 import firebase from "../../components/utils/firebase";
 import { useHistory } from "react-router-dom";
 export default function Login() {
@@ -8,7 +9,9 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [companyName, setcompanyName] = useState("");
-
+  function signInWithGoogle() {
+    const provider = new firebase.auth.GoogleAuthProvider()
+    auth.signInWithPopup(provider)}
   const login = () => {
     firebase
       .auth()
@@ -115,6 +118,12 @@ export default function Login() {
               className=" Button form-control mt-3 mb-3 "
             >
               Login
+            </button>
+            <button
+            onClick={signInWithGoogle}
+              className=" Button form-control mt-3 mb-3 "
+            >
+              Sign With Google
             </button>
           </div>
         </div>
