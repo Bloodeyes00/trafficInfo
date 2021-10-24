@@ -1,8 +1,8 @@
-.container-fluid{
-    background-color: rgb(236, 234, 234);
+.container-fluid-chatroom{
+    background-color: rgb(232, 230, 230);
 }
 .main{
-    background-color:burlywood;
+    background-color:#E7D5C7;
     border-bottom-right-radius: 30px ;
     border-bottom-left-radius: 30px;
 }

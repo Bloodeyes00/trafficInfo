@@ -23,21 +23,21 @@ export default function Navbar() {
     <>
       <div className="container-fluid">
         <div className="container">
-          <div className="row pt-5 d-flex justify-content-center">
-            <div className="col-sm-2">
+          <div className="rowss pt-5 d-flex justify-content-center">
+            <div className="col-1 mt-1">
               <a onClick={handleShow}>
-              <span style={{ fontSize:'50px' }}>
+              <span style={{ fontSize:'40px' }}>
                   <IoMdMenu/>
                   </span>
               </a>
             </div>
-            <div className="col-sm-6 d-flex justify-content-center">
-              <h2>Trafic Info Dashboard</h2>
+            <div className="col-9  mt-4 d-flex justify-content-center">
+              <h2>TRAFFIC INFO</h2>
             </div>
             <div className="col-sm-2 d-flex justify-content-end"></div>
           </div>
           <Offcanvas show={show} onHide={handleClose}>
-            <Offcanvas.Header closeButton>
+            <Offcanvas.Header>
               <Offcanvas.Title>
                 <div className="ms-3 mt-2">
                   <img
@@ -107,7 +107,7 @@ export default function Navbar() {
                     </span>
                     <a 
                       onClick={()=>{
-                        history.push("./inbox")
+                        history.push("./groupchat")
                       }}
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
