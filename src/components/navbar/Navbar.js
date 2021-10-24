@@ -24,17 +24,18 @@ export default function Navbar() {
       <div className="container-fluid">
         <div className="container">
           <div className="rowss pt-5 d-flex justify-content-center">
-            <div className="col-1 mt-1">
+            <div className="col-2  pt-1">
               <a onClick={handleShow}>
               <span style={{ fontSize:'40px' }}>
                   <IoMdMenu/>
                   </span>
               </a>
-            </div>
-            <div className="col-9  mt-4 d-flex justify-content-center">
-              <h2>TRAFFIC INFO</h2>
-            </div>
-            <div className="col-sm-2 d-flex justify-content-end"></div>
+              </div>
+            
+              <div className="col-10 pt-4">
+              <h2 className="info">TRAFFIC INFO</h2>
+         </div>
+            
           </div>
           <Offcanvas show={show} onHide={handleClose}>
             <Offcanvas.Header>

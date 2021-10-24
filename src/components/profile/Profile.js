@@ -41,7 +41,7 @@ export default function Profile() {
         <div className="Data d-flex justify-content-center  align-items-center py-4 flex-wrap">
           <form>
             <div class="mb-3">
-              <label for="exampleInputEmail1" className="form-label float-start ps-1">
+              <label for="exampleInputEmail1" className="form-label float-start offset-3 ps-1">
                 <b>Email address</b>
               </label>
               <input
@@ -52,7 +52,7 @@ export default function Profile() {
               />
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" className="form-label float-start ps-1">
+              <label for="exampleInputPassword1" className="form-label offset-3 float-start ps-1">
                <b> Password </b>
               </label>
               <input
@@ -62,7 +62,7 @@ export default function Profile() {
               /> 
             </div>
             <div class="mb-3">
-              <label for="exampleAddress" className="form-label float-start ps-1">
+              <label for="exampleAddress" className="form-label offset-3 float-start ps-1">
                <b> Address</b>
               </label>
               <input
