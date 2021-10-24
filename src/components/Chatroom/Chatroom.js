@@ -5,11 +5,9 @@ import logo from '../../assets/logo.png'
 export default function Chatroom() {
     return (
         <div>
-            <div className="Container-fluid">
+            <div className="container-fluid-chatroom">
                 <div className="main mt-5">
-                    <h1 className="heading pt-3">
-                        TRAFFIC INFO
-                    </h1>
+                 
                     <h2 className="heading2 pt-4 ps-2 pb-2">
                        <b> COMPANY CHAT ROOM </b>
                     </h2>

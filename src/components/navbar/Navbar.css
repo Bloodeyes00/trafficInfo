@@ -7,8 +7,12 @@
     height: 100%;
     overflow: auto;
   }
+  .rowss{
+    background-color: #E7D5C7;
+  }
   h2{
     color: purple;
+
   }
   .sidebar a {
     display: block;

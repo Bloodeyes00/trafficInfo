@@ -4,13 +4,11 @@ import logo from '../../assets/logo.png'
 
 export default function Groupchat() {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid-groupchat">
       
       <div className="header sm">
          <div className="groups sm">
-         <h1 className="heading pt-3">
-          TRAFFIC INFO
-          </h1>
+        
           <h3>MY GROUPS</h3>
         </div>
 
@@ -34,7 +32,7 @@ export default function Groupchat() {
         <div className="imgs ps-2 pt-2">
          <img src={logo} className="imges" />
         </div>
-        <div className="col-8 ps-4 pt-3">
+        <div className="col-8 ps-2 pt-3">
         <h5 className="text">Kumar Partik</h5>
           <p> Doing what you like will always keep you  </p>
         </div>
@@ -44,7 +42,7 @@ export default function Groupchat() {
         <div className="imgs ps-2 pt-2">
          <img src={logo} className="imges" />
         </div>
-        <div className="col-8 ps-4 pt-3">
+        <div className="col-8 ps-2 pt-3">
         <h5 className="text">Kumar Partik</h5>
           <p> Doing what you like will always keep you  </p>
         </div>
@@ -54,7 +52,7 @@ export default function Groupchat() {
         <div className="imgs ps-2 pt-2">
          <img src={logo} className="imges" />
         </div>
-        <div className="col-8 ps-4 pt-3">
+        <div className="col-8 ps-2 pt-3">
         <h5 className="text">Kumar Partik</h5>
           <p> Doing what you like will always keep you  </p>
         </div>
@@ -64,7 +62,7 @@ export default function Groupchat() {
         <div className="imgs ps-2 pt-2">
          <img src={logo} className="imges" />
         </div>
-        <div className="col-8 ps-4 pt-3">
+        <div className="col-8 ps-2 pt-3">
         <h5 className="text">Kumar Partik</h5>
           <p> Doing what you like will always keep you  </p>
         </div>

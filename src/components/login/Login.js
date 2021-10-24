@@ -3,6 +3,7 @@ import './login.css'
 import { useState } from "react";
 import firebase from "../../components/utils/firebase";
 import { useHistory } from "react-router-dom";
+import GoogleLogin from "../googlelogin/GoogleLogin";
 export default function Login() {
   const history = useHistory();
   const [email, setEmail] = useState("");
@@ -115,12 +116,8 @@ export default function Login() {
             >
               Login
             </button>
-            <button
-             href = ""
-              className=" Button form-control mt-3 mb-3 "
-            >
-              Sign With Google
-            </button>
+            <GoogleLogin />
+            <br/>
           </div>
         </div>
       </div>
