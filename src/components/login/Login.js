@@ -8,9 +8,6 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [companyName, setcompanyName] = useState("");
-  function signInWithGoogle() {
-    const provider = new firebase.auth.GoogleAuthProvider()
-    auth.signInWithPopup(provider)
   const login = () => {
     firebase
       .auth()
