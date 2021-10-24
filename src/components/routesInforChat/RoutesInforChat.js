@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { db, auth } from '../components/utils/firebase'
-import SendMessage from './SendMessage'
-import SignOut from './SignOut'
+import { db, auth } from '../utils/firebase'
+import SendMessage from '../SendMessage'
+import SignOut from '../SignOut'
 
-function Chat() {
+function RoutesinfoChat() {
     const scroll = useRef()
     const [messages, setMessages] = useState([])
     useEffect(() => {
-        db.collection('messages').orderBy('createdAt').limit(50).onSnapshot(snapshot => {
+        db.collection('routesinfo').orderBy('createdAt').limit(50).onSnapshot(snapshot => {
             setMessages(snapshot.docs.map(doc => doc.data()))
         })
     }, [])
@@ -31,4 +31,4 @@ function Chat() {
     )
 }
 
-export default Chat
+export default RoutesinfoChat

@@ -18,21 +18,21 @@ export default function Home() {
                   With supporting text below as a natural lead-in to additional
                   content.
                 </p>
-                <a href="#" className="Home-buttons btn btn-secondary float-end">
+                <div onClick={() => { history.push(`/chat/${11}`) }} className="Home-buttons btn btn-secondary float-end">
                   <BsFillArrowRightSquareFill />
-                </a>
+                </div>
               </div>
             </div>
           </div>
           <div className="col-sm-6 col-xs-6 p-3">
             <div className="card w-100 " id="Card2">
-              <div className="card-body" onClick={() => { history.push('/chatroom') }}>
+              <div className="card-body" onClick={() => { history.push(`/chatroom/${2}`) }}>
                 <h5 className="card-title">Bolog Chat Room</h5>
                 <p className="card-text">
                   With supporting text below as a natural lead-in to additional
                   content.
                 </p>
-                <a href="#" className="Home-buttons btn btn-secondary float-end" >
+                <a href="chatroom" className="Home-buttons btn btn-secondary float-end" >
                   <BsFillArrowRightSquareFill />
                 </a>
               </div>
@@ -42,7 +42,7 @@ export default function Home() {
         <div className="row mt-3">
           <div className="col-sm-6 col-xs-6 p-3">
             <div className="card w-100" id="Card3">
-              <div className="card-body">
+              <div className="card-body" onClick={() => { history.push(`/transfer/${3}`) }}>
                 <h5 className="card-title">Transfers</h5>
                 <p className="card-text">
                   With supporting text below as a natural lead-in to additional
@@ -56,7 +56,7 @@ export default function Home() {
           </div>
           <div className="col-sm-6 col-xs-6 p-3">
             <div className="card w-100" id="Card4">
-              <div className="card-body">
+              <div className="card-body" onClick={() => { history.push(`/routesinfo/${4}`) }}>
                 <h5 className="card-title">Routes</h5>
                 <p className="card-text">
                   With supporting text below as a natural lead-in to additional

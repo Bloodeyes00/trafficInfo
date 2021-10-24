@@ -1,6 +1,6 @@
 import React from 'react'
 import firebase from 'firebase'
-import { auth } from '../firebase.js'
+import { auth } from '../components/utils/firebase'
 import { Button } from '@material-ui/core'
 
 function SignIn() {

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { db, auth } from '../components/utils/firebase'
-import SendMessage from './SendMessage'
-import SignOut from './SignOut'
+import { db, auth } from '../utils/firebase'
+import SendMessage from '../SendMessage'
+import SignOut from '../SignOut'
 
-function Chat() {
+function TransferChat() {
     const scroll = useRef()
     const [messages, setMessages] = useState([])
     useEffect(() => {
@@ -31,4 +31,4 @@ function Chat() {
     )
 }
 
-export default Chat
+export default TransferChat

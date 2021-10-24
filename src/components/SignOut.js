@@ -1,5 +1,5 @@
 import React from 'react'
-import { auth } from '../firebase.js'
+import { auth } from '../components/utils/firebase'
 import { Button } from '@material-ui/core'
 
 function SignOut() {

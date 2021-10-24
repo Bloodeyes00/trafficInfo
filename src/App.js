@@ -12,27 +12,28 @@
 // }
 
 // export default App;
-import './App.css';
 // import Chat from './components/Chat';
-// import SignIn from './components/SignIn';
 // import { auth } from './firebase.js'
-// import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth } from './components/utils/firebase'
+import { useAuthState } from 'react-firebase-hooks/auth'
 import Navbar from '../src/components/navbar/Navbar';
 import Routes from '../src/components/routes/Routes';
 import { BrowserRouter } from 'react-router-dom';
+import './App.css';
+import Login from './components/login/Login';
 
 function App() {
 
-  // const [user] = useAuthState(auth)
+  const [user] = useAuthState(auth);
   return (
     <>
-    <div className="container-fluid">
-//      <BrowserRouter>
-//         <Navbar />
-//         <Routes />
-//       </BrowserRouter>
-//     </div>
-      {/* {user ? <Chat /> : <SignIn />} */}
+      <div className="container-fluid">
+        <BrowserRouter>
+          <Navbar />
+          {user ? <Routes /> : <Login />}
+          {/* <Routes /> */}
+        </BrowserRouter>
+      </div>
     </>
   );
 }
