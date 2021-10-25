@@ -26,7 +26,7 @@ export default function Navbar() {
     <>
       <div className="container-fluid">
         <div className="container">
-          <div className="rowss pt-5 d-flex justify-content-center">
+          <div className="rowss pt-1 d-flex justify-content-center">
             <div className="col-2  pt-1">
               <a onClick={handleShow}>
                 <span style={{ fontSize: '40px' }}>
@@ -43,9 +43,9 @@ export default function Navbar() {
           <Offcanvas show={show} onHide={handleClose}>
             <Offcanvas.Header>
               <Offcanvas.Title>
-                <div className="ms-3 mt-2">
+                <div className="ms-4 mt-3">
                   <img
-                    style={{ marginLeft: "30px", width: "70px" }}
+                    style={{ marginLeft: "30px", width: "75px",height:"50px" }}
                     src={Logo}
                   />
                   <br />
