@@ -47,7 +47,7 @@ export default function Registration() {
               <div className="mb-3 input">
                 <label
                   for="exampleInputEmail1"
-                  className="form-label float-start ps-1 ms-2"
+                  className="form-label float-start ps-1"
                 >
                   <b>UserName</b>
                 </label>
@@ -64,7 +64,7 @@ export default function Registration() {
               <div className="mb-3 input">
                 <label
                   for="exampleInputPassword1"
-                  className="form-label float-start ps-1 ms-2"
+                  className="form-label float-start ps-1"
                 >
                   <b> Password </b>
                 </label>
@@ -77,13 +77,12 @@ export default function Registration() {
                   }}
                 />
               </div>
-              <div className="mb-3 input">
+              {/* <div className="mb-3 input">
                 <label
                   for="exampleInputPassword1"
-                  className="form-label float-start ps-1 ms-2"
-                >
-                  <b>Re-type Password </b>
-                </label>
+                  className="form-label float-start ps-1">
+                 <b>Re-type Password </b>
+                  </label>
                 <input
                   type="password"
                   className="form-control"
@@ -92,11 +91,11 @@ export default function Registration() {
                     setRetypePassword(e.target.value);
                   }}
                 />
-              </div>
+              </div> */}
               <div className="mb-3 input">
                 <label
                   for="exampleAddress"
-                  className="form-label float-start ps-1 ms-2"
+                  className="form-label float-start ps-1"
                 >
                   <b> Company Name</b>
                 </label>

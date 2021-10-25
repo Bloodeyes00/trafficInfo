@@ -67,7 +67,7 @@ export default function Login() {
           </div>
           <div className="Data d-flex align-items-center pt-4 mb-5">
           <div class="mb-3 "> 
-              <label for="exampleInputPassword1" class="form-label float-start ps-1">
+              <label for="exampleInputPassword1" class="ms-5 form-label float-start ps-1">
                 <b> Email Address </b>
               </label>
               &nbsp;
@@ -82,7 +82,7 @@ export default function Login() {
               />
             </div>
             <div class="mb-3"> 
-              <label for="exampleInputPassword1" class="form-label float-start ps-1">
+              <label for="exampleInputPassword1" class=" ms-5 form-label float-start ps-1">
                 <b> Enter Password </b>
               </label>
               &nbsp;
@@ -97,7 +97,7 @@ export default function Login() {
               />
             </div>
             <div class="mb-3"> 
-              <label for="exampleInputPassword1" class="form-label float-start ps-1">
+              <label for="exampleInputPassword1" class="ms-5 form-label float-start ps-1">
                 <b> Company Name </b>
               </label>
               &nbsp;
