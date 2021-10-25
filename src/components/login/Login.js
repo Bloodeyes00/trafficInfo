@@ -115,7 +115,7 @@ export default function Login() {
               onClick={() => login()}
               className=" Button form-control mt-3 mb-3 "
             >
-              Login
+              LOGIN
             </button>
             <SignIn />
             {/* <GoogleLogin /> */}
