@@ -1,8 +1,9 @@
 import React from 'react'
 import './Chatroom.css';
 import logo from '../../assets/logo.png'
-
+import { useHistory } from 'react-router';
 export default function Chatroom() {
+    let history = useHistory();
     return (
         <div>
             <div className="container-fluid-chatroom">
@@ -12,7 +13,7 @@ export default function Chatroom() {
                        <b> COMPANY CHAT ROOM </b>
                     </h2>
                 </div>
-                <div className="hello mt-5 col-sm-10 offset-1">
+                <div className="hello mt-5 col-sm-10 offset-1" onClick={()=> history.push(`/company/${2}`)}>
                     <div className="img ps-2 pt-2"><img src={logo}  className="image" /></div>
                    <div className="col-8 ps-4 pt-3"> <h5 className="taxi ">Taxi 97</h5>
                     <p  className="taxi ">Description of Taxi 97</p></div>

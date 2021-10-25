@@ -4,12 +4,12 @@ import { useState } from "react";
 import firebase from "../../components/utils/firebase";
 import { useHistory } from "react-router-dom";
 import GoogleLogin from "../googlelogin/GoogleLogin";
+import SignIn from "../SignIn";
 export default function Login() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [companyName, setcompanyName] = useState("");
-
   const login = () => {
     firebase
       .auth()
@@ -117,7 +117,8 @@ export default function Login() {
             >
               Login
             </button>
-            <GoogleLogin />
+            <SignIn />
+            {/* <GoogleLogin /> */}
             <br/>
           </div>
         </div>

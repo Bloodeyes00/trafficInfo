@@ -6,6 +6,10 @@ import Profile from "../profile/Profile";
 import Registration from '../registration/Registration';
 import Home from '../Home/Home';
 import Groupchat from '../groupchat/Groupchat';
+import Chat from '../Chat';
+import CompanyChat from '../company-chat/CompanyChat';
+import TransferChat from '../transfer-chat/TransferChat';
+import RoutesinfoChat from '../routesInforChat/RoutesInforChat';
 export default function Routes() {
     return (
         <div>
@@ -15,6 +19,10 @@ export default function Routes() {
                 <Route path="/registration" component={Registration}/>
                 <Route path="/chatroom" component={Chatroom}/>
                 <Route path="/Groupchat" component={Groupchat}/>
+                <Route path="/transfer/:id" component={TransferChat}/>
+                <Route path="/company/:id" component={CompanyChat}/>
+                <Route path="/routesinfo/:id" component={RoutesinfoChat}/>
+                <Route path="/chat/:id" component={Chat}/>
                 <Route path ="/" component={Home}/>
             </Switch>
         </div>
