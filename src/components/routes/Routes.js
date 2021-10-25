@@ -10,6 +10,7 @@ import Chat from '../Chat';
 import CompanyChat from '../company-chat/CompanyChat';
 import TransferChat from '../transfer-chat/TransferChat';
 import RoutesinfoChat from '../routesInforChat/RoutesInforChat';
+import SignOut from '../SignOut';
 export default function Routes() {
     return (
         <div>
@@ -17,8 +18,8 @@ export default function Routes() {
                 <Route path="/profile" component={Profile}/>
                 <Route path="/login" component={Login}/>
                 <Route path="/registration" component={Registration}/>
-                <Route path="/chatroom" component={Chatroom}/>
                 <Route path="/Groupchat" component={Groupchat}/>
+                <Route path="/SignOut " component={SignOut}/>
                 <Route path="/transfer/:id" component={TransferChat}/>
                 <Route path="/company/:id" component={CompanyChat}/>
                 <Route path="/routesinfo/:id" component={RoutesinfoChat}/>

@@ -13,7 +13,7 @@ function Chat() {
     }, [])
     return (
         <div>
-            <SignOut />
+            {/* <SignOut /> */}
             <div className="msgs">
                 {messages.map(({ id, text, photoURL, uid }) => (
                     <div>

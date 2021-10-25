@@ -2,36 +2,41 @@ import React from "react";
 import "./Registration.css";
 import { useState } from "react";
 import firebase from "../../components/utils/firebase";
-export default function Registration() {
-  const [userName, setUserName] = useState("");
+export default function Registration(props) {
+  let { setCurrentPageLogin } = props;
+  // const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
-  const [retypePassword, setRetypePassword] = useState("");
+  // const [retypePassword, setRetypePassword] = useState("");
   const [companyName, setcompanyName] = useState("");
   //function for sending message
   const handleSendMessage = () => {
     const firestore = firebase.database().ref("/UserInfo");
     let data = {
-      userName: userName,
+      // userName: userName,
       email: email,
       userPassword: userPassword,
-      retypePassword: retypePassword,
+      // retypePassword: retypePassword,
       companyName: companyName,
     };
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, userPassword)
-      .then((res) => console.log("dfd"))
+      .then((res) => {
+        console.log("dfd");
+        firestore
+          .push(data)
+          .then((res) => {
+            console.log("res ;", res);
+          })
+          .catch((e) => {
+            alert(e.message);
+            console.log("error in pushing data :", e);
+          });
+      })
       .catch((e) => [console.log(e)]);
 
-    firestore
-      .push(data)
-      .then((res) => {
-        console.log("res ;", res);
-      })
-      .catch((e) => {
-        console.log("error in pushing data :", e);
-      });
+
   };
   return (
     <div>
@@ -57,7 +62,7 @@ export default function Registration() {
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   onChange={(e) => {
-                    setUserName(e.target.value);
+                    setEmail(e.target.value);
                   }}
                 />
               </div>
@@ -115,11 +120,16 @@ export default function Registration() {
                   className=" Button form-control mt-4 mb-2 "
                   onClick={() => {
                     handleSendMessage();
+
                   }}
                 >
                   Register
-                </button>
+                </button >
+               
               </div>
+              <a 
+                  
+                  onClick={()=> setCurrentPageLogin(true)}>Already have an Account!</a>
             </div>
           </div>
         </div>
