@@ -21,6 +21,7 @@ export default function Routes() {
                 <Route path="/Groupchat" component={Groupchat}/>
                 <Route path="/SignOut " component={SignOut}/>
                 <Route path="/transfer/:id" component={TransferChat}/>
+                <Route path="/chatroom" component={Chatroom}/>
                 <Route path="/company/:id" component={CompanyChat}/>
                 <Route path="/routesinfo/:id" component={RoutesinfoChat}/>
                 <Route path="/chat/:id" component={Chat}/>

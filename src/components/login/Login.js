@@ -123,25 +123,17 @@ export default function Login() {
               >
                 Login
               </button>
-              <a
-                onClick={() => setCurrentPageLogin(false)}
-                // className=" Button form-control mt-3 mb-3 "
-              >
-                Don't have an Account!
-              </a>
+              
               <SignIn />
-              {/* <GoogleLogin /> */}
+           
               <br />
+              <a style={{marginBottom:'40px'}}
+                onClick={() => setCurrentPageLogin(false)}
+                
+              >
+                Don't have an Account? SignIn
+              </a>
             </div>
-            <button 
-              onClick={() => login()}
-              className=" Button form-control mt-3 mb-3 "
-            >
-              LOGIN
-            </button>
-            <SignIn />
-            {/* <GoogleLogin /> */}
-            <br/>
           </div>
         </div>
       </div>}

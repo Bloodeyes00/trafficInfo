@@ -13,7 +13,7 @@ function TransferChat() {
     }, [])
     return (
         <div>
-            <SignOut />
+            {/* <SignOut /> */}
             <div className="msgs">
                 {transinfo.map(({ id, text, photoURL, uid }) => (
                     <div>

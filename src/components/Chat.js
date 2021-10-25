@@ -11,6 +11,7 @@ function Chat() {
             setMessages(snapshot.docs.map(doc => doc.data()))
         })
     }, [])
+    console.log("mesgsegae", messages);
     return (
         <div>
             {/* <SignOut /> */}
@@ -20,7 +21,7 @@ function Chat() {
                         <div key={id} className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>
                             <img src={photoURL} alt="" />
                             <p>{text}</p>
-                            
+
                         </div>
                     </div>
                 ))}

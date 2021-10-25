@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { db, auth } from '../utils/firebase'
 import SendMessage from '../SendMessage'
-import SignOut from '../SignOut'
 
 function CompanyChat() {
     const scroll = useRef()
@@ -13,7 +12,7 @@ function CompanyChat() {
     }, [])
     return (
         <div>
-            <SignOut />
+            {/* <SignOut /> */}
             <div className="msgs">
                 {company.map(({ id, text, photoURL, uid }) => (
                     <div>

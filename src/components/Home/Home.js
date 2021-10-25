@@ -5,7 +5,7 @@ import { useHistory } from 'react-router'
 export default function Home() {
   let history = useHistory();
   return (
-    <div className="container-fluid custom_bg_Home pb-3">
+    <div className="container-fluid-home custom_bg_Home pb-3">
       <div className="container  py-5">
         <h3>START SOCIALISING</h3>
         <h4 className="mt-3">Join Groups </h4> <span>For All The Information!</span>
@@ -33,7 +33,7 @@ export default function Home() {
                   With supporting text below as a natural lead-in to additional
                   content.
                 </p>
-                <a href="chatroom" className="Home-buttons btn btn-secondary float-end" >
+                <a href="" className="Home-buttons btn btn-secondary float-end" >
                   <BsFillArrowRightSquareFill />
                 </a>
               </div>
@@ -49,7 +49,7 @@ export default function Home() {
                   With supporting text below as a natural lead-in to additional
                   content.
                 </p>
-                <a href="#" className="Home-buttons btn btn-secondary float-end">
+                <a href="" className="Home-buttons btn btn-secondary float-end">
                   <BsFillArrowRightSquareFill />
                 </a>
               </div>
@@ -63,7 +63,7 @@ export default function Home() {
                   With supporting text below as a natural lead-in to additional
                   content.
                 </p>
-                <a href="#" className="Home-buttons btn btn-secondary float-end">
+                <a href="" className="Home-buttons btn btn-secondary float-end">
                   <BsFillArrowRightSquareFill />
                 </a>
               </div>

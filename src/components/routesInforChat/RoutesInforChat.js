@@ -13,7 +13,7 @@ function RoutesinfoChat() {
     }, [])
     return (
         <div>
-            <SignOut />
+            {/* <SignOut /> */}
             <div className="msgs">
                 {routesinfo.map(({ id, text, photoURL, uid }) => (
                     <div>

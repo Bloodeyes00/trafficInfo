@@ -27,7 +27,7 @@ function App() {
   const [user] = useAuthState(auth);
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid-home">
         <BrowserRouter>
           <Navbar />
           {user ? <Routes /> : <Login />}
