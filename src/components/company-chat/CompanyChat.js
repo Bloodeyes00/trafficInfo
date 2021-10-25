@@ -5,7 +5,7 @@ import SignOut from '../SignOut'
 
 function CompanyChat() {
     const scroll = useRef()
-    const [messages, setMessages] = useState([])
+    const [company, setMessages] = useState([])
     useEffect(() => {
         db.collection('company').orderBy('createdAt').limit(50).onSnapshot(snapshot => {
             setMessages(snapshot.docs.map(doc => doc.data()))
@@ -15,7 +15,7 @@ function CompanyChat() {
         <div>
             <SignOut />
             <div className="msgs">
-                {messages.map(({ id, text, photoURL, uid }) => (
+                {company.map(({ id, text, photoURL, uid }) => (
                     <div>
                         <div key={id} className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>
                             <img src={photoURL} alt="" />

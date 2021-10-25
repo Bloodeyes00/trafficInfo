@@ -5,9 +5,9 @@ import SignOut from '../SignOut'
 
 function TransferChat() {
     const scroll = useRef()
-    const [messages, setMessages] = useState([])
+    const [transinfo, setMessages] = useState([])
     useEffect(() => {
-        db.collection('messages').orderBy('createdAt').limit(50).onSnapshot(snapshot => {
+        db.collection('transinfo').orderBy('createdAt').limit(50).onSnapshot(snapshot => {
             setMessages(snapshot.docs.map(doc => doc.data()))
         })
     }, [])
@@ -15,7 +15,7 @@ function TransferChat() {
         <div>
             <SignOut />
             <div className="msgs">
-                {messages.map(({ id, text, photoURL, uid }) => (
+                {transinfo.map(({ id, text, photoURL, uid }) => (
                     <div>
                         <div key={id} className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>
                             <img src={photoURL} alt="" />

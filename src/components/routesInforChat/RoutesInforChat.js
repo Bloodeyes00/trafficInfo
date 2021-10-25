@@ -5,7 +5,7 @@ import SignOut from '../SignOut'
 
 function RoutesinfoChat() {
     const scroll = useRef()
-    const [messages, setMessages] = useState([])
+    const [routesinfo, setMessages] = useState([])
     useEffect(() => {
         db.collection('routesinfo').orderBy('createdAt').limit(50).onSnapshot(snapshot => {
             setMessages(snapshot.docs.map(doc => doc.data()))
@@ -15,7 +15,7 @@ function RoutesinfoChat() {
         <div>
             <SignOut />
             <div className="msgs">
-                {messages.map(({ id, text, photoURL, uid }) => (
+                {routesinfo.map(({ id, text, photoURL, uid }) => (
                     <div>
                         <div key={id} className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>
                             <img src={photoURL} alt="" />
