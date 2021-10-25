@@ -77,7 +77,7 @@ export default function Registration() {
                   }}
                 />
               </div>
-              <div className="mb-3 input">
+              {/* <div className="mb-3 input">
                 <label
                   for="exampleInputPassword1"
                   className="form-label float-start ps-1">
@@ -91,7 +91,7 @@ export default function Registration() {
                     setRetypePassword(e.target.value);
                   }}
                 />
-              </div>
+              </div> */}
               <div className="mb-3 input">
                 <label
                   for="exampleAddress"
