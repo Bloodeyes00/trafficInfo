@@ -3,19 +3,19 @@ import './login.css'
 import { useState } from "react";
 import firebase from "../../components/utils/firebase";
 import { useHistory } from "react-router-dom";
-import GoogleLogin from "../googlelogin/GoogleLogin";
 import SignIn from "../SignIn";
 import Registration from "../registration/Registration";
 export default function Login() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
-  const [companyName, setcompanyName] = useState("");
+  // const [Number, setNumber] = useState("");
   const [curPageLogin, setCurrentPageLogin] = useState(true);
   const login = () => {
-    
+
     firebase
       .auth()
+
       .signInWithEmailAndPassword(email, userPassword)
       .then((res) => {
         console.log("login res : ", res);
@@ -23,10 +23,7 @@ export default function Login() {
           if (user) {
             let curuserid = firebase.auth().currentUser.uid;
             console.log("curuserid", curuserid);
-            // dispatch({
-            //   type: "SET_ID",
-            //   payload: curuserid,
-            // });
+
             firebase
               .database()
               .ref("/userRoles")
@@ -38,17 +35,14 @@ export default function Login() {
                   console.log("role ", role);
                   if (role.student == email) {
                     history.push("/dashboardstudent");
-                    // return "student"
                   }
                   if (role.admin == email) {
                     history.push("/dashboard");
-                    // return "admin"
                   } else {
                     return "notfound";
                   }
                 });
                 console.log("check role ", checkRole);
-                // if(main.students.stuent)
               });
           }
         });
@@ -56,7 +50,6 @@ export default function Login() {
         history.push('/home')
       })
       .catch((e) => {
-        // console.log("eeeerrr : login : ", e);
         console.log("email: ", email);
         alert(e.message);
       });
@@ -73,7 +66,7 @@ export default function Login() {
             </div>
             <div className="Data d-flex align-items-center pt-4 mb-5">
               <div class="mb-3 ">
-                <label for="exampleInputPassword1" class="ms-5 form-label float-start ps-1">
+                <label for="exampleInputPassword1" class="ms-2 form-label float-start ps-1">
                   <b> Email Address </b>
                 </label>
                 &nbsp;
@@ -88,14 +81,15 @@ export default function Login() {
                 />
               </div>
               <div class="mb-3">
-                <label for="exampleInputPassword1" class=" ms-5 form-label float-start ps-1">
-                  <b> Enter Password </b>
+                <label for="exampleInputPassword1" class=" ms-2 form-label float-start ps-1">
+                  <b> Enter Number </b>
                 </label>
                 &nbsp;
                 <input
-                  type="password"
+                  type="number"
                   class="input form-control "
                   id="exampleInputPassword1"
+                  placeholder="+92-3120908499"
                   required
                   onChange={(event) => {
                     setUserPassword(event.target.value);
@@ -103,12 +97,12 @@ export default function Login() {
                 />
               </div>
               <div class="mb-3">
-                <label for="exampleInputPassword1" class="ms-5 form-label float-start ps-1">
-                  <b> Company Name </b>
+                <label for="exampleInputPassword1" class="ms-2 form-label float-start ps-1">
+                  <b> Enter Password </b>
                 </label>
                 &nbsp;
                 <input
-                  type="text  "
+                  type="password  "
                   class="input form-control "
                   id="exampleInputPassword1"
                   required
@@ -123,15 +117,15 @@ export default function Login() {
               >
                 Login
               </button>
-              
+
               <SignIn />
-           
+
               <br />
-              <a style={{marginBottom:'40px'}}
+              <a style={{ marginBottom: '40px' }}
                 onClick={() => setCurrentPageLogin(false)}
-                
+
               >
-                Don't have an Account? SignIn
+                Don't have an Account? SignUp
               </a>
             </div>
           </div>

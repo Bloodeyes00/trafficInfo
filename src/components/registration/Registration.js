@@ -2,45 +2,59 @@ import React from "react";
 import "./Registration.css";
 import { useState } from "react";
 import firebase from "../../components/utils/firebase";
+import { useHistory } from "react-router";
 export default function Registration(props) {
+  const history = useHistory();
   let { setCurrentPageLogin } = props;
-  // const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
-  // const [retypePassword, setRetypePassword] = useState("");
+  const [Name, setName] = useState("");
+  const [Number, setNumber] = useState("");
   const [companyName, setcompanyName] = useState("");
-  //function for sending message
   const handleSendMessage = () => {
     const firestore = firebase.database().ref("/UserInfo");
     let data = {
-      // userName: userName,
       email: email,
       userPassword: userPassword,
-      // retypePassword: retypePassword,
       companyName: companyName,
+      Name: Name,
+      Number: Number,
     };
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, userPassword)
       .then((res) => {
-        console.log("dfd");
-        firestore
-          .push(data)
-          .then((res) => {
-            console.log("res ;", res);
-          })
-          .catch((e) => {
-            alert(e.message);
-            console.log("error in pushing data :", e);
-          });
+
+        firebase.auth().onAuthStateChanged((user) => {
+          if (user) {
+            let uid = user.uid;
+            data["uid"] = uid;
+            firestore.push(data).then((res) => {
+              console.log("res ;", res);
+              alert("SignUp Successfully!");
+              history.push('/login')
+            })
+              .catch((e) => {
+                alert(e.message);
+                console.log("error in pushing data :", e);
+              });
+
+          }
+        });
+
+        console.log("res after registration", res);
+
       })
       .catch((e) => [console.log(e)]);
 
 
   };
+
   return (
+
+
     <div>
-      <div>
+      <div className=''>
         <div className="Profile d-flex flex-column justify-content-center align-items-center pb-5">
           <div className="Heading d-flex justify-content-center mt-3">
             <h1>
@@ -48,13 +62,13 @@ export default function Registration(props) {
             </h1>
           </div>
           <div>
-            <div className="Data d-flex flex-column justify-content-center align-items-center py-5 mt-5 mb-5 ">
+            <div className="Data d-flex flex-column justify-content-center align-items-center py-5 mt-5  ">
               <div className="mb-3 input">
                 <label
                   for="exampleInputEmail1"
                   className="form-label float-start ps-1"
                 >
-                  <b>UserName</b>
+                  <b>Full Name</b>
                 </label>
                 <input
                   type="text"
@@ -62,7 +76,39 @@ export default function Registration(props) {
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   onChange={(e) => {
+                    setName(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="mb-3 input">
+                <label
+                  for="exampleInputPassword1"
+                  className="form-label float-start "
+                >
+                  <b> Enter Email </b>
+                </label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="exampleInputPassword1"
+                  onChange={(e) => {
                     setEmail(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="mb-3 input">
+                <label
+                  for="exampleInputPassword1"
+                  className="form-label float-start ps-1"
+                >
+                  <b> Enter Number </b>
+                </label>
+                <input
+                  type="number"
+                  className="form-control"
+                  id="exampleInputPassword1"
+                  onChange={(e) => {
+                    setNumber(e.target.value);
                   }}
                 />
               </div>
@@ -82,21 +128,6 @@ export default function Registration(props) {
                   }}
                 />
               </div>
-              {/* <div className="mb-3 input">
-                <label
-                  for="exampleInputPassword1"
-                  className="form-label float-start ps-1">
-                 <b>Re-type Password </b>
-                  </label>
-                <input
-                  type="password"
-                  className="form-control"
-                  id="exampleInputPassword1"
-                  onChange={(e) => {
-                    setRetypePassword(e.target.value);
-                  }}
-                />
-              </div> */}
               <div className="mb-3 input">
                 <label
                   for="exampleAddress"
@@ -117,7 +148,7 @@ export default function Registration(props) {
               <div>
                 <button
                   type="submit"
-                  className=" Button form-control mt-4 mb-2 "
+                  className=" Button form-control mt-3 mb-5 "
                   onClick={() => {
                     handleSendMessage();
 
@@ -125,11 +156,11 @@ export default function Registration(props) {
                 >
                   Register
                 </button >
-               
+
               </div>
-              <a 
-                  
-                  onClick={()=> setCurrentPageLogin(true)}>Already have an Account!</a>
+              <a
+
+                onClick={() => setCurrentPageLogin(true)}>Already have an Account!</a>
             </div>
           </div>
         </div>

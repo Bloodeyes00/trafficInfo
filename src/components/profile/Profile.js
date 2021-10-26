@@ -7,7 +7,6 @@ export default function Profile() {
   const [email, setEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [adress, setAdress] = useState("");
-  //function for sending message
   const handleSendMessage = () => {
     const firestore = firebase.database().ref("/UserInfo");
     let data = {
@@ -34,9 +33,9 @@ export default function Profile() {
         </div>
 
         <div className=" d-flex justify-content-center  shadow-sm p-3 mb-3  rounded-circle ">
-          <input type="file" id="files" class="hidden"  />
-            <MdAddAPhoto/>
-            </div>
+          <input type="file" id="files" class="hidden" />
+          <MdAddAPhoto />
+        </div>
 
         <div className="Data d-flex justify-content-center  align-items-center py-4 flex-wrap">
           <form>
@@ -48,34 +47,34 @@ export default function Profile() {
                 type="email"
                 class="form-control  d-flex  justify-content-center align-items-center "
                 id="exampleInputEmail1"
-                aria-describedby="emailHelp"  onChange={(e) => { setEmail(e.target.value) }}
+                aria-describedby="emailHelp" onChange={(e) => { setEmail(e.target.value) }}
               />
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" className="form-label offset-3 float-start ps-1">
-               <b> Password </b>
+                <b> Password </b>
               </label>
               <input
                 type="password"
                 class="form-control d-flex justify-content-center align-items-center"
-                id="exampleInputPassword1"  onChange={(e) => { setUserPassword(e.target.value) }}
-              /> 
+                id="exampleInputPassword1" onChange={(e) => { setUserPassword(e.target.value) }}
+              />
             </div>
             <div class="mb-3">
               <label for="exampleAddress" className="form-label offset-3 float-start ps-1">
-               <b> Address</b>
+                <b> Address</b>
               </label>
               <input
                 type="email"
                 class="form-control d-flex justify-content-center align-items-center"
                 id="exampleAddress"
-                aria-describedby="emailHelp"  onChange={(e) => { setAdress(e.target.value) }}
+                aria-describedby="emailHelp" onChange={(e) => { setAdress(e.target.value) }}
               />
             </div>
-           <div className="d-flex justify-content-center">
-            <button type="submit" className="Button form-control my-3 " onClick={() => {handleSendMessage()}}>
-              Submit
-            </button>
+            <div className="d-flex justify-content-center">
+              <button type="submit" className="Button form-control my-3 " onClick={() => { handleSendMessage() }}>
+                Save Changes
+              </button>
             </div>
           </form>
         </div>

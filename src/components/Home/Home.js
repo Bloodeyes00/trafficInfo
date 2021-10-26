@@ -9,11 +9,10 @@ export default function Home() {
       <div className="container  py-5">
         <h3>START SOCIALISING</h3>
         <h4 className="mt-3">Join Groups </h4> <span>For All The Information!</span>
-        {/* <p style={{margin:'0px',padding:'0px'}}>For All The Information!</p> */}
         <div className="row">
           <div className="col-sm-6 col-xs-6 p-3">
             <div className="card w-100 " id="Card1">
-              <div className="card-body">
+              <div className="card-body" onClick={() => { history.push(`/chat/${11}`) }}>
                 <h5 className="card-title">Traffic Info</h5>
                 <p className="card-text">
                   With supporting text below as a natural lead-in to additional

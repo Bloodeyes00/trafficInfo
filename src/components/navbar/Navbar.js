@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../navbar/Navbar.css";
 import "react-pro-sidebar/dist/css/styles.css";
 import { Offcanvas } from "react-bootstrap";
@@ -14,10 +14,37 @@ import { GoSignOut } from "react-icons/go";
 import { IoLogInOutline } from "react-icons/all"
 import { RiInboxArchiveFill } from "react-icons/ri";
 import { IoMdMenu } from "react-icons/io";
-import { auth } from "../utils/firebase";
+import { auth, db } from "../utils/firebase";
+import firebase from "../utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 export default function Navbar() {
+  useEffect(() => {
+
+    const firestore = firebase.database().ref("/UserInfo");
+    firestore.on('value', (snapshot) => {
+      let data = { ...snapshot.val() };
+      data = Object.values(data);
+      let uid = auth?.currentUser.uid;
+      if (uid) {
+
+
+        let currentUserDetails = data.find(item => item.uid == uid);
+        console.log("data : ", data);
+        console.log("currentUserDetails : ", currentUserDetails);
+        setuserdetails(currentUserDetails);
+      }
+    });
+
+    db.collection('messages').orderBy('createdAt').onSnapshot(snapshot => {
+      setMessages(snapshot.docs.map(doc => doc.data()))
+    });
+    return {
+
+    }
+  }, [])
   const [show, setShow] = useState(false);
+  const [messages, setMessages] = useState(false);
+  const [userdetails, setuserdetails] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   let history = useHistory();
@@ -45,12 +72,14 @@ export default function Navbar() {
               <Offcanvas.Title>
                 <div className="ms-4 mt-3">
                   <img
-                    style={{ marginLeft: "30px", width: "75px",height:"50px" }}
-                    src={Logo}
+                    style={{ marginLeft: "35px", width: "80px", height: "75px", marginTop: 'auto' }}
+                    src={messages[0]?.photoURL ? messages[0].photoURL : Logo}
                   />
                   <br />
                   <br />
-                  <span style={{ marginLeft: "30px" }}>Traffic Info</span>
+                  {/* <span style={{ marginLeft: "30px" }}>Traffic Info</span> */}
+                  <h2 style={{ marginLeft: "0px" }}>{userdetails?.Name}</h2>
+                  {/* <span style={{ marginLeft: "30px" }}>Traffic Info</span> */}
                 </div>
               </Offcanvas.Title>
             </Offcanvas.Header>
@@ -133,7 +162,7 @@ export default function Navbar() {
                       CHATROOM
                     </a>
                     <br />
-                   {!user?.uid && <br />}
+                    {!user?.uid && <br />}
                     {!user?.uid && <div>
                       <span style={{ fontSize: '25px' }} onClick={() => {
                         history.push("./login")
@@ -182,14 +211,12 @@ export default function Navbar() {
                     <br />
                     {user && <div>
                       <span style={{ fontSize: '25px' }} onClick={() => {
-                        // history.push("./SignOut >")
                         auth.signOut();
                       }} >
                         <GoSignOut />
                       </span>
                       <a
                         onClick={() => {
-                          // history.push("/login ");
                           auth.signOut();
                         }}
                         style={{ color: "black", textDecoration: "none" }}
