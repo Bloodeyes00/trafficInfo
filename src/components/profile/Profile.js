@@ -1,12 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import firebase from "../../components/utils/firebase";
 import "../profile/Profile.css";
 import { MdAddAPhoto } from "react-icons/md";
+import { auth } from "../utils/firebase";
 export default function Profile() {
   const [email, setEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [adress, setAdress] = useState("");
+  const [userdetails, setuserdetails] = useState(null);
+
+  useEffect(() => {
+
+    const firestore = firebase.database().ref("/UserInfo");
+    firestore.on('value', (snapshot) => {
+      let data = { ...snapshot.val() };
+      data = Object.values(data);
+      console.log("data : ", data);
+
+      if (auth?.currentUser?.uid) {
+        console.log("auth uids: ", auth.currentUser.uid);
+        let currentUserDetails = data.find(item => item.uid == auth?.currentUser.uid);
+        // console.log("item.uid : ", item.uid);
+        console.log("currentUserDetails : ", currentUserDetails);
+        setuserdetails(currentUserDetails);
+        setEmail(currentUserDetails.email);
+      }
+    });
+    return {
+
+    }
+  }, [])
+
   const handleSendMessage = () => {
     const firestore = firebase.database().ref("/UserInfo");
     let data = {
@@ -15,7 +40,7 @@ export default function Profile() {
       adress: adress,
     };
     firestore
-      .push(data)
+      .update(data)
       .then((res) => {
         console.log("res ;", res);
       })
@@ -47,6 +72,7 @@ export default function Profile() {
                 type="email"
                 class="form-control  d-flex  justify-content-center align-items-center "
                 id="exampleInputEmail1"
+                value={email}
                 aria-describedby="emailHelp" onChange={(e) => { setEmail(e.target.value) }}
               />
             </div>
@@ -65,7 +91,8 @@ export default function Profile() {
                 <b> Address</b>
               </label>
               <input
-                type="email"
+
+                type="text"
                 class="form-control d-flex justify-content-center align-items-center"
                 id="exampleAddress"
                 aria-describedby="emailHelp" onChange={(e) => { setAdress(e.target.value) }}

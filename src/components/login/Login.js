@@ -28,10 +28,10 @@ export default function Login() {
               .database()
               .ref("/userRoles")
               .on("value", (snapshot) => {
-                let main = snapshot.val();
-                main = Object.values(main);
-                console.log("user Roles :", main);
-                let checkRole = main.map((role) => {
+                // let main = snapshot.val();
+                 Object.values(snapshot?.val());
+                console.log("user Roles :", snapshot?.val());
+                let checkRole = snapshot?.val().map((role) => {
                   console.log("role ", role);
                   if (role.student == email) {
                     history.push("/dashboardstudent");

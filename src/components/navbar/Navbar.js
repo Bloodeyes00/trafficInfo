@@ -88,7 +88,7 @@ export default function Navbar() {
                 <div className="row">
                   <div className="offset-1">
                     <span style={{ fontSize: '25px' }} onClick={() => {
-                      history.push("./home")
+                      history.push("/home")
                     }} >
                       <IoIosHome />
                     </span>
@@ -104,13 +104,13 @@ export default function Navbar() {
                     <br />
                     <br />
                     <span style={{ fontSize: '25px' }} onClick={() => {
-                      history.push("./group")
+                      history.push("/group")
                     }} >
                       <MdGroup />
                     </span>
                     <a
                       onClick={() => {
-                        history.push("./group")
+                        history.push("/group")
                       }}
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
@@ -119,13 +119,15 @@ export default function Navbar() {
                     <br />
                     <br />
                     <span style={{ fontSize: '25px' }} onClick={() => {
-                      history.push("./groupchat")
+                      history.push("/groupchat")
+                      
+
                     }} >
                       <CgProfile />
                     </span>
                     <a
                       onClick={() => {
-                        history.push("./profile")
+                        history.push("/profile")
                       }}
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
@@ -165,7 +167,7 @@ export default function Navbar() {
                     {!user?.uid && <br />}
                     {!user?.uid && <div>
                       <span style={{ fontSize: '25px' }} onClick={() => {
-                        history.push("./login")
+                        history.push("/login")
                       }} >
                         <IoLogInOutline />
                       </span>
@@ -180,13 +182,13 @@ export default function Navbar() {
                     </div>}
                     <br />
                     <span style={{ fontSize: '25px' }} onClick={() => {
-                      history.push("./registration")
+                      history.push("/registration")
                     }} >
                       <MdAppRegistration />
                     </span>
                     <a
                       onClick={() => {
-                        history.push("./registration")
+                        history.push("/registration")
                       }}
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
@@ -195,13 +197,13 @@ export default function Navbar() {
                     <br />
                     <br />
                     <span style={{ fontSize: '25px' }} onClick={() => {
-                      history.push("./support")
+                      history.push("/support")
                     }} >
                       <MdOutlineSupportAgent />
                     </span>
                     <a
                       onClick={() => {
-                        history.push("./support")
+                        history.push("/support")
                       }}
                       style={{ color: "black", textDecoration: "none" }}
                     > &nbsp;&nbsp;
