@@ -1,6 +1,9 @@
 import React from "react";
 import "./Groupchat.css";
-import logo from '../../assets/logo.png'
+import sveaTaxi from '../../assets/images/SveaTaxi.png'
+import microsoftteams from '../../assets/images/MicrosoftTeams.png'
+import sverigetaxi from '../../assets/images/Sverigetaxi.jpg'
+import T1212 from '../../assets/images/T1212.jpg'
 
 export default function Groupchat() {
   return (
@@ -29,41 +32,41 @@ export default function Groupchat() {
       </div>
 
       <div className="hi mt-5 col-sm-10 offset-1">
-        <div className="imgs ps-2 pt-2">
-          <img src={logo} className="imges" />
+        <div className="imgs ps-2 pt-2 mt-4">
+          <img src={sveaTaxi} className="imges" />
         </div>
         <div className="col-8 ps-2 pt-3">
-          <h5 className="text">Kumar Partik</h5>
+          <h5 className="text ms-2">Svea Taxi</h5>
           <p> Doing what you like will always keep you  </p>
         </div>
       </div>
 
       <div className="hi mt-5 col-sm-10 offset-1">
-        <div className="imgs ps-2 pt-2">
-          <img src={logo} className="imges" />
+        <div className="imgs ps-2 pt-2 mt-4">
+          <img src={microsoftteams} className="imges" />
         </div>
         <div className="col-8 ps-2 pt-3">
-          <h5 className="text">Kumar Partik</h5>
+          <h5 className="text ms-2">Microsoft Teams</h5>
           <p> Doing what you like will always keep you  </p>
         </div>
       </div>
 
       <div className="hi mt-5 col-sm-10 offset-1">
-        <div className="imgs ps-2 pt-2">
-          <img src={logo} className="imges" />
+        <div className="imgs ps-2 pt-2 mt-4">
+          <img src={sverigetaxi} className="imges" />
         </div>
         <div className="col-8 ps-2 pt-3">
-          <h5 className="text">Kumar Partik</h5>
+          <h5 className="text ms-2">Sverige Taxi</h5>
           <p> Doing what you like will always keep you  </p>
         </div>
       </div>
 
       <div className="hi mt-5 col-sm-10 offset-1">
-        <div className="imgs ps-2 pt-2">
-          <img src={logo} className="imges" />
+        <div className="imgs ps-2 pt-2 mt-4">
+          <img src={T1212} className="imges" />
         </div>
         <div className="col-8 ps-2 pt-3">
-          <h5 className="text">Kumar Partik</h5>
+          <h5 className="text ms-2">Taxi 1212</h5>
           <p> Doing what you like will always keep you  </p>
         </div>
       </div>
