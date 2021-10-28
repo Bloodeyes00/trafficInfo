@@ -24,6 +24,7 @@ export default function Routes() {
                 <Route path="/chatroom" component={Chatroom}/>
                 <Route path="/company/:id" component={CompanyChat}/>
                 <Route path="/routesinfo/:id" component={RoutesinfoChat}/>
+
                 <Route path="/chat/:id" component={Chat}/>
                 <Route path ="/" component={Home}/>
             </Switch>
