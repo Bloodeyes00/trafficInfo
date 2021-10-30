@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { ArrowRight } from 'react-bootstrap-icons';
-
 import { storage } from '../components/utils/firebase'
 class Sendimage extends Component {
     constructor(props) {

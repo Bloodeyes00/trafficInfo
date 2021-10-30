@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { db, auth } from '../utils/firebase'
 import SendMessage from '../SendMessage'
 import { useParams } from 'react-router'
+import './CompanyChat.css'
 function CompanyChat() {
     const scroll = useRef()
     const [company, setMessages] = useState([])
@@ -37,7 +38,7 @@ function CompanyChat() {
         scroll.current.scrollIntoView({ behavior: 'smooth' })
     }, [company])
     return (
-        <div>
+        <div className="container-fluid-chats">
             <div className="msgs">
                 {company.map(({ id, text, photoURL, curImageUrl, uid }) => (
                     <div style={{ borderBottom: "solid 0.0px gray" }}>

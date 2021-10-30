@@ -5,7 +5,7 @@ import { useHistory } from 'react-router'
 export default function Home() {
   let history = useHistory();
   return (
-    <div className="container-fluid-home custom_bg_Home pb-3">
+      <div className="container-fluid-home custom_bg_Home pb-3">
       <div className="container  py-5">
         <h3>START SOCIALISING</h3>
         <h4 className="mt-3">Join Groups </h4> <span>For All The Information!</span>
