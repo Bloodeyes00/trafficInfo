@@ -13,6 +13,7 @@ function SendMessage({ scroll }) {
 
     useEffect(() => {
         console.log("curImageUrl", curImageUrl);
+        scroll.current.scrollIntoView({ behavior: 'smooth' })
     }, [curImageUrl])
 
     async function sendMessage(e) {
@@ -62,6 +63,7 @@ function SendMessage({ scroll }) {
         await db.collection(event).add(payload).then(res => {
             console.log("msg sent succesfuly");
             setCurrentImgUrl("");
+            scroll.current.scrollIntoView({ behavior: 'smooth' })
             // this.fileRef.value = "";
         }).catch(e => {
             console.log("Err sending msg : ", e);
@@ -69,10 +71,8 @@ function SendMessage({ scroll }) {
         setMsg('')
         scroll = () => {
             this.messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+            scroll.current.scrollIntoView({ behavior: 'smooth' })
         };
-
-
-        // scroll.current.scrollIntoView({ behavior: 'smooth' })
     }
 
     function reset(ref) {

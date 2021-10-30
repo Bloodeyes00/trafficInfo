@@ -34,15 +34,16 @@ function CompanyChat() {
             setMessages(snapshot.docs.map(doc => doc.data()));
             console.log("messages in company chat : ", company);
         })
-    }, [])
+        scroll.current.scrollIntoView({ behavior: 'smooth' })
+    }, [company])
     return (
         <div>
             <div className="msgs">
                 {company.map(({ id, text, photoURL, curImageUrl, uid }) => (
-                    <div style={{borderBottom:"solid 0.0px gray"}}>
-                        { < div key={id} className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>
+                    <div style={{ borderBottom: "solid 0.0px gray" }}>
+                        {< div key={id} className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>
                             {photoURL && <img src={photoURL} alt="" />}
-                            {curImageUrl && <img src={curImageUrl} alt="no img"  style={{height:'270px', width:'270px', borderRadius:'0px'}} />}
+                            {curImageUrl && <img src={curImageUrl} alt="no img" style={{ height: '270px', width: '270px', borderRadius: '0px' }} />}
                             {text != " " && <p>{text}</p>}
                         </div>}
                     </div>
