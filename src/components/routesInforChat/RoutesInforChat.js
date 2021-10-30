@@ -13,20 +13,20 @@ function RoutesinfoChat() {
     }, [])
     return (
         <div>
-            <div className="msgs">
-                {routesinfo.map(({ id, text, photoURL, uid }) => (
-                    <div>
-                        <div key={id} className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>
-                            <img src={photoURL} alt="" />
-                            <p>{text}</p>
-
-                        </div>
-                    </div>
-                ))}
-            </div>
-            <SendMessage scroll={scroll} />
-            <div ref={scroll}></div>
+        <div className="msgs">
+            {routesinfo.map(({ id, text, photoURL, curImageUrl, uid }) => (
+                <div style={{borderBottom:"solid 0.0px gray"}}>
+                    { < div key={id} className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>
+                        {photoURL && <img src={photoURL} alt="" />}
+                        {curImageUrl && <img src={curImageUrl} alt="no img"  style={{height:'270px', width:'270px', borderRadius:'0px'}} />}
+                        {text != " " && <p>{text}</p>}
+                    </div>}
+                </div>
+            ))}
         </div>
+        <SendMessage scroll={scroll} />
+        <div ref={scroll}></div>
+    </div>
     )
 }
 
