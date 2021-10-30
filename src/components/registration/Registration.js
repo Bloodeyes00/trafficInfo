@@ -65,15 +65,15 @@ export default function Registration(props) {
             <div className="Data d-flex flex-column justify-content-center align-items-center py-5 mt-5  ">
               <div className="mb-3 input">
                 <label
-                  for="exampleInputEmail1"
+                  for="exampleInputText1"
                   className="form-label float-start ps-1"
                 >
                   <b>Full Name</b>
                 </label>
                 <input
                   type="text"
-                  className="form-control"
-                  id="exampleInputEmail1"
+                  className="form-control ps-4"
+                  id="exampleInputText1"
                   aria-describedby="emailHelp"
                   onChange={(e) => {
                     setName(e.target.value);
@@ -82,15 +82,15 @@ export default function Registration(props) {
               </div>
               <div className="mb-3 input">
                 <label
-                  for="exampleInputPassword1"
-                  className="form-label float-start "
+                  for="exampleInpuEmail1"
+                  className="form-label float-start ps-2 "
                 >
                   <b> Enter Email </b>
                 </label>
                 <input
                   type="email"
-                  className="form-control"
-                  id="exampleInputPassword1"
+                  className="form-control ps-3"
+                  id="exampleInpuEmail1"
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
@@ -98,15 +98,15 @@ export default function Registration(props) {
               </div>
               <div className="mb-3 input">
                 <label
-                  for="exampleInputPassword1"
-                  className="form-label float-start ps-1"
+                  for="exampleInputNumber"
+                  className="form-label float-start ps-2"
                 >
                   <b> Enter Number </b>
                 </label>
                 <input
                   type="number"
-                  className="form-control"
-                  id="exampleInputPassword1"
+                  className="form-control ps-1"
+                  id="exampleInputNumber"
                   onChange={(e) => {
                     setNumber(e.target.value);
                   }}
@@ -114,30 +114,30 @@ export default function Registration(props) {
               </div>
               <div className="mb-3 input">
                 <label
-                  for="exampleInputPassword1"
-                  className="form-label float-start ps-1"
+                  for="exampleInputpassword"
+                  className="form-label float-start ps-2"
                 >
-                  <b> Password </b>
+                  <b>Password</b>
                 </label>
                 <input
                   type="password"
-                  className="form-control"
-                  id="exampleInputPassword1"
+                  className="form-control ps-5 "
+                  id="exampleInputpassword"
                   onChange={(e) => {
-                    setUserPassword(e.target.value);
+                  setUserPassword(e.target.value);
                   }}
                 />
               </div>
               <div className="mb-3 input">
                 <label
                   for="exampleAddress"
-                  className="form-label float-start ps-1"
+                  className="form-label float-start ps-2"
                 >
                   <b> Company Name</b>
                 </label>
                 <input
                   type="text"
-                  className="form-control "
+                  className="form-control ps-1 "
                   id="exampleAddress"
                   aria-describedby="emailHelp"
                   onChange={(e) => {
