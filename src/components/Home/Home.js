@@ -26,7 +26,7 @@ export default function Home() {
           </div>
           <div className="col-sm-6 col-xs-6 p-3">
             <div className="card w-100 " id="Card2">
-              <div className="card-body" onClick={() => { history.push(`/chatroom/${2}`) }}>
+              <div className="card-body" onClick={() => { history.push(`/chatroom`) }}>
                 <h5 className="card-title">Bolog Chat Room</h5>
                 <p className="card-text">
                   With supporting text below as a natural lead-in to additional

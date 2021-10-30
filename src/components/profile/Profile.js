@@ -4,6 +4,7 @@ import firebase from "../../components/utils/firebase";
 import "../profile/Profile.css";
 import { MdAddAPhoto } from "react-icons/md";
 import { auth } from "../utils/firebase";
+import ImageUpload from "../ImageUpload";
 export default function Profile() {
   const [email, setEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
@@ -58,7 +59,7 @@ export default function Profile() {
         </div>
 
         <div className=" d-flex justify-content-center  shadow-sm p-3 mb-3  rounded-circle ">
-          <input type="file" id="files" class="hidden" />
+          <ImageUpload />
           <MdAddAPhoto />
         </div>
 

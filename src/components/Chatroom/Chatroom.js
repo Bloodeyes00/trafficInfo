@@ -23,29 +23,29 @@ export default function Chatroom() {
                     <div className="col-8 ps-4 pt-3"> <h5 className="taxi ">Svea Taxi</h5>
                         <p className="taxi ">Description of Taxi 97</p></div>
                 </div>
-                <div className="hello mt-5 col-sm-10 offset-1">
+                <div className="hello mt-5 col-sm-10 offset-1" onClick={() => history.push(`/company/${4}`)}>
                     <div className="img ps-2 pt-2 mt-4"><img src={microsoftteams} className="image" /></div>
                     <div className="col-8 ps-4 pt-3"> <h5 className="taxi ">Microsoft Teams</h5>
                         <p className="taxi ">Description of  Free Akare</p></div>
                 </div>
-                <div className="hello mt-5 col-sm-10 offset-1">
+                <div className="hello mt-5 col-sm-10 offset-1" onClick={() => history.push(`/company/${5}`)}>
                     <div className="img ps-2 pt-2 mt-4"><img src={sverigetaxi} className="image" /></div>
                     <div className="col-8 ps-4 pt-3"> <h5 className="taxi ">Sverige Taxi</h5>
                         <p className="taxi ">Description of chatroom Taxi 23</p></div>
                 </div>
-                <div className="hello mt-5 col-sm-10 offset-1">
+                <div className="hello mt-5 col-sm-10 offset-1" onClick={() => history.push(`/company/${6}`)}>
                     <div className="img ps-2 pt-2 mt-4"><img src={T1212} className="image" /></div>
                     <div className="col-8 ps-4 pt-3"> <h5 className="taxi ">Taxi 1212</h5>
                         <p className="taxi ">Description of chatroom Taxi 59</p></div>
                 </div>
-                <div className="hello mt-5 col-sm-10 offset-1">
+                <div className="hello mt-5 col-sm-10 offset-1" onClick={() => history.push(`/company/${7}`)}>
                     <div className="img ps-2 pt-2 mt-4"><img src={TKurir} className="image" /></div>
                     <div className="col-8 ps-4 pt-3"> <h5 className="taxi ">Taxi kurir</h5>
                         <p className="taxi ">Description of chatroom Taxi 1212</p></div>
                 </div>
-                <div className="hello mt-5 col-sm-10 offset-1">
+                <div className="hello mt-5 col-sm-10 offset-1" onClick={() => history.push(`/company/${8}`)}>
                     <div className="img ps-2 pt-2 mt-4"><img src={TSkane} className="image" /></div>
-                    <div className="col-8 ps-4 pt-3"> <h5 className="taxi ">Taxi kurir</h5>
+                    <div className="col-8 ps-4 pt-3"> <h5 className="taxi ">Taxi Skane</h5>
                         <p className="taxi ">Description of chatroom Taxi 1212</p></div>
                 </div>
 

@@ -4,6 +4,7 @@ import Navbar from '../src/components/navbar/Navbar';
 import Routes from '../src/components/routes/Routes';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
+import ImageUpload from './components/ImageUpload';
 import Login from './components/login/Login';
 
 function App() {
