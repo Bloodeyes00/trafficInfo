@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { ArrowRight } from 'react-bootstrap-icons';
-
+import { BsCardImage } from 'react-icons/bs'
 import { storage } from '../components/utils/firebase'
+import "./send-message/send-message.css"
 class Sendimage extends Component {
     constructor(props) {
         super(props);
@@ -47,10 +48,13 @@ class Sendimage extends Component {
     }
     render() {
         return (
-            <div>
-                {/* <img src={this.state.url || 'http://via.placeholder.com/400x300'} alt="Uploaded images" height="300" width="400"/>
-       */}
-                <input type="file" onChange={this.handleChange} ref={(e) => { this.ref = e; this.props.reset(this.ref) }} />
+            <div className="send-image-container">
+              
+                <input value={''} type="file" id="" className="custom-file-input " 
+                    onChange={this.handleChange} ref={(e) => { this.ref = e; this.props.reset(this.ref) }}
+                >
+
+                </input>
                 {/* <button onClick={this.handleUpload}>Upload</button> */}
                 {/* <progress value={this.state.progress} max="100"/> */}
             </div>

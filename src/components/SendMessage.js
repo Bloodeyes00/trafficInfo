@@ -3,7 +3,7 @@ import { db, auth } from '../components/utils/firebase'
 import firebase from 'firebase'
 import { Input, Button } from '@material-ui/core'
 import { useParams } from 'react-router-dom'
-import { BsCardImage } from 'react-icons/bs'
+
 import Sendimage from './Sendimage'
 function SendMessage({ scroll }) {
     const [msg, setMsg] = useState('');
@@ -13,8 +13,15 @@ function SendMessage({ scroll }) {
 
     useEffect(() => {
         console.log("curImageUrl", curImageUrl);
-        scroll.current.scrollIntoView({ behavior: 'smooth' })
-    }, [curImageUrl])
+        if (scroll) {
+            scroll?.current?.scrollIntoView({
+                // top: 100,
+                behavior: 'smooth',
+                block: 'end',
+                inline: 'nearest'
+            });
+        }
+    }, [curImageUrl,msg])
 
     async function sendMessage(e) {
         e.preventDefault()
@@ -45,7 +52,7 @@ function SendMessage({ scroll }) {
         if (id == "3") {
             send('transinfo');
         }
-        else {
+        if (id == "4") {
             send('routesinfo');
         }
 
@@ -59,20 +66,42 @@ function SendMessage({ scroll }) {
             uid,
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
         };
-        console.log("paylod : ",payload);
+        console.log("paylod : ", payload);
         await db.collection(event).add(payload).then(res => {
             console.log("msg sent succesfuly");
             setCurrentImgUrl("");
-            scroll.current.scrollIntoView({ behavior: 'smooth' })
+            if (scroll) {
+                scroll.current.scrollIntoView({
+                    // top: 100,
+                    behavior: 'smooth',
+                    block: 'end',
+                    inline: 'nearest'
+                });
+            }
+            // window.scrollTo({
+            //     top: 500,
+            //     left: 0,
+            //     behavior: 'smooth'
+            //   });
             // this.fileRef.value = "";
         }).catch(e => {
             console.log("Err sending msg : ", e);
         })
         setMsg('')
-        scroll = () => {
-            this.messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
-            scroll.current.scrollIntoView({ behavior: 'smooth' })
-        };
+        // scroll = () => {
+        //     this.messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+        //     scroll.current.scrollIntoView({
+        //         behavior: 'smooth',
+        //         block: 'end',
+        //         inline: 'nearest'
+        //     })
+        // };
+        // scroll.current.scrollIntoView({
+        //     behavior: 'smooth',
+        //     block: 'end',
+        //     inline: 'nearest'
+        // })
+
     }
 
     function reset(ref) {
@@ -82,16 +111,11 @@ function SendMessage({ scroll }) {
         <div>
             <form onSubmit={sendMessage}>
                 <div className="sendMsg">
-                    <div>
-                        <Button type="input" >
-                            <BsCardImage />
-
+                    <div className='imagesend'>
+                        <Button >
                             <Sendimage setCurrentImgUrl={setCurrentImgUrl} curImageUrl={curImageUrl} reset={reset} />
                         </Button>
-
                     </div>
-                    {/* <input type="file"  />
-                    <button type="submit">UPLOAD</button> */}
                     <br />
                     <Input style={{
                         width: '78%', fontSize: '15px', fontWeight: '550', marginLeft: '5px',

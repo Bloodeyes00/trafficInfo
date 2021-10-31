@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { ArrowRight } from 'react-bootstrap-icons';
 
-import { storage } from '../components/utils/firebase'
+import { storage } from './utils/firebase'
 class ImageUpload extends Component {
   constructor(props) {
     super(props);
@@ -48,13 +48,15 @@ class ImageUpload extends Component {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center' ,
+      display:'none', visibility:'none'
     };
     return (
-      <div style={style}>
+      <div>
         <img src={this.state.url || 'http://via.placeholder.com/400x300'} alt="Uploaded images" height="300" width="400"/>
-      
-        <input  type="file" onChange={this.handleChange}/><ArrowRight />
+     
+      <label> <i style={{fontsize: '31px',border:'1px solid black'}}> </i> <ArrowRight /> </label>
+        <input  type="file" onChange={this.handleChange}/>
         <button onClick={this.handleUpload}>Upload</button>
         <progress value={this.state.progress} max="100"/>
       </div>
