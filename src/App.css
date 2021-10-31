@@ -82,6 +82,9 @@ p {
   /* border-top-left-radius: 1000px; */
   float: left;
 }
+.img, svg{
+  font-size: 21px !important ;
+}
 
 .sendMsg {
   position: fixed;
