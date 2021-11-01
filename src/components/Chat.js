@@ -19,7 +19,7 @@ function Chat() {
     console.log("messages", messages);
     return (
         <ScrollToBottom className={ROOT_CSS}>
-            <div className="msgs">
+            <div className="msgs ">
                 {messages.map(({ id, text, photoURL, curImageUrl, uid }) => (
                     <div style={{ borderBottom: "solid 0.0px gray" }}>
                         {< div key={id} className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>

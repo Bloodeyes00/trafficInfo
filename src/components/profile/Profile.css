@@ -9,11 +9,18 @@
     size: 50px;
    
 }
+.Profile{
+    background-color:rgb(232, 230, 230);
+  
+}
 .photoicon a{
     font-size: 25px;
 }
 .ProPic:hover{
     border: solid grey;
+}
+.Heading{
+    
 }
 
 .Data{

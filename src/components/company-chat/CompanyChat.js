@@ -53,6 +53,7 @@ function CompanyChat() {
         scroll.current.scrollIntoView({ behavior: 'smooth' });
     }, [])
     return (
+        <div className="container-fluid-chats">
         <ScrollToBottom className={ROOT_CSS}>
             <div className="msgs">
                 {company.map(({ id, text, photoURL, curImageUrl, uid }) => (
@@ -69,6 +70,7 @@ function CompanyChat() {
             </div>
             <SendMessage scroll={scroll} />
             </ScrollToBottom>
+            </div>
     )
 }
 

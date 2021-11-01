@@ -65,36 +65,36 @@ export default function Profile() {
 
         <div className="Data d-flex justify-content-center  align-items-center py-4 flex-wrap">
           <form>
-            <div class="mb-3">
+            <div className="mb-3">
               <label for="exampleInputEmail1" className="form-label float-start offset-3 ps-1">
                 <b>Email address</b>
               </label>
               <input
                 type="email"
-                class="form-control  d-flex  justify-content-center align-items-center "
+                className="form-control  d-flex  justify-content-center align-items-center "
                 id="exampleInputEmail1"
                 value={email}
                 aria-describedby="emailHelp" onChange={(e) => { setEmail(e.target.value) }}
               />
             </div>
-            <div class="mb-3">
+            <div className="mb-3">
               <label for="exampleInputPassword1" className="form-label offset-3 float-start ps-1">
                 <b> Password </b>
               </label>
               <input
                 type="password"
-                class="form-control d-flex justify-content-center align-items-center"
+                className="form-control d-flex justify-content-center align-items-center"
                 id="exampleInputPassword1" onChange={(e) => { setUserPassword(e.target.value) }}
               />
             </div>
-            <div class="mb-3">
+            <div className="mb-3">
               <label for="exampleAddress" className="form-label offset-3 float-start ps-1">
                 <b> Address</b>
               </label>
               <input
 
                 type="text"
-                class="form-control d-flex justify-content-center align-items-center"
+                className="form-control d-flex justify-content-center align-items-center"
                 id="exampleAddress"
                 aria-describedby="emailHelp" onChange={(e) => { setAdress(e.target.value) }}
               />
