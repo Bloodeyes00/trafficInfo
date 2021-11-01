@@ -81,14 +81,14 @@ export default function Login() {
                 />
               </div>
               <div class="mb-3">
-                <label for="exampleInputPassword1" class=" ms-2 form-label float-start ps-1">
+                <label for="exampleInputText1" class=" ms-2 form-label float-start ps-1">
                   <b> Enter Number </b>
                 </label>
                 &nbsp;
                 <input
                   type="number"
                   class="input form-control "
-                  id="exampleInputPassword1"
+                  id="exampleInputText1"
                   placeholder="+92-3120908499"
                   required
                   onChange={(event) => {
@@ -102,9 +102,9 @@ export default function Login() {
                 </label>
                 &nbsp;
                 <input
-                  type="password  "
+                  type="password"
                   class="input form-control "
-                  id="exampleInputPassword1"
+                  id="exampleInputPassword"
                   required
                   onChange={(event) => {
                     setUserPassword(event.target.value);
@@ -117,9 +117,9 @@ export default function Login() {
               >
                 Login
               </button>
-
+              
               <SignIn />
-
+                  
               <br />
               <a style={{ marginBottom: '40px' }}
                 onClick={() => setCurrentPageLogin(false)}

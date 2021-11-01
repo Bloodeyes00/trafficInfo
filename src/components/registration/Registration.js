@@ -99,7 +99,7 @@ export default function Registration(props) {
               <div className="mb-3 input">
                 <label
                   for="exampleInputNumber"
-                  className="form-label float-start ps-2"
+                  className="form-label float-start ps-1"
                 >
                   <b> Enter Number </b>
                 </label>
@@ -131,17 +131,16 @@ export default function Registration(props) {
               <div className="mb-3 input">
                 <label
                   for="exampleAddress"
-                  className="form-label float-start ps-2"
+                  className="form-label float-start ps-1"
                 >
                   <b> Company Name</b>
                 </label>
                 <input
                   type="text"
-                  className="form-control ps-1 "
+                  className="form-control ps-1"
                   id="exampleAddress"
-                  aria-describedby="emailHelp"
                   onChange={(e) => {
-                    setcompanyName(e.target.value);
+                  setcompanyName(e.target.value);
                   }}
                 />
               </div>
