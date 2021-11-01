@@ -3,7 +3,12 @@ import "./Registration.css";
 import { useState } from "react";
 import firebase from "../../components/utils/firebase";
 import { useHistory } from "react-router";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function Registration(props) {
+
+  //  const notify = () => toast("loading please wait!");
+  const notify = (message) => toast(message);
   const history = useHistory();
   let { setCurrentPageLogin } = props;
   const [email, setEmail] = useState("");
@@ -11,7 +16,9 @@ export default function Registration(props) {
   const [Name, setName] = useState("");
   const [Number, setNumber] = useState("");
   const [companyName, setcompanyName] = useState("");
+
   const handleSendMessage = () => {
+
     const firestore = firebase.database().ref("/UserInfo");
     let data = {
       email: email,
@@ -31,11 +38,13 @@ export default function Registration(props) {
             data["uid"] = uid;
             firestore.push(data).then((res) => {
               console.log("res ;", res);
-              alert("SignUp Successfully!");
+              // alert("SignUp Successfully!");
+              notify("Successfuly!");
+             
               history.push('/login')
             })
               .catch((e) => {
-                alert(e.message);
+                notify(e.message);
                 console.log("error in pushing data :", e);
               });
 
@@ -45,15 +54,20 @@ export default function Registration(props) {
         console.log("res after registration", res);
 
       })
-      .catch((e) => [console.log(e)]);
+      .catch((e) => {
+        console.log(e);
+        notify(e.message);
+      });
 
 
   };
+
 
   return (
 
 
     <div>
+      <ToastContainer />
       <div className=''>
         <div className="Profile d-flex flex-column justify-content-center align-items-center pb-5">
           <div className="Heading d-flex justify-content-center mt-3">
@@ -149,6 +163,7 @@ export default function Registration(props) {
                 <button
                   type="submit"
                   className=" Button form-control mt-3 mb-5 "
+                  //    onClick={notify}
                   onClick={() => {
                     handleSendMessage();
 
@@ -156,7 +171,7 @@ export default function Registration(props) {
                 >
                   Register
                 </button >
-
+                <ToastContainer />
               </div>
               <a
 

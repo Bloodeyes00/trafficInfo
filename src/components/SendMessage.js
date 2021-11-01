@@ -3,9 +3,11 @@ import { db, auth } from '../components/utils/firebase'
 import firebase from 'firebase'
 import { Input, Button } from '@material-ui/core'
 import { useParams } from 'react-router-dom'
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Sendimage from './Sendimage'
 function SendMessage({ scroll }) {
+    const notify = (message) => toast(message);
     const [msg, setMsg] = useState('');
     const [curImageUrl, setCurrentImgUrl] = useState('');
     const { id } = useParams();
@@ -84,9 +86,9 @@ function SendMessage({ scroll }) {
             //     behavior: 'smooth'
             //   });
             // this.fileRef.value = "";
-        }).catch(e => {
-            console.log("Err sending msg : ", e);
-        })
+        }).catch((e) => {
+            notify(e.message);
+          });
         setMsg('')
         // scroll = () => {
         //     this.messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
@@ -127,6 +129,7 @@ function SendMessage({ scroll }) {
                         width: '18%', fontSize: '15px', fontWeight: '550',
                         margin: '4px 5% -13px 5%', maxWidth: '200px'
                     }} type="submit">Send</Button>
+                       <ToastContainer />
                 </div>
             </form>
         </div>
