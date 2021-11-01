@@ -85,6 +85,9 @@ p {
   /* border-top-left-radius: 1000px; */
   float: left;
 }
+.img, svg{
+  font-size: 21px !important ;
+}
 
 .sendMsg {
   position: fixed;
@@ -130,9 +133,10 @@ p {
     padding: 7px 7px 0 7px;
   }
   img {
-    /* height: 30px;
-    margin-top: -7px; */
-  }
+    margin-top: 0px;
+ }
+ 
 }
+
 
 
