@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
-import { ArrowRight } from 'react-bootstrap-icons';
-import { BsCardImage } from 'react-icons/bs'
 import { storage } from '../components/utils/firebase'
 import "./send-message/send-message.css"
+import Loadimage from '../../src/components/loader/Loadimage';
 class Sendimage extends Component {
     constructor(props) {
         super(props);
         this.state = {
             image: null,
             url: '',
-            progress: 0
+            progress: 0,
+            loading: false
         }
         this.handleChange = this
             .handleChange
             .bind(this);
         this.handleUpload = this.handleUpload.bind(this);
+    }
+    setLoading() {
+        // this.setState({ loading: !this.state.loading });
+        this.setState({ loading: true });
     }
     handleChange = e => {
         if (e.target.files[0]) {
@@ -24,13 +28,14 @@ class Sendimage extends Component {
         }
     }
     handleUpload = (image) => {
-        //   const {image} = this.state;
         const uploadTask = storage.ref(`images/${image.name}`).put(image);
         uploadTask.on('state_changed',
             (snapshot) => {
+
                 // progrss function ....
                 const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
                 this.setState({ progress });
+                this.setState({ loading: true })
             },
             (error) => {
                 // error function ....
@@ -43,20 +48,24 @@ class Sendimage extends Component {
                     this.setState({ url });
                     this.props.setCurrentImgUrl(url);
                     this.ref = "";
-                })
+                    this.setState({ loading: false })
+                })    
             });
+
+      
     }
     render() {
         return (
+
             <div className="send-image-container">
-              
-                <input value={''} type="file" id="" className="custom-file-input " 
+               
+                {this.state.loading && <Loadimage/> }
+               
+
+                <input value={''} type="file" id="" className="custom-file-input "
                     onChange={this.handleChange} ref={(e) => { this.ref = e; this.props.reset(this.ref) }}
                 >
-
                 </input>
-                {/* <button onClick={this.handleUpload}>Upload</button> */}
-                {/* <progress value={this.state.progress} max="100"/> */}
             </div>
         )
     }

@@ -11,22 +11,22 @@ import { ToastContainer } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 
 function App() {
-  const [setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [user] = useAuthState(auth);
 
   useEffect(() => {
-    if (user){
-      
+    if (user) {
+
     }
   }, [])
-  
+
   return (
     <>
       <div className="container-fluid-home">
         <BrowserRouter>
           <Navbar />
           {user ? <Routes /> : <Login setLoggedIn={setLoggedIn} />}
-          {/* { <Routes />} */}
+          {/* <Routes /> */}
           {/* <NotificationContainer leaveTimeout={60000}/> */}
         </BrowserRouter>
       </div>

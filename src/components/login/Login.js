@@ -7,16 +7,20 @@ import SignIn from "../SignIn";
 import Registration from "../registration/Registration";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import Loader from '../loader/Loader';
 export default function Login(props) {
   let { setLoggedIn } = props;
   const notifyf = () => toast("login succesfully!");
   const notify = (message) => toast(message);
   const history = useHistory();
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
   const [userPassword, setUserPassword] = useState("");
   // const [Number, setNumber] = useState("");
   const [curPageLogin, setCurrentPageLogin] = useState(true);
   const login = () => {
+    setLoading(true);
     firebase
       .auth()
 
@@ -25,43 +29,53 @@ export default function Login(props) {
         console.log("login res : ", res);
         firebase.auth().onAuthStateChanged((user) => {
           if (user) {
-            let curuserid = firebase?.auth()?.currentUser?.uid;
-            console.log("curuserid", curuserid);
+            // let curuserid = firebase?.auth()?.currentUser?.uid;
+            // console.log("curuserid", curuserid);
+            notify("User data added succefully");
+            setLoggedIn(true);
+            setLoading(false);
+            history.push('/home')
             // notify("Logged In");
-            firebase
-              .database()
-              .ref("/userRoles")
-              .on("value", (snapshot) => {
-                // let main = snapshot.val();
-                Object.values(snapshot?.val());
-                console.log("user Roles :", snapshot?.val());
-                let checkRole = snapshot?.val().map((role) => {
-                  console.log("role ", role);
-                  notify("User data added succefully");
-                  setLoggedIn(true);
-                  // if (role.student == email) {
-                  //   history.push("");
-                  // }
-                  // if (role.admin == email) {
-                  //   history.push("");
-                  // } else {
-                  //   return "notfound";
-                  // }
-                });
-                console.log("check role ", checkRole);
-              });
+            // firebase
+            //   .database()
+            //   .ref("/userRoles")
+            //   .on("value", (snapshot) => {
+            //     // let main = snapshot.val();
+            //     if (snapshot && snapshot?.val && snapshot?.val() != undefined && snapshot?.val() != null ) {
+            //       Object.values(snapshot?.val());
+            //       console.log("user Roles :", snapshot?.val());
+            //       let checkRole = snapshot?.val().map((role) => {
+            //         console.log("role ", role);
+            //         notify("User data added succefully");
+            //         setLoggedIn(true);
+            //         setLoading(false);
+            //         // if (role.student == email) {
+            //         //   history.push("");
+            //         // }
+            //         // if (role.admin == email) {
+            //         //   history.push("");
+            //         // } else {
+            //         //   return "notfound";
+            //         // }
+            //       });
+            //       console.log("check role ", checkRole);
+            //     }
+            //   });
           }
         });
-        alert("You have succesfully Logged!")
-        history.push('/home')
+        // alert("You have succesfully Logged!")
+        // history.push('/home')
       })
       .catch((e) => {
         notify(e.message);
         console.log("email: ", email);
+        setLoading(false);
       });
   };
   return (
     <div>
+      <ToastContainer />
+      {loading && <Loader />}
       {curPageLogin && <div className=" col flex-coloumn col-sm-12">
         <div className="Login">
           <div className="Profile d-flex flex-column justify-content-center align-items-center ">
@@ -120,12 +134,12 @@ export default function Login(props) {
               <button
                 onClick={() => login()}
                 className=" Button form-control mt-3 mb-3 "
-                // onClick={notifyf}
+              // onClick={notifyf}
+
               >
-                
                 Login
               </button>
-              <ToastContainer />
+              
               <SignIn />
 
               <br />
