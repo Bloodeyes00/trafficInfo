@@ -24,11 +24,9 @@ export default function Navbar() {
     firestore.on('value', (snapshot) => {
       let data = { ...snapshot.val() };
       data = Object.values(data);
-      let uid = auth?.currentUser.uid;
-      if (uid) {
-
-
-        let currentUserDetails = data.find(item => item.uid == uid);
+      // let uid = auth?.currentUser.uid;
+      if (auth?.currentUser?.uid) {
+        let currentUserDetails = data.find(item => item.uid == auth?.currentUser?.uid);
         console.log("data : ", data);
         console.log("currentUserDetails : ", currentUserDetails);
         setuserdetails(currentUserDetails);
@@ -120,7 +118,7 @@ export default function Navbar() {
                     <br />
                     <span style={{ fontSize: '25px' }} onClick={() => {
                       history.push("/groupchat")
-                      
+
 
                     }} >
                       <CgProfile />

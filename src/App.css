@@ -153,6 +153,16 @@ p {
  }
  
 }
+.smalloaderContainer {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.loader {
+  width: 70px;
+  height: 70px;
+}
 
 
