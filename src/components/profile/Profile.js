@@ -5,11 +5,14 @@ import "../profile/Profile.css";
 import { MdAddAPhoto } from "react-icons/md";
 import { auth } from "../utils/firebase";
 import ImageUpload from "../ImageUpload";
+import { Dropdown, DropdownButton } from "react-bootstrap";
+import { useHistory } from "react-router";
 export default function Profile() {
-  const [email, setEmail] = useState("");
-  const [userPassword, setUserPassword] = useState("");
+  const [Name, setName] = useState("");
   const [adress, setAdress] = useState("");
   const [userdetails, setuserdetails] = useState(null);
+  const [companyName, setcompanyName] = useState("");
+  let history = useHistory();
 
   useEffect(() => {
 
@@ -22,10 +25,9 @@ export default function Profile() {
       if (auth?.currentUser?.uid) {
         console.log("auth uids: ", auth.currentUser.uid);
         let currentUserDetails = data.find(item => item.uid == auth?.currentUser.uid);
-        // console.log("item.uid : ", item.uid);
         console.log("currentUserDetails : ", currentUserDetails);
         setuserdetails(currentUserDetails);
-        setEmail(currentUserDetails.email);
+        // setEmail(currentUserDetails.email);
       }
     });
     return {
@@ -36,14 +38,34 @@ export default function Profile() {
   const handleSendMessage = () => {
     const firestore = firebase.database().ref("/UserInfo");
     let data = {
-      email: email,
-      userPassword: userPassword,
+      Name: Name,
+      companyName: companyName,
       adress: adress,
     };
     firestore
-      .update(data)
+      .push(data)
       .then((res) => {
-        console.log("res ;", res);
+        firebase.auth().onAuthStateChanged((user) => {
+          if (user) {
+            let uid = user.uid;
+            data["uid"] = uid;
+            firestore.push(data).then((res) => {
+              console.log("res ;", res);
+              // alert("SignUp Successfully!");
+              // notify("Successfuly!");
+
+              history.push('/home')
+            })
+              .catch((e) => {
+                // notify(e.message);
+                console.log("error in pushing data :", e);
+              });
+
+          }
+        });
+
+        console.log("res after registration", res);
+
       })
       .catch((e) => {
         console.log("error in pushing data :", e);
@@ -64,47 +86,51 @@ export default function Profile() {
         </div>
 
         <div className="Data d-flex justify-content-center  align-items-center py-4 flex-wrap">
-          <form>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" className="form-label float-start offset-3 ps-1">
-                <b>Email address</b>
-              </label>
-              <input
-                type="email"
-                class="form-control  d-flex  justify-content-center align-items-center "
-                id="exampleInputEmail1"
-                value={email}
-                aria-describedby="emailHelp" onChange={(e) => { setEmail(e.target.value) }}
-              />
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" className="form-label offset-3 float-start ps-1">
-                <b> Password </b>
-              </label>
-              <input
-                type="password"
-                class="form-control d-flex justify-content-center align-items-center"
-                id="exampleInputPassword1" onChange={(e) => { setUserPassword(e.target.value) }}
-              />
-            </div>
-            <div class="mb-3">
-              <label for="exampleAddress" className="form-label offset-3 float-start ps-1">
-                <b> Address</b>
-              </label>
-              <input
+          <div class="mb-3">
+            <label for="exampleInputEmail1" className="form-label  offset-1 ps-1">
+              <b>Enter Full Name</b>
+            </label>
+            <input
+              type="text"
+              class="form-control  d-flex 
+              justify-content-center align-items-center "
+              value={Name}
+              aria-describedby="emailHelp" onChange={(e) => { setName(e.target.value) }}
+            />
+          </div>
+          <div class="mb-3">
+            <label className="form-label float-start offset-1 ps-1" style={{marginLeft:'55px'}}>
+              <b> Add Company </b>
+            </label>
+            <div style={{ display: 'flex'  }}>
+              <select onChange={(e) => { let value = e.target.value; setcompanyName(value) }} style={{marginLeft:'10px',borderRadius:'10px'}}>
+              
+                <option>Svea Taxi</option>
+                <option>Sverige taxi</option>
+                <option>Taxii 1212</option>
+                <option>Taxi Kurir</option>
+                <option>Taxi Skane</option>
+              </select>
 
-                type="text"
-                class="form-control d-flex justify-content-center align-items-center"
-                id="exampleAddress"
-                aria-describedby="emailHelp" onChange={(e) => { setAdress(e.target.value) }}
-              />
             </div>
-            <div className="d-flex justify-content-center">
-              <button type="submit" className="Button form-control my-3 " onClick={() => { handleSendMessage() }}>
-                Save Changes
-              </button>
-            </div>
-          </form>
+          </div>
+          <div class="mb-3">
+            <label for="exampleAddress" className="form-label offset-1 ps-1">
+              <b> Enter Full Address</b>
+            </label>
+            <input
+
+              type="text"
+              class="form-control d-flex justify-content-center align-items-center"
+              id="exampleAddress"
+              aria-describedby="emailHelp" onChange={(e) => { setAdress(e.target.value) }}
+            />
+          </div>
+          <div className="d-flex justify-content-center">
+            <button type="submit" className="Button form-control my-3 " onClick={() => { handleSendMessage() }}>
+              Save
+            </button>
+          </div>
         </div>
       </div>
     </div>

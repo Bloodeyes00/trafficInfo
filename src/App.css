@@ -58,12 +58,12 @@ p {
 
 .msg {
   /* display: flex; */
-  text-align: center;
+  /* text-align: center; */
   padding: 20px 10px 0 20px;
   margin: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgb(164, 164, 164);
-  align-items: center;
+  /* align-items: center; */
 }
 
 .sent {
@@ -125,25 +125,16 @@ p {
   }
   .sent {
     padding: 7px 7px 0 7px;
+    
   }
   .received {
     padding: 7px 7px 0 7px;
   }
   img {
     margin-top: 0px;
+    
  }
  
-}
-.smalloaderContainer {
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.loader {
-  width: 70px;
-  height: 70px;
 }
 
 
