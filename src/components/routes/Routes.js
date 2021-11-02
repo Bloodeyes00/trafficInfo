@@ -11,6 +11,7 @@ import CompanyChat from '../company-chat/CompanyChat';
 import TransferChat from '../transfer-chat/TransferChat';
 import RoutesinfoChat from '../routesInforChat/RoutesInforChat';
 import SignOut from '../SignOut';
+import Mainpage from '../main';
 export default function Routes() {
     return (
         <div>
@@ -25,6 +26,7 @@ export default function Routes() {
                 <Route path="/company/:id" component={CompanyChat}/>
                 <Route path="/routesinfo/:id" component={RoutesinfoChat}/>
 
+                <Route path="/logged-out" component={Mainpage}/>
                 <Route path="/chat/:id" component={Chat}/>
                 <Route path ="/" component={Home}/>
             </Switch>
