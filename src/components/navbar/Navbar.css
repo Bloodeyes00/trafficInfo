@@ -8,10 +8,10 @@
     overflow: auto;
   }
   .rowss{
-    background-color: #E7D5C7;
+    background-color: #D9CAB3;
   }
   h2{
-    color: purple;
+    color: #2C2E43;
 
   }
   .info{
@@ -97,11 +97,11 @@ img{
 
 .offcanvas-start {
     width: 235px !important;
-    background-color: #e7d5c7;;
+    background-color: #D9CAB3;;
 
 }
 .offcanvas-body {
     flex-grow: 1;
     padding: 1rem 1rem;
-   background-color: #e7d5c7;
+   background-color: #D9CAB3;
 }

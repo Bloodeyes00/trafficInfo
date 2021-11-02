@@ -15,6 +15,9 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.container-fluid-msgs{
+  background-color: #F3F1F5;
+}
 
 .App-header {
   background-color: #282c34;
@@ -66,7 +69,7 @@ p {
   margin: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgb(164, 164, 164);
-  align-items: center;
+  /* align-items: center; */
 }
 
 .sent {
@@ -96,7 +99,7 @@ p {
 .sendMsg {
   position: fixed;
   display: flex;
-  width: 100%;
+  width: 102%;
   bottom: 0;
   z-index: 1;
   border-top: 1px solid lightgray;
@@ -121,6 +124,7 @@ p {
     padding: 10px 10px 0 10px;
     display: flex;
     flex-wrap: wrap;
+    
   }
   .received {
     padding: 10px 10px 0 10px;
@@ -148,8 +152,8 @@ p {
     flex-wrap: wrap;
   }
   img {
-    margin-top: 7px;
-    margin-right: 20px;
+    margin-top: 0px;
+    margin-right: 5px;
  }
  
 }

@@ -1,5 +1,5 @@
 .Profile h1{
-    color: purple;
+    color: #2C2E43;
     text-transform: capitalize;
     
 }
@@ -25,7 +25,7 @@
 
 .Data{
     background-color: white;
-    color: purple;
+    color: #2C2E43;
 }
 .form-control{
     border-radius: 50px;
@@ -41,12 +41,12 @@
     box-shadow: none !important;
 }
 .Data .Button{
-    background-color:purple;
+    background-color:#170055;
     border: none;
     justify-content: center;
     text-align: center;
     color: white;
 }
 .Button:hover{
-    background-color: green;
+    background-color: #240281;
 }

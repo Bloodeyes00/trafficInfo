@@ -2,6 +2,8 @@ import React from 'react'
 import firebase from 'firebase'
 import { auth } from '../components/utils/firebase'
 import { Button } from '@material-ui/core'
+import { FcGoogle } from 'react-icons/fc'
+
 
 function SignIn() {
     function signInWithGoogle() {
@@ -9,8 +11,9 @@ function SignIn() {
         auth.signInWithPopup(provider)
     }
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', height: '10%', alignItems: 'center' }}>
-            <Button style={{ padding: '10px', fontSize: '15px', borderRadius: '20px',backgroundColor: 'purple', color:'white',font:'small-caption'}} onClick={signInWithGoogle}>Sign In With Google</Button>
+        <div style={{ display: 'flex', justifyContent: 'center', height: '10%', alignItems: 'center' }}> 
+        <i class="fab fa-google"></i>
+            <Button  style={{ padding: '7px', fontSize: '15px', borderRadius: '20px',backgroundColor: 'white', color:'black',font:'small-caption'}} onClick={signInWithGoogle}> <FcGoogle /> &nbsp; Google</Button>
         </div>
     )
 }

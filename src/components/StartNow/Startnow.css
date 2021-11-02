@@ -1,0 +1,60 @@
+.container-fluid-start{
+    background-color: #D9CAB3;
+    height: 100vh;
+}
+
+.tel-box{
+    display: flex;
+    margin: 1rem;
+    margin-top: 0;
+    
+}
+
+.select-box{
+    margin: 1rem;
+    width: 60px;
+    height: 40px;
+    border: 2px solid black;
+}
+
+.select-box select{
+    font-family: 'Lato',sans-serif ;
+    width: 60px;
+    height: 40px;
+    background: none;
+    position: absolute;
+    border: none;
+    font-size: 1rem;
+    padding-left: 4rem;
+    outline: none;
+    -webkit-appearance: none;
+}
+.tel{
+    font-family: 'Lato',sans-serif ;
+    width: 200px;
+    height: 40px;
+    background: none;
+    border: 2px solid black;
+    outline: none;
+    margin: 1rem;
+}
+.output{
+    margin: 1rem;
+    margin-top: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    align-self: center;
+    display: flex;
+}
+
+.result{
+    width: auto;
+    padding: 0rem;
+    border-radius: 5px;
+    height: 30px;
+    background-color: pink;
+    color: red;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    display: flex;
+}
