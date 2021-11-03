@@ -62,7 +62,7 @@ const SignwithPohone = () => {
 
                     
                 }}
-                    placeholder="phone number" />
+                    placeholder="+92 " />
                 <br /><br />
                 <div id="recaptcha-container"></div>
                 <button className='btn btn' onClick={signin}>Send OTP</button>
