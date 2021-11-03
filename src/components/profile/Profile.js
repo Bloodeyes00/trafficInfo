@@ -25,7 +25,7 @@ export default function Profile() {
       if (auth?.currentUser?.uid) {
         console.log("auth uids: ", auth.currentUser.uid);
         let currentUserDetails = data.find(item => item.uid == auth?.currentUser.uid);
-        console.log("currentUserDetails : ", currentUserDetails);
+        console.log("currentUserDetails in profile : ", currentUserDetails);
         setuserdetails(currentUserDetails);
         // setEmail(currentUserDetails.email);
       }
@@ -41,31 +41,13 @@ export default function Profile() {
       Name: Name,
       companyName: companyName,
       adress: adress,
+      uid: auth?.currentUser?.uid
     };
     firestore
       .push(data)
       .then((res) => {
-        firebase.auth().onAuthStateChanged((user) => {
-          if (user) {
-            let uid = user.uid;
-            data["uid"] = uid;
-            firestore.push(data).then((res) => {
-              console.log("res ;", res);
-              // alert("SignUp Successfully!");
-              // notify("Successfuly!");
-
-              history.push('/home')
-            })
-              .catch((e) => {
-                // notify(e.message);
-                console.log("error in pushing data :", e);
-              });
-
-          }
-        });
-
+        history.push('/home');
         console.log("res after registration", res);
-
       })
       .catch((e) => {
         console.log("error in pushing data :", e);
@@ -99,12 +81,12 @@ export default function Profile() {
             />
           </div>
           <div class="mb-3">
-            <label className="form-label float-start offset-1 ps-1" style={{marginLeft:'55px'}}>
+            <label className="form-label float-start offset-1 ps-1" style={{ marginLeft: '55px' }}>
               <b> Add Company </b>
             </label>
-            <div style={{ display: 'flex'  }}>
-              <select onChange={(e) => { let value = e.target.value; setcompanyName(value) }} style={{marginLeft:'10px',borderRadius:'10px'}}>
-              
+            <div style={{ display: 'flex' }}>
+              <select onChange={(e) => { let value = e.target.value; setcompanyName(value) }} style={{ marginLeft: '10px', borderRadius: '10px' }}>
+
                 <option>Svea Taxi</option>
                 <option>Sverige taxi</option>
                 <option>Taxii 1212</option>
