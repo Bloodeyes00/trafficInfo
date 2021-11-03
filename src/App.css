@@ -64,7 +64,7 @@ p {
 
 .msg {
   /* display: flex; */
-  text-align: center;
+  /* text-align: center; */
   padding: 20px 10px 0 20px;
   margin: 20px;
   border-radius: 10px;
@@ -142,8 +142,6 @@ p {
   }
   .sent {
     padding: 7px 7px 0 7px;
-    display: flex;
-    flex-wrap: wrap;
     
   }
   .received {
@@ -153,20 +151,9 @@ p {
   }
   img {
     margin-top: 0px;
-    margin-right: 5px;
+    
  }
  
-}
-.smalloaderContainer {
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.loader {
-  width: 70px;
-  height: 70px;
 }
 
 
