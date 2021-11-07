@@ -27,7 +27,7 @@ function App() {
 
   return (
     <>
-      <div className="container-fluid-home">
+      <div className="container-fluid-home px-0">
         <BrowserRouter>
           <Navbar />
           {/* {user ? <Routes /> : <Login setLoggedIn={setLoggedIn} />} */}

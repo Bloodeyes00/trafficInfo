@@ -66,3 +66,9 @@ margin-top: 17px;
 .Home-buttons:hover {
     background-color: green;
 }
+@media screen and (max-width: 375px) {
+    .custom_btn_company{
+      background-color: blue !important;
+      width: 100% !important;
+    }
+  }
