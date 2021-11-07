@@ -65,8 +65,8 @@ const SignwithPohone = () => {
                 <input className="form-controlss ps-5" style={{width:"50%"}} value={mynumber} onChange={(e) => {
                     setnumber(e.target.value)    
                 }}
-                placeholder="+46" />
-                <br />
+                    placeholder="+92 " />
+                <br /><br />
                 <div id="recaptcha-container"></div>
                 <button className='btn btn' onClick={signin}>Send OTP</button>
             </div>

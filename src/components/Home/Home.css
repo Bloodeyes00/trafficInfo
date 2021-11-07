@@ -15,14 +15,35 @@
 h3 {
     color: #2C2E43;
 }
-
+.Tlogo{
+   
+   background-size: 20px;
+}
 h4 {
     color: #2C2E43;
 }
+.Dat {
+    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+    border-radius: 30px;
+    height: 43vh;
 
+}
+/* .Tlogo
+{
+    background-image: url(../Home/Trafficinfo.png);
+} */
+.row-home{
+    background-image: url(../Home/Trafficinfo.png);
+background-repeat: no-repeat;
+background-size: 100px;
+height: 100px;
+background-position:center ;
+margin-top: 17px;
+}
 #Card1 {
-    background-image: url(../../assets/Home/pic1.jpg);
-    background-size: cover;
+   
+    background-size: 10px;
     background-repeat: no-repeat;
     color: white;
 }
@@ -47,6 +68,8 @@ h4 {
     background-repeat: no-repeat;
     color: white;
 }
+
+
 
 .Home-buttons:hover {
     background-color: green;
