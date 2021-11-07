@@ -1,0 +1,72 @@
+.container-fluid-job{
+    background-color: #D9CAB3;
+    height: 100%;
+    }
+.container-job{
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    border: 2px solid rgb(88, 88, 88);
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+.row-header{
+    border: 0.5px  solid rgb(88, 88, 88) ;
+    height: 100px;
+    border-width: 0px 0px 1px 0px;
+    
+}
+.form-controlsss{
+    border: 1px solid lightgray;
+    width: 98%;
+    height: 50px;
+
+}
+.selects{
+    height: 35px;
+    width: 150px;
+    
+}
+.form-contrlsss{
+    width: 98%;
+    height: 100px;
+}
+
+.row-type{
+    
+    border: 0.5px  solid rgb(88, 88, 88) ;
+    border-width: 0px 0px 1px 0px;
+}
+.location{
+    height: 35px;
+    width: 300px;
+}
+.abc{
+width: 50px;
+}
+.row-loction{
+    border: 0.5px  solid rgb(88, 88, 88) ;
+    border-width: 0px 0px 1px 0px;
+}
+
+.form-name{
+    width: 98%;
+    height: 50px;
+}
+
+.btnnss{
+    height: 100%;
+    width: 50%;
+    font-size: 20px;
+    background-color: rgb(39, 156, 202);
+    color: white;
+    border: none;
+    border-radius: 5px;
+
+}
+.btnnss:hover{
+    border: 2px solid rgb(3, 3, 3); 
+    background-color: rgb(19, 82, 107);
+    
+}
+

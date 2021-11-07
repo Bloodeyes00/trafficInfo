@@ -4,7 +4,14 @@
     padding-bottom: 90px;
     color: #2C2E43 !important; 
 }
+.row-home{
+    background-image: url(../Home/Trafficinfo.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40vh;
 
+}
 h3 {
     color: #2C2E43;
 }

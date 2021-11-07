@@ -7,10 +7,16 @@ function Logopage() {
         <div className="Container-fluid-images">
             <h2><b>Welcome to Trafik info</b></h2>
         <br/>
-        <br/>
-        <br/>
-            <img className="imgsss" src={trafikinfo} style={{textAlign:"center",alignItems:"center", height: "50%", width: "50%", }} />
+        
+            <img className="imgsss" src={trafikinfo} style={{textAlign:"center",alignItems:"center", height: "45%", width: "45%",border:"none", }} />
         </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+       
+        
+        <button className="btnn1"><b>Next</b></button>
         </div>
     )
 }

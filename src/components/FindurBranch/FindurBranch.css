@@ -1,0 +1,13 @@
+.container-fluid-branch{
+    background-color: #D9CAB3;
+    height: 100vh;
+    text-align: center;
+    margin-top: 20px;
+}
+.row1-branch{
+    background-image: url(../../images/trafficsign.jpg);
+    background-position: center;
+    background-size: 200px;
+    background-repeat: no-repeat;
+    height: 40%;
+}
