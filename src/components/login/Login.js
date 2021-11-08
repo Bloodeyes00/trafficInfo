@@ -85,14 +85,14 @@ export default function Login(props) {
               </h1>
             </div>
             <div className="Data d-flex align-items-center pt-4 mb-5">
-              <div class="mb-3 ">
-                <label for="exampleInputPassword1" class="ms-2 form-label float-start ps-1">
+              <div className="mb-3 ">
+                <label for="exampleInputPassword1" className="ms-2 form-label float-start ps-1">
                   <b> Email Address </b>
                 </label>
                 &nbsp;
                 <input
                   type="text  "
-                  class="input form-control "
+                  className="input form-control "
                   id="exampleInputPassword1"
                   required
                   onChange={(event) => {
@@ -100,15 +100,15 @@ export default function Login(props) {
                   }}
                 />
               </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class=" ms-2 form-label float-start ps-1">
+              <div className="mb-3">
+                <label for="exampleInputText1" className=" ms-2 form-label float-start ps-1">
                   <b> Enter Number </b>
                 </label>
                 &nbsp;
                 <input
                   type="number"
-                  class="input form-control "
-                  id="exampleInputPassword1"
+                  className="input form-control "
+                  id="exampleInputText1"
                   placeholder="+92-3120908499"
                   required
                   onChange={(event) => {
@@ -116,15 +116,15 @@ export default function Login(props) {
                   }}
                 />
               </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="ms-2 form-label float-start ps-1">
+              <div className="mb-3">
+                <label for="exampleInputPassword1" className="ms-2 form-label float-start ps-1">
                   <b> Enter Password </b>
                 </label>
                 &nbsp;
                 <input
-                  type="password  "
-                  class="input form-control "
-                  id="exampleInputPassword1"
+                  type="password"
+                  className="input form-control "
+                  id="exampleInputPassword"
                   required
                   onChange={(event) => {
                     setUserPassword(event.target.value);
@@ -141,7 +141,7 @@ export default function Login(props) {
               </button>
               
               <SignIn />
-
+                  
               <br />
               <a style={{ marginBottom: '40px' }}
                 onClick={() => setCurrentPageLogin(false)}

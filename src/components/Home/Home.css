@@ -1,18 +1,26 @@
 .container-fluid-home {
-    background-color: #E7D5C7;
-    padding-bottom: 114px;
+    background-color: #D9CAB3;
+    height: 100%;
+    padding-bottom: 90px;
+    color: #2C2E43 !important; 
 }
+.row-home{
+    background-image: url(../Home/Trafficinfo.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40vh;
 
+}
 h3 {
-    color: purple;
+    color: #2C2E43;
 }
 .Tlogo{
    
    background-size: 20px;
 }
 h4 {
-    color: purple;
-    
+    color: #2C2E43;
 }
 .Dat {
     background-color: rgb(255, 255, 255);

@@ -4,6 +4,7 @@ import { css } from '@emotion/css';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import SendMessage from '../SendMessage'
 import { useParams } from 'react-router'
+import './CompanyChat.css'
 function CompanyChat() {
     const scroll = useRef(null)
     const [company, setMessages] = useState([])
@@ -52,6 +53,7 @@ function CompanyChat() {
         scroll.current.scrollIntoView({ behavior: 'smooth' });
     }, [])
     return (
+        <div className="container-fluid-chats">
         <ScrollToBottom className={ROOT_CSS}>
             <div className="msgs">
                 {company.map(({ id, text, photoURL, curImageUrl, uid }) => (
@@ -68,6 +70,7 @@ function CompanyChat() {
             </div>
             <SendMessage scroll={scroll} />
             </ScrollToBottom>
+            </div>
     )
 }
 

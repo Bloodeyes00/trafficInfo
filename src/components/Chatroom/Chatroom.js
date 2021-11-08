@@ -39,7 +39,7 @@ export default function Chatroom() {
             <div className="container-fluid-chatroom">
                 <div className="main mt-5">
 
-                    <h2 className="heading2 pt-4 ps-2 pb-2">
+                    <h2 className="heading2 pt-4 ps-3 pb-3">
                         <b> COMPANY CHAT ROOM </b>
                     </h2>
                 </div>

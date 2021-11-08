@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+.container-messages{
+  background-color: #61dafb;
+}
 
 .App-logo {
   height: 40vmin;
@@ -11,6 +14,9 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+.container-fluid-msgs{
+  background-color: #F3F1F5;
 }
 
 .App-header {
@@ -74,6 +80,8 @@ p {
   padding: 20px 20px 0 10px;
   text-align: end;
   float: right;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .received {
@@ -81,6 +89,8 @@ p {
   background-color: #FAFAFA;
   /* border-top-left-radius: 1000px; */
   float: left;
+  display: flex;
+  flex-wrap: wrap;
 }
 .img, svg{
   font-size: 21px !important ;
@@ -89,7 +99,7 @@ p {
 .sendMsg {
   position: fixed;
   display: flex;
-  width: 100%;
+  width: 102%;
   bottom: 0;
   z-index: 1;
   border-top: 1px solid lightgray;
@@ -112,16 +122,23 @@ p {
   }
   .sent {
     padding: 10px 10px 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    
   }
   .received {
     padding: 10px 10px 0 10px;
+    display: flex;
+    flex-wrap: wrap;
   }
+  
   
 }
 
 @media (max-width: 500px) {
   p {
     font-size: 15px;
+  
   }
   .sent {
     padding: 7px 7px 0 7px;
@@ -129,6 +146,8 @@ p {
   }
   .received {
     padding: 7px 7px 0 7px;
+    display: flex;
+    flex-wrap: wrap;
   }
   img {
     margin-top: 0px;
