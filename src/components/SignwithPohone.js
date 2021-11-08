@@ -1,8 +1,11 @@
 
 import firebase from 'firebase'
+import './SignwithPohone.css';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
+
 import { auth } from '../components/utils/firebase'
+
 const SignwithPohone = () => {
     const [mynumber, setnumber] = useState("");
     const [otp, setotp] = useState('');
@@ -54,13 +57,13 @@ const SignwithPohone = () => {
 
                     </div> */}
             </div>
-        </div>
+       <br/>
         <center>
+            
             <div style={{ display: !show ? "block" : "none" }}>
-                <input className={"form-control "} style={{width:"40%"}} value={mynumber} onChange={(e) => {
-                    setnumber(e.target.value)
-
-                    
+            {/* <img className="immgss" src={pakistan} /> */}
+                <input className="form-controlss ps-5" style={{width:"50%"}} value={mynumber} onChange={(e) => {
+                    setnumber(e.target.value)    
                 }}
                     placeholder="+92 " />
                 <br /><br />
@@ -68,12 +71,13 @@ const SignwithPohone = () => {
                 <button className='btn btn' onClick={signin}>Send OTP</button>
             </div>
             <div style={{ display: show ? "block" : "none" }}>
-                <input type="text" placeholder={"Enter your OTP"}
+                <input type="number" placeholder={"- - - - - -"}
                     onChange={(e) => { setotp(e.target.value) }}></input>
                 <br /><br />
                 <button onClick={ValidateOtp}>Verify</button>
             </div>
         </center>
+        </div>
     </div>
     )
 }

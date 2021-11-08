@@ -1,4 +1,4 @@
-{
+{ 
   "name": "trafficinfor",
   "version": "0.1.0",
   "private": true,
@@ -14,6 +14,8 @@
     "emotion": "^11.0.0",
     "firebase": "^7.24.0",
     "firebase-admin": "^8.12.1",
+    "install": "^0.13.0",
+    "npm": "^8.1.2",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-rc.0",
     "react-bootstrap-icons": "^1.6.1",
@@ -30,6 +32,7 @@
     "react-scripts": "4.0.3",
     "react-scroll-button": "^1.1.2",
     "react-scroll-to-bottom": "^4.2.0",
+    "react-select-country-list": "^2.2.3",
     "react-toastify": "^8.0.3",
     "web-vitals": "^1.1.2"
   },

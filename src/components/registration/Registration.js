@@ -76,8 +76,8 @@ export default function Registration(props) {
             </h1>
           </div>
           <div>
-            <div className="Data d-flex flex-column justify-content-center align-items-center py-5 mt-5  ">
-              <div className="mb-3 input">
+            <div className="Data d-flex flex-column justify-content-center align-items-center py-5 mt-2  ">
+              <div className="mb-1 input">
                 <label
                   for="exampleInputText1"
                   className="form-label float-start ps-1"
@@ -94,7 +94,7 @@ export default function Registration(props) {
                   }}
                 />
               </div>
-              <div className="mb-3 input">
+              <div className="mb-1 input">
                 <label
                   for="exampleInpuEmail1"
                   className="form-label float-start ps-2 "
@@ -110,10 +110,10 @@ export default function Registration(props) {
                   }}
                 />
               </div>
-              <div className="mb-3 input">
+              <div className="mb-1 input">
                 <label
                   for="exampleInputNumber"
-                  className="form-label float-start ps-2"
+                  className="form-label float-start ps-1"
                 >
                   <b> Enter Number </b>
                 </label>
@@ -126,7 +126,7 @@ export default function Registration(props) {
                   }}
                 />
               </div>
-              <div className="mb-3 input">
+              <div className="mb-1 input">
                 <label
                   for="exampleInputpassword"
                   className="form-label float-start ps-2"
@@ -142,27 +142,26 @@ export default function Registration(props) {
                   }}
                 />
               </div>
-              <div className="mb-3 input">
+              <div className="mb-1 input">
                 <label
                   for="exampleAddress"
-                  className="form-label float-start ps-2"
+                  className="form-label float-start ps-1"
                 >
                   <b> Company Name</b>
                 </label>
                 <input
                   type="text"
-                  className="form-control ps-1 "
+                  className="form-control ps-1"
                   id="exampleAddress"
-                  aria-describedby="emailHelp"
                   onChange={(e) => {
-                    setcompanyName(e.target.value);
+                  setcompanyName(e.target.value);
                   }}
                 />
               </div>
               <div>
                 <button
                   type="submit"
-                  className=" Button form-control mt-3 mb-5 "
+                  className=" Button form-control mt-3 mb-3 "
                   //    onClick={notify}
                   onClick={() => {
                     handleSendMessage();
