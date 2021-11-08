@@ -1,40 +1,50 @@
 import React from "react";
 import "../Home/Home.css";
-import { BsFillArrowRightSquareFill } from "react-icons/bs";
+
 import { useHistory } from 'react-router'
-import Trafficinfo from '../Home/Trafficinfo.png'
 export default function Home() {
   let history = useHistory();
   return (
-    <div className="container-fluid-home custom_bg_Home pb-3">
-<div className="row">
-          <div  onClick={() => { history.push(`/chat/${11}`) }}className="row-home mt-20">
-          </div>
-      <div className="container  py-2">
-        {/* <h3>START SOCIALISING</h3> */}
-        {/* <h4 className="mt-3  Tlogo">Join Groups </h4> <span>For All The Information!</span> */}
-        
-          <div className="header sm-1">
-            <div className="buttonn ml-4">
-              <button type="button" onClick={() => { history.push(`/chatroom`) }} 
-              className="btn" style={{marginLeft: "5px",backgroundColor: 'purple',padding:"10px",border:" #af1f1f", border:'1px solid',
-              borderRadius:'21px',color:"white"}}>
-                <b>Company Room</b>
-              </button>
-              <button type="button" onClick={() => { history.push(`/transfer/${3}`) }} 
-              className="btn " style={{ marginLeft: "5px",backgroundColor: 'purple',padding:"10px",border:" #af1f1f",border:'1px solid', width:'29%',
-             borderRadius:'21px',color:"white"}} >
-                <b>Find jobs</b>
-              </button>
-              <button type="button" onClick={() => { history.push(`/routesinfo/${4}`) }}
-               className="btn " style={{marginLeft: "5px",backgroundColor: 'purple',padding:"10px",border:" #af1f1f",border:'1px solid',width:'28%',
-               borderRadius:'21px',color:"white" }}>
-                <b>Services</b>
-              </button>
+    <div className="container-fluid-home px-0 custom_bg_Home pb-3">
+      <div className="row px-0">
+        <div onClick={() => { history.push(`/chat/${11}`) }} className="row-home mt-20">
+        </div>
+        <div className="container  py-2">
+          {/* <h3>START SOCIALISING</h3> */}
+          {/* <h4 className="mt-3  Tlogo">Join Groups </h4> <span>For All The Information!</span> */}
+
+          <div className="container">
+            <div className="row ">
+              <div className='col order-first'>
+                <button type="button" className="btn btn-primary btn-lg"  onClick={() => { history.push(`/chatroom`) }}
+                   style={{ width: '137px',  backgroundColor: 'purple', border: " #af1f1f", border: '1px solid',
+                  borderRadius: '21px', color: "white" }}>
+                  <b> Company Room</b>
+                </button>
+              </div>
+              <div className='col px-0'>
+                <button type="button" onClick={() => { history.push("/Jobs") }}
+                className="btn btn-primary btn-lg mh-100 w-100" style={{
+                    backgroundColor: 'purple', border: " #af1f1f", border: '1px solid',
+                    borderRadius: '21px', color: "white"
+                  }} >
+                  <b>Find jobs</b>
+                </button>
+              </div>
+              <div className='col order-last'>
+                <button type="button" onClick={() => { history.push("/Services") }}
+                  className="btn btn-success px-0 custom_btn_company mh-100 w-100 " style={{
+                    backgroundColor: 'purple', border: " #af1f1f", border: '1px solid',
+                    borderRadius: '21px', color: "white"
+                  }}>
+                  <b>Services</b>
+                </button>
+              </div>
+
             </div>
           </div>
           <div className="container-fluid ">
-            <h2 style={{textAlign:'center'}}>
+            <h2 style={{ textAlign: 'center' }}>
               Ads Components
             </h2>
             <div className=" Dat d-flex justify-content-center  align-items-center py-4 flex-wrap"></div>
