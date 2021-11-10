@@ -5,7 +5,7 @@ import Chatroom from '../Chatroom/Chatroom';
 import Socialservices from '../soicialsevices/Socialservices';
 import FindurBranch from '../FindurBranch/FindurBranch';
 import Startnow from '../StartNow/Startnow';
-
+import CarInput from '../carinput/CarInput'
 import Job from '../job/Job'
 import Agree from '../agreepage/Agree';
 import Logopage from '../Logopage/Logopage';
@@ -25,6 +25,7 @@ export default function Routes() {
     return (
         <div>
             <Switch>
+                <Route path="/carinput" component={CarInput}/>    
                 <Route path="/job" component={Job}/>    
                 <Route path="/Agree" component={Agree}/>
                 <Route path="/Socialservices" component={Socialservices}/>
