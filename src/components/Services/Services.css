@@ -14,3 +14,33 @@
     height: 100px;
     border-radius: 5px;
 }
+
+.container-card{
+    width: 100%;
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+.body{
+    background-color: rgb(238, 240, 240);
+    margin-top: 10px;
+
+}
+.cardsss{
+    background-color: rgb(231, 218, 201);
+    border: 1px solid rgb(122, 122, 122);
+    
+}
+.btnsss{
+    background-color: rgb(39, 156, 202);
+    color: white;
+    border: 1px solid rgb(179, 179, 179);
+    height: 35px;
+
+}
+.btnsss:hover{
+    background-color: rgb(138, 217, 248);
+    border: 1px solid rgb(121, 120, 120);
+
+}
