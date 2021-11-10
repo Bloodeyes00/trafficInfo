@@ -1,63 +1,94 @@
 import { Input } from '@material-ui/core';
 import Button from '@restart/ui/esm/Button';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Services/Services.css'
 import { Card, Modal } from 'react-bootstrap';
 import Sverigetaxi from '../Services/Sverigetaxi.jpg'
+import { useHistory } from 'react-router';
+import firebase from "../utils/firebase";
 const Services = () => {
     const [smShow, setSmShow] = useState(false);
     const [lgShow, setLgShow] = useState(false);
+    let history = useHistory();
 
-    const cardinfo = [{ image: "", title: "Used Car", text: "motor", price: 'RS:2000000', model: 'Model:2002', registeration: 'Reg/No:23232' },
-    { image: "", title: "Used Car", text: "motor", price: 'RS:2000000', model: 'Model:2002', registeration: 'Reg/No:23232' },
-    { image: "", title: "Used Car", text: "motor", price: 'RS:2000000', model: 'Model:2002', registeration: 'Reg/No:23232' },
-    { image: "", title: "Used Car", text: "motor", price: 'RS:2000000', model: 'Model:2002', registeration: 'Reg/No:23232' },
-    { image: "", title: "Used Car", text: "motor", price: 'RS:2000000', model: 'Model:2002', registeration: 'Reg/No:23232' },];
+
+    useEffect(() => {
+        const firestore = firebase.database().ref("/CarInput");
+
+        firestore.on('value', (snapshot) => {
+            let data = { ...snapshot.val() };
+            data = Object.values(data);
+            console.log("data : ", data);
+            setMovies(data);
+        });
+
+    }, [])
+    const [movies, setMovies] = useState([])
     const renderCard = (card, index) => {
-        return (<Card style={{ width: '18rem' }} key={index} style={{ display: 'flex', marginBottom: '5px' }}>
-            <Card.Img variant="top" src={Sverigetaxi} style={{ width: '100%', height: '150px', borderRadius: '2px', display: 'flex' }} />
-            <Card.Body> <Card.Title>{card.title}</Card.Title> <Card.Text> {card.text} 
-            <div class="col"> <div className="col-sm"> {card.price}
-            </div> 
-            <div className="col-sm"> {card.model}</div>
-             <div className="col-sm"> {card.registeration}</div> </div> </Card.Text>
-                <Button onClick={() => setSmShow(true)} variant="primary">Go To Contact</Button> </Card.Body> </Card>)
+        return (
+            <div>
+                <div>
+                    <Modal
+                        size="sm"
+                        show={smShow}
+                        onHide={() => setSmShow(false)}
+                        aria-labelledby="example-modal-sizes-title-sm"
+                    >
+                        <Modal.Header closeButton>
+                            <Modal.Title id="example-modal-sizes-title-sm">
+                                Contact
+                            </Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            {card.number}
+                        </Modal.Body>
+                    </Modal>
+                    <Modal
+                        size="lg"
+                        show={lgShow}
+                        onHide={() => setLgShow(false)}
+                        aria-labelledby="example-modal-sizes-title-lg"
+                    >
+                        <Modal.Header closeButton>
+                            <Modal.Title id="example-modal-sizes-title-lg">
+                                Large Modal
+                            </Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>...</Modal.Body>
+                    </Modal>
+                </div>
+
+                <Card style={{ width: '18rem' }} key={index} style={{ display: 'flex', marginBottom: '5px' }}>
+                    <Card.Img variant="top" src={card.url} style={{ width: '100%', height: '150px', borderRadius: '2px', display: 'flex' }} />
+                    <Card.Body> <Card.Title>
+                        Title :
+                        {card.title}</Card.Title>
+                        <Card.Text> Description:{card.description}
+                            <div class="col"><div className="col-sm"> Price: {card.price}
+                            </div>
+                                <div className="col-sm"> Year: {card.year}</div>
+                                <div className="col-sm"> Kelometer:{card.km}</div>
+                                <div className="col-sm"> Car Make:{card.make}</div>
+                                <div className="col-sm"> Car Fuel: {card.fuel}</div>
+                                <div className="col-sm">Registeration No: {card.regisration}</div>
+                                <div className="col-sm"> Car Condition: {card.condition}</div>
+                            </div> </Card.Text>
+                        <Button onClick={() => setSmShow(true)} variant="primary">Go To Contact</Button> </Card.Body> </Card>
+
+            </div>
+        )
     }
     return (<div >
-         <Modal
-        size="sm"
-        show={smShow}
-        onHide={() => setSmShow(false)}
-        aria-labelledby="example-modal-sizes-title-sm"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-sm">
-           Contact
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            Moble Number: 0312-2333233
-        </Modal.Body>
-      </Modal>
-      <Modal
-        size="lg"
-        show={lgShow}
-        onHide={() => setLgShow(false)}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg">
-            Large Modal
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>...</Modal.Body>
-      </Modal>
-         
+
+
         <div className="container ">
             <div className='container-fluid-car'>
                 <div className='container-car'>
                     <div className="col">
-                        <Button style={{ marginTop: '14px', paddingRight: "10px", backgroundColor: "rgb(80 109 139)", borderRadius: '4px', color: 'white' }}
+                        <Button onClick={() => { history.push("/carinput") }} style={{
+                            marginTop: '14px', paddingRight: "10px",
+                            backgroundColor: "rgb(80 109 139)", borderRadius: '4px', color: 'white'
+                        }}
                             className="btn btn-outline-success  ">Cars</Button>
                         <Button style={{
                             marginTop: '14px', backgroundColor: "rgb(80 109 139)",
@@ -83,6 +114,6 @@ const Services = () => {
             </div>
         </div>
         <div style={{ alignItems: 'center', marginTop: '20px' }}>
-            {cardinfo.map(renderCard)} </div> </div>)
+            {movies.map(renderCard)} </div> </div>)
 };
 export default Services;

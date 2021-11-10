@@ -5,7 +5,6 @@ import { getJobs } from '../Jobs/JobInput'
 import { Input } from '@material-ui/core';
 import Button from '@restart/ui/esm/Button';
 import { useHistory } from "react-router";
-import { auth } from "../utils/firebase";
 import firebase from "../utils/firebase";
 
 function Jobs() {
