@@ -1917,3 +1917,8 @@
 
 		}
 	  }
+	  @media screen and (min-width: 386px){
+      .col-sm {
+      flex: 1 0 0%;
+}
+	  }

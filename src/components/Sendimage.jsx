@@ -10,6 +10,8 @@ class Sendimage extends Component {
             url: '',
             progress: 0,
             loading: false
+///
+
         }
         this.handleChange = this
             .handleChange
