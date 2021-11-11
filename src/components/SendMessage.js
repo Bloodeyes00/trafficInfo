@@ -127,7 +127,7 @@ function SendMessage({ scroll }) {
 
                     <Button style={{
                         width: '18%', fontSize: '15px', fontWeight: '550',
-                        margin: '4px 5% -13px 5%', maxWidth: '200px'
+                        margin: '4px 5% -13px 5%', maxWidth: '200px',backgroundColor:"#279cca"
                     }} type="submit">Send</Button>
                        <ToastContainer />
                 </div>

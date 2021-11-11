@@ -85,12 +85,13 @@ export default function Navbar() {
               <div className="container">
                 <div className="row">
                   <div className="offset-1">
-                    <span style={{ fontSize: '25px' }} onClick={() => {
+                    <div className="btn-nav">
+                    <span type="button" style={{ fontSize: '25px' }} onClick={() => {
                       history.push("/home")
                     }} >
                       <IoIosHome />
                     </span>
-                    <a
+                    <a type="button"
                       onClick={() => {
                         history.push("./home")
                       }}
@@ -99,14 +100,15 @@ export default function Navbar() {
                       &nbsp;&nbsp;
                       HOME
                     </a>
+                    </div>
                     <br />
-                    <br />
-                    <span style={{ fontSize: '25px' }} onClick={() => {
+                    <div className="btn-nav">
+                    <span type="button" style={{ fontSize: '25px' }} onClick={() => {
                       history.push("/group")
                     }} >
                       <MdGroup />
                     </span>
-                    <a
+                    <a type="button"
                       onClick={() => {
                         history.push("/group")
                       }}
@@ -114,16 +116,17 @@ export default function Navbar() {
                     > &nbsp;&nbsp;
                       MY GROUPS
                     </a>
+                    </div>
                     <br />
-                    <br />
-                    <span style={{ fontSize: '25px' }} onClick={() => {
+                    <div className="btn-nav">
+                    <span type="button" style={{ fontSize: '25px' }} onClick={() => {
                       history.push("/groupchat")
 
 
                     }} >
                       <CgProfile />
                     </span>
-                    <a
+                    <a type="button"
                       onClick={() => {
                         history.push("/profile")
                       }}
@@ -131,14 +134,15 @@ export default function Navbar() {
                     > &nbsp;&nbsp;
                       PROFILE
                     </a>
+                   </div>
                     <br />
-                    <br />
-                    <span style={{ fontSize: '25px' }} onClick={() => {
+                    <div className="btn-nav">
+                    <span type="button" style={{ fontSize: '25px' }} onClick={() => {
                       history.push("./inbox")
                     }} >
                       <RiInboxArchiveFill />
                     </span>
-                    <a
+                    <a type="button"
                       onClick={() => {
                         history.push("./groupchat")
                       }}
@@ -146,14 +150,15 @@ export default function Navbar() {
                     > &nbsp;&nbsp;
                       INBOX
                     </a>
+                  </div>
                     <br />
-                    <br />
-                    <span style={{ fontSize: '25px' }} onClick={() => {
+                    <div className="btn-nav">
+                    <span type="button" style={{ fontSize: '25px' }} onClick={() => {
                       history.push("./chatroom")
                     }} >
                       <BsFillChatDotsFill />
                     </span>
-                    <a
+                    <a type="button"
                       onClick={() => {
                         history.push("./chatroom")
                       }}
@@ -161,15 +166,17 @@ export default function Navbar() {
                     > &nbsp;&nbsp;
                       CHATROOM
                     </a>
+                    </div>
                     <br />
                     {!user?.uid && <br />}
                     {!user?.uid && <div>
-                      <span style={{ fontSize: '25px' }} onClick={() => {
+                      <div className="btn-nav">
+                      <span type="button" style={{ fontSize: '25px' }} onClick={() => {
                         history.push("/login")
                       }} >
                         <IoLogInOutline />
                       </span>
-                      <a
+                      <a type="button"
                         onClick={() => {
                           history.push("./login")
                         }}
@@ -177,14 +184,17 @@ export default function Navbar() {
                       > &nbsp;&nbsp;
                         Login
                       </a>
+                      </div>
                     </div>}
+                    
                     <br />
-                    <span style={{ fontSize: '25px' }} onClick={() => {
+                    <div className="btn-nav">
+                    <span type="button" style={{ fontSize: '25px' }} onClick={() => {
                       history.push("/registration")
                     }} >
                       <MdAppRegistration />
                     </span>
-                    <a
+                    <a type="button"
                       onClick={() => {
                         history.push("/registration")
                       }}
@@ -192,14 +202,15 @@ export default function Navbar() {
                     > &nbsp;&nbsp;
                       Registration
                     </a>
+                    </div>
                     <br />
-                    <br />
-                    <span style={{ fontSize: '25px' }} onClick={() => {
+                    <div className="btn-nav">
+                    <span type="button" style={{ fontSize: '25px' }} onClick={() => {
                       history.push("/support")
                     }} >
                       <MdOutlineSupportAgent />
                     </span>
-                    <a
+                    <a type="button"
                       onClick={() => {
                         history.push("/support")
                       }}
@@ -207,15 +218,16 @@ export default function Navbar() {
                     > &nbsp;&nbsp;
                       SUPPORT
                     </a>
-                    <br />
+                    </div>
                     <br />
                     {user && <div>
-                      <span style={{ fontSize: '25px' }} onClick={() => {
+                      <div className="btn-nav">
+                      <span type="button" style={{ fontSize: '25px' }} onClick={() => {
                         auth.signOut();
                       }} >
                         <GoSignOut />
                       </span>
-                      <a
+                      <a type="button"
                         onClick={() => {
                           auth.signOut();
                         }}
@@ -223,6 +235,7 @@ export default function Navbar() {
                       > &nbsp;&nbsp;
                         SIGN OUT
                       </a>
+                      </div>
                     </div>}
                   </div>
                 </div>

@@ -16,17 +16,17 @@ export default function Groupchat() {
         </div>
 
         <div className="button">
-          <button type="button" className="btn">
-            Friends
+          <button style={{height:"40px",width: "25%", color:"#2C2E43",fontFamily:"'Anton', sans-serif"}} type="button" className="btn">
+          <b>Friends</b>
           </button>
-          <button type="button" className="btn">
-            Employees
+          <button style={{height:"40px",width: "25%", color:"#2C2E43",fontFamily:"'Anton', sans-serif"}} type="button" className="btn">
+            <b>Employees</b>
           </button>
-          <button type="button" className="btn">
-            Family
+          <button  style={{height:"40px",width: "25%", color:"#2C2E43",fontFamily:"'Anton', sans-serif"}} type="button" className="btn">
+            <b>Family</b>
           </button>
-          <button type="button" className="btn">
-            Health Care
+          <button style={{height:"40px", fontSize:"14px" ,width: "25%", color:"#2C2E43",fontFamily:"'Anton', sans-serif"}} type="button" className="btn">
+            <b>Health Care</b>
           </button>
         </div>
       </div>
@@ -70,7 +70,7 @@ export default function Groupchat() {
           <p> Doing what you like will always keep you  </p>
         </div>
       </div>
-
+<br/>
 
 
     </div>
