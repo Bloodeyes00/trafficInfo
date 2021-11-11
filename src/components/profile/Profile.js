@@ -7,12 +7,19 @@ import { auth } from "../utils/firebase";
 import ImageUpload from "../ImageUpload";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 import { useHistory } from "react-router";
+import { storage } from '../utils/firebase'
 export default function Profile() {
   const [Name, setName] = useState("");
   const [adress, setAdress] = useState("");
   const [userdetails, setuserdetails] = useState(null);
   const [companyName, setcompanyName] = useState("");
+  const [progress, setProgress] = useState("");
   let history = useHistory();
+  const [url, setUrl] = useState("");
+  // const [url2, setUrl2] = useState("");
+  // const [url3, setUrl3] = useState("");
+  // const [url4, setUrl4] = useState("");
+  // const [image, setImage] = useState("");
 
   useEffect(() => {
 
@@ -34,6 +41,59 @@ export default function Profile() {
 
     }
   }, [])
+  const handleChange = (e, check) => {
+    console.log("check1");
+    if (e.target.files[0]) {
+      console.log("check2");
+      const image = e.target.files[0];
+      // setImage(() => ({ image }));
+      // setImage(image)
+    
+      handleUpload(image, check);
+     
+    
+    }
+  }
+  const handleUpload = (image, check) => {
+    const uploadTask = storage.ref(`imges/${image.name}`).put(image);
+    uploadTask.on('state_changed',
+      (snapshot) => {
+
+        // progrss function ....
+        const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+        setProgress(progress);
+        // this.setState({ loading: true })
+      },
+      (error) => {
+        // error function ....
+        console.log(error);
+      },
+      () => {
+        // complete function ....
+        storage.ref('imges').child(image.name).getDownloadURL().then(url => {
+          console.log(url);
+          console.log("check", check);
+
+          if (check == "first") {
+            setUrl(url);
+          }
+          // if (check == "2nd") {
+          //   setUrl2(url)
+          // }
+          // if (check == "3rd") {
+          //   setUrl3(url)
+          // }
+          // if (check == "4th") {
+          //   setUrl4(url)
+          // }
+          // this.props.setCurrentImgUrl(url);
+          // this.ref = "";
+          // this.setState({ loading: false })
+        })
+      });
+
+
+  }
 
   const handleSendMessage = () => {
     const firestore = firebase.database().ref("/UserInfo");
@@ -41,7 +101,8 @@ export default function Profile() {
       Name: Name,
       companyName: companyName,
       adress: adress,
-      uid: auth?.currentUser?.uid
+      uid: auth?.currentUser?.uid,
+      url: url ? url : "",
     };
     firestore
       .push(data)
@@ -63,8 +124,9 @@ export default function Profile() {
         </div>
 
         <div className=" d-flex justify-content-center  shadow-sm p-3 mb-3  rounded-circle ">
-          <ImageUpload />
-          <MdAddAPhoto />
+          {/* <ImageUpload /> */}
+          {/* <MdAddAPhoto /> */}
+          <input type="file"  onClick={(e) => handleChange(e, "first")}></input>
         </div>
 
         <div className="Data d-flex justify-content-center  align-items-center py-4 flex-wrap">
@@ -86,7 +148,7 @@ export default function Profile() {
             </label>
             <div style={{ display: 'flex' }}>
               <select onChange={(e) => { let value = e.target.value; setcompanyName(value) }} style={{ marginLeft: '10px', borderRadius: '10px' }}>
-
+              <option>Select</option>
                 <option>Svea Taxi</option>
                 <option>Sverige taxi</option>
                 <option>Taxii 1212</option>
