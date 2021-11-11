@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import Webcam from "react-webcam";
 import Sendimage from './Sendimage'
+import "./send-message/send-message.css"
 function SendMessage({ scroll }) {
     const webcamRef = React.useRef(null);
     const [image, setImage] = useState('');
@@ -165,21 +166,21 @@ function SendMessage({ scroll }) {
                 <div className="sendMsg">
                     {openCamera && <div>
                         {image != '' ?
-                            <button onClick={(e) => {
+                            <button  className="retake"  onClick={(e) => {
                                 e.preventDefault();
                                 setImage('');
                             }}
-                                className="webcam-btn">
+                               >
                                 Retake</button> :
-                            <button onClick={(e) => {
+                            <button  className="capture" onClick={(e) => {
                                 e.preventDefault();
                                 capture();
                                 // setOpenCamera(false);
                             }}
-                                className="webcam-btn">Capture</button>
+                               >Capture</button>
                         }
                     </div>}
-                    {!openCamera && <button onClick={() => { setOpenCamera(true) }}> Camera </button>}
+                    {!openCamera && <button className="cemra" onClick={() => { setOpenCamera(true) }}> </button>}
                     <div className='imagesend'>
                         <Button >
                             <Sendimage setCurrentImgUrl={setCurrentImgUrl} curImageUrl={curImageUrl} reset={reset} />
