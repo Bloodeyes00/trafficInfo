@@ -1,4 +1,4 @@
-{ 
+{
   "name": "trafficinfor",
   "version": "0.1.0",
   "private": true,
@@ -34,6 +34,7 @@
     "react-scroll-to-bottom": "^4.2.0",
     "react-select-country-list": "^2.2.3",
     "react-toastify": "^8.0.3",
+    "react-webcam": "^6.0.0",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

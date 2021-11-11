@@ -34,7 +34,9 @@ function Jobs() {
                             backgroundColor: "rgb(248, 248, 248)", marginRight: '59px',
                             borderRadius: "4px"
                         }}>
-                            <Input type="search" placeholder=" Search Services" aria-label="Seahrc"></Input>
+                            <Input type="search" placeholder=" Search Services" aria-label="Search"      >
+
+                            </Input>
                             <Button style={{
                                 position: 'fixed', marginBottom: "20px", color: 'white', borderRadius: '4px',
                                 backgroundColor: "rgb(80 109 139)"

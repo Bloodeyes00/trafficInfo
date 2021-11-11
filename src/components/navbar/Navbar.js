@@ -71,7 +71,8 @@ export default function Navbar() {
                 <div className="ms-4 mt-3">
                   <img
                     style={{ marginLeft: "35px", width: "80px", height: "75px", marginTop: 'auto' }}
-                    src={messages[0]?.photoURL ? messages[0].photoURL : Logo}
+                    // src={messages[0]?.url ? messages[0].url : Logo}
+                    src={userdetails?.url ? userdetails?.url : Logo}
                   />
                   <br />
                   <br />
