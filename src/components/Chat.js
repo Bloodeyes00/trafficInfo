@@ -3,6 +3,7 @@ import { db, auth } from '../components/utils/firebase'
 import SendMessage from './SendMessage'
 import { css } from '@emotion/css';
 import ScrollToBottom from 'react-scroll-to-bottom';
+import { Recorder } from 'react-voice-recorder'
 function Chat() {
     const scroll = useRef()
     const [messages, setMessages] = useState([])
@@ -21,13 +22,22 @@ function Chat() {
         <div className="container-fluid-msgs">
             <ScrollToBottom className={ROOT_CSS}>
                 <div className="msgs ">
-                    {messages.map(({ id, image, text, photoURL, curImageUrl, uid }) => (
+                    {messages.map(({ id, image, text, photoURL, curImageUrl, uid, voice }) => (
                         <div style={{ borderBottom: "solid 0.0px gray" }}>
                             {< div key={id} className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>
                                 {photoURL && <img src={photoURL} alt="" />}
                                 {curImageUrl && <img src={curImageUrl} alt="no img" style={{ height: '270px', width: '270px', borderRadius: '0px' }} />}
                                 {text != " " && <p>{text}</p>}
                                 {image && <img src={image} style={{ height: '270px', width: '270px', borderRadius: '0px' }} />}
+                                {voice && <audio controls>
+                                    <source src={voice} type={"audio/webm"} />
+                                </audio>}
+                                {/* {voice && <Recorder
+                                    record={true}
+                                    audioURL={voice}
+                                    showUIAudio
+                                    mimeTypeToUseWhenRecording={`audio/webm`} // For specific mimetype.
+                                />} */}
                             </div>}
 
                         </div>

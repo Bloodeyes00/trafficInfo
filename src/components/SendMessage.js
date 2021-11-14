@@ -7,11 +7,18 @@ import { ToastContainer, toast } from 'react-toastify';
 import Webcam from "react-webcam";
 import Sendimage from './Sendimage'
 import "./send-message/send-message.css"
+import VoiceRecorder from './common-components/voice-recorder/VoiceRecorder'
+import 'react-voice-recorder/dist/index.css'
+
 function SendMessage({ scroll }) {
+
+
     const webcamRef = React.useRef(null);
     const [image, setImage] = useState('');
     const [progress, setProgress] = useState('');
     const [url, setUrl] = useState('');
+    const [recordVisible, setRecordVisible] = useState(false);
+
     const capture = React.useCallback(
         () => {
             const imageSrc = webcamRef.current.getScreenshot();
@@ -44,8 +51,8 @@ function SendMessage({ scroll }) {
     }, [curImageUrl, msg]);
 
     const handleChange = (e, check) => {
-        console.log("check1",e);
-        console.log("check2",JSON.parse(e));
+        console.log("check1", e);
+        console.log("check2", JSON.parse(e));
         if (e.target.files[0]) {
             console.log("check2");
             const image = e.target.files[0];
@@ -79,41 +86,41 @@ function SendMessage({ scroll }) {
 
     }
 
-    async function sendMessage(e) {
-        e.preventDefault()
+    async function sendMessage(e, voice) {
+        e?.preventDefault()
 
         console.log("id : ", id)
         if (id == "11") {
-            send('messages');
+            send('messages', voice);
         }
         if (id == "2") {
-            send('company');
+            send('company', voice);
         }
         if (id == '4') {
-            send('Teamcompany');
+            send('Teamcompany', voice);
         }
         if (id == '5') {
 
-            send('Staxicompany');
+            send('Staxicompany', voice);
         }
         if (id == '6') {
-            send('Taxicompany');
+            send('Taxicompany', voice);
         }
         if (id == '7') {
-            send('Kuricompany');
+            send('Kuricompany', voice);
         }
         if (id == '8') {
-            send('Skancompany');
+            send('Skancompany', voice);
         }
         if (id == "3") {
-            send('transinfo');
+            send('transinfo', voice);
         }
         if (id == "4") {
-            send('routesinfo');
+            send('routesinfo', voice);
         }
 
     }
-    async function send(event) {
+    async function send(event, voice) {
         const { uid, photoURL } = auth.currentUser;
         let payload = {
             text: msg,
@@ -121,6 +128,7 @@ function SendMessage({ scroll }) {
             curImageUrl,
             uid,
             image,
+            voice: voice ? voice : null,
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
         };
         console.log("paylod : ", payload);
@@ -147,11 +155,11 @@ function SendMessage({ scroll }) {
 
     }
     return (
-
         <div>
-
+            {recordVisible && <VoiceRecorder sendMessage={sendMessage} setRecordVisible={setRecordVisible} />}
             <form onSubmit={sendMessage}>
                 <div className="webcam-container">
+
                     {openCamera && <div className="webcam-img">
                         {image == '' ? <Webcam
                             audio={false}
@@ -164,40 +172,49 @@ function SendMessage({ scroll }) {
                     </div>}
                 </div>
                 <div className="sendMsg">
+
                     {openCamera && <div>
                         {image != '' ?
-                            <button  className="retake"  onClick={(e) => {
+                            <button className="retake" onClick={(e) => {
                                 e.preventDefault();
                                 setImage('');
                             }}
-                               >
+                            >
                                 Retake</button> :
-                            <button  className="capture" onClick={(e) => {
+                            <button className="capture" onClick={(e) => {
                                 e.preventDefault();
                                 capture();
                                 // setOpenCamera(false);
                             }}
-                               >Capture</button>
+                            >Capture</button>
                         }
                     </div>}
-                    {!openCamera && <button className="cemra" onClick={() => { setOpenCamera(true) }}> </button>}
-                    <div className='imagesend'>
-                        <Button >
-                            <Sendimage setCurrentImgUrl={setCurrentImgUrl} curImageUrl={curImageUrl} reset={reset} />
-                        </Button>
-                    </div>
-                    <br />
-                    <Input style={{
-                        width: '78%', fontSize: '15px', fontWeight: '550', marginLeft: '5px',
-                        marginBottom: '-3px'
-                    }} placeholder='Message...'
-                        type="text" value={msg} onChange={e => setMsg(e.target.value)} />
 
-                    <Button style={{
-                        width: '18%', fontSize: '15px', fontWeight: '550',
-                        margin: '4px 5% -13px 5%', maxWidth: '200px'
-                    }} type="submit">Send</Button>
+
+
+
+                    {!recordVisible && <>
+                        <button onClick={() => setRecordVisible(true)}>Record</button>
+                        {!openCamera && <button className="cemra" onClick={() => { setOpenCamera(true) }}> </button>}
+                        {/* <div className='imagesend'> */}
+                        {/* <Button > */}
+                        <Sendimage setCurrentImgUrl={setCurrentImgUrl} curImageUrl={curImageUrl} reset={reset} />
+                        {/* </Button> */}
+                        {/* </div> */}
+                        <br />
+                        <Input style={{
+                            width: '78%', fontSize: '15px', fontWeight: '550', marginLeft: '5px',
+                            marginBottom: '-3px'
+                        }} placeholder='Message...'
+                            type="text" value={msg} onChange={e => setMsg(e.target.value)} />
+
+                        <Button style={{
+                            width: '18%', fontSize: '15px', fontWeight: '550',
+                            margin: '4px 5% -13px 5%', maxWidth: '200px'
+                        }} type="submit">Send</Button>
+                    </>}
                     <ToastContainer />
+
                 </div>
             </form>
         </div>

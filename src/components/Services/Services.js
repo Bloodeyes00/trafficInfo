@@ -60,6 +60,9 @@ const Services = () => {
 
                 <Card style={{ width: '18rem' }} key={index} style={{ display: 'flex', marginBottom: '5px' }}>
                     <Card.Img variant="top" src={card.url} style={{ width: '100%', height: '150px', borderRadius: '2px', display: 'flex' }} />
+                    <Card.Img variant="top" src={card.url2} style={{ width: '100%', height: '150px', borderRadius: '2px', display: 'flex' }} />
+                    <Card.Img variant="top" src={card.url3} style={{ width: '100%', height: '150px', borderRadius: '2px', display: 'flex' }} />
+                    <Card.Img variant="top" src={card.url4} style={{ width: '100%', height: '150px', borderRadius: '2px', display: 'flex' }} />
                     <Card.Body> <Card.Title>
                         Title :
                         {card.title}</Card.Title>
