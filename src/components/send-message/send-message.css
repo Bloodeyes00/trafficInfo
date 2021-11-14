@@ -36,3 +36,29 @@ input[type="file"]::-webkit-file-upload-button {
     text-align: center;
     /* background-image: url('../../images/ic_input_file.png'); */
 }
+
+.cemra{
+    height: 30px;
+    width: 60px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 130x;
+    text-align: center;
+    background-color: rgb(82, 82, 82);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('../../images/ic_input_file.png');
+}
+.capture{
+    margin-top: 10px;
+    height: 30px;
+    width: 70px;
+}
+.retake{
+    margin-top: 10px;
+    height: 30px;
+    width: 70px;
+}
