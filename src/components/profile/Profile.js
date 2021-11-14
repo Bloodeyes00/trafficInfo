@@ -41,7 +41,7 @@ export default function Profile() {
 
     }
   }, [])
-  const handleChange = (e, check) => {
+   const handleChange = (e, check) => {
     console.log("check1");
     if (e.target.files[0]) {
       console.log("check2");
