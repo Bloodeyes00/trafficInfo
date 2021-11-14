@@ -2,8 +2,9 @@ import { auth } from '../../utils/firebase'
 import React, { Component } from 'react'
 import { Recorder } from 'react-voice-recorder'
 import { storage } from '../../utils/firebase'
-// import "./voice-recorder.css"
+import "./voice-recorder.css"
 import 'react-voice-recorder/dist/index.css'
+import { VscClose } from 'react-icons/vsc'
 
 export default class VoiceRecorder extends Component {
     state = {
@@ -60,7 +61,7 @@ export default class VoiceRecorder extends Component {
     render() {
         return (
             <div className=" recorder-main">
-                <button onClick={() => { this.props.setRecordVisible(false) }}> close </button>
+              
                 <Recorder
                     record={this.props?.recording}
                     // title={"New recording"}
@@ -69,8 +70,10 @@ export default class VoiceRecorder extends Component {
                     handleAudioStop={data => this.handleAudioStop(data)}
                     handleAudioUpload={data => this.handleAudioUpload(data)}
                     handleReset={() => this.handleReset()}
+                  
                     mimeTypeToUseWhenRecording={`audio/webm`} // For specific mimetype.
                 />
+                  <button style={{float:'right',marginTop:'-28px'}} onClick={() => { this.props.setRecordVisible(false) }}> <VscClose/></button>
             </div>
         )
     }
