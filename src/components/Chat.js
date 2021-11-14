@@ -2,12 +2,13 @@ import React, { useState, useEffect, useRef } from 'react'
 import { db, auth } from '../components/utils/firebase'
 import SendMessage from './SendMessage'
 import { css } from '@emotion/css';
+// import './App.css'
 import ScrollToBottom from 'react-scroll-to-bottom';
 function Chat() {
     const scroll = useRef()
     const [messages, setMessages] = useState([])
     const ROOT_CSS = css({
-        height: 600,
+        height: "98%",
         width: '100%'
     });
     useEffect(() => {
@@ -18,6 +19,7 @@ function Chat() {
     }, [])
     console.log("messages", messages);
     return (
+        
         <div className="container-fluid-msgs">
             <ScrollToBottom className={ROOT_CSS}>
                 <div className="msgs ">
@@ -37,6 +39,7 @@ function Chat() {
                 <SendMessage scroll={scroll} />
             </ScrollToBottom>
         </div>
+        
     )
 }
 

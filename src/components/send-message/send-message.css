@@ -15,17 +15,21 @@ input[type="file"] {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 130x;
+    border-radius: 20x;
+    margin-bottom: 5px;
     text-align: center;
-    background-color: rgb(243, 243, 243);
+    background-color: #ffffff;
     background-image: url('../../images/ic_photo.png');
     background-size: contain;
     background-repeat: no-repeat;
+    margin-top: 15px;
+    margin-left: -8px;
+    
 }
 
 input[type="file"]::-webkit-file-upload-button {
     visibility: hidden;
-    height: 34px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;

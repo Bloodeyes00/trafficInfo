@@ -6,6 +6,11 @@ import { useParams } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import Webcam from "react-webcam";
 import Sendimage from './Sendimage'
+import { AiTwotoneCamera } from "react-icons/ai";
+import { TiArrowSync } from "react-icons/ti";
+import { TiCameraOutline } from "react-icons/ti";
+import { SiMinutemailer } from "react-icons/si";
+import { lightBlue } from '@material-ui/core/colors'
 function SendMessage({ scroll }) {
     const webcamRef = React.useRef(null);
     const [image, setImage] = useState('');
@@ -159,27 +164,30 @@ function SendMessage({ scroll }) {
                             screenshotFormat="image/jpeg"
                             width={320}
                             videoConstraints={videoConstraints}
-                        /> : <img src={image} style={{ height: "225px", width: "225px", borderRadius: '2px' }} />}
+                        /> : 
+                        <img src={image} style={{ height: "225px", width: "225px", borderRadius: '2px' }} />}
                     </div>}
                 </div>
-                <div className="sendMsg">
-                    {openCamera && <div>
+            
+                <div className="sendMsg" style={{border:"2px solid lightgray",borderRadius:"5px",height:"90px", marginBottom:"0px",backgroundColor:"white"}}>
+                    {openCamera &&
+                     <div>
                         {image != '' ?
                             <button onClick={(e) => {
                                 e.preventDefault();
                                 setImage('');
                             }}
-                                className="webcam-btn">
-                                Retake</button> :
+                                className="webcam-btn"  style={{height:"35px",width:"45px", marginTop:"10px",marginLeft:"10px", backgroundColor:"revert",border:"none" ,borderRadius:"10px",alignItems:"center",textAlign:"center" }}>
+                                <TiArrowSync /></button> :
                             <button onClick={(e) => {
                                 e.preventDefault();
                                 capture();
                                 // setOpenCamera(false);
                             }}
-                                className="webcam-btn">Capture</button>
+                                className="webcam-btn " style={{height:"35px",width:"45px", marginTop:"10px",marginLeft:"10px", backgroundColor:"revert",border:"none" ,borderRadius:"10px",alignItems:"center",textAlign:"center"}}> <AiTwotoneCamera /> </button>
                         }
                     </div>}
-                    {!openCamera && <button onClick={() => { setOpenCamera(true) }}> Camera </button>}
+                    {!openCamera && <button onClick={() => { setOpenCamera(true) }} style={{height:"35px",width:"75px", marginTop:"22px",marginLeft:"10px",color:"black", backgroundColor:"revert",border:"none" ,borderRadius:"10px",alignItems:"center",textAlign:"center" }}><TiCameraOutline /> </button>}
                     <div className='imagesend'>
                         <Button >
                             <Sendimage setCurrentImgUrl={setCurrentImgUrl} curImageUrl={curImageUrl} reset={reset} />
@@ -187,17 +195,18 @@ function SendMessage({ scroll }) {
                     </div>
                     <br />
                     <Input style={{
-                        width: '78%', fontSize: '15px', fontWeight: '550', marginLeft: '5px',
-                        marginBottom: '-3px'
+                        width: '100%', fontSize: '15px', fontWeight: '550', marginLeft: '-45px',
+                        marginBottom:"-18px",marginTop:"10px", border:"0px solid gray",padding:"10px",
                     }} placeholder='Message...'
                         type="text" value={msg} onChange={e => setMsg(e.target.value)} />
 
-                    <Button style={{
-                        width: '18%', fontSize: '15px', fontWeight: '550',
-                        margin: '4px 5% -13px 5%', maxWidth: '200px',backgroundColor:"#279cca"
-                    }} type="submit">Send</Button>
+                    <Button className="sendbutton" style={{
+                        width: '10%',height:"35px" , fontSize: '13px', fontWeight: '550',
+                        margin: '4px 5% -13px 5%', maxWidth: '200px',backgroundColor:"white",border:"1px solid #279cca",color: "#279cca"
+                    ,marginTop:"20px" }} type="submit"><SiMinutemailer/></Button>
                     <ToastContainer />
                 </div>
+             
             </form>
         </div>
     )

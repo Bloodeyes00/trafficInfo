@@ -30,3 +30,9 @@ border-radius: 5px;
 width:30%;
 background-image: url('../../images/ic_photo.png');
 }
+.custom-file-input{
+    width: 50px;
+}
+.sendbutton:hover{
+    background-color:#279cca;
+    }
