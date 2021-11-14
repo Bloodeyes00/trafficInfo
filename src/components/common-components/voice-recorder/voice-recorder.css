@@ -1,13 +1,35 @@
-.recorder-main {
-    position: absolute;
-    border: solid;
+
+._1ceqH ._1lB9c {
+    display: flex;
+    justify-content: space-between;
+    background: #fdfdfd;
+    align-items: center;
+    padding: 20px 20px;
+    color: #fff;
+    border-radius: 3px 3px 0 0;
 }
-._eV_dK {
-    background-color: red;
-    border: solid blue;
-    display: none;
+._1ceqH ._1Yplu ._1Pz2d {
+    float: right;
+    margin-top: 230px;
 }
-._3neb0 {
-    font-size: 10px;
-    border: solid red;
+._1ceqH ._3bC73 ._1dpop {
+   
+    
+    transform: translateX(-50%);
+    bottom: 20px;
+}
+._1ceqH ._1Yplu ._1Pz2d:hover {
+    margin-left: 40px;
+}
+
+._1ceqH ._1Yplu ._2gd2_ {
+
+    /* margin-top: 10px; */
+    margin-right: 150px;
+}
+._1ceqH ._qxztz ._1bSom {
+    margin-left: 34px;
+}
+._1ceqH ._1lB9c {
+    background-color: wheat;
 }
