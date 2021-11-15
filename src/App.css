@@ -112,14 +112,17 @@ p {
   width: 102%;
   bottom: 0;
   z-index: 1;
-  border-top: 1px solid lightgray;
+  border-top: 2px solid rgb(184, 182, 182);
   margin-left: -5px;
   padding: 10px;
-  padding-bottom: 30px;
-  background-color: #D9CAB3;
+  padding-bottom: 20px;
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(242,241,241,1) 100%);
+
+  border-radius: 30px 30px 0px 0px;
+  
 }
 
-.msgs {
+  .msgs {
   margin: 100 px 0;
   display: flex;
   flex-direction: column;

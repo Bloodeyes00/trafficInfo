@@ -54,14 +54,14 @@ export default function Navbar() {
           <div className="rowss pt-1 d-flex justify-content-center">
             <div className="col-2  pt-1">
               <a onClick={handleShow}>
-                <span style={{ fontSize: '40px' }}>
+                <span style={{ fontSize: '40px', color:"white", marginLeft:"10px" }}>
                   <IoMdMenu />
                 </span>
               </a>
             </div>
 
             <div className="col-10 pt-4">
-              <h2 className="info">TRAFFIC INFO</h2>
+              <h3 className="info" style={{color:"white"}}>TRAFFIC INFO</h3>
             </div>
 
           </div>

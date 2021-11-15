@@ -121,7 +121,8 @@ const Services = () => {
                         {card.title}
                         </Card.Title>
                         <Card.Text>
-                            <div className="container-title mt-4">
+                            <div className="conta
+                            iner-title mt-4">
                                 <div className="row-title d-flex">
                                    <div className="col-title-6">
                                    <div className="col-sm"> Description: {card.description}</div>

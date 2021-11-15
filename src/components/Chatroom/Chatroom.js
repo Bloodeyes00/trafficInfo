@@ -40,7 +40,7 @@ export default function Chatroom() {
                 <div className="main mt-5">
 
                     <h2 className="heading2 pt-4 ps-3 pb-3">
-                        <b> COMPANY CHAT ROOM </b>
+                        <b style={{color:"#2C2E43"}}> COMPANY CHAT ROOM </b>
                     </h2>
                 </div>
                 {<div  style={userdetails?.companyName !== "Svea Taxi" ? { opacity: 0.5 } : { opacity: 1 }} className="hello mt-5 col-sm-10 offset-1" onClick={() => { userdetails?.companyName == "Svea Taxi" && history.push(`/company/${2}`)}}>

@@ -10,14 +10,14 @@
    
 }
 .Profile{
-    background-color:rgb(232, 230, 230);
+    background-color:rgb(255, 255, 255);
   
 }
 .photoicon a{
     font-size: 25px;
 }
 .ProPic:hover{
-    border: solid grey;
+    border: solid rgb(255, 255, 255);
 }
 .Heading{
     
@@ -31,8 +31,8 @@ input[type="files"] {
     border-radius: 10px;
     margin-bottom: 5px;
     text-align: center;
-    background-color: #ebe7fb;
-    background-image: url('../../components/carinput/camra.png');
+    background-color: #ffffff;
+    background-image: url('../../components/profile/camra1.png');
     background-size: 70px;
     background-position: center;
     background-repeat: no-repeat;
@@ -41,8 +41,9 @@ input[type="files"] {
 }
 
 .Data{
-    background-color: white;
+    background-color: rgb(240, 238, 238);
     color: #2C2E43;
+    border: 1px solid rgb(185, 185, 185);
 }
 .form-control{
     border-radius: 50px;

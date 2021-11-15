@@ -8,10 +8,14 @@
     overflow: auto;
   }
   .rowss{
-    background-color: #D9CAB3;
+    background: rgb(10, 10, 10);
+    border-radius: 0px 0px 20px 20px;
+    width: 105%;
+    margin-left: -10px;
+    margin-right: 50px;
   }
   h2{
-    color: #2C2E43;
+    color: #000000;
 
   }
   .btn-nav:hover{
