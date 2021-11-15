@@ -1,11 +1,11 @@
 .container-fluid-job{
-    background-color: #D9CAB3;
+    background-color: #ffffff;
     height: 100%;
     }
 .container-job{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(240, 238, 238);
     height: 100%;
-    border: 2px solid rgb(88, 88, 88);
+    border: 2px solid rgb(209, 207, 207);
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 5px;

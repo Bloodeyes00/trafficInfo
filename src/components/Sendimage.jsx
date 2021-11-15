@@ -59,15 +59,18 @@ class Sendimage extends Component {
     render() {
         return (
 
-            <div className="send-image-container">
+            <div className="send-image-container" style={{border: "1px solid rgb(39, 156, 202)",height:"40px",marginTop:"12px", paddingTop:"0px",
+            paddingBottom:"10px"}}>
                
                 {this.state.loading && <Loadimage/> }
-               
+               &nbsp;
 
                 <input value={''} type="file" id="" className="custom-file-input "
                     onChange={this.handleChange} ref={(e) => { this.ref = e; this.props.reset(this.ref) }}
                 >
                 </input>
+                &nbsp;
+
             </div>
         )
     }
