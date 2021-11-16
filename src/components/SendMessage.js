@@ -170,19 +170,20 @@ function SendMessage({ scroll }) {
                         <div className="webcam-img">
                             {image == '' ? <Webcam
                                 audio={false}
-                                height={300}
+                                height={200}
                                 ref={webcamRef}
                                 screenshotFormat="image/jpeg"
-                                width={320}
+                                width={300}
                                 videoConstraints={videoConstraints}
                             /> :
-                                <img src={image} style={{ height: "225px", width: "225px", borderRadius: '2px' }} />}
+                                <img src={image} style={{ height: "100%", width: "100%", borderRadius: '2px' }} />}
                         </div>}
                 </div>
 
                 <div className="sendMsg">
                     {openCamera &&
                         <div>
+                            
                             {image != '' ?
                                 <button className="retake" onClick={(e) => {
                                     e.preventDefault();
@@ -197,27 +198,33 @@ function SendMessage({ scroll }) {
                                 alignItems: "center", textAlign: "center" }} onClick={(e) => {
                                     e.preventDefault();
                                     capture();
-                                    // setOpenCamera(false);
+                                    
                                 }}
                                 ><TiCameraOutline /></button>
                             }
+                           
                         </div>}
 
 
 
 
-                    {!recordVisible && <>
+                    
 
-                        {!openCamera && <button style={{ height: "40px", width: "10%", color: "rgb(39, 156, 202)", marginTop: "12px",
+                        {!openCamera && 
+                        <button style={{ height: "40px", width: "10%", color: "rgb(39, 156, 202)", marginTop: "12px",
                          marginLeft: "0px", backgroundColor: "#070220", border: "", borderRadius: "2px", 
                          alignItems: "center", textAlign: "center" }} className="cemra" onClick={() => { setOpenCamera(true) }}><AiTwotoneCamera/> </button>}
-                        {/* <div className='imagesend'> */}
-                        {/* <Button > */}
+                    
+                    
+                        <Sendimage setCurrentImgUrl={setCurrentImgUrl} curImageUrl={curImageUrl} reset={reset} />
+                      
+                    {!recordVisible && <>
+
+                       
                         &nbsp;
 
-                        <Sendimage setCurrentImgUrl={setCurrentImgUrl} curImageUrl={curImageUrl} reset={reset} />
-                        {/* </Button> */}
-                        {/* </div> */}
+                     
+                      
                         <br />
                         &nbsp;
                         <Input style={{
@@ -225,6 +232,7 @@ function SendMessage({ scroll }) {
                             marginTop: '11px', border: "none", borderRadius: "5px", height: "40px",marginRight:"-10px"
                         }} placeholder='Message...'
                             type="text" value={msg} onChange={e => setMsg(e.target.value)} />
+                            
                         <button style={{
                             width: "1%", marginLeft: "8px", height: "40px", marginTop: "12px", border: "none",
                             backgroundColor: "#070220", color: "rgb(39, 156, 202)", borderRadius: "2px"
@@ -238,9 +246,7 @@ function SendMessage({ scroll }) {
                         }} type="submit"><SiMinutemailer /></Button>
                     </>}
                     <ToastContainer />
-
                 </div>
-
             </form>
         </div>
     )

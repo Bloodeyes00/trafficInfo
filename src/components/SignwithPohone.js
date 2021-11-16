@@ -37,25 +37,47 @@ const SignwithPohone = () => {
             return;
         final.confirm(otp).then((result) => {
             // success
-            history.push("/profile")
+            history.push("/profile");
+            // localStorage.setItem("oldUser", true);
         }).catch((err) => {
             alert("Wrong code");
         })
     }
     return (
-    <div style={{ "marginTop": "20px" }}>
-        <div className="container-fluid-start">
-            <div className="row-start mt-5 pt-4 ms-4">
-                <h1><b>START NOW</b></h1>
-                <h5>Sign Up To Taxi Info With Your Phone Number.
-                    Simple, Right?  </h5>
-            </div>
+        <div style={{ "marginTop": "20px" }}>
+            <div className="container-fluid-start">
+                <div className="row-start mt-5 pt-4 ms-4">
+                    <h1><b>START NOW</b></h1>
+                    <h5>Sign Up To Taxi Info With Your Phone Number.
+                        Simple, Right?  </h5>
+                </div>
 
-            <div className="tel-box">
-                {/* <div className="select-box">
+                <div className="tel-box">
+                    {/* <div className="select-box">
                 <select id="country_list"> </select>
 
                     </div> */}
+                </div>
+                <br />
+                <center>
+
+                    <div style={{ display: !show ? "block" : "none" }}>
+                        {/* <img className="immgss" src={pakistan} /> */}
+                        <input className="form-controlss ps-5" style={{ width: "50%" }} value={mynumber} onChange={(e) => {
+                            setnumber(e.target.value)
+                        }}
+                            placeholder="+92 " />
+                        <br /><br />
+                        <div id="recaptcha-container"></div>
+                        <button className='btn btn' onClick={signin}>Send OTP</button>
+                    </div>
+                    <div style={{ display: show ? "block" : "none" }}>
+                        <input type="number" placeholder={"- - - - - -"}
+                            onChange={(e) => { setotp(e.target.value) }}></input>
+                        <br /><br />
+                        <button onClick={ValidateOtp}>Verify</button>
+                    </div>
+                </center>
             </div>
        <br/>
         <center>
@@ -80,7 +102,6 @@ const SignwithPohone = () => {
             </div>
         </center>
         </div>
-    </div>
     )
 }
 export default SignwithPohone;
