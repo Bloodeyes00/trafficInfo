@@ -45,6 +45,9 @@ export default function Routes() {
                 <Route path="/chat/:id" component={Chat}/>
                 <Route path="/Services" component={Services}/>
                 <Route path="/Jobs" component={Jobs}/>
+                <Route path="/logopage" component={Logopage}/>
+                <Route path="/socialservices" component={Socialservices}/>
+                <Route path="/Agree" component={Agree}/>
                 <Route path ="/" component={Home}/>
             </Switch>
         </div>

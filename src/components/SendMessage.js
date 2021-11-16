@@ -190,9 +190,6 @@ function SendMessage({ scroll }) {
                         }
                     </div>}
 
-
-
-
                     {!recordVisible && <>
                         <button onClick={() => setRecordVisible(true)}>Record</button>
                         {!openCamera && <button className="cemra" onClick={() => { setOpenCamera(true) }}> </button>}
