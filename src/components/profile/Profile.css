@@ -22,7 +22,7 @@
 .Heading{
     
 }
-input[type="files"] {
+.filess{
     width: 50%;
     height: 50px;
     display: flex;

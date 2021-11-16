@@ -126,7 +126,8 @@ export default function Profile() {
         <div className=" d-flex justify-content-center  shadow-sm p-3 mb-3  rounded-circle ">
           {/* <ImageUpload /> */}
           {/* <MdAddAPhoto /> */}
-          <input type="files"  onClick={(e) => handleChange(e, "first")}></input>
+          <input style={{width:"50%",height:"50px",display:"flex",justifyContent:"center",alignItems:"center",borderRadius:"10px",
+        marginBottom:"5px",textAlign:"center",marginLeft:"35%",backgroundSize:"50px" }} type="file"  onClick={(e) => handleChange(e, "first")}></input>
         </div>
 
         <div className="Data d-flex justify-content-center  align-items-center py-4 flex-wrap">

@@ -18,15 +18,16 @@ input[type="file"] {
     border-radius: 2px;
     text-align: center;
     /* background-color: #ffffff; */
+    color: blanchedalmond;
     background-image: url('../../images/ic_photo.png');
     background-size: contain;
     background-repeat: no-repeat;
     
     
-    margin-left: 5px;
-    
     
 }
+
+
 
 input[type="file"]::-webkit-file-upload-button {
     visibility: hidden;
@@ -64,3 +65,5 @@ input[type="file"]::-webkit-file-upload-button {
     height: 30px;
     width: 70px;
 }
+
+

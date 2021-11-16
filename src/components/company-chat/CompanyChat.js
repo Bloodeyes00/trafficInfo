@@ -57,11 +57,14 @@ function CompanyChat() {
         <ScrollToBottom className={ROOT_CSS}>
             <div className="msgs">
                 {company.map(({ id, text, photoURL, curImageUrl, uid }) => (
-                    <div style={{ borderBottom: "solid 0.0px gray" }}>
+                    <div className="comchats">
                         {< div key={id} className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>
-                            {photoURL && <img src={photoURL} alt="" />}
-                            {curImageUrl && <img src={curImageUrl} alt="no img" style={{ height: '270px', width: '270px', borderRadius: '0px' }} />}
-                            {text != " " && <p>{text}</p>}
+                            {photoURL &&
+                             <img src={photoURL} alt="" />}
+                            {curImageUrl && 
+                            <img className="imgcard" src={curImageUrl} alt="no img" style={{ height: '270px', width: '270px', borderRadius: '0px' }} />}
+                            {text != " " && 
+                            <p>{text}</p>}
                         </div>}
                         
                     </div>

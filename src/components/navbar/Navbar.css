@@ -8,16 +8,19 @@
     overflow: auto;
   }
   .rowss{
-    background: rgb(10, 10, 10);
+    background:#070220;
     border-radius: 0px 0px 20px 20px;
     width: 105%;
     margin-left: -10px;
     margin-right: 50px;
   }
   h2{
-    color: #000000;
+    color: #ffffff;
 
   }
+
+
+  
   .btn-nav:hover{
   border: 2px solid rgb(46, 46, 46);
 border-width: 0px 0px 0.5px 0px;
@@ -106,11 +109,11 @@ img{
 
 .offcanvas-start {
     width: 235px !important;
-    background-color: #D9CAB3;;
+    background-color: #070220;;
 
 }
 .offcanvas-body {
     flex-grow: 1;
     padding: 1rem 1rem;
-   background-color: #D9CAB3;
+   background-color: #070220;
 }
