@@ -28,7 +28,7 @@ function Chat() {
                         <div style={{ borderBottom: "solid 0.0px gray" }}>
                             {< div key={id} className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>
                                 {photoURL && <img src={photoURL} alt="" />}
-                                {curImageUrl && <img src={curImageUrl} alt="no img" style={{ height: '270px', width: '321px', borderRadius: '0px' }} />}
+                                {curImageUrl && <img src={curImageUrl} alt="no img" style={{ height: '271px', width: '321px', borderRadius: '0px' }} />}
                                 {text != " " && <p>{text}</p>}
                                 {image && <img src={image} style={{ height: '260px', width: '270px', borderRadius: '0px' }} />}
                                
