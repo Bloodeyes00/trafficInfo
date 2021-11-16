@@ -23,7 +23,7 @@
 
 }
 .body{
-    background-color: rgb(238, 240, 240);
+    background-color: rgb(240, 238, 238);
     margin-top: 10px;
 
 }
@@ -39,8 +39,16 @@
     height: 35px;
 
 }
+
+.cardbody{
+    background-color: rgb(221, 220, 219);
+}
 .btnsss:hover{
     background-color: rgb(138, 217, 248);
     border: 1px solid rgb(121, 120, 120);
+
+}
+.carousel{
+
 
 }

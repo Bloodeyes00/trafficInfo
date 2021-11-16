@@ -1,13 +1,13 @@
 .container-fluid-carinput{
-    background-color: #D9CAB3;
+    background-color: #ffffff;
     height: 100%;
 }
 .container-carinput{
-    background-color: white;
+    background-color: rgb(240, 238, 238);
     height: 98%;
     margin-left: 15px;
     margin-right: 15px;
-    border: 1px solid rgb(31, 30, 30);
+    border: 1px solid rgb(207, 206, 206);
 }
 
 .selectes{

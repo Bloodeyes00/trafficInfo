@@ -79,6 +79,28 @@ const SignwithPohone = () => {
                     </div>
                 </center>
             </div>
+       <br/>
+        <center>
+            
+            <div style={{ display: !show ? "block" : "none" }}>
+            {/* <img className="immgss" src={pakistan} /> */}
+                <input className="form-controlss ps-5" style={{width:"70%"}} value={mynumber} onChange={(e) => {
+                    setnumber(e.target.value)    
+                }}
+                    placeholder="+92 " />
+                <br /><br />
+                <div id="recaptcha-container"></div>
+                <button className='btn btn' onClick={signin} style={{backgroundColor: '#279cca',
+                    borderRadius: '5px', color: "white"}}>Send OTP</button>
+            </div>
+            <div style={{ display: show ? "block" : "none" }}>
+                <input type="number" placeholder={"- - - - - -"}
+                    onChange={(e) => { setotp(e.target.value) }}></input>
+                <br /><br />
+                <button onClick={ValidateOtp} style={{backgroundColor: '#279cca',
+                    borderRadius: '5px', color: "white"}}>Verify</button>
+            </div>
+        </center>
         </div>
     )
 }

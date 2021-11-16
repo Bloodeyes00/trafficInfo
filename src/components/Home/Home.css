@@ -1,5 +1,5 @@
 .container-fluid-home {
-    background-color: #D9CAB3;
+    background-color: #ffffff;
     height: 100%;
     padding-bottom: 90px;
     color: #2C2E43 !important; 
@@ -23,10 +23,11 @@ h4 {
     color: #2C2E43;
 }
 .Dat {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(231, 231, 231);
     flex-direction: column;
     border-radius: 30px;
     height: 43vh;
+    border: 1px solid gray;
 
 }
 /* .Tlogo
@@ -76,7 +77,6 @@ margin-top: 17px;
 }
 @media screen and (max-width: 375px) {
     .custom_btn_company{
-      background-color: blue !important;
       width: 100% !important;
     }
   }

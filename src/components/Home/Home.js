@@ -15,18 +15,18 @@ export default function Home() {
 
           <div className="container">
             <div className="row ">
-              <div className='col order-first'>
-                <button type="button" className="btn btn-primary btn-lg"  onClick={() => { history.push(`/chatroom`) }}
-                   style={{ width: '137px',  backgroundColor: 'purple', border: " #af1f1f", border: '1px solid',
-                  borderRadius: '21px', color: "white" }}>
+              <div className='col '>
+                <button type="button" className="btn btn-primary btn-lg "  onClick={() => { history.push(`/chatroom`) }}
+                   style={{ width: '90%', height:"85%" , backgroundColor: '#279cca',fontSize:"12px",
+                  borderRadius: '5px', color: "white" }}>
                   <b> Company Room</b>
                 </button>
               </div>
               <div className='col px-0'>
                 <button type="button" onClick={() => { history.push("/Jobs") }}
                 className="btn btn-primary btn-lg mh-100 w-100" style={{
-                    backgroundColor: 'purple', border: " #af1f1f", border: '1px solid',
-                    borderRadius: '21px', color: "white"
+                    backgroundColor: '#279cca',
+                    borderRadius: '5px', color: "white"
                   }} >
                   <b>Find jobs</b>
                 </button>
@@ -34,8 +34,8 @@ export default function Home() {
               <div className='col order-last'>
                 <button type="button" onClick={() => { history.push("/Services") }}
                   className="btn btn-success px-0 custom_btn_company mh-100 w-100 " style={{
-                    backgroundColor: 'purple', border: " #af1f1f", border: '1px solid',
-                    borderRadius: '21px', color: "white"
+                    backgroundColor: '#279cca',
+                    borderRadius: '5px', color: "white"
                   }}>
                   <b>Services</b>
                 </button>
