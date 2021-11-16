@@ -5,36 +5,36 @@ import Navbar from '../src/components/navbar/Navbar';
 import Routes from '../src/components/routes/Routes';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import ImageUpload from './components/ImageUpload';
-import Login from './components/login/Login';
-import { NotificationContainer } from 'react-notifications';
-import { ToastContainer } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
-import Mainpage from './components/main';
 import SignwithPohone from './components/SignwithPohone';
+import Logopage from './components/Logopage/Logopage';
 function App() {
   // const [loggedIn, setLoggedIn] = useState(false);
   const [user] = useAuthState(auth);
-
+  const [oldUserState, setOlduserState] = useState(false);
+  let oldUser = localStorage.getItem("oldUser");
   useEffect(() => {
+    let oldUser = localStorage.getItem("oldUser");
+    console.log("old user in app js ", oldUser);
     if (user) {
       console.log("user :", user);
       firebase.auth().onAuthStateChanged((user) => {
         console.log("user 2 :", user);
       })
     }
-  }, [user])
-
+  }, [user, oldUser, oldUserState])
   return (
     <>
       <div className="container-fluid-home px-0">
         <BrowserRouter>
+
           <Navbar />
+          {/* <Logopage /> */}
           {/* {user ? <Routes /> : <Login setLoggedIn={setLoggedIn} />} */}
           {/* <Routes /> */}
           {/* <NotificationContainer leaveTimeout={60000}/> */}
-
-          {user ? <Routes /> : <SignwithPohone />}
+          {!oldUser && <Logopage setOlduserState={setOlduserState} />}
+          {user ? <Routes /> : oldUser && <SignwithPohone />}
         </BrowserRouter>
       </div>
     </>

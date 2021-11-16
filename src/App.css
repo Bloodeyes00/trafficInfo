@@ -83,7 +83,7 @@ p {
 }
 
 .sent {
-  background-color: #769ee9;
+  background-color: #001d3a;
   color: white;
   /* border-top-right-radius: 1000px; */
   flex-direction: row-reverse;
@@ -92,6 +92,7 @@ p {
   float: right;
   display: flex;
   flex-wrap: wrap;
+  border-radius: 25px 0px 20px 1px;
 }
 
 .received {

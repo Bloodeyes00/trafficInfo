@@ -59,7 +59,7 @@ class Sendimage extends Component {
     render() {
         return (
 
-            <div className="send-image-container" style={{border: "1px solid rgb(39, 156, 202)",height:"40px",marginTop:"12px", paddingTop:"0px",
+            <div className="send-image-container" style={{height:"40px",marginTop:"12px", paddingTop:"0px", 
             paddingBottom:"10px"}}>
                
                 {this.state.loading && <Loadimage/> }

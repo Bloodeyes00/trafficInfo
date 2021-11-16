@@ -1,12 +1,8 @@
 
 ._1ceqH ._1lB9c {
-    display: flex;
-    justify-content: space-between;
-    background: #fdfdfd;
-    align-items: center;
-    padding: 20px 20px;
-    color: #fff;
-    border-radius: 3px 3px 0 0;
+ 
+    background: #ffffff;
+   
 }
 ._1ceqH ._1Yplu ._1Pz2d {
     float: right;
@@ -25,11 +21,18 @@
 ._1ceqH ._1Yplu ._2gd2_ {
 
     /* margin-top: 10px; */
-    margin-right: 150px;
+   float: left;
 }
 ._1ceqH ._qxztz ._1bSom {
     margin-left: 34px;
 }
 ._1ceqH ._1lB9c {
     background-color: wheat;
+}
+._1ceqH ._1Yplu ._2gd2_ {
+margin-left: none !important;
+}
+
+._1ceqH ._3bC73 ._1dpop {
+    left: 57%;
 }
