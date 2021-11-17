@@ -22,7 +22,7 @@
 .Heading{
     
 }
-input[type="files"] {
+.filess{
     width: 50%;
     height: 50px;
     display: flex;
@@ -38,6 +38,29 @@ input[type="files"] {
     background-repeat: no-repeat;
     border: none;
   
+}
+
+.input-profile{
+    width:30%;
+    height:80;
+    display:flex;
+    justify-Content:center;
+    align-Items:center;
+    border-Radius:10px;
+    margin-Bottom:5px;
+    text-Align:center;
+    margin-Left:60px;
+    
+    
+}
+.addcmpny{
+    display: flex;
+}
+
+.selectws{
+    width: 100%;
+    margin-left: 12px;
+    border-radius: 40px;
 }
 
 .Data{

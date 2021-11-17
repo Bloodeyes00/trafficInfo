@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import "../navbar/Navbar.css";
 import "react-pro-sidebar/dist/css/styles.css";
 import { Offcanvas } from "react-bootstrap";
 import { useState, } from "react";
+import "../navbar/Navbar.css";
 import { useHistory } from "react-router-dom";
 import Logo from "../../assets/Navbar/profile.png";
 import { IoIosHome } from "react-icons/io";
@@ -54,31 +54,27 @@ export default function Navbar() {
           <div className="rowss pt-1 d-flex justify-content-center">
             <div className="col-2  pt-1">
               <a onClick={handleShow}>
-                <span style={{ fontSize: '40px', color:"white", marginLeft:"10px" }}>
+                <span className="navspan">
                   <IoMdMenu />
                 </span>
               </a>
             </div>
 
             <div className="col-10 pt-4">
-              <h3 className="info" style={{color:"white"}}>TRAFFIC INFO</h3>
+              <h3 className="info">TRAFFIC INFO</h3>
             </div>
 
           </div>
           <Offcanvas show={show} onHide={handleClose}>
             <Offcanvas.Header>
               <Offcanvas.Title>
-                <div className="ms-4 mt-3">
-                  <img
-                    style={{ marginLeft: "35px", width: "80px", height: "75px", marginTop: 'auto' }}
-                    // src={messages[0]?.url ? messages[0].url : Logo}
+                <div className="ms-4 mt-3" style={{marginLeft:"20px"}}>
+                  <img className="off-canvas-image"
                     src={userdetails?.url ? userdetails?.url : Logo}
                   />
                   <br />
                   <br />
-                  {/* <span style={{ marginLeft: "30px" }}>Traffic Info</span> */}
-                  <h2 style={{ marginLeft: "0px" }}>{userdetails?.Name}</h2>
-                  {/* <span style={{ marginLeft: "30px" }}>Traffic Info</span> */}
+                  <h2 style={{ marginLeft:"50px" }}>{userdetails?.Name}</h2>
                 </div>
               </Offcanvas.Title>
             </Offcanvas.Header>
@@ -87,16 +83,16 @@ export default function Navbar() {
                 <div className="row">
                   <div className="offset-1">
                     <div className="btn-nav">
-                    <span type="button" style={{ fontSize: '25px' }} onClick={() => {
+                    <span className="sidemenu-icons" type="button" onClick={() => {
                       history.push("/home")
                     }} >
-                      <IoIosHome />
+                      < IoIosHome />
                     </span>
                     <a type="button"
                       onClick={() => {
                         history.push("./home")
                       }}
-                      style={{ color: "black", textDecoration: "none" }}
+                      style={{ color: "white", textDecoration: "none" }}
                     >
                       &nbsp;&nbsp;
                       HOME
@@ -104,7 +100,7 @@ export default function Navbar() {
                     </div>
                     <br />
                     <div className="btn-nav">
-                    <span type="button" style={{ fontSize: '25px' }} onClick={() => {
+                    <span className="sidemenu-icons" type="button" onClick={() => {
                       history.push("/group")
                     }} >
                       <MdGroup />
@@ -113,14 +109,14 @@ export default function Navbar() {
                       onClick={() => {
                         history.push("/group")
                       }}
-                      style={{ color: "black", textDecoration: "none" }}
+                      style={{ color: "white", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       MY GROUPS
                     </a>
                     </div>
                     <br />
                     <div className="btn-nav">
-                    <span type="button" style={{ fontSize: '25px' }} onClick={() => {
+                    <span className="sidemenu-icons" type="button" onClick={() => {
                       history.push("/groupchat")
 
 
@@ -131,14 +127,14 @@ export default function Navbar() {
                       onClick={() => {
                         history.push("/profile")
                       }}
-                      style={{ color: "black", textDecoration: "none" }}
+                      style={{ color: "white", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       PROFILE
                     </a>
                    </div>
                     <br />
                     <div className="btn-nav">
-                    <span type="button" style={{ fontSize: '25px' }} onClick={() => {
+                    <span className="sidemenu-icons" type="button" onClick={() => {
                       history.push("./inbox")
                     }} >
                       <RiInboxArchiveFill />
@@ -147,14 +143,14 @@ export default function Navbar() {
                       onClick={() => {
                         history.push("./groupchat")
                       }}
-                      style={{ color: "black", textDecoration: "none" }}
+                      style={{ color: "white", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       INBOX
                     </a>
                   </div>
                     <br />
                     <div className="btn-nav">
-                    <span type="button" style={{ fontSize: '25px' }} onClick={() => {
+                    <span className="sidemenu-icons" type="button" onClick={() => {
                       history.push("./chatroom")
                     }} >
                       <BsFillChatDotsFill />
@@ -163,7 +159,7 @@ export default function Navbar() {
                       onClick={() => {
                         history.push("./chatroom")
                       }}
-                      style={{ color: "black", textDecoration: "none" }}
+                      style={{color: "white", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       CHATROOM
                     </a>
@@ -172,7 +168,7 @@ export default function Navbar() {
                     {!user?.uid && <br />}
                     {!user?.uid && <div>
                       <div className="btn-nav">
-                      <span type="button" style={{ fontSize: '25px' }} onClick={() => {
+                      <span className="sidemenu-icons" type="button" onClick={() => {
                         history.push("/login")
                       }} >
                         <IoLogInOutline />
@@ -181,16 +177,16 @@ export default function Navbar() {
                         onClick={() => {
                           history.push("./login")
                         }}
-                        style={{ color: "black", textDecoration: "none" }}
+                        style={{ color: "white", textDecoration: "none" }}
                       > &nbsp;&nbsp;
                         Login
                       </a>
                       </div>
                     </div>}
                     
-                    <br />
+                  
                     <div className="btn-nav">
-                    <span type="button" style={{ fontSize: '25px' }} onClick={() => {
+                    <span className="sidemenu-icons" type="button" onClick={() => {
                       history.push("/registration")
                     }} >
                       <MdAppRegistration />
@@ -199,14 +195,14 @@ export default function Navbar() {
                       onClick={() => {
                         history.push("/registration")
                       }}
-                      style={{ color: "black", textDecoration: "none" }}
+                      style={{color: "white", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       Registration
                     </a>
                     </div>
                     <br />
                     <div className="btn-nav">
-                    <span type="button" style={{ fontSize: '25px' }} onClick={() => {
+                    <span className="sidemenu-icons" type="button" onClick={() => {
                       history.push("/support")
                     }} >
                       <MdOutlineSupportAgent />
@@ -215,7 +211,7 @@ export default function Navbar() {
                       onClick={() => {
                         history.push("/support")
                       }}
-                      style={{ color: "black", textDecoration: "none" }}
+                      style={{color: "white", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       SUPPORT
                     </a>
@@ -223,7 +219,7 @@ export default function Navbar() {
                     <br />
                     {user && <div>
                       <div className="btn-nav">
-                      <span type="button" style={{ fontSize: '25px' }} onClick={() => {
+                      <span className="sidemenu-icons" type="button" onClick={() => {
                         auth.signOut();
                       }} >
                         <GoSignOut />
@@ -232,7 +228,7 @@ export default function Navbar() {
                         onClick={() => {
                           auth.signOut();
                         }}
-                        style={{ color: "black", textDecoration: "none" }}
+                        style={{color: "white", textDecoration: "none" }}
                       > &nbsp;&nbsp;
                         SIGN OUT
                       </a>

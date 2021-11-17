@@ -1,6 +1,6 @@
 .container-fluid-social{
-    background-color: #D9CAB3;
-    height: 150vh;
+    background-color: #ffffff;
+    height: 100%;
 }
 
 /* .row-social{
@@ -15,4 +15,11 @@
 height: 100%;
 width: 80%;
 border: none;
+}
+.socsev{
+    color: #2C2E43
+}
+.row2-branch{
+    display: flex;
+    justify-content: center;
 }

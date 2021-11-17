@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { storage } from '../components/utils/firebase'
 import "./send-message/send-message.css"
+import { SiMinutemailer } from "react-icons/si";
 import Loadimage from '../../src/components/loader/Loadimage';
 class Sendimage extends Component {
     constructor(props) {
@@ -59,16 +60,17 @@ class Sendimage extends Component {
     render() {
         return (
 
-            <div className="send-image-container" style={{height:"40px",marginTop:"12px", paddingTop:"0px", 
-            paddingBottom:"10px"}}>
+            <div className="send-image-container" style={{border: "",height:"40px", width:"12%",marginTop:"12px", paddingTop:"0px",
+            paddingBottom:"10px",marginLeft:"-10px"}}>
                
                 {this.state.loading && <Loadimage/> }
                &nbsp;
 
-                <input value={''} type="file" id="" className="custom-file-input "
+                <input value={''} type="file" id=""className="custom-file-input " 
                     onChange={this.handleChange} ref={(e) => { this.ref = e; this.props.reset(this.ref) }}
-                >
+                > 
                 </input>
+               
                 &nbsp;
 
             </div>

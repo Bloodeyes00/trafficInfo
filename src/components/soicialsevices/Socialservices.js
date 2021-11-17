@@ -8,7 +8,7 @@ function Socialservices(props) {
     let history = useHistory();
     return (
         <div className="container-fluid-social">
-            <h2><b>This app Provides Some Social Services jobs, advertisment</b></h2>
+            <h2 className="socsev"><b>This app Provides Some Social Services jobs, advertisment</b></h2>
             <div className="row-social ms-5 mt-4">
                 <img src={socialservices} className="imgsss" />
             </div>

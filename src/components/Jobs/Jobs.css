@@ -1842,8 +1842,33 @@
 	padding: 10px 10px 10px 0px;
 }
 
+.form-control-job{
+	width: 40%;
+	float: right;
+	padding-Top: 5px;
+	background-Color: rgb(248, 248, 248);
+	margin-Right: 25%;
+	border-Radius: 4px;
 
 
+}
+.btn-job{
+margin-Top: 20px;
+padding-Right: 10px; 
+background-Color: rgb(80, 109, 139); 
+border-Radius: 4px; 
+color: white;
+}
+
+.btn-job-serach{
+margin-Top: 14px;
+padding-Right: 10px; 
+background-Color: rgb(80, 109, 139); 
+border-Radius: 4px; 
+color: white;
+margin-right: -100px;
+
+}
 
 
 

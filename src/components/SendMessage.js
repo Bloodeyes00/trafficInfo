@@ -190,26 +190,31 @@ function SendMessage({ scroll }) {
                                     setImage('');
                                 }}
                                     className="webcam-btn"  style={{ height: "40px", width: "80%", color: "rgb(39, 156, 202)", marginTop: "12px",
-                                    marginLeft: "10px", backgroundColor: "", border: "1px solid rgb(39, 156, 202)", borderRadius: "2px", 
+                                    marginLeft: "0px", backgroundColor: "", border: "1px solid rgb(39, 156, 202)", borderRadius: "2px", 
                                     alignItems: "center", textAlign: "center" }}>
                                     <TiArrowSync /></button> :
                                 <button  style={{ height: "40px", width: "80%", color: "rgb(39, 156, 202)", marginTop: "12px",
-                                marginLeft: "10px", backgroundColor: "", border: "1px solid rgb(39, 156, 202)", borderRadius: "2px", 
+                                marginLeft: "0px", backgroundColor: "", border: "1px solid rgb(39, 156, 202)", borderRadius: "2px", 
                                 alignItems: "center", textAlign: "center" }} onClick={(e) => {
                                     e.preventDefault();
                                     capture();
-                                    // setOpenCamera(false);
+                                    
                                 }}
                                 ><TiCameraOutline /></button>
                             }
                            
                         </div>}
-             
-                        {!openCamera && <button style={{ height: "35px", width: "20%", color: "rgb(39, 156, 202)", marginTop: "12px",
-                      backgroundColor: "", borderRadius: "2px", 
+
+
+
+
+                    
+
+                        {!openCamera && 
+                        <button style={{ height: "40px", width: "10%", color: "rgb(39, 156, 202)", marginTop: "12px",
+                         marginLeft: "0px", backgroundColor: "#070220", border: "", borderRadius: "2px", 
                          alignItems: "center", textAlign: "center" }} className="cemra" onClick={() => { setOpenCamera(true) }}><AiTwotoneCamera/> </button>}
-                        {/* <div className='imagesend'> */}
-                        {/* <Button > */}
+                    
                     
                         <Sendimage setCurrentImgUrl={setCurrentImgUrl} curImageUrl={curImageUrl} reset={reset} />
                       
@@ -219,32 +224,29 @@ function SendMessage({ scroll }) {
                         &nbsp;
 
                      
-                        {/* </Button> */}
-                        {/* </div> */}
+                      
                         <br />
-                        
+                        &nbsp;
                         <Input style={{
-                            width: '100%', backgroundColor:"white", padding: "4px", fontSize: '15px', fontWeight: '550', marginLeft: '-22px',
-                            marginTop: '11px', height: "40px",marginRight:"-17px"
+                            width: '100%', backgroundColor:"white", padding: "4px", fontSize: '15px', fontWeight: '550', marginLeft: '-px',
+                            marginTop: '11px', border: "none", borderRadius: "5px", height: "40px",marginRight:"-10px"
                         }} placeholder='Message...'
                             type="text" value={msg} onChange={e => setMsg(e.target.value)} />
                             
                         <button style={{
-                            width: "18%", marginLeft: "20px", height: "40px", marginTop: "12px", border: "1px solid rgb(39, 156, 202)",
-                            backgroundColor: "", color: "rgb(39, 156, 202)", borderRadius: "2px"
+                            width: "1%", marginLeft: "8px", height: "40px", marginTop: "12px", border: "none",
+                            backgroundColor: "#070220", color: "rgb(39, 156, 202)", borderRadius: "2px"
                         }}
                             onClick={() => setRecordVisible(true)}><MdKeyboardVoice /></button>
                         &nbsp;
                         <Button style={{
-                            width: '10%', marginTop: "12px", fontSize: '15px', fontWeight: '550',
-                            maxWidth: '200px', marginRight: "2px", color: "rgb(39, 156, 202)", border: "1px solid rgb(39, 156, 202)",
+                            width: '1%', marginTop: "14px", fontSize: '15px', fontWeight: '550',
+                            maxWidth: '200px', marginRight: "0px", color: "rgb(39, 156, 202)", border: "",
                             height: "40px"
                         }} type="submit"><SiMinutemailer /></Button>
                     </>}
                     <ToastContainer />
-
                 </div>
-
             </form>
         </div>
     )

@@ -126,7 +126,7 @@ export default function Profile() {
         <div className=" d-flex justify-content-center  shadow-sm p-3 mb-3  rounded-circle ">
           {/* <ImageUpload /> */}
           {/* <MdAddAPhoto /> */}
-          <input type="file"  onClick={(e) => handleChange(e, "first")}></input>
+          <input className="input-profile" style={{height:"60px",backgroundSize:"70px",color:"white"}} type="file"  onClick={(e) => handleChange(e, "first")}></input>
         </div>
         <div className="Data d-flex justify-content-center  align-items-center py-4 flex-wrap">
           <div class="mb-3">
@@ -142,11 +142,11 @@ export default function Profile() {
             />
           </div>
           <div class="mb-3">
-            <label className="form-label float-start offset-1 ps-1" style={{ marginLeft: '55px' }}>
+            <label className="form-label float-start">
               <b> Add Company </b>
             </label>
-            <div style={{ display: 'flex' }}>
-              <select onChange={(e) => { let value = e.target.value; setcompanyName(value) }} style={{ marginLeft: '10px', borderRadius: '10px' }}>
+            <div className="addcmpny">
+              <select className="selectws" onChange={(e) => { let value = e.target.value; setcompanyName(value) }} >
               <option>Select</option>
                 <option>Svea Taxi</option>
                 <option>Sverige taxi</option>
