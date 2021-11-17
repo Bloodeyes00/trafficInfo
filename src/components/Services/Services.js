@@ -156,23 +156,24 @@ const Services = () => {
                             marginTop: '14px', paddingRight: "10px",
                             backgroundColor: "rgb(80 109 139)", borderRadius: '4px', color: 'white'
                         }}
-                            className="btn btn-outline-success  ">Cars</Button>
+                            className="btnsss btn-outline-success  ">Cars</Button>
                         <Button style={{
                             marginTop: '14px', backgroundColor: "rgb(80 109 139)",
                             borderRadius: '4px', color: 'white'
                         }}
-                            className="btn btn-outline-success  ">Other</Button>
+                            className="btnsss btn-outline-success  ">Other</Button>
                         <div className="form-control " style={{
                             width: '166px', float: 'right', paddingTop: '11px',
                             backgroundColor: "rgb(248, 248, 248)", marginRight: '59px',
                             borderRadius: "4px"
                         }}>
                             <Input type="search" placeholder=" Search Services" aria-label="Seahrc"></Input>
+                           
                             <Button style={{
                                 position: 'fixed', marginBottom: "20px", color: 'white', borderRadius: '4px',
                                 backgroundColor: "rgb(80 109 139)"
                             }}
-                                className="btn btn-outline-success  ">Search</Button>
+                                className="btnsss btn-outline-success  ">Search</Button>
                         </div>
                     </div>
                 </div>

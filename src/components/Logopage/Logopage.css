@@ -1,5 +1,5 @@
 .Container-fluid-logopage{
-    background-color: #D9CAB3;
+    background-color: #ffffff36;
     height: 70vh;
     margin-top: 70px;
  background-size: contain;
@@ -11,3 +11,35 @@
  
 }
 
+.wtti{
+    color: #2C2E43;
+    list-style: none;
+    position: relative;
+}
+
+.wtti::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    border-left: 2px solid rgb(255, 255, 255);
+    left: 0;
+    animation: typing 1.5s steps(20)infinite;
+}
+
+@keyframes typing {
+    100%{
+        left: 100%;
+        margin: 0 -35px 0px 35px;
+        
+    }
+}
+
+.imgsss{
+    text-Align: center;
+    align-Items:center;
+    height: 45%;
+    width: 45%; 
+    border: none;
+}

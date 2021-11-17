@@ -240,7 +240,7 @@ function SendMessage({ scroll }) {
                             onClick={() => setRecordVisible(true)}><MdKeyboardVoice /></button>
                         &nbsp;
                         <Button style={{
-                            width: '1%', marginTop: "12px", fontSize: '15px', fontWeight: '550',
+                            width: '1%', marginTop: "14px", fontSize: '15px', fontWeight: '550',
                             maxWidth: '200px', marginRight: "0px", color: "rgb(39, 156, 202)", border: "",
                             height: "40px"
                         }} type="submit"><SiMinutemailer /></Button>

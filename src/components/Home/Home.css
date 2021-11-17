@@ -70,6 +70,19 @@ margin-top: 17px;
     color: white;
 }
 
+.home-btn{
+    width: 90%; 
+    height: 80%; 
+    background-Color: #279cca;
+    font-Size:12px;
+    border-Radius: 5px;
+    color: white;
+    border: none;
+}
+.home-btn:hover{
+    background-color:#d1edf8 ;
+    color: black;
+}
 
 
 .Home-buttons:hover {

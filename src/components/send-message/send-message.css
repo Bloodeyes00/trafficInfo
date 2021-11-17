@@ -20,8 +20,10 @@ input[type="file"] {
     /* background-color: #ffffff; */
     color: blanchedalmond;
     background-image: url('../../images/ic_photo.png');
-    background-size: contain;
+    background-size: 25px;
     background-repeat: no-repeat;
+    margin-left: 10px;
+    margin-top: 8px;
     
     
     

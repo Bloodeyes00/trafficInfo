@@ -26,23 +26,17 @@ function Jobs() {
             <div className='container-fluid-car'>
                 <div className='container-car'>
                     <div className="col">
-                        <Button onClick={() => { history.push("/Job") }} style={{ marginTop: '14px', paddingRight: "10px", backgroundColor: "rgb(80 109 139)", borderRadius: '4px', color: 'white' }}
-                            className="btn btn-outline-success  " >Add Jobs</Button>
+                        <Button onClick={() => { history.push("/Job") }}
+                            className="btn-job" >Add Jobs</Button>
 
-                        <div className="form-control " style={{
-                            width: '166px', float: 'right', paddingTop: '11px',
-                            backgroundColor: "rgb(248, 248, 248)", marginRight: '59px',
-                            borderRadius: "4px"
-                        }}>
-                            <Input type="search" placeholder=" Search Services" aria-label="Search"      >
+                        <div className="form-control-job ">
+                            <Input  type="search" placeholder=" Search Services" aria-label="Search"      >
 
                             </Input>
-                            <Button style={{
-                                position: 'fixed', marginBottom: "20px", color: 'white', borderRadius: '4px',
-                                backgroundColor: "rgb(80 109 139)"
-                            }}
-                                className="btn btn-outline-success  ">Search</Button>
+                            <Button
+                                className="btn-job-serach btn-outline-success">Search</Button>          
                         </div>
+                        
                     </div>
                 </div>
             </div>

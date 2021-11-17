@@ -11,10 +11,10 @@ function Logopage(props) {
         <>
             {currentPage == "1" && <div className="Container-fluid-logopage">
                 <div className="Container-fluid-images">
-                    <h2><b>Welcome to Trafik info</b></h2>
+                    <h2 className="wtti"><b>Welcome to Trafik info</b></h2>
                     <br />
 
-                    <img className="imgsss" src={trafikinfo} style={{ textAlign: "center", alignItems: "center", height: "45%", width: "45%", border: "none", }} />
+                    <img className="imgsss" src={trafikinfo} />
                 </div>
                 <br />
                 <br />

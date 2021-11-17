@@ -16,16 +16,16 @@ export default function Groupchat() {
         </div>
 
         <div className="button">
-          <button style={{height:"40px",width: "25%", color:"#2C2E43",fontFamily:"'Anton', sans-serif"}} type="button" className="btn">
+          <button className="btn" type="button">
           <b>Friends</b>
           </button>
-          <button style={{height:"40px",width: "25%", color:"#2C2E43",fontFamily:"'Anton', sans-serif"}} type="button" className="btn">
+          <button className="btn" type="button">
             <b>Employees</b>
           </button>
-          <button  style={{height:"40px",width: "25%", color:"#2C2E43",fontFamily:"'Anton', sans-serif"}} type="button" className="btn">
+          <button className="btn"   type="button">
             <b>Family</b>
           </button>
-          <button style={{height:"40px", fontSize:"14px" ,width: "25%", color:"#2C2E43",fontFamily:"'Anton', sans-serif"}} type="button" className="btn">
+          <button className="btn" style={{height:"40px", fontSize:"14px" ,width: "25%", color:"",fontFamily:"'Anton', sans-serif"}} type="button">
             <b>Health Care</b>
           </button>
         </div>
