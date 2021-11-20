@@ -3,11 +3,13 @@ import firebase from 'firebase'
 import './SignwithPohone.css';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
-
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 import { auth } from '../components/utils/firebase'
 
 const SignwithPohone = () => {
     const [mynumber, setnumber] = useState("");
+    const [value, setValue] = useState();
     const [otp, setotp] = useState('');
     const [show, setshow] = useState(false);
     const [final, setfinal] = useState('');
@@ -51,22 +53,22 @@ const SignwithPohone = () => {
                     <h5>Sign Up To Taxi Info With Your Phone Number.
                         Simple, Right?  </h5>
                 </div>
-
                 <div className="tel-box">
-                    {/* <div className="select-box">
-                <select id="country_list"> </select>
-
-                    </div> */}
                 </div>
                 <br />
                 <center>
 
                     <div style={{ display: !show ? "block" : "none" }}>
-                        {/* <img className="immgss" src={pakistan} /> */}
-                        <input className="form-controlss ps-5" style={{ width: "50%" }} value={mynumber} onChange={(e) => {
-                            setnumber(e.target.value)
-                        }}
-                            placeholder="+92 " />
+                            <div>
+                             <PhoneInput className=" " style={{ width: "50%" }}
+                              international
+                              defaultCountry="SE"
+                            placeholder="Enter phone number"
+                            value={mynumber}
+                            onChange={setnumber}/> 
+                             {setnumber}
+                            </div>
+                           
                         <br /><br />
                         <div id="recaptcha-container"></div>
                         <button className='btnsss btn' onClick={signin}>Send OTP</button>
@@ -79,8 +81,8 @@ const SignwithPohone = () => {
                     </div>
                 </center>
             </div>
-       <br/>
-       
+            <br />
+
         </div>
     )
 }
