@@ -4,6 +4,7 @@ import { useState } from "react";
 import firebase from "../../components/utils/firebase";
 import { useHistory } from "react-router";
 import { ToastContainer, toast } from 'react-toastify';
+import { IoMdArrowBack } from "react-icons/io";
 import 'react-toastify/dist/ReactToastify.css';
 function Job() {
   const notify = (message) => toast(message);
@@ -47,7 +48,9 @@ function Job() {
 
   return (
     <div className="container-fluid-job mt-3">
+      <button className="btnsss ms-3"  onClick={() => history.goBack()}><IoMdArrowBack /></button>
       <h1 style={{ textAlign: "center" }}>POST YOUR AD</h1>
+      
       <div className="container-job ms-3">
         <div className="row-header ms-3 mt-1">
           <h3 >SELECTED CATEGORY</h3>
@@ -134,6 +137,11 @@ function Job() {
             handleSendMessage();
 
           }} className="btnnss mt-2"><b>Post now</b></button>
+          
+        </center>
+        <br/>
+       <center> 
+        <button className="btnsss ms-3"  onClick={() => history.goBack()}><IoMdArrowBack /></button>
         </center>
         <br />
         <br />

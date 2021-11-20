@@ -18,7 +18,6 @@ import 'react-voice-recorder/dist/index.css'
 
 function SendMessage({ scroll }) {
 
-
     const webcamRef = React.useRef(null);
     const [image, setImage] = useState('');
     const [progress, setProgress] = useState('');

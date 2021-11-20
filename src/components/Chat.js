@@ -2,10 +2,14 @@ import React, { useState, useEffect, useRef } from 'react'
 import { db, auth } from '../components/utils/firebase'
 import SendMessage from './SendMessage'
 import { css } from '@emotion/css';
+import { IoMdArrowBack } from "react-icons/io";
+import { useHistory } from 'react-router';
 // import './App.css'
 import ScrollToBottom from 'react-scroll-to-bottom';
 import { Recorder } from 'react-voice-recorder'
 function Chat() {
+
+    let history = useHistory();
     const scroll = useRef()
     const [messages, setMessages] = useState([])
     const ROOT_CSS = css({
@@ -22,6 +26,8 @@ function Chat() {
     return (
         
         <div className="container-fluid-msgs">
+     <button className="btnsss ms-3 "  onClick={() => history.goBack()}><IoMdArrowBack /></button>
+
             <ScrollToBottom className={ROOT_CSS}>
                 <div className="msgs ">
                     {messages.map(({ id, image, text, photoURL, curImageUrl, uid, voice }) => (

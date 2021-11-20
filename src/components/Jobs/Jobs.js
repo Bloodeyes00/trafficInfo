@@ -6,6 +6,7 @@ import { Input } from '@material-ui/core';
 import Button from '@restart/ui/esm/Button';
 import { useHistory } from "react-router";
 import firebase from "../utils/firebase";
+import { IoMdArrowBack } from "react-icons/io";
 
 function Jobs() {
     let history = useHistory();
@@ -26,6 +27,7 @@ function Jobs() {
             <div className='container-fluid-car'>
                 <div className='container-car'>
                     <div className="col">
+                        
                         <Button onClick={() => { history.push("/Job") }}
                             className="btn-job" >Add Jobs</Button>
 
@@ -37,9 +39,11 @@ function Jobs() {
                                 className="btn-job-serach btn-outline-success">Search</Button>          
                         </div>
                         
+                        
                     </div>
                 </div>
             </div>
+            <button className="btnsss mt-2 "  onClick={() => history.goBack()}><IoMdArrowBack /></button>
             <div className=" col-xl-9 col-lg-8" style={{ fontsize: '16px', marginTop: '5px', fontweight: 400, color: '#6f6f6f' }}>
 
                 <div className=" table-job-bx browse-job clearfix" style={{ backgroundColor: 'rgb(233 226 228)' }}>
@@ -87,6 +91,7 @@ function Jobs() {
                     </div>
                     <div>
                         <div class="float-right">
+                        <button className="btnsss ms-3 mt-2 "  onClick={() => history.goBack()}><IoMdArrowBack /></button>
                             <nav aria-label="Page navigation example" style={{ float: 'right' }}>
                                 <ul class="pagination">
                                     <li class="page-item">
