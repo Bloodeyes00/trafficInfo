@@ -3,9 +3,12 @@ import { db, auth } from '../utils/firebase'
 import { css } from '@emotion/css';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import SendMessage from '../SendMessage'
-import { useParams } from 'react-router'
+import { useHistory, useParams } from 'react-router'
+import { IoMdArrowBack } from "react-icons/io";
 import './CompanyChat.css'
 function CompanyChat() {
+
+    let history = useHistory ();
     const scroll = useRef(null)
     const [company, setMessages] = useState([])
     const { id } = useParams();
@@ -54,6 +57,7 @@ function CompanyChat() {
     }, [])
     return (
         <div className="container-fluid-chats">
+         <button className="btnsss ms-3 "  onClick={() => history.goBack()}><IoMdArrowBack /></button>
         <ScrollToBottom className={ROOT_CSS}>
             <div className="msgs">
                 {company.map(({ id, text, photoURL, curImageUrl, uid }) => (

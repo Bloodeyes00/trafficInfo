@@ -4,7 +4,7 @@ import camra from "../carinput/camra.png"
 import { useState } from "react";
 import firebase from "../../components/utils/firebase";
 import { useHistory } from "react-router";
-
+import { IoMdArrowBack } from "react-icons/io";
 import { storage } from '../utils/firebase'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -120,6 +120,7 @@ function CarInput() {
   };
   return (
     <div className="container-fluid-carinput">
+       <button className="btnsss ms-3 mt-2 "  onClick={() => history.goBack()}><IoMdArrowBack /></button>
       <h1 style={{ textAlign: "center" }}>POST YOUR AD</h1>
       <div className="container-carinput">
         <div className="row-header ms-3 mt-1">
@@ -321,13 +322,17 @@ function CarInput() {
             handleSendMessage();
 
           }} className="btnnss"><b>Post now</b></button>
+          
+        </center>
+        <br />
+      
+        <center>
+       
         </center>
         <br />
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
+      
+        
       </div>
       <br />
       <br />

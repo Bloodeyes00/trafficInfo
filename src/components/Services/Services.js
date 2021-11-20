@@ -5,6 +5,7 @@ import '../Services/Services.css'
 import { Card, Modal } from 'react-bootstrap';
 import Sverigetaxi from '../Services/Sverigetaxi.jpg'
 import { useHistory } from 'react-router';
+import { IoMdArrowBack } from "react-icons/io";
 import firebase from "../utils/firebase";
 import car3 from '../Services/car3.jpg';
 import car4 from '../Services/car4.jpg';
@@ -49,6 +50,7 @@ const Services = () => {
             }
           };
         return (
+            
             <div>
                 <div>
                     <Modal
@@ -147,7 +149,7 @@ const Services = () => {
     }
     return (<div >
 
-
+<button className="btnsss ms-3 mt-2 mb-2"  onClick={() => history.goBack()}><IoMdArrowBack /></button>
         <div className="container ">
             <div className='container-fluid-car'>
                 <div className='container-car'>
@@ -181,7 +183,12 @@ const Services = () => {
             <div className="list-group" style={{ marginTop: '20px' }}>
             </div>
         </div>
+      
         <div style={{ alignItems: 'center', marginTop: '20px' }}>
-            {movies.map(renderCard)} </div> </div>)
+            {movies.map(renderCard)}
+            
+             </div>
+             </div>)
+            
 };
 export default Services;

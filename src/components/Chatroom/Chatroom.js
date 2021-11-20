@@ -9,6 +9,7 @@ import TSkane from '../../assets/images/TSkane.jpg'
 import { useHistory } from 'react-router';
 import firebase from '../utils/firebase';
 import { auth } from '../utils/firebase';
+import { IoMdArrowBack } from "react-icons/io";
 export default function Chatroom() {
     let history = useHistory();
     const [userdetails, setuserdetails] = useState(null);
@@ -37,7 +38,10 @@ export default function Chatroom() {
     return (
         <div>
             <div className="container-fluid-chatroom">
-                <div className="main mt-5">
+                <div className="main mt-2">
+                    <button className="btnsss ms-3 "  onClick={() => history.goBack()}><IoMdArrowBack /></button>
+                    <br/>
+                    <br/>
 
                     <h2 className="heading2 ps-3 pb-3">
                         <b style={{color:"#2C2E43"}}> COMPANY CHAT ROOM </b>

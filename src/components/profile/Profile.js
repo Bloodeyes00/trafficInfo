@@ -7,6 +7,7 @@ import { auth } from "../utils/firebase";
 import ImageUpload from "../ImageUpload";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 import { useHistory } from "react-router";
+import { IoMdArrowBack } from "react-icons/io";
 import { storage } from '../utils/firebase'
 export default function Profile() {
   const [Name, setName] = useState("");
@@ -174,6 +175,8 @@ export default function Profile() {
               Save
             </button>
           </div>
+          <button className="btnsss ms-3 mt-2 mb-2"  onClick={() => history.goBack()}><IoMdArrowBack /></button>
+
         </div>
       </div>
     </div>
