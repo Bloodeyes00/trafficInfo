@@ -140,9 +140,7 @@ function Job() {
           
         </center>
         <br/>
-       <center> 
-        <button className="btnsss ms-3"  onClick={() => history.goBack()}><IoMdArrowBack /></button>
-        </center>
+      
         <br />
         <br />
 
