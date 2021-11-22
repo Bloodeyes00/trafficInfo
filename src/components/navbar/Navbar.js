@@ -74,7 +74,7 @@ export default function Navbar() {
                   />
                   <br />
                   <br />
-                  <h2 style={{ marginLeft:"50px" }}>{userdetails?.Name}</h2>
+                  <h2 style={{ marginLeft:"30px" }}>{userdetails?.Name}</h2>
                 </div>
               </Offcanvas.Title>
             </Offcanvas.Header>

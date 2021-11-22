@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="container-fluid-home px-0 custom_bg_Home pb-3">
       <div className="row px-0">
-        <div onClick={() => { history.push(`/chat/${11}`) }} className="row-home mt-20">
+        <div onClick={() => { history.push(`/chat/${11}`) }} className="img-logo mt-20">
         </div>
         <div className="container  py-2">
         

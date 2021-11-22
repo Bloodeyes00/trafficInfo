@@ -188,12 +188,12 @@ function SendMessage({ scroll }) {
                                     e.preventDefault();
                                     setImage('');
                                 }}
-                                    className="webcam-btn"  style={{ height: "40px", width: "80%", color: "rgb(39, 156, 202)", marginTop: "12px",
-                                    marginLeft: "0px", backgroundColor: "", border: "1px solid rgb(39, 156, 202)", borderRadius: "2px", 
+                                    className="webcam-btn" style={{ height: "40px", width: "", color: "rgb(39, 156, 202)", marginTop: "12px",
+                                    marginLeft: "0px", backgroundColor: "#070220", border: "none", borderRadius: "2px", 
                                     alignItems: "center", textAlign: "center" }}>
                                     <TiArrowSync /></button> :
-                                <button  style={{ height: "40px", width: "80%", color: "rgb(39, 156, 202)", marginTop: "12px",
-                                marginLeft: "0px", backgroundColor: "", border: "1px solid rgb(39, 156, 202)", borderRadius: "2px", 
+                                <button style={{ height: "40px", width: "", color: "rgb(39, 156, 202)", marginTop: "12px",
+                                marginLeft: "0px", backgroundColor: "#070220", border: "none", borderRadius: "2px", 
                                 alignItems: "center", textAlign: "center" }} onClick={(e) => {
                                     e.preventDefault();
                                     capture();
@@ -239,10 +239,9 @@ function SendMessage({ scroll }) {
                             onClick={() => setRecordVisible(true)}><MdKeyboardVoice /></button>
                         &nbsp;
                         <Button style={{
-                            width: '1%', marginTop: "14px", fontSize: '15px', fontWeight: '550',
-                            maxWidth: '200px', marginRight: "0px", color: "rgb(39, 156, 202)", border: "",
-                            height: "40px"
-                        }} type="submit"><SiMinutemailer /></Button>
+                            width: '1%', marginTop: "14px", fontSize: 'px', fontWeight: '550',
+                            maxWidth: '200px', marginRight: "0px", color: "rgb(39, 156, 202)", border: "none",
+                            height: "40px"}} type="submit"><SiMinutemailer /></Button>
                     </>}
                     <ToastContainer />
                 </div>
