@@ -15,7 +15,7 @@ export default function Chatroom() {
     const [userdetails, setuserdetails] = useState(null);
     useEffect(() => {
 
-        const firestore = firebase.database().ref("/UserInfo");
+        const firestore = firebase.database().ref("/UserProfile");
         firestore.on('value', (snapshot) => {
             let data = { ...snapshot.val() };
             data = Object.values(data);

@@ -20,7 +20,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 export default function Navbar() {
   useEffect(() => {
 
-    const firestore = firebase.database().ref("/UserInfo");
+    const firestore = firebase.database().ref("/UserProfile");
     firestore.on('value', (snapshot) => {
       let data = { ...snapshot.val() };
       data = Object.values(data);
