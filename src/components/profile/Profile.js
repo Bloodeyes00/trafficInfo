@@ -101,7 +101,7 @@ export default function Profile() {
   const handleSendMessage = () => {
     console.log("check 1")
     const firestore = firebase.database().ref("/UserProfile");
-    console.log("check 2")
+  
     let data = {
       Name: Name,
       companyName: companyName,
@@ -109,11 +109,10 @@ export default function Profile() {
       uid: auth?.currentUser?.uid,
       url: url ? url : "",
     };
-    console.log("check 3")
     firestore
     .push(data)
+    console.log("check 2")
     .then((res) => {
-        console.log("check 4")
         history.push('/home');
         console.log("res after registration", res);
       })
