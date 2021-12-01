@@ -14,6 +14,7 @@ import { GoSignOut } from "react-icons/go";
 import { IoLogInOutline } from "react-icons/all"
 import { RiInboxArchiveFill } from "react-icons/ri";
 import { IoMdMenu } from "react-icons/io";
+import { RiAdminFill } from "react-icons/ri";
 import { auth, db } from "../utils/firebase";
 import firebase from "../utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -111,7 +112,7 @@ export default function Navbar() {
                       }}
                       style={{ color: "white", textDecoration: "none" }}
                     > &nbsp;&nbsp;
-                      MY GROUPS
+                      MY GROUP
                     </a>
                     </div>
                     <br />
@@ -163,8 +164,26 @@ export default function Navbar() {
                     > &nbsp;&nbsp;
                       CHATROOM
                     </a>
-                    </div>
                     <br />
+                    <br />
+                     <div>
+                      <div className="btn-nav">
+                      <span style={{color:"white"}} className="sidemenu-icons" type="button" onClick={() => {
+                        history.push("/admin")
+                      }} >
+                        <RiAdminFill />
+                      </span>
+                      <a type="button"
+                        onClick={() => {
+                          history.push("./admin")
+                        }}
+                        style={{ color: "white", textDecoration: "none" }}
+                      > &nbsp;&nbsp;
+                        ADMIN
+                      </a>
+                      </div>
+                    </div>
+                    </div>
                     {!user?.uid && <br />}
                     {!user?.uid && <div>
                       <div className="btn-nav">
@@ -183,8 +202,7 @@ export default function Navbar() {
                       </a>
                       </div>
                     </div>}
-                    
-                  
+                    <br />
                     <div className="btn-nav">
                     <span className="sidemenu-icons" type="button" onClick={() => {
                       history.push("/registration")

@@ -21,10 +21,18 @@ import SignOut from '../SignOut';
 import Mainpage from '../main';
 import Services from '../Services/Services';
 import Jobs from '../Jobs/Jobs';
+import Admin from '../admin/Admin';
+import AllowUser from '../Allowuser/AllowUser';
+import BlockUser from "../blockuser/BlockUser";
+import UploadAds from "../uploadads/UploadAds";
 export default function Routes() {
     return (
         <div>
             <Switch>
+            <Route path="/uploadads" component={UploadAds} />
+                <Route path="/blockuser" component={BlockUser} />
+                <Route path="/allowuser" component={AllowUser} />
+                <Route path="/admin" component={Admin} />
                 <Route path="/carinput" component={CarInput}/>    
                 <Route path="/job" component={Job}/>    
                 <Route path="/Agree" component={Agree}/>
