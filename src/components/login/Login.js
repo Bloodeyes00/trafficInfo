@@ -32,9 +32,9 @@ export default function Login(props) {
             // let curuserid = firebase?.auth()?.currentUser?.uid;
             // console.log("curuserid", curuserid);
             notify("User data added succefully");
-            setLoggedIn(true);
+            // setLoggedIn(true);
             setLoading(false);
-            history.push('/home')
+            history.push('/profile')
             // notify("Logged In");
             // firebase
             //   .database()

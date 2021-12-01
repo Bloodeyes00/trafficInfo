@@ -8,6 +8,8 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import SignwithPohone from './components/SignwithPohone';
 import Logopage from './components/Logopage/Logopage';
+import Registration from './components/registration/Registration';
+import Login from './components/login/Login';
 function App() {
   // const [loggedIn, setLoggedIn] = useState(false);
   const [user] = useAuthState(auth);
@@ -34,7 +36,7 @@ function App() {
           {/* <Routes /> */}
           {/* <NotificationContainer leaveTimeout={60000}/> */}
           {!oldUser && <Logopage setOlduserState={setOlduserState} />}
-          {user ? <Routes /> : oldUser && <SignwithPohone />}
+          {user ? <Routes /> : oldUser && <Login/>}
         </BrowserRouter>
       </div>
     </>
