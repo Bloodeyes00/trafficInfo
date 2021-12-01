@@ -91,7 +91,6 @@ function Jobs() {
                     </div>
                     <div>
                         <div class="float-right">
-                        <button className="btnsss ms-3 mt-2 "  onClick={() => history.goBack()}><IoMdArrowBack /></button>
                             <nav aria-label="Page navigation example" style={{ float: 'right' }}>
                                 <ul class="pagination">
                                     <li class="page-item">
