@@ -1,64 +1,53 @@
 import React from "react";
 import "./Registration.css";
+import { auth } from '../../components/utils/firebase'
 import { useState } from "react";
 import firebase from "../../components/utils/firebase";
 import { useHistory } from "react-router";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Login from "../login/Login";
 export default function Registration(props) {
 
   //  const notify = () => toast("loading please wait!");
   const notify = (message) => toast(message);
   const history = useHistory();
   let { setCurrentPageLogin } = props;
-  const [email, setEmail] = useState("");
-  const [userPassword, setUserPassword] = useState("");
-  const [Name, setName] = useState("");
-  const [Number, setNumber] = useState("");
-  const [companyName, setcompanyName] = useState("");
+  const [email, setemail] = useState('');
+  const [password, setpassword] = useState('');
 
-  const handleSendMessage = () => {
-
+  const SaveUserDetails = () => {
     const firestore = firebase.database().ref("/UserInfo");
     let data = {
       email: email,
-      userPassword: userPassword,
-      companyName: companyName,
-      Name: Name,
-      Number: Number,
+      password: password,
+      uid: auth?.currentUser?.uid,
     };
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, userPassword)
+
+    firestore
+      .push(data)
       .then((res) => {
-
-        firebase.auth().onAuthStateChanged((user) => {
-          if (user) {
-            let uid = user.uid;
-            data["uid"] = uid;
-            firestore.push(data).then((res) => {
-              console.log("res ;", res);
-              // alert("SignUp Successfully!");
-              notify("Successfuly!");
-             
-              history.push('/login')
-            })
-              .catch((e) => {
-                notify(e.message);
-                console.log("error in pushing data :", e);
-              });
-
-          }
-        });
-
         console.log("res after registration", res);
-
+        userCredential.user.sendEmailVerification();
+        auth.signOut();
+        alert("Email sent");
+        history.push('/login')
       })
       .catch((e) => {
-        console.log(e);
-        notify(e.message);
+        console.log("error in pushing data :", e);
       });
+  };
 
+  const signup = () => {
+    auth.createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // send verification mail.
+        SaveUserDetails();
+        // store data in firebase
+
+
+      })
+      .catch(alert);
 
   };
 
@@ -78,21 +67,8 @@ export default function Registration(props) {
           <div>
             <div className="Data d-flex flex-column justify-content-center align-items-center py-5 mt-2  ">
               <div className="mb-1 input">
-                <label
-                  for="exampleInputText1"
-                  className="form-label float-start ps-1"
-                >
-                  <b>Full Name</b>
-                </label>
-                <input
-                  type="text"
-                  className="form-control ps-4"
-                  id="exampleInputText1"
-                  aria-describedby="emailHelp"
-                  onChange={(e) => {
-                    setName(e.target.value);
-                  }}
-                />
+
+
               </div>
               <div className="mb-1 input">
                 <label
@@ -103,29 +79,13 @@ export default function Registration(props) {
                 </label>
                 <input
                   type="email"
-                  className="form-control ps-3"
-                  id="exampleInpuEmail1"
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                />
+                  className="form-control ps-5 "
+                  id="exampleInputpassword"
+                  onChange={(e) => { setemail(e.target.value) }}>
+                </input>
+
               </div>
-              <div className="mb-1 input">
-                <label
-                  for="exampleInputNumber"
-                  className="form-label float-start ps-1"
-                >
-                  <b> Enter Number </b>
-                </label>
-                <input
-                  type="number"
-                  className="form-control ps-1"
-                  id="exampleInputNumber"
-                  onChange={(e) => {
-                    setNumber(e.target.value);
-                  }}
-                />
-              </div>
+
               <div className="mb-1 input">
                 <label
                   for="exampleInputpassword"
@@ -137,34 +97,18 @@ export default function Registration(props) {
                   type="password"
                   className="form-control ps-5 "
                   id="exampleInputpassword"
-                  onChange={(e) => {
-                  setUserPassword(e.target.value);
-                  }}
+                  onChange={(e) => { setpassword(e.target.value) }}
                 />
+
               </div>
-              <div className="mb-1 input">
-                <label
-                  for="exampleAddress"
-                  className="form-label float-start ps-1"
-                >
-                  <b> Company Name</b>
-                </label>
-                <input
-                  type="text"
-                  className="form-control ps-1"
-                  id="exampleAddress"
-                  onChange={(e) => {
-                  setcompanyName(e.target.value);
-                  }}
-                />
-              </div>
+
               <div>
                 <button
                   type="submit"
                   className=" Button form-control mt-3 mb-3 "
                   //    onClick={notify}
                   onClick={() => {
-                    handleSendMessage();
+                    signup();
 
                   }}
                 >
@@ -172,9 +116,9 @@ export default function Registration(props) {
                 </button >
                 <ToastContainer />
               </div>
-              {/* <a
+              <a
 
-                onClick={() => setCurrentPageLogin(true)}>Already have an Account!</a> */}
+                onClick={() => setCurrentPageLogin(true)}>Already have an Account!</a>
             </div>
           </div>
         </div>

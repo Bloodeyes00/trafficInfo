@@ -36,6 +36,8 @@ export default function Profile() {
         console.log("currentUserDetails in profile : ", currentUserDetails);
         setuserdetails(currentUserDetails);
         // setEmail(currentUserDetails.email);
+        // setName(currentUserDetails.name);
+
       }
     });
     return {
@@ -97,7 +99,7 @@ export default function Profile() {
   }
 
   const handleSendMessage = () => {
-    const firestore = firebase.database().ref("/UserInfo");
+    const firestore = firebase.database().ref("/UserProfile");
     let data = {
       Name: Name,
       companyName: companyName,
