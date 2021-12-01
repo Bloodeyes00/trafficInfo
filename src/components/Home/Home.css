@@ -1,17 +1,28 @@
 .container-fluid-home {
     background-color: #ffffff;
     height: 100%;
-    padding-bottom: 90px;
+    width: 98%;
     color: #2C2E43 !important; 
 }
-.row-home{
+.img-logo{
     background-image: url(../Home/Trafficinfo.png);
-    background-size: 200px;
+    background-size: 100px;
     background-repeat: no-repeat;
     background-position: center;
-    height: 40vh;
+    height: 20vh;
 
 }
+
+.img-logo:hover{
+    background-image: url(../Home/Trafficinfo.png);
+    background-size: 106px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 20vh;
+
+}
+
+
 h3 {
     color: #2C2E43;
 }

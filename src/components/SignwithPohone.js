@@ -60,7 +60,7 @@ const SignwithPohone = () => {
 
                     <div style={{ display: !show ? "block" : "none" }}>
                             <div>
-                             <PhoneInput className=" " style={{ width: "50%" }}
+                             <PhoneInput className="" style={{ width: "50%",}}
                               international
                               defaultCountry="SE"
                             placeholder="Enter phone number"

@@ -37,7 +37,7 @@ function Chat() {
     return (
 
         <div className="container-fluid-msgs">
-            <button className="btnsss ms-3 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
+     <button className="btnsss ms-3 mt-1 mb-1 "  onClick={() => history.goBack()}><IoMdArrowBack /></button>
 
             <ScrollToBottom className={ROOT_CSS}>
                 <infinite-scroll data-height="300" data-threshold="0.8">

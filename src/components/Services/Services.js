@@ -165,7 +165,7 @@ const Services = () => {
                         }}
                             className="btnsss btn-outline-success  ">Other</Button>
                         <div className="form-control " style={{
-                            width: '166px', float: 'right', paddingTop: '11px',
+                            width: '40%', float: 'right', paddingTop: '11px',
                             backgroundColor: "rgb(248, 248, 248)", marginRight: '59px',
                             borderRadius: "4px"
                         }}>
