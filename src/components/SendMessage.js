@@ -18,6 +18,7 @@ import 'react-voice-recorder/dist/index.css'
 
 function SendMessage({ scroll }) {
 
+
     const webcamRef = React.useRef(null);
     const [image, setImage] = useState('');
     const [progress, setProgress] = useState('');
@@ -173,11 +174,13 @@ function SendMessage({ scroll }) {
                                 ref={webcamRef}
                                 screenshotFormat="image/jpeg"
                                 width={300}
+                                marginRight={30}
                                 videoConstraints={videoConstraints}
                             /> :
-                                <img src={image} style={{ height: "100%", width: "100%", borderRadius: '2px' }} />}
+                                <img src={image} style={{marginBottom:"100px", height: "100%", width: "100%", borderRadius: '2px' }} />}
                         </div>}
                 </div>
+                
 
                 <div className="sendMsg">
                     {openCamera &&
@@ -188,63 +191,51 @@ function SendMessage({ scroll }) {
                                     e.preventDefault();
                                     setImage('');
                                 }}
-                                    className="webcam-btn" style={{ height: "40px", width: "", color: "rgb(39, 156, 202)", marginTop: "12px",
-                                    marginLeft: "0px", backgroundColor: "#070220", border: "none", borderRadius: "2px", 
+                                    className="webcam-btn"  style={{ height: "40px", width: "80%", color: "rgb(39, 156, 202)", marginTop: "12px",
+                                    marginLeft: "10px", backgroundColor: "", border: "1px solid rgb(39, 156, 202)", borderRadius: "2px", 
                                     alignItems: "center", textAlign: "center" }}>
                                     <TiArrowSync /></button> :
-                                <button style={{ height: "40px", width: "", color: "rgb(39, 156, 202)", marginTop: "12px",
-                                marginLeft: "0px", backgroundColor: "#070220", border: "none", borderRadius: "2px", 
+                                <button  style={{ height: "40px", width: "80%", color: "rgb(39, 156, 202)", marginTop: "12px",
+                                marginLeft: "10px", backgroundColor: "", border: "1px solid rgb(39, 156, 202)", borderRadius: "2px", 
                                 alignItems: "center", textAlign: "center" }} onClick={(e) => {
                                     e.preventDefault();
                                     capture();
-                                    
+                                    // setOpenCamera(false);
                                 }}
                                 ><TiCameraOutline /></button>
                             }
                            
                         </div>}
-
-
-
-
-                    
-
-                        {!openCamera && 
-                        <button style={{ height: "40px", width: "10%", color: "rgb(39, 156, 202)", marginTop: "12px",
-                         marginLeft: "0px", backgroundColor: "#070220", border: "", borderRadius: "2px", 
+             
+                        {!openCamera && <button style={{ height: "35px", width: "20%", color: "rgb(39, 156, 202)", marginTop: "12px",
+                      backgroundColor: "", borderRadius: "2px", 
                          alignItems: "center", textAlign: "center" }} className="cemra" onClick={() => { setOpenCamera(true) }}><AiTwotoneCamera/> </button>}
-                    
-                    
                         <Sendimage setCurrentImgUrl={setCurrentImgUrl} curImageUrl={curImageUrl} reset={reset} />
-                      
                     {!recordVisible && <>
-
-                       
                         &nbsp;
-
-                     
-                      
                         <br />
-                        &nbsp;
                         <Input style={{
-                            width: '100%', backgroundColor:"white", padding: "4px", fontSize: '15px', fontWeight: '550', marginLeft: '-px',
-                            marginTop: '11px', border: "none", borderRadius: "5px", height: "40px",marginRight:"-10px"
+                            width: '100%', backgroundColor:"white", padding: "4px", fontSize: '15px', fontWeight: '550', marginLeft: '-22px',
+                            marginTop: '11px', height: "40px",marginRight:"-17px"
                         }} placeholder='Message...'
                             type="text" value={msg} onChange={e => setMsg(e.target.value)} />
                             
                         <button style={{
-                            width: "1%", marginLeft: "8px", height: "40px", marginTop: "12px", border: "none",
-                            backgroundColor: "#070220", color: "rgb(39, 156, 202)", borderRadius: "2px"
+                            width: "18%", marginLeft: "20px", height: "40px", marginTop: "12px", border: "1px solid rgb(39, 156, 202)",
+                            backgroundColor: "", color: "rgb(39, 156, 202)", borderRadius: "2px"
                         }}
                             onClick={() => setRecordVisible(true)}><MdKeyboardVoice /></button>
                         &nbsp;
                         <Button style={{
-                            width: '1%', marginTop: "14px", fontSize: 'px', fontWeight: '550',
-                            maxWidth: '200px', marginRight: "0px", color: "rgb(39, 156, 202)", border: "none",
-                            height: "40px"}} type="submit"><SiMinutemailer /></Button>
+                            width: '10%', marginTop: "12px", fontSize: '15px', fontWeight: '550',
+                            maxWidth: '200px', marginRight: "2px", color: "rgb(39, 156, 202)", border: "1px solid rgb(39, 156, 202)",
+                            height: "40px"
+                        }} type="submit"><SiMinutemailer /></Button>
                     </>}
                     <ToastContainer />
+
                 </div>
+
             </form>
         </div>
     )

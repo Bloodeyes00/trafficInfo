@@ -36,7 +36,7 @@ function Chat() {
     console.log("messages", messages);
     return (
 
-        <div className="container-fluid-msgs">
+        <div className="container-fluid-msgs" style={{border:"solid black", height:"80vh"}}>
      <button className="btnsss ms-3 mt-1 mb-1 "  onClick={() => history.goBack()}><IoMdArrowBack /></button>
 
             <ScrollToBottom className={ROOT_CSS}>
@@ -65,7 +65,7 @@ function Chat() {
                         ))}
                         <div ref={scroll}></div>
                     </div>
-                    <SendMessage scroll={scroll} />
+                    <SendMessage  />
                 </infinite-scroll>
             </ScrollToBottom>
         </div>
