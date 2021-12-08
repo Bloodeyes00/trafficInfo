@@ -111,26 +111,23 @@ p {
 .sendMsg {
   position: fixed;
   display: flex;
-  width: 88%;
+  width: 98%;
   bottom: 4px;
   z-index: 1;
   /* border-top: 2px solid rgb(184, 182, 182); */
-  margin-left: 14px;
-
-  padding-bottom: 55px;
+  margin-left: -8px;
+/* 
+  padding-bottom: 55px; */
   /* background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(242,241,241,1) 100%); */
   background-color: #ffffff;
   border-radius: 35px;
-  height: 7%;
+  height: 9%;
   border: 1px solid gray;
-  
+  margin-bottom: 2%;
 }
 
-.react-scroll-to-bottom--css-qwkap-1n7m0yu {
-  height: 92%;
-  overflow-y: auto;
-  width: 100%;
-}
+
+
 
   .msgs {
   margin: 100 px 0;

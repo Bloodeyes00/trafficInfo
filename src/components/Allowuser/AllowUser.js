@@ -4,7 +4,9 @@ import { IoMdArrowBack } from "react-icons/io";
 
 function AllowUser() {
 let history = useHistory () ;
-    return (
+   
+
+return (
         <div className="container-fluid-Allow">
             <div className="container-Allow ms-4 mt-5">
                 <div className="row-allow ms-1">

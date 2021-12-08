@@ -143,11 +143,11 @@ export default function Login(props) {
               <SignIn />
                   
               <br />
-              <a style={{ marginBottom: '40px' }}
+              <a type="button" style={{ marginBottom: '40px' }}
                 onClick={() => setCurrentPageLogin(false)}
 
               >
-                Don't have an Account? SignUp
+                Don't have an Account?<b className="signup-in"> SignUp</b> 
               </a>
             </div>
           </div>

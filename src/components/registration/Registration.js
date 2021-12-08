@@ -116,9 +116,9 @@ export default function Registration(props) {
                 </button >
                 <ToastContainer />
               </div>
-              <a
+              <a type="button"
 
-                onClick={() => setCurrentPageLogin(true)}>Already have an Account!</a>
+                onClick={() => setCurrentPageLogin(true)}>Already have an Account?<b className="signup-in" > SignIn</b></a>
             </div>
           </div>
         </div>
