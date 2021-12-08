@@ -4,5 +4,15 @@
     border-radius: 30px;
     width: 73vw;
 }
+.signup-in{
+    color: #0583d2; 
+    
+   
+}
+.signup-in:hover{
+    color: #3393ce; 
+    border: 1px solid #0583d2;
+    border-Width: 0px 0px 1px 0px
+}
 
 

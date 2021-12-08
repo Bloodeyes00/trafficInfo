@@ -64,9 +64,10 @@
 }
 
 .Data{
-    background-color: rgb(240, 238, 238);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(29,199,253,1) 50%, rgba(98,211,254,1) 100%);
     color: #2C2E43;
-    border: 1px solid rgb(185, 185, 185);
+    /* border: 1px solid rgb(185, 185, 185); */
+
 }
 .form-control{
     border-radius: 50px;

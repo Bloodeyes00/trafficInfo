@@ -36,8 +36,8 @@ function Chat() {
     console.log("messages", messages);
     return (
 
-        <div className="container-fluid-msgs" style={{border:"solid black", height:"80vh"}}>
-     <button className="btnsss ms-3 mt-1 mb-1 "  onClick={() => history.goBack()}><IoMdArrowBack /></button>
+        <div className="container-fluid-msgs" style={{ height: "80vh" }}>
+            <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
 
             <ScrollToBottom className={ROOT_CSS}>
                 <infinite-scroll data-height="300" data-threshold="0.8">
@@ -48,7 +48,7 @@ function Chat() {
                                     {photoURL && <img src={photoURL} alt="" />}
                                     {curImageUrl && <img src={curImageUrl} alt="no img" style={{ height: '271px', width: '321px', borderRadius: '0px' }} />}
                                     {text != " " && <p>{text}</p>}
-                                    {image && <img src={image} style={{ height: '260px', width: '270px', borderRadius: '0px' }} />}
+                                    {image && <img src={image} style={{ height: '176px', width: '294px', borderRadius: '0px' }} />}
 
                                     {voice && <audio controls>
                                         <source src={voice} type={"audio/webm"} />
@@ -65,7 +65,7 @@ function Chat() {
                         ))}
                         <div ref={scroll}></div>
                     </div>
-                    <SendMessage  />
+                    <SendMessage />
                 </infinite-scroll>
             </ScrollToBottom>
         </div>
