@@ -106,7 +106,7 @@ export default function Login(props) {
                 </label>
                 &nbsp;
                 <input
-                  type="number"
+                  type="text"
                   className="input form-control "
                   id="exampleInputText1"
                   placeholder="+92-3120908499"

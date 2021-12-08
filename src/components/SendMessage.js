@@ -18,6 +18,7 @@ import 'react-voice-recorder/dist/index.css'
 
 function SendMessage({ scroll }) {
 
+
     const webcamRef = React.useRef(null);
     const [image, setImage] = useState('');
     const [progress, setProgress] = useState('');
@@ -253,7 +254,9 @@ function SendMessage({ scroll }) {
                         }} type="submit"><SiMinutemailer /></Button>
                     </>}
                     <ToastContainer />
+
                 </div>
+
             </form>
         </div>
         </div>

@@ -99,7 +99,9 @@ export default function Profile() {
   }
 
   const handleSendMessage = () => {
+    console.log("check 1")
     const firestore = firebase.database().ref("/UserProfile");
+  
     let data = {
       Name: Name,
       companyName: companyName,
@@ -108,8 +110,9 @@ export default function Profile() {
       url: url ? url : "",
     };
     firestore
-      .push(data)
-      .then((res) => {
+    .push(data)
+    console.log("check 2")
+    .then((res) => {
         history.push('/home');
         console.log("res after registration", res);
       })
