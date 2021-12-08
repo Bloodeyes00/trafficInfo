@@ -5,7 +5,7 @@
   background-color: #f1f1f1;
   position: fixed;
   height: 100%;
-  overflow: auto;
+  /* overflow: auto; */
 }
 
 .off-canvas-image {
@@ -45,7 +45,7 @@ h2 {
 .sidebar a {
   display: block;
   color: black;
-  padding: 16px;
+  /* padding: 16px; */
   text-decoration: none;
 }
 
@@ -136,7 +136,7 @@ img {
 
 .offcanvas-body {
   flex-grow: 1;
-  padding: 1rem 1rem;
+  /* padding: 1rem 1rem; */
   background: linear-gradient(180deg, rgba(6,2,28,1) 0%, rgba(37,9,173,1) 100%);
  
 }
