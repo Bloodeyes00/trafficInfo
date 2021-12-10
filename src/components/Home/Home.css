@@ -9,17 +9,33 @@
     background-size: 100px;
     background-repeat: no-repeat;
     background-position: center;
-    height: 20vh;
-
+    height: 16vh;
+    width: 35%;
+    margin-left: 32vw;
+    display: flex;
+  
 }
 
+
+
+.btsss{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
 .img-logo:hover{
-    background-image: url(../Home/Trafficinfo.png);
-    background-size: 106px;
+    background-image: url(../Home/Trafficinfo2.png);
+    background-size: 100px;
     background-repeat: no-repeat;
     background-position: center;
-    height: 20vh;
-
+    height: 16vh;
+    width: 35%;
+    margin-left: 32vw;
+    display: flex;
 }
 
 

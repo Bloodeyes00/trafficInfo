@@ -1,5 +1,5 @@
 .Data{
-    background-color: lightgray;
+    background-color: rgb(255, 255, 255);
     flex-direction: column;
     border-radius: 30px;
     width: 73vw;
@@ -7,5 +7,9 @@
 .Button{
     width: 150px;
     
+}
+
+.textss{
+    background-color: rgba(255, 255, 255, 0.452);
 }
 

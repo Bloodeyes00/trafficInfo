@@ -61,7 +61,7 @@ export default class VoiceRecorder extends Component {
     render() {
         return (
             <div className=" recorder-main">
-              
+
                 <Recorder
                     record={this.props?.recording}
                     // title={"New recording"}
@@ -73,7 +73,9 @@ export default class VoiceRecorder extends Component {
                   
                     mimeTypeToUseWhenRecording={`audio/webm`} // For specific mimetype.
                 />
-                  <button style={{float:'right',marginTop:'-28px'}} onClick={() => { this.props.setRecordVisible(false) }}> <VscClose/></button>
+               <button style={{float:'right',marginTop:'-28px',border:"none",backgroundColor:"#ce2b2b",color:"white",borderRadius:"10px"}} onClick={() => { this.props.setRecordVisible(false) }}> <VscClose/></button>
+
+
             </div>
         )
     }

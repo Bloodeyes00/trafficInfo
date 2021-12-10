@@ -7,6 +7,7 @@
 ._1ceqH ._1Yplu ._1Pz2d {
     float: right;
     margin-top: 230px;
+    margin-right: -20px;
 }
 ._1ceqH ._3bC73 ._1dpop {
    
@@ -24,7 +25,7 @@
    float: left;
 }
 ._1ceqH ._qxztz ._1bSom {
-    margin-left: 34px;
+    margin-left: 10px;
 }
 ._1ceqH ._1lB9c {
     background-color: wheat;
@@ -34,5 +35,14 @@ margin-left: none !important;
 }
 
 ._1ceqH ._3bC73 ._1dpop {
-    left: 57%;
+    left: 50%;
+}
+
+._1ceqH ._1Yplu ._2gd2_ {
+    background: #fff;
+    color: #185fec;
+    margin-left: -15px;
+}
+._1ceqH ._1Yplu ._1Pz2d:hover {
+    margin-left: -15px;
 }

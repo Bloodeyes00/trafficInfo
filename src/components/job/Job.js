@@ -48,7 +48,7 @@ function Job() {
 
   return (
     <div className="container-fluid-job mt-3">
-      <button className="btnsss ms-3"  onClick={() => history.goBack()}><IoMdArrowBack /></button>
+      {/* <button className="btnsss ms-3"  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
       <h1 style={{ textAlign: "center" }}>POST YOUR AD</h1>
       
       <div className="container-job ms-3">

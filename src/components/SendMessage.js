@@ -236,8 +236,8 @@ function SendMessage({ scroll }) {
                         <br />
 
                         <textarea style={{
-                            width: '100%', backgroundColor: "white", padding: "4px", fontSize: '15px', fontWeight: '550', marginLeft: '-px',
-                            marginTop: '15px', border: "none", borderRadius: "5px", height: "40px", marginRight: "-10px", outline: "none"
+                            width: '100%', backgroundColor: "white", padding: "0px", fontSize: '15px', fontWeight: '550',
+                            marginTop: '15px', border: "none", borderRadius: "5px", height: "30px", marginRight: "-10px", outline: "none"
                         }} placeholder='Message...'
                             type="text" value={msg} onChange={e => setMsg(e.target.value)} />
 

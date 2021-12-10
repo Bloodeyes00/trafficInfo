@@ -147,6 +147,7 @@ export default function Profile() {
               aria-describedby="emailHelp" onChange={(e) => { setName(e.target.value) }}
             />
           </div>
+          <br />
           <div class="mb-3">
             <label className="form-label float-start">
               <b> Add Company </b>
@@ -163,6 +164,7 @@ export default function Profile() {
 
             </div>
           </div>
+          <br />
           <div class="mb-3">
             <label for="exampleAddress" className="form-label offset-1 ps-1">
               <b> Enter Full Address</b>
@@ -175,12 +177,13 @@ export default function Profile() {
               aria-describedby="emailHelp" onChange={(e) => { setAdress(e.target.value) }}
             />
           </div>
+          <br />
           <div className="d-flex justify-content-center">
             <button type="submit" className="Button form-control my-3 " onClick={() => { handleSendMessage() }}>
               Save
             </button>
           </div>
-          <button className="btnsss ms-3 mt-2 mb-2"  onClick={() => history.goBack()}><IoMdArrowBack /></button>
+          {/* <button className="btnsss ms-3 mt-2 mb-2"  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
 
         </div>
       </div>

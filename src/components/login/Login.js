@@ -100,7 +100,7 @@ export default function Login(props) {
                   }}
                 />
               </div>
-              <div className="mb-3">
+              {/* <div className="mb-3">
                 <label for="exampleInputText1" className=" ms-2 form-label float-start ps-1">
                   <b> Enter Number </b>
                 </label>
@@ -115,7 +115,7 @@ export default function Login(props) {
                     setUserPassword(event.target.value);
                   }}
                 />
-              </div>
+              </div> */}
               <div className="mb-3">
                 <label for="exampleInputPassword1" className="ms-2 form-label float-start ps-1">
                   <b> Enter Password </b>
@@ -147,7 +147,7 @@ export default function Login(props) {
                 onClick={() => setCurrentPageLogin(false)}
 
               >
-                Don't have an Account?<b className="signup-in"> SignUp</b> 
+                <h7 className="textss">Don't have an Account?<b className="signup-in"> SignUp</b> </h7>
               </a>
             </div>
           </div>

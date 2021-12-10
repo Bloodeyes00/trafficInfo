@@ -98,7 +98,7 @@ let history = useHistory();
                         </table>
 
                     </div>
-                    <button className="btnsss ms-3 mt-2 mb-2"  onClick={() => history.goBack()}><IoMdArrowBack /></button>
+                    {/* <button className="btnsss ms-3 mt-2 mb-2"  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
 
        </div> 
             

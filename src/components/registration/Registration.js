@@ -64,6 +64,8 @@ export default function Registration(props) {
               <b>Registration</b>
             </h1>
           </div>
+          <br />
+          
           <div>
             <div className="Data d-flex flex-column justify-content-center align-items-center py-5 mt-2  ">
               <div className="mb-1 input">
@@ -101,7 +103,23 @@ export default function Registration(props) {
                 />
 
               </div>
+              <br />
+              
+              <div className="mb-1 input">
+                <label
+                  for="exampleInputpassword"
+                  className="form-label float-start ps-2"
+                >
+                  <b>Confrim Password</b>
+                </label>
+                <input
+                  type="password"
+                  className="form-control ps-5 "
+                  id="exampleInputpassword"
+                  onChange={(e) => { setpassword(e.target.value) }}
+                />
 
+              </div>
               <div>
                 <button
                   type="submit"
@@ -116,6 +134,7 @@ export default function Registration(props) {
                 </button >
                 <ToastContainer />
               </div>
+              <br />
               <a type="button"
 
                 onClick={() => setCurrentPageLogin(true)}>Already have an Account?<b className="signup-in" > SignIn</b></a>

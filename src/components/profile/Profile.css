@@ -64,9 +64,14 @@
 }
 
 .Data{
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(29,199,253,1) 50%, rgba(98,211,254,1) 100%);
+    /* background: linear-gradient(0deg, rgba(104,232,198,0.3925945378151261) 0%, rgba(117,221,171,0.6166841736694677) 100%); */
     color: #2C2E43;
-    /* border: 1px solid rgb(185, 185, 185); */
+    background-image: url(../login/login.jpg);
+    background-repeat: no-repeat;
+    background-size: 300px;
+    background-position: center;
+    box-shadow: rgb(133, 132, 132) 1px 0px 9px 0px;
+    border: 1px solid rgb(185, 185, 185);
 
 }
 .form-control{
@@ -83,12 +88,12 @@
     box-shadow: none !important;
 }
 .Data .Button{
-    background-color:#170055;
+    background-color:#170055af;
     border: none;
     justify-content: center;
     text-align: center;
     color: white;
 }
 .Button:hover{
-    background-color: #240281;
+    background-color: #5d3db4be;
 }
