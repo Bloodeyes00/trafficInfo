@@ -9,6 +9,7 @@ import { Dropdown, DropdownButton } from "react-bootstrap";
 import { useHistory } from "react-router";
 import { IoMdArrowBack } from "react-icons/io";
 import { storage } from '../utils/firebase'
+
 export default function Profile() {
   const [Name, setName] = useState("");
   const [adress, setAdress] = useState("");
@@ -132,21 +133,30 @@ export default function Profile() {
         <div className=" d-flex justify-content-center  shadow-sm p-3 mb-3  rounded-circle ">
           {/* <ImageUpload /> */}
           {/* <MdAddAPhoto /> */}
+    
           <input className="input-profile" style={{height:"60px",backgroundSize:"70px",color:"white"}} type="file"  onClick={(e) => handleChange(e, "first")}></input>
         </div>
         <div className="Data d-flex justify-content-center  align-items-center py-4 flex-wrap">
           <div class="mb-3">
-            <label for="exampleInputEmail1" className="form-label  offset-1 ps-1">
-              <b>Enter Full Name</b>
-            </label>
+            
             <input
-              type="text"
+              type="text" placeholder="Full Name"
               class="form-control  d-flex 
               justify-content-center align-items-center "
               value={Name}
               aria-describedby="emailHelp" onChange={(e) => { setName(e.target.value) }}
             />
           </div>
+        
+          <div class="mb-3">
+            <input
+              type="number" placeholder="Phone Number"
+              class="form-control d-flex justify-content-center align-items-center"
+              id="exampleAddress"
+              aria-describedby="emailHelp" onChange={(e) => { setAdress(e.target.value) }}
+            />
+          </div>
+         
           <div class="mb-3">
             <label className="form-label float-start">
               <b> Add Company </b>
@@ -163,24 +173,12 @@ export default function Profile() {
 
             </div>
           </div>
-          <div class="mb-3">
-            <label for="exampleAddress" className="form-label offset-1 ps-1">
-              <b> Enter Full Address</b>
-            </label>
-            <input
-
-              type="text"
-              class="form-control d-flex justify-content-center align-items-center"
-              id="exampleAddress"
-              aria-describedby="emailHelp" onChange={(e) => { setAdress(e.target.value) }}
-            />
-          </div>
           <div className="d-flex justify-content-center">
-            <button type="submit" className="Button form-control my-3 " onClick={() => { handleSendMessage() }}>
-              Save
+            <button type="submit" className="Btn4 my-3 " style={{borderRadius:'50px',border:'none',backgroundColor:"#FF0101",color:'white',height:"30px",width:"104%",}} onClick={() => { handleSendMessage() }}>
+             <b> Save  </b>
             </button>
           </div>
-          <button className="btnsss ms-3 mt-2 mb-2"  onClick={() => history.goBack()}><IoMdArrowBack /></button>
+          {/* <button className="btnsss ms-3 mt-2 mb-2"  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
 
         </div>
       </div>

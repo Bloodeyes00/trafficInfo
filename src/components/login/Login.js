@@ -73,25 +73,20 @@ export default function Login(props) {
       });
   };
   return (
-    <div>
+    <div className="container-fluid">
       <ToastContainer />
       {loading && <Loader />}
       {curPageLogin && <div className=" col flex-coloumn col-sm-12">
         <div className="Login">
           <div className="Profile d-flex flex-column justify-content-center align-items-center ">
             <div className="Heading d-flex justify-content-center mt-3 mb-5">
-              <h1>
-                <b>Login</b>
-              </h1>
             </div>
-            <div className="Data d-flex align-items-center pt-4 mb-5">
+            <div className="Data d-flex align-items-center  mb-5">
               <div className="mb-3 ">
-                <label for="exampleInputPassword1" className="ms-2 form-label float-start ps-1">
-                  <b> Email Address </b>
-                </label>
+                
                 &nbsp;
                 <input
-                  type="text  "
+                  type="text  " placeholder="Email Address"
                   className="input form-control "
                   id="exampleInputPassword1"
                   required
@@ -100,7 +95,7 @@ export default function Login(props) {
                   }}
                 />
               </div>
-              <div className="mb-3">
+              {/* <div className="mb-3">
                 <label for="exampleInputText1" className=" ms-2 form-label float-start ps-1">
                   <b> Enter Number </b>
                 </label>
@@ -115,14 +110,10 @@ export default function Login(props) {
                     setUserPassword(event.target.value);
                   }}
                 />
-              </div>
+              </div> */}
               <div className="mb-3">
-                <label for="exampleInputPassword1" className="ms-2 form-label float-start ps-1">
-                  <b> Enter Password </b>
-                </label>
-                &nbsp;
                 <input
-                  type="password"
+                  type="password" placeholder="Enter Password"
                   className="input form-control "
                   id="exampleInputPassword"
                   required
@@ -137,7 +128,7 @@ export default function Login(props) {
               // onClick={notifyf}
 
               >
-                Login
+                <b>Login</b>
               </button>
               
               <SignIn />
@@ -147,7 +138,7 @@ export default function Login(props) {
                 onClick={() => setCurrentPageLogin(false)}
 
               >
-                Don't have an Account?<b className="signup-in"> SignUp</b> 
+                <h7 className="textss">Don't have an Account?<b className="signup-in"> SignUp</b> </h7>
               </a>
             </div>
           </div>

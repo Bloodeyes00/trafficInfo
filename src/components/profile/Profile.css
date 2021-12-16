@@ -10,8 +10,11 @@
    
 }
 .Profile{
-    background-color:rgb(255, 255, 255);
-  
+    /* background-color:rgb(255, 255, 255); */
+    background-image: url(../login/background.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 102%;
 }
 .photoicon a{
     font-size: 25px;
@@ -19,9 +22,7 @@
 .ProPic:hover{
     border: solid rgb(255, 255, 255);
 }
-.Heading{
-    
-}
+
 .filess{
     width: 50%;
     height: 50px;
@@ -31,7 +32,7 @@
     border-radius: 10px;
     margin-bottom: 5px;
     text-align: center;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     background-image: url('../../components/profile/camra1.png');
     background-size: 70px;
     background-position: center;
@@ -64,16 +65,22 @@
 }
 
 .Data{
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(29,199,253,1) 50%, rgba(98,211,254,1) 100%);
+    /* background: linear-gradient(0deg, rgba(104,232,198,0.3925945378151261) 0%, rgba(117,221,171,0.6166841736694677) 100%); */
     color: #2C2E43;
-    /* border: 1px solid rgb(185, 185, 185); */
-
+    background-image: url(../login/login.jpg);
+    background-repeat: no-repeat;
+    background: none;
+    background-size: 300px;
+    background-position: center;
+    box-shadow: rgb(3 3 3) 1px 2px 5px 0px;
+    border: 1px solid #ffffff;
 }
+
+
 .form-control{
     border-radius: 50px;
-    border-top: aliceblue;
-    border-right: yellowgreen;
-    border-left: aliceblue
+    margin-top: 6px;
+    box-shadow: rgb(3 3 3) 1px 2px 5px 0px;
 }
 .form-control:focus{
     border-top: aliceblue !important;
@@ -83,12 +90,13 @@
     box-shadow: none !important;
 }
 .Data .Button{
-    background-color:#170055;
+    background-color:#FF0101;
     border: none;
     justify-content: center;
     text-align: center;
     color: white;
+    width: 34%;
 }
 .Button:hover{
-    background-color: #240281;
+    background-color: #5d3db4be;
 }

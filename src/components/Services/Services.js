@@ -140,7 +140,7 @@ const Services = () => {
                                 </div>
                             </div>
                             </Card.Text>
-                        <Button className="btnsss" onClick={() => setSmShow(true)} variant="primary">Go To Contact</Button> 
+                        <Button className="bttnsss" onClick={() => setSmShow(true)} variant="primary">Go To Contact</Button> 
                         </Card.Body> 
                         </Card>
 
@@ -149,7 +149,7 @@ const Services = () => {
     }
     return (<div >
 
-<button className="btnsss ms-3 mt-2 mb-2"  onClick={() => history.goBack()}><IoMdArrowBack /></button>
+{/* <button className="btnsss ms-3 mt-2 mb-2"  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
         <div className="container ">
             <div className='container-fluid-car'>
                 <div className='container-car'>

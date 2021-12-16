@@ -100,7 +100,7 @@ return (
                         </table>
 
                     </div>
-                    <button className="btnsss mt-2 "  onClick={() => history.goBack()}><IoMdArrowBack /></button>
+                    {/* <button className="btnsss mt-2 "  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
 
                 </div>
             </div>

@@ -1,5 +1,13 @@
+.container-fluid{
+
+    background-image: url(../login/background.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 102%;
+}
+
 .Data{
-    background-color: lightgray;
+    background-color: rgb(255, 255, 255);
     flex-direction: column;
     border-radius: 30px;
     width: 73vw;
@@ -8,4 +16,8 @@
     width: 150px;
     
 }
+
+/* .textss{
+    background-color: rgba(255, 255, 255, 0.452);
+} */
 

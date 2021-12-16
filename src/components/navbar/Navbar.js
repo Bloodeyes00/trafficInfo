@@ -13,7 +13,7 @@ import { MdOutlineSupportAgent, MdAppRegistration } from "react-icons/md";
 import { GoSignOut } from "react-icons/go";
 import { IoLogInOutline } from "react-icons/all"
 import { RiInboxArchiveFill } from "react-icons/ri";
-import { IoMdMenu } from "react-icons/io";
+import { AiOutlineMore } from "react-icons/ai";
 import { RiAdminFill } from "react-icons/ri";
 import { auth, db } from "../utils/firebase";
 import firebase from "../utils/firebase";
@@ -56,26 +56,26 @@ export default function Navbar() {
             <div className="col-2  pt-1">
               <a onClick={handleShow}>
                 <span className="navspan">
-                  <IoMdMenu />
+                  <AiOutlineMore />
                 </span>
               </a>
             </div>
 
             <div className="col-10 pt-4">
-              <h3 className="info">TRAFFIC INFO</h3>
+              <h3 className="info"><b>TRAFFIC INFO</b></h3>
             </div>
 
           </div>
           <Offcanvas show={show} onHide={handleClose}>
             <Offcanvas.Header>
               <Offcanvas.Title>
-                <div className="ms-4 mt-3" style={{marginLeft:"20px"}}>
+                <div className="ms-4 mt-3" style={{}}>
                   <img className="off-canvas-image"
                     src={userdetails?.url ? userdetails?.url : Logo}
                   />
                   <br />
                   <br />
-                  <h2 style={{ marginLeft:"30px" }}>{userdetails?.Name}</h2>
+                  <h2 style={{marginLeft:'20px' }}>{userdetails?.Name}</h2>
                 </div>
               </Offcanvas.Title>
             </Offcanvas.Header>
@@ -168,7 +168,8 @@ export default function Navbar() {
                     <br />
                      <div>
                       <div className="btn-nav">
-                      <span style={{color:"white"}} className="sidemenu-icons" type="button" onClick={() => {
+                      <span style={{color:"white"}} className="sidemenu-icons"
+                       type="button" onClick={() => {
                         history.push("/admin")
                       }} >
                         <RiAdminFill />

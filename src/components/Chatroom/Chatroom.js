@@ -39,7 +39,7 @@ export default function Chatroom() {
         <div>
             <div className="container-fluid-chatroom">
                 <div className="main mt-2">
-                    <button className="btnsss ms-3 "  onClick={() => history.goBack()}><IoMdArrowBack /></button>
+                    {/* <button className="btnsss ms-3 "  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
                     <br/>
                     <br/>
 

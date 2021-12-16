@@ -10,7 +10,7 @@ import { AiTwotoneCamera } from "react-icons/ai";
 import { TiArrowSync } from "react-icons/ti";
 import { MdKeyboardVoice } from "react-icons/md";
 import { TiCameraOutline } from "react-icons/ti";
-import { SiMinutemailer } from "react-icons/si";
+import { IoSend } from "react-icons/io5";
 import { lightBlue } from '@material-ui/core/colors'
 import "./send-message/send-message.css"
 import VoiceRecorder from './common-components/voice-recorder/VoiceRecorder'
@@ -219,8 +219,8 @@ function SendMessage({ scroll }) {
 
                     {!openCamera &&
                         <button style={{
-                            height: "40px", width: "15%", color: "rgb(39, 156, 202)", marginTop: "12px",
-                            marginLeft: "10px", backgroundColor: "white", border: "none", borderRadius: "40px",
+                            height: "40px", width: "15%", color: "rgb(39, 156, 202)", marginTop: "9px",
+                            marginLeft: "4px", backgroundColor: "white", border: "none", borderRadius: "40px",
                             alignItems: "center", textAlign: "center"
                         }} className="cemra" onClick={() => { setOpenCamera(true) }}><AiTwotoneCamera /> </button>}
 
@@ -236,22 +236,22 @@ function SendMessage({ scroll }) {
                         <br />
 
                         <textarea style={{
-                            width: '100%', backgroundColor: "white", padding: "4px", fontSize: '15px', fontWeight: '550', marginLeft: '-px',
-                            marginTop: '15px', border: "none", borderRadius: "5px", height: "40px", marginRight: "-10px", outline: "none"
+                            width: '100%', backgroundColor: "white", padding: "0px", fontSize: '15px', fontWeight: '550',
+                            marginTop: '15px', border: "none", borderRadius: "5px", height: "30px", marginRight: "-10px", outline: "none"
                         }} placeholder='Message...'
                             type="text" value={msg} onChange={e => setMsg(e.target.value)} />
 
                         <button style={{
-                            width: "6%", marginLeft: "13px", height: "40px", marginTop: "12px", border: "none",
+                            width: "11%", marginLeft: "13px", height: "40px", marginTop: "9px", border: "none",
                             backgroundColor: "white", color: "rgb(39, 156, 202)", borderRadius: "22px"
                         }}
                             onClick={() => setRecordVisible(true)}><MdKeyboardVoice /></button>
 
                         <Button style={{
-                            width: '6%', marginTop: "14px", fontSize: 'px', fontWeight: '550',
+                            width: '6%', marginTop: "9px", fontSize: 'px', fontWeight: '550',
                             maxWidth: '200px', marginRight: "0px", color: "rgb(39, 156, 202)", border: "none",
                             height: "40px", marginRight: ""
-                        }} type="submit"><SiMinutemailer /></Button>
+                        }} type="submit"><IoSend /></Button>
                     </>}
                     <ToastContainer />
 

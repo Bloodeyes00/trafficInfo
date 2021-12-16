@@ -64,6 +64,8 @@ export default function Registration(props) {
               <b>Registration</b>
             </h1>
           </div>
+          <br />
+          
           <div>
             <div className="Data d-flex flex-column justify-content-center align-items-center py-5 mt-2  ">
               <div className="mb-1 input">
@@ -71,15 +73,10 @@ export default function Registration(props) {
 
               </div>
               <div className="mb-1 input">
-                <label
-                  for="exampleInpuEmail1"
-                  className="form-label float-start ps-2 "
-                >
-                  <b> Enter Email </b>
-                </label>
+                
                 <input
-                  type="email"
-                  className="form-control ps-5 "
+                  type="email" placeholder="Enter Email"
+                  className="form-control "
                   id="exampleInputpassword"
                   onChange={(e) => { setemail(e.target.value) }}>
                 </input>
@@ -87,25 +84,31 @@ export default function Registration(props) {
               </div>
 
               <div className="mb-1 input">
-                <label
-                  for="exampleInputpassword"
-                  className="form-label float-start ps-2"
-                >
-                  <b>Password</b>
-                </label>
+
                 <input
-                  type="password"
-                  className="form-control ps-5 "
+                  type="password" placeholder="Password"
+                  className="form-control "
                   id="exampleInputpassword"
                   onChange={(e) => { setpassword(e.target.value) }}
                 />
 
               </div>
+             
+              
+              <div className="mb-1 input">
+               
+                <input
+                  type="password" placeholder="Conform Password"
+                  className="form-control"
+                  id="exampleInputpassword"
+                  onChange={(e) => { setpassword(e.target.value) }}
+                />
 
+              </div>
               <div>
                 <button
                   type="submit"
-                  className=" Button form-control mt-3 mb-3 "
+                  className=" Btn4  mt-3 mb-3 " style={{borderRadius:'50px',border:'none',backgroundColor:"#FF0101",color:'white',height:"40px",width:"105%"}}
                   //    onClick={notify}
                   onClick={() => {
                     signup();
@@ -116,6 +119,7 @@ export default function Registration(props) {
                 </button >
                 <ToastContainer />
               </div>
+              <br />
               <a type="button"
 
                 onClick={() => setCurrentPageLogin(true)}>Already have an Account?<b className="signup-in" > SignIn</b></a>

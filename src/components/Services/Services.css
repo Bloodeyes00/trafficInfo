@@ -45,21 +45,22 @@ element.style {
     border: 1px solid rgb(122, 122, 122);
     
 }
-.btnsss{
+.bttnsss{
     background-color: rgb(39, 156, 202);
     color: white;
     border: 1px solid rgb(179, 179, 179);
-    height: 35px;
-    width: 15%;
+    height: 40px;
+    width: 115px;
     border-radius: 10px;
    
 }
 
-.btnsss:hover{
+.bttnsss:hover{
     background-color: rgb(126, 209, 241);
     color: rgb(0, 0, 0);
     border: 1px solid rgb(10, 10, 10);
-    height: 35px;
+    height: 40px;
+    width: 115px;
     border-radius: 10px;
    
 }

@@ -57,7 +57,7 @@ function CompanyChat() {
     }, [])
     return (
         <div className="container-fluid-chats">
-         <button className="btnsss ms-3 "  onClick={() => history.goBack()}><IoMdArrowBack /></button>
+         {/* <button className="btnsss ms-3 "  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
         <ScrollToBottom className={ROOT_CSS}>
             <div className="msgs">
                 {company.map(({ id, text, photoURL, curImageUrl, uid }) => (
