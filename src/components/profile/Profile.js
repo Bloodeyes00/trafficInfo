@@ -9,6 +9,7 @@ import { Dropdown, DropdownButton } from "react-bootstrap";
 import { useHistory } from "react-router";
 import { IoMdArrowBack } from "react-icons/io";
 import { storage } from '../utils/firebase'
+
 export default function Profile() {
   const [Name, setName] = useState("");
   const [adress, setAdress] = useState("");
@@ -132,6 +133,7 @@ export default function Profile() {
         <div className=" d-flex justify-content-center  shadow-sm p-3 mb-3  rounded-circle ">
           {/* <ImageUpload /> */}
           {/* <MdAddAPhoto /> */}
+    
           <input className="input-profile" style={{height:"60px",backgroundSize:"70px",color:"white"}} type="file"  onClick={(e) => handleChange(e, "first")}></input>
         </div>
         <div className="Data d-flex justify-content-center  align-items-center py-4 flex-wrap">
