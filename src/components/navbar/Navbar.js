@@ -62,7 +62,7 @@ export default function Navbar() {
             </div>
 
             <div className="col-10 pt-4">
-              <h3 className="info">TRAFFIC INFO</h3>
+              <h3 className="info"><b>TRAFFIC INFO</b></h3>
             </div>
 
           </div>
