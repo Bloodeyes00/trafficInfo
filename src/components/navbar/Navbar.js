@@ -50,7 +50,7 @@ export default function Navbar() {
   const [user] = useAuthState(auth);
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid-navbar">
         <div className="container">
           <div className="rowss pt-1 d-flex justify-content-center">
             <div className="col-2  pt-1">

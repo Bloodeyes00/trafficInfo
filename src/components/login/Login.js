@@ -19,61 +19,61 @@ export default function Login(props) {
   const [userPassword, setUserPassword] = useState("");
   // const [Number, setNumber] = useState("");
   const [curPageLogin, setCurrentPageLogin] = useState(true);
-  const login = () => {
-    setLoading(true);
-    firebase
-      .auth()
+    const login = () => {
+      setLoading(true);
+      firebase
+        .auth()
 
-      .signInWithEmailAndPassword(email, userPassword)
-      .then((res) => {
-        console.log("login res : ", res);
-        firebase.auth().onAuthStateChanged((user) => {
-          if (user) {
-            // let curuserid = firebase?.auth()?.currentUser?.uid;
-            // console.log("curuserid", curuserid);
-            notify("User data added succefully");
-            // setLoggedIn(true);
-            setLoading(false);
-            history.push('/profile')
-            // notify("Logged In");
-            // firebase
-            //   .database()
-            //   .ref("/userRoles")
-            //   .on("value", (snapshot) => {
-            //     // let main = snapshot.val();
-            //     if (snapshot && snapshot?.val && snapshot?.val() != undefined && snapshot?.val() != null ) {
-            //       Object.values(snapshot?.val());
-            //       console.log("user Roles :", snapshot?.val());
-            //       let checkRole = snapshot?.val().map((role) => {
-            //         console.log("role ", role);
-            //         notify("User data added succefully");
-            //         setLoggedIn(true);
-            //         setLoading(false);
-            //         // if (role.student == email) {
-            //         //   history.push("");
-            //         // }
-            //         // if (role.admin == email) {
-            //         //   history.push("");
-            //         // } else {
-            //         //   return "notfound";
-            //         // }
-            //       });
-            //       console.log("check role ", checkRole);
-            //     }
-            //   });
-          }
+        .signInWithEmailAndPassword(email, userPassword)
+        .then((res) => {
+          console.log("login res : ", res);
+          firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+              // let curuserid = firebase?.auth()?.currentUser?.uid;
+              // console.log("curuserid", curuserid);
+              notify("User data added succefully");
+              // setLoggedIn(true);
+              setLoading(false);
+              history.push('/profile')
+              // notify("Logged In");
+              // firebase
+              //   .database()
+              //   .ref("/userRoles")
+              //   .on("value", (snapshot) => {
+              //     // let main = snapshot.val();
+              //     if (snapshot && snapshot?.val && snapshot?.val() != undefined && snapshot?.val() != null ) {
+              //       Object.values(snapshot?.val());
+              //       console.log("user Roles :", snapshot?.val());
+              //       let checkRole = snapshot?.val().map((role) => {
+              //         console.log("role ", role);
+              //         notify("User data added succefully");
+              //         setLoggedIn(true);
+              //         setLoading(false);
+              //         // if (role.student == email) {
+              //         //   history.push("");
+              //         // }
+              //         // if (role.admin == email) {
+              //         //   history.push("");
+              //         // } else {
+              //         //   return "notfound";
+              //         // }
+              //       });
+              //       console.log("check role ", checkRole);
+              //     }
+              //   });
+            }
+          });
+          // alert("You have succesfully Logged!")
+          // history.push('/home')
+        })
+        .catch((e) => {
+          notify(e.message);
+          console.log("email: ", email);
+          setLoading(false);
         });
-        // alert("You have succesfully Logged!")
-        // history.push('/home')
-      })
-      .catch((e) => {
-        notify(e.message);
-        console.log("email: ", email);
-        setLoading(false);
-      });
-  };
+    };
   return (
-    <div className="container-fluid">
+    <div className="container-fluid-login">
       <ToastContainer />
       {loading && <Loader />}
       {curPageLogin && <div className=" col flex-coloumn col-sm-12">

@@ -11,13 +11,16 @@ import car3 from '../Services/car3.jpg';
 import car4 from '../Services/car4.jpg';
 import car5 from '../Services/car5.jpg';
 import { Carousel } from 'react-bootstrap'
+import Loader from '../loader/Loader';
 const Services = () => {
     const [smShow, setSmShow] = useState(false);
     const [lgShow, setLgShow] = useState(false);
+    const [loading, setLoading] = useState(false);
+
     let history = useHistory();
 
-
-    useEffect(() => {
+   const  loadServices = () => {
+        setLoading(true)
         const firestore = firebase.database().ref("/CarInput");
 
         firestore.on('value', (snapshot) => {
@@ -25,7 +28,12 @@ const Services = () => {
             data = Object.values(data);
             console.log("data : ", data);
             setMovies(data);
+            setLoading(false)
         });
+     }
+
+    useEffect(() => {
+      loadServices();
 
     }, [])
     const [movies, setMovies] = useState([])
@@ -151,6 +159,7 @@ const Services = () => {
 
 {/* <button className="btnsss ms-3 mt-2 mb-2"  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
         <div className="container ">
+            {loading && <Loader />}
             <div className='container-fluid-car'>
                 <div className='container-car'>
                     <div className="col">

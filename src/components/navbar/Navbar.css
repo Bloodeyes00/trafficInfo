@@ -1,3 +1,8 @@
+.container-fluid-navbar{
+  height: 10vh;
+  background-color: #599ef1;
+}
+
 .sidebar {
   margin: 0;
   padding: 0;
@@ -7,9 +12,6 @@
   height: 100%;
   overflow: auto;
 }
-
-  
-
 
 
 .off-canvas-image {
@@ -24,7 +26,8 @@
 }
 
 .rowss {
-  background: linear-gradient(0deg, rgba(195,202,2,1) 0%, rgba(210,255,9,1) 13%, rgba(8,248,32,1) 19%, rgba(58,155,255,1) 25%, rgba(255,120,1,1) 37%, rgba(255,26,26,1) 100%);  width: 105%;
+  background: linear-gradient(0deg, rgba(195,202,2,1) 0%, rgba(210,255,9,1) 13%, rgba(8,248,32,1) 19%, rgba(58,155,255,1) 25%, rgba(255,120,1,1) 37%, rgba(255,26,26,1) 100%);  
+  width: 102%;
   margin-left: -1%;
   margin-right: 50px;
   border-radius: 0px 0 20px 20px;
