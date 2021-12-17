@@ -1,7 +1,9 @@
 .container-fluid-home {
-    background-color: #ffffff;
-    height: 100%;
-    width: 98%;
+    background-image: url(../login/background.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+    width: 100%;
     color: #2C2E43 !important; 
 }
 .img-logo{
@@ -10,7 +12,7 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 16vh;
-    width: 35%;
+    width: 39%;
     margin-left: 32vw;
     display: flex;
   
@@ -33,7 +35,7 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 16vh;
-    width: 35%;
+    width: 39%;
     margin-left: 32vw;
     display: flex;
 }

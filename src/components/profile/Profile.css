@@ -14,7 +14,8 @@
     background-image: url(../login/background.png) ;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 102%;
+    width: 100vw;
+    height: 90vh;
 }
 .photoicon a{
     font-size: 25px;

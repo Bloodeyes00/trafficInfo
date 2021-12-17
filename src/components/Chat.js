@@ -7,27 +7,37 @@ import { useHistory } from 'react-router';
 // import './App.css'
 import ScrollToBottom from 'react-scroll-to-bottom';
 import { Recorder } from 'react-voice-recorder'
+import Loader from './loader/Loader';
 function Chat() {
 
     let history = useHistory();
     const scroll = useRef()
     const [messages, setMessages] = useState([]);
+    const [loading, setLoading] = useState(false);
     const [lastMessagesLimit, setLastMessagesLimit] = useState(20);
     const ROOT_CSS = css({
         height: "98%",
         width: '100%'
     });
-    useEffect(() => {
+
+    const loadMessages = () => {
+        setLoading(true);
         db.collection('messages').orderBy('createdAt').limitToLast(lastMessagesLimit).onSnapshot(snapshot => {
             // let values= snapshot.docs.entries
             let msgs = snapshot.docs.map(doc => doc.data());
             let lastVisible = msgs.length - 10;
-            setMessages(snapshot.docs.map(doc => doc.data()))
+            setMessages(snapshot.docs.map(doc => doc.data()));
+            setLoading(false)
         })
-
+        // .catch(e =>{
+        //     setLoading(false)
+        // })
         const infiniteScrollElem = document.querySelector('infinite-scroll');
         infiniteScrollElem.addEventListener('infinite-scroll-fetch', handleInfiniteScrollFetchRequest);
+    }
 
+    useEffect(() => {
+        loadMessages();
     }, []);
 
     function handleInfiniteScrollFetchRequest() {
@@ -38,7 +48,7 @@ function Chat() {
 
         <div className="container-fluid-msgs" style={{ height: "80vh" }}>
             {/* <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
-
+        {loading && <Loader />}
             <ScrollToBottom className={ROOT_CSS}>
                 <infinite-scroll data-height="300" data-threshold="0.8">
                     <div className="msgs ">

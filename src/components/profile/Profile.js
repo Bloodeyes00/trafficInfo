@@ -9,12 +9,15 @@ import { Dropdown, DropdownButton } from "react-bootstrap";
 import { useHistory } from "react-router";
 import { IoMdArrowBack } from "react-icons/io";
 import { storage } from '../utils/firebase'
+import Loader from "../loader/Loader";
 
 export default function Profile() {
   const [Name, setName] = useState("");
   const [adress, setAdress] = useState("");
   const [userdetails, setuserdetails] = useState(null);
   const [companyName, setcompanyName] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const [progress, setProgress] = useState("");
   let history = useHistory();
   const [url, setUrl] = useState("");
@@ -23,8 +26,8 @@ export default function Profile() {
   // const [url4, setUrl4] = useState("");
   // const [image, setImage] = useState("");
 
-  useEffect(() => {
-
+const loadProfile =() =>{
+  setLoading(true)
     const firestore = firebase.database().ref("/UserInfo");
     firestore.on('value', (snapshot) => {
       let data = { ...snapshot.val() };
@@ -36,26 +39,31 @@ export default function Profile() {
         let currentUserDetails = data.find(item => item.uid == auth?.currentUser.uid);
         console.log("currentUserDetails in profile : ", currentUserDetails);
         setuserdetails(currentUserDetails);
+        setLoading(false)
         // setEmail(currentUserDetails.email);
         // setName(currentUserDetails.name);
 
       }
     });
+}
+
+  useEffect(() => {
+    loadProfile();
     return {
 
     }
   }, [])
-   const handleChange = (e, check) => {
+  const handleChange = (e, check) => {
     console.log("check1");
     if (e.target.files[0]) {
       console.log("check2");
       const image = e.target.files[0];
       // setImage(() => ({ image }));
       // setImage(image)
-    
+
       handleUpload(image, check);
-     
-    
+
+
     }
   }
   const handleUpload = (image, check) => {
@@ -102,7 +110,7 @@ export default function Profile() {
   const handleSendMessage = () => {
     console.log("check 1")
     const firestore = firebase.database().ref("/UserProfile");
-  
+
     let data = {
       Name: Name,
       companyName: companyName,
@@ -110,10 +118,10 @@ export default function Profile() {
       uid: auth?.currentUser?.uid,
       url: url ? url : "",
     };
-    firestore
-    .push(data)
     console.log("check 2")
-    .then((res) => {
+    firestore
+      .push(data)
+      .then((res) => {
         history.push('/home');
         console.log("res after registration", res);
       })
@@ -123,6 +131,7 @@ export default function Profile() {
   };
   return (
     <div>
+      {loading && <Loader />}
       <div className="Profile d-flex flex-column justify-content-center align-items-center pb-5">
         <div className="Heading d-flex justify-content-center  mt-3">
           <h1>
@@ -133,12 +142,12 @@ export default function Profile() {
         <div className=" d-flex justify-content-center  shadow-sm p-3 mb-3  rounded-circle ">
           {/* <ImageUpload /> */}
           {/* <MdAddAPhoto /> */}
-    
-          <input className="input-profile" style={{height:"60px",backgroundSize:"70px",color:"white"}} type="file"  onClick={(e) => handleChange(e, "first")}></input>
+
+          <input className="input-profile" style={{ height: "60px", backgroundSize: "70px", color: "white" }} type="file" onClick={(e) => handleChange(e, "first")}></input>
         </div>
         <div className="Data d-flex justify-content-center  align-items-center py-4 flex-wrap">
           <div class="mb-3">
-            
+
             <input
               type="text" placeholder="Full Name"
               class="form-control  d-flex 
@@ -147,7 +156,7 @@ export default function Profile() {
               aria-describedby="emailHelp" onChange={(e) => { setName(e.target.value) }}
             />
           </div>
-        
+
           <div class="mb-3">
             <input
               type="number" placeholder="Phone Number"
@@ -156,14 +165,14 @@ export default function Profile() {
               aria-describedby="emailHelp" onChange={(e) => { setAdress(e.target.value) }}
             />
           </div>
-         
+
           <div class="mb-3">
             <label className="form-label float-start">
               <b> Add Company </b>
             </label>
             <div className="addcmpny">
               <select className="selectws" onChange={(e) => { let value = e.target.value; setcompanyName(value) }} >
-              <option>Select</option>
+                <option>Select</option>
                 <option>Svea Taxi</option>
                 <option>Sverige taxi</option>
                 <option>Taxii 1212</option>
@@ -174,8 +183,8 @@ export default function Profile() {
             </div>
           </div>
           <div className="d-flex justify-content-center">
-            <button type="submit" className="Btn4 my-3 " style={{borderRadius:'50px',border:'none',backgroundColor:"#FF0101",color:'white',height:"30px",width:"104%",}} onClick={() => { handleSendMessage() }}>
-             <b> Save  </b>
+            <button type="submit" className="Btn4 my-3 " style={{ borderRadius: '50px', border: 'none', backgroundColor: "#FF0101", color: 'white', height: "30px", width: "104%", }} onClick={() => { handleSendMessage() }}>
+              <b> Save  </b>
             </button>
           </div>
           {/* <button className="btnsss ms-3 mt-2 mb-2"  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}

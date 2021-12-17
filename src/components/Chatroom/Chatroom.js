@@ -10,11 +10,14 @@ import { useHistory } from 'react-router';
 import firebase from '../utils/firebase';
 import { auth } from '../utils/firebase';
 import { IoMdArrowBack } from "react-icons/io";
+import Loader from '../loader/Loader';
 export default function Chatroom() {
     let history = useHistory();
     const [userdetails, setuserdetails] = useState(null);
-    useEffect(() => {
+    const [loading, setLoading] = useState(false);
 
+   const loadChatroom = () =>{
+        setLoading(true)
         const firestore = firebase.database().ref("/UserProfile");
         firestore.on('value', (snapshot) => {
             let data = { ...snapshot.val() };
@@ -26,9 +29,14 @@ export default function Chatroom() {
                 let currentUserDetails = data.find(item => item.uid == auth?.currentUser.uid);
                 console.log("currentUserDetails in profile : ", currentUserDetails);
                 setuserdetails(currentUserDetails);
+                setLoading(false)
                 // setEmail(currentUserDetails.email);
             }
         });
+    }
+
+    useEffect(() => {
+        loadChatroom();
         return {
 
         }
@@ -38,6 +46,7 @@ export default function Chatroom() {
     return (
         <div>
             <div className="container-fluid-chatroom">
+                {loading && <Loader />}
                 <div className="main mt-2">
                     {/* <button className="btnsss ms-3 "  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
                     <br/>
