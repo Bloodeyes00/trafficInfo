@@ -133,6 +133,7 @@ const loadProfile =() =>{
     <div>
       {loading && <Loader />}
       <div className="Profile d-flex flex-column justify-content-center align-items-center pb-5">
+       <div className="prof">
         <div className="Heading d-flex justify-content-center  mt-3">
           <h1>
             <b>Profile</b>
@@ -143,7 +144,7 @@ const loadProfile =() =>{
           {/* <ImageUpload /> */}
           {/* <MdAddAPhoto /> */}
 
-          <input className="input-profile" style={{ height: "60px", backgroundSize: "70px", color: "white" }} type="file" onClick={(e) => handleChange(e, "first")}></input>
+          <input className="input-profile" style={{ height: "60px", backgroundSize: "70px", }} type="file" onClick={(e) => handleChange(e, "first")}></input>
         </div>
         <div className="Data d-flex justify-content-center  align-items-center py-4 flex-wrap">
           <div class="mb-3">
@@ -190,6 +191,7 @@ const loadProfile =() =>{
           {/* <button className="btnsss ms-3 mt-2 mb-2"  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
 
         </div>
+      </div>
       </div>
     </div>
   );

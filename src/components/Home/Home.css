@@ -52,11 +52,12 @@ h4 {
     color: #2C2E43;
 }
 .Dat {
-    background-color: rgb(231, 231, 231);
+    background-color: rgba(231, 231, 231, 0.288);
     flex-direction: column;
     border-radius: 30px;
     height: 43vh;
     border: 1px solid gray;
+    box-shadow: black 3px 4px 9px -1
 
 }
 /* .Tlogo
@@ -102,7 +103,7 @@ margin-top: 17px;
 .home-btn{
     width: 90%; 
     height: 40px; 
-    background-Color: #279cca;
+    background-Color: #FF0101;
     font-Size:12px;
     border-Radius: 5px;
     color: white;

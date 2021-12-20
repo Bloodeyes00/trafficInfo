@@ -47,7 +47,9 @@ export default function Registration(props) {
 
 
       })
-      .catch(alert);
+      .catch((e) => {
+        toast.error(e.message);
+      });
 
   };
 
@@ -56,7 +58,7 @@ export default function Registration(props) {
 
 
     <div>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
       <div className=''>
         <div className="Profile d-flex flex-column justify-content-center align-items-center pb-5">
           <div className="Heading d-flex justify-content-center mt-3">
@@ -117,7 +119,7 @@ export default function Registration(props) {
                 >
                   Register
                 </button >
-                <ToastContainer />
+               
               </div>
               <br />
               <a type="button"

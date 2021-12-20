@@ -7,10 +7,18 @@ import Button from '@restart/ui/esm/Button';
 import { useHistory } from "react-router";
 import firebase from "../utils/firebase";
 import { IoMdArrowBack } from "react-icons/io";
+import Loader from "../loader/Loader";
+
+
 
 function Jobs() {
+
+const [loading, setLoading] = useState(false)
+
     let history = useHistory();
-    useEffect(() => {
+    
+    const loadJobs = () => {
+        setLoading(true)
         const firestore = firebase.database().ref("/Jobs");
         
         firestore.on('value', (snapshot) => {
@@ -18,12 +26,18 @@ function Jobs() {
             data = Object.values(data);
             console.log("data : ", data);   
             setMovies(data);
+            setLoading(false)
         });
+    }
+
+    useEffect(() => {
+       loadJobs();
 
     }, [])
     const [movies, setMovies] = useState([])
     return (
         <div className="container ">
+            {loading && <Loader />}
             <div className='container-fluid-car'>
                 <div className='container-car'>
                     <div className="col">
