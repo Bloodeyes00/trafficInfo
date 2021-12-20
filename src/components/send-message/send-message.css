@@ -17,9 +17,9 @@ input[type="file"] {
     align-items: center;
     border-radius: 2px;
     text-align: center;
-    /* background-color: #ffffff; */
+    /* background-color: #ffffff00; */
     color: rgb(255, 255, 255);
-    background-image: url('../../images/ic_photo.png');
+    background-image: url("../../images/gallary.png");
     background-size: 30px;
     background-repeat: no-repeat;
     margin-left: -3px;
