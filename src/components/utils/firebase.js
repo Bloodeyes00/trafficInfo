@@ -4,13 +4,13 @@ import 'firebase/database';
 import 'firebase/storage';
 import 'firebase/firestore';
 const firebaseConfig = {
-    apiKey: "AIzaSyBQY52JsAH7XS9sb9cYmwdZo2zy4Rx6sHk",
-    authDomain: "messenger-4ee92.firebaseapp.com",
-    projectId: "messenger-4ee92",
-    storageBucket: "messenger-4ee92.appspot.com",
-    messagingSenderId: "989793361213",
-    appId: "1:989793361213:web:594f13750b7270133d3954",
-    measurementId: "G-Y4R2TFFFYP"
+    apiKey: "AIzaSyAKlJ4wA0jzLHzGhPEZRsJtWIOoxPIhL68",
+    authDomain: "prpjectfb.firebaseapp.com",
+    projectId: "prpjectfb",
+    storageBucket: "prpjectfb.appspot.com",
+    messagingSenderId: "756976570371",
+    appId: "1:756976570371:web:1e2c4c17ad557cf80a3e36",
+    measurementId: "G-YF75Z3MVYW"
 };
 let InitFirebase;
 InitFirebase = firebase.initializeApp(firebaseConfig);
