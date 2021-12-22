@@ -181,7 +181,7 @@ const Services = () => {
                             <Input type="search" placeholder=" Search Services" aria-label="Seahrc"></Input>
                            
                             <Button style={{
-                                position: 'fixed', marginBottom: "20px", color: 'white', borderRadius: '4px',
+                                position: 'absolute', marginBottom: "20px", color: 'white', borderRadius: '4px',
                                 backgroundColor: "rgb(80 109 139)"
                             }}
                                 className="btnsss btn-outline-success  ">Search</Button>

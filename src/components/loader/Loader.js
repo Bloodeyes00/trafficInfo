@@ -1,7 +1,7 @@
 import React from "react";
 import '../loader/loader.css'
 import loader from "../../images/loader.gif"
-function Loader({ backgroundColor, text }) {
+function Loader( ) {
     return (
         <div className="loaderContainer flex flex-col"
             style={{
@@ -10,15 +10,15 @@ function Loader({ backgroundColor, text }) {
                 position:"absolute",
                 backgroundColor: "rgba(0,0,0,0.5)",
                 height: "100vh", width: "100vw",
-                justifyContent: "center", alignItems: "center", display: "flex"
+                justifyContent: "center",
+                alignItems: "center",
+                display: "flex",
+                border: "none"
             }}>
             <img
                 className="loader"
-                src={loader} alt="" />
-            {
-                text &&
-                <p>{text}</p>
-            }
+                src={loader} alt="" style={{border:"none",height:"60px",width:'60px'}} />
+           
         </div>
     )
 }
