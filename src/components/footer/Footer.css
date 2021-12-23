@@ -23,22 +23,55 @@
     padding: 10px;
 }
 
-.col-b{
+.col-a:hover{
     height: 100%;
     width: 20%;
+    color: rgb(68, 135, 235);
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 10px;
 }
 
-.col-c{
+.col-b{
     height: 100%;
-    width: 35%;
+    width: 25%;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 10px;
+    padding: 0px;
+    margin-top: 20px;
+}
+
+.col-b:hover{
+    height: 100%;
+    width: 25%;
+    color: rgb(68, 135, 235);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+    margin-top: 20px;
+}
+
+.col-c{
+    height: 100%;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+    margin-top: 20px;
+}
+.col-c:hover{
+    height: 100%;
+    color: rgb(68, 135, 235);
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+    margin-top: 20px;
 }
 
 .col-d{
@@ -50,9 +83,10 @@
     padding: 10px;
 }
 
-.col-e  {
+.col-d:hover{
     height: 100%;
     width: 20%;
+    color: rgb(68, 135, 235);
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -60,9 +94,4 @@
 }
 
 
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
+

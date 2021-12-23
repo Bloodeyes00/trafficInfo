@@ -6,9 +6,11 @@ import item from "../../images/item.png"
 import inumber from "../../images/inumber.png"
 import { TiPlus } from "react-icons/ti";
 import Footer from '../footer/Footer';
+import { useHistory } from 'react-router'
 
 
 function MainPage() {
+    let history = useHistory()
     return (
         <div className='container-fluid-s'>
             
@@ -19,18 +21,18 @@ function MainPage() {
                 </div>
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
-                    <div className='find'><h2> Input & Find Job</h2></div>
+                    <div className='find'><h2  onClick={() => { history.push("/Jobs") }}> Input & Find Job</h2></div>
                     <div className='imgsss'>
-                        <img  style={{border:"none",borderRadius:"2px",}} src={findjob} />
+                        <img onClick={() => { history.push("/Jobs") }}  style={{border:"none",borderRadius:"2px",}} src={findjob} />
                     </div>
                     
                 </div>
 
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
-                    <div className='find'><h2>Car Sales</h2></div>
+                    <div className='find'><h2 onClick={() => { history.push("/Services") }}>Car Sales</h2></div>
                     <div className='imgsss'>
-                    <img  style={{border:"none",borderRadius:"2px",}} src={carsales} />                    </div>
+                    <img onClick={() => { history.push("/Services") }} style={{border:"none",borderRadius:"2px",}} src={carsales} />                    </div>
                     
                 </div>
 
