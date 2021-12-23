@@ -11,7 +11,9 @@ import Footer from '../footer/Footer';
 function MainPage() {
     return (
         <div className='container-fluid-s'>
+            
             <div className='container-s'>
+           
                 <div className='row-s'>
                     <h1><b>SERVICES</b></h1>
                 </div>
@@ -61,7 +63,6 @@ function MainPage() {
                     <div className='imgsss'> </div>
                     
                 </div>
-
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
                     <div className='find'><h2></h2></div>
@@ -69,15 +70,11 @@ function MainPage() {
                     
                 </div>
 
-                <div className='row-c'>
-                    <div className='plus '> <TiPlus /></div>
-                    <div className='find'><h2></h2></div>
-                    <div className='imgsss'> </div>
-                    
-                </div>
-               <Footer />
-            </div>   
+                
+                  </div>   
+                  {/* <Footer /> */}
         </div>  
+     
     )
 }
 

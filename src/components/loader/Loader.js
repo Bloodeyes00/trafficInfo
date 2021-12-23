@@ -17,7 +17,7 @@ function Loader( ) {
             }}>
             <img
                 className="loader"
-                src={loader} alt="" style={{border:"none",height:"60px",width:'60px'}} />
+                src={loader} alt="" style={{border:"none",height:"40px",width:'40px'}} />
            
         </div>
     )

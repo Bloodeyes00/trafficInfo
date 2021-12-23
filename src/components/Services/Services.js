@@ -20,8 +20,10 @@ const Services = () => {
     let history = useHistory();
 
    const  loadServices = () => {
+       console.log("check 1")
         setLoading(true)
         const firestore = firebase.database().ref("/CarInput");
+        console.log("check 2")
 
         firestore.on('value', (snapshot) => {
             let data = { ...snapshot.val() };

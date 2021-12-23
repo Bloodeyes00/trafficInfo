@@ -62,6 +62,7 @@ export default function Routes() {
                 <Route path="/Agree" component={Agree}/>
                 <Route path ="/" component={Home}/>
             </Switch>
+            <Footer />
         </div>
     )
 }

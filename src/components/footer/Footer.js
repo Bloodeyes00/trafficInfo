@@ -1,6 +1,11 @@
 import React from 'react'
 import './Footer.css'
 import { HiUsers } from "react-icons/hi";
+import { AiFillHome } from "react-icons/ai";
+import { AiFillWechat } from "react-icons/ai";
+import { RiTrafficLightFill } from "react-icons/ri";
+import { GrServices } from "react-icons/gr";
+
 
 
 
@@ -9,26 +14,23 @@ function Footer() {
         <div className='container-fluid-footer'>
                 <div className='row-footer'>
                     <div className='col-a'>
-                        <HiUsers />
+                        <AiFillHome />
                         <br/>
-                        icon
+                        <b>Home</b>
                         </div>
-                    <div className='col-b'><HiUsers />
+                    <div className='col-b'><RiTrafficLightFill />
                     <br />
-                    icon
+                    <b>icon</b>
                     </div>
-                    <div className='col-c'><HiUsers />
+                    <div className='col-c'><AiFillWechat />
                     <br />
-                    icon
+                    <b>Company Chat</b>
                     </div>
-                    <div className='col-d'><HiUsers />
+                    <div className='col-d'><GrServices />
                     <br />
-                    icon
+                     <b>Services</b>
                     </div>
-                    <div className='col-e'><HiUsers />
-                    <br />
-                    icon
-                    </div>
+                   
                 </div>
         </div>
     )
