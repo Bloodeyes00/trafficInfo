@@ -112,7 +112,7 @@ p {
   position: fixed;
   display: flex;
   width: 80%;
-  bottom: 4px;
+  bottom: 70px;
   z-index: 1;
   /* border-top: 2px solid rgb(184, 182, 182); */
   margin-left: 20px;

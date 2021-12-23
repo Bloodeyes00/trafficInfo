@@ -25,10 +25,14 @@ import Admin from '../admin/Admin';
 import AllowUser from '../Allowuser/AllowUser';
 import BlockUser from "../blockuser/BlockUser";
 import UploadAds from "../uploadads/UploadAds";
+import MainPage from '../Services/MainPage';
+import Footer from '../footer/Footer';
 export default function Routes() {
     return (
         <div>
             <Switch>
+            <Route path="/footer" component={Footer} />
+            <Route path="/mainpage" component={MainPage} />
             <Route path="/uploadads" component={UploadAds} />
                 <Route path="/blockuser" component={BlockUser} />
                 <Route path="/allowuser" component={AllowUser} />
@@ -58,6 +62,7 @@ export default function Routes() {
                 <Route path="/Agree" component={Agree}/>
                 <Route path ="/" component={Home}/>
             </Switch>
+            <Footer />
         </div>
     )
 }
