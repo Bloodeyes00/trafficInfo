@@ -28,7 +28,7 @@ export default function Profile() {
 
 const loadProfile =() =>{
   setLoading(true)
-    const firestore = firebase.database().ref("/UserInfo");
+    const firestore = firebase.database().ref("/UserProfile");
     firestore.on('value', (snapshot) => {
       let data = { ...snapshot.val() };
       data = Object.values(data);

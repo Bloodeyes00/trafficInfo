@@ -21,7 +21,7 @@ const Services = () => {
 
    const  loadServices = () => {
        console.log("check 1")
-        setLoading(true)
+        setLoading(true)    
         const firestore = firebase.database().ref("/CarInput");
         console.log("check 2")
 
