@@ -17,7 +17,7 @@ export default function Registration(props) {
   const [password, setpassword] = useState('');
 
   const SaveUserDetails = (userCredential) => {
-    const firestore = firebase.database().ref("/UserInfo");
+    const firestore = firebase.database().ref("/UserProfile");
     let data = {
       email: email,
       password: password,
@@ -65,7 +65,7 @@ export default function Registration(props) {
             </h1>
           </div>
           <br />
-          
+
           <div>
             <div className="Data d-flex flex-column justify-content-center align-items-center py-5 mt-2  ">
               <div className="mb-1 input">
@@ -73,7 +73,7 @@ export default function Registration(props) {
 
               </div>
               <div className="mb-1 input">
-                
+
                 <input
                   type="email" placeholder="Enter Email"
                   className="form-control "
@@ -93,10 +93,10 @@ export default function Registration(props) {
                 />
 
               </div>
-             
-              
+
+
               <div className="mb-1 input">
-               
+
                 <input
                   type="password" placeholder="Conform Password"
                   className="form-control"
@@ -108,7 +108,7 @@ export default function Registration(props) {
               <div>
                 <button
                   type="submit"
-                  className=" Btn4  mt-3 mb-3 " style={{borderRadius:'50px',border:'none',backgroundColor:"#FF0101",color:'white',height:"40px",width:"105%"}}
+                  className=" Btn4  mt-3 mb-3 " style={{ borderRadius: '50px', border: 'none', backgroundColor: "#FF0101", color: 'white', height: "40px", width: "105%" }}
                   //    onClick={notify}
                   onClick={() => {
                     signup();

@@ -26,9 +26,9 @@ export default function Profile() {
   // const [url4, setUrl4] = useState("");
   // const [image, setImage] = useState("");
 
-const loadProfile =() =>{
-  setLoading(true)
-    const firestore = firebase.database().ref("/UserInfo");
+  const loadProfile = () => {
+    setLoading(true)
+    const firestore = firebase.database().ref("/UserProfile");
     firestore.on('value', (snapshot) => {
       let data = { ...snapshot.val() };
       data = Object.values(data);
@@ -45,7 +45,7 @@ const loadProfile =() =>{
 
       }
     });
-}
+  }
 
   useEffect(() => {
     loadProfile();
@@ -107,7 +107,7 @@ const loadProfile =() =>{
 
   }
 
-  const handleSendMessage = () => {
+  const updateProfile = () => {
     console.log("check 1")
     const firestore = firebase.database().ref("/UserProfile");
 
@@ -119,8 +119,8 @@ const loadProfile =() =>{
       url: url ? url : "",
     };
     console.log("check 2")
-    firestore
-      .push(data)
+    firestore.child(auth?.currentUser?.uid)
+      .update(data)
       .then((res) => {
         history.push('/home');
         console.log("res after registration", res);
@@ -183,7 +183,8 @@ const loadProfile =() =>{
             </div>
           </div>
           <div className="d-flex justify-content-center">
-            <button type="submit" className="Btn4 my-3 " style={{ borderRadius: '50px', border: 'none', backgroundColor: "#FF0101", color: 'white', height: "30px", width: "104%", }} onClick={() => { handleSendMessage() }}>
+            <button type="submit" className="Btn4 my-3 " style={{ borderRadius: '50px', border: 'none', backgroundColor: "#FF0101", color: 'white', height: "30px", width: "104%", }}
+              onClick={() => { updateProfile() }}>
               <b> Save  </b>
             </button>
           </div>
