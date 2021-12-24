@@ -9,6 +9,7 @@
     size: 50px;
    
 }
+
 .Profile{
     /* background-color:rgb(255, 255, 255); */
     background-image: url(../login/background.png) ;
@@ -16,6 +17,11 @@
     background-size: cover;
     width: 100vw;
     height: 90vh;
+   
+}
+
+.prof{
+    
 }
 .photoicon a{
     font-size: 25px;
@@ -24,35 +30,19 @@
     border: solid rgb(255, 255, 255);
 }
 
-.filess{
-    width: 50%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    margin-bottom: 5px;
-    text-align: center;
-    /* background-color: #ffffff; */
-    background-image: url('../../components/profile/camra1.png');
-    background-size: 70px;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: none;
-  
-}
 
 .input-profile{
+  
     width:30%;
-    height:80;
     display:flex;
     justify-Content:center;
     align-Items:center;
     border-Radius:10px;
     margin-Bottom:5px;
     text-Align:center;
-    margin-Left:60px;
-    
+    margin-Left:50px;
+    background-image: url('../../images/gallary.png');
+    background-position: center;
     
 }
 .addcmpny{
@@ -75,13 +65,15 @@
     background-position: center;
     box-shadow: rgb(3 3 3) 1px 2px 5px 0px;
     border: 1px solid #ffffff;
+    margin-left: 33px;
 }
 
 
 .form-control{
     border-radius: 50px;
     margin-top: 6px;
-    box-shadow: rgb(3 3 3) 1px 2px 5px 0px;
+    /* box-shadow: rgb(3 3 3) 1px 2px 5px 0px; */
+    border: none;
 }
 .form-control:focus{
     border-top: aliceblue !important;

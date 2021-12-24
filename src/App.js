@@ -10,6 +10,8 @@ import SignwithPohone from './components/SignwithPohone';
 import Logopage from './components/Logopage/Logopage';
 import Registration from './components/registration/Registration';
 import Login from './components/login/Login';
+import { ToastContainer } from 'react-toastify';
+import Footer from './components/footer/Footer';
 function App() {
   // const [loggedIn, setLoggedIn] = useState(false);
   const [user] = useAuthState(auth);
@@ -28,6 +30,9 @@ function App() {
   return (
     <>
       <div className="container-fluid-home px-0">
+      <ToastContainer 
+      position='top-center'
+     />
         <BrowserRouter>
 
           <Navbar />
@@ -36,8 +41,11 @@ function App() {
           {/* <Routes /> */}
           {/* <NotificationContainer leaveTimeout={60000}/> */}
           {!oldUser && <Logopage setOlduserState={setOlduserState} />}
-          {user ? <Routes /> : oldUser && <Login/>}
+          {user ? <Routes /> : oldUser && <Login/> }
+          
+          
         </BrowserRouter>
+        
       </div>
     </>
   );

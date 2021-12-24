@@ -19,19 +19,22 @@ export default function Login(props) {
   const [userPassword, setUserPassword] = useState("");
   // const [Number, setNumber] = useState("");
   const [curPageLogin, setCurrentPageLogin] = useState(true);
+  
     const login = () => {
+      
       setLoading(true);
       firebase
         .auth()
 
         .signInWithEmailAndPassword(email, userPassword)
         .then((res) => {
+
           console.log("login res : ", res);
           firebase.auth().onAuthStateChanged((user) => {
             if (user) {
               // let curuserid = firebase?.auth()?.currentUser?.uid;
               // console.log("curuserid", curuserid);
-              notify("User data added succefully");
+              toast.success("login Successfully");
               // setLoggedIn(true);
               setLoading(false);
               history.push('/profile')
@@ -66,15 +69,22 @@ export default function Login(props) {
           // alert("You have succesfully Logged!")
           // history.push('/home')
         })
+        
+        
+ 
         .catch((e) => {
-          notify(e.message);
+          toast.error(e.message);
           console.log("email: ", email);
           setLoading(false);
         });
+        
     };
+    
+      
   return (
     <div className="container-fluid-login">
-      <ToastContainer />
+      {/* <ToastContainer /> */}
+      
       {loading && <Loader />}
       {curPageLogin && <div className=" col flex-coloumn col-sm-12">
         <div className="Login">

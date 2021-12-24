@@ -5,6 +5,9 @@ import { Button } from '@material-ui/core'
 import { FcGoogle } from 'react-icons/fc'
 
 function SignIn() {
+
+    
+
     function signInWithGoogle() {
         const provider = new firebase.auth.GoogleAuthProvider()
         auth.signInWithPopup(provider)

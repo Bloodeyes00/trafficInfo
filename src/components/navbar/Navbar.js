@@ -13,7 +13,7 @@ import { MdOutlineSupportAgent, MdAppRegistration } from "react-icons/md";
 import { GoSignOut } from "react-icons/go";
 import { IoLogInOutline } from "react-icons/all"
 import { RiInboxArchiveFill } from "react-icons/ri";
-import { AiOutlineMore } from "react-icons/ai";
+import { MdOutlineReorder } from "react-icons/md";
 import { RiAdminFill } from "react-icons/ri";
 import { auth, db } from "../utils/firebase";
 import firebase from "../utils/firebase";
@@ -56,7 +56,7 @@ export default function Navbar() {
             <div className="col-2  pt-1">
               <a onClick={handleShow}>
                 <span className="navspan">
-                  <AiOutlineMore />
+                  <MdOutlineReorder />
                 </span>
               </a>
             </div>

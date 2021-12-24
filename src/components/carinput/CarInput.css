@@ -64,7 +64,7 @@
     align-items: center;
     border-radius: 130x;
     text-align: center;
-    background-color: rgb(243, 243, 243);
+    /* background-color: rgb(243, 243, 243); */
     background-image: url('../../components/carinput/camra.png');
     background-size: contain;
     background-repeat: no-repeat;
