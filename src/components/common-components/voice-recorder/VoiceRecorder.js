@@ -70,10 +70,10 @@ export default class VoiceRecorder extends Component {
                     handleAudioStop={data => this.handleAudioStop(data)}
                     handleAudioUpload={data => this.handleAudioUpload(data)}
                     handleReset={() => this.handleReset()}
-                  
+
                     mimeTypeToUseWhenRecording={`audio/webm`} // For specific mimetype.
                 />
-               <button style={{float:'right',marginTop:'-28px',border:"none",backgroundColor:"#ce2b2b",color:"white",borderRadius:"10px"}} onClick={() => { this.props.setRecordVisible(false) }}> <VscClose/></button>
+                <button style={{ float: 'right', marginTop: '-28px', border: "none", backgroundColor: "#ce2b2b", color: "white", borderRadius: "10px" }} onClick={() => { this.props.setRecordVisible(false) }}> <VscClose /></button>
 
 
             </div>
