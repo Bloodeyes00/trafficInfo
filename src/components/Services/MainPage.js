@@ -5,12 +5,15 @@ import carsales from "../../images/carsales.png"
 import item from "../../images/item.png"
 import inumber from "../../images/inumber.png"
 import { TiPlus } from "react-icons/ti";
-import Footer from '../footer/Footer';
 import { useHistory } from 'react-router'
 
 
 function MainPage() {
+
+
     let history = useHistory()
+
+    
     return (
         <div className='container-fluid-s'>
             
@@ -74,7 +77,7 @@ function MainPage() {
 
                 
                   </div>   
-                  {/* <Footer /> */}
+                
         </div>  
      
     )

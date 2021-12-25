@@ -12,18 +12,22 @@ import car4 from '../Services/car4.jpg';
 import car5 from '../Services/car5.jpg';
 import { Carousel } from 'react-bootstrap'
 import Loader from '../loader/Loader';
+import { storage } from '../utils/firebase'
+
 const Services = () => {
     const [smShow, setSmShow] = useState(false);
     const [lgShow, setLgShow] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [url, setUrl] = useState()
+    const [progress, setProgress] = useState()
 
     let history = useHistory();
 
    const  loadServices = () => {
-       console.log("check 1")
-        setLoading(true)
+       console.log("check 3")
+        setLoading(true)    
         const firestore = firebase.database().ref("/CarInput");
-        console.log("check 2")
+        console.log("check 4")
 
         firestore.on('value', (snapshot) => {
             let data = { ...snapshot.val() };
@@ -36,8 +40,63 @@ const Services = () => {
 
     useEffect(() => {
       loadServices();
+return {
 
+}
     }, [])
+    const handleChange = (e, check) => {
+        console.log("check 1");
+        if (e.target.files[0]) {
+          console.log("check 2");
+          const image = e.target.files[0];
+          // setImage(() => ({ image }));
+          // setImage(image)
+    
+          handleUpload(image, check);
+    
+    
+        }
+      }
+      const handleUpload = (image, check) => {
+        const uploadTask = storage.ref(`imges/${image.name}`).put(image);
+        uploadTask.on('state_changed',
+          (snapshot) => {
+    
+            // progrss function ....
+            const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+            setProgress(progress);
+            // this.setState({ loading: true })
+          },
+          (error) => {
+            // error function ....
+            console.log(error);
+          },
+          () => {
+            // complete function ....
+            storage.ref('imges').child(image.name).getDownloadURL().then(url => {
+              console.log(url);
+              console.log("check 5", check);
+    
+              if (check == "first") {
+                setUrl(url);
+              }
+              // if (check == "2nd") {
+              //   setUrl2(url)
+              // }
+              // if (check == "3rd") {
+              //   setUrl3(url)
+              // }
+              // if (check == "4th") {
+              //   setUrl4(url)
+              // }
+              // this.props.setCurrentImgUrl(url);
+              // this.ref = "";
+              // this.setState({ loading: false })
+            })
+          });
+    
+    
+      }
     const [movies, setMovies] = useState([])
     const renderCard = (card, index) => {
         const responsive = {
@@ -199,7 +258,8 @@ const Services = () => {
             {movies.map(renderCard)}
             
              </div>
-             </div>)
+             </div>
+             )
             
 };
 export default Services;

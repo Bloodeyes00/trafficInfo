@@ -17,7 +17,7 @@ export default function Registration(props) {
   const [password, setpassword] = useState('');
 
   const SaveUserDetails = (userCredential) => {
-    const firestore = firebase.database().ref("/UserInfo");
+    const firestore = firebase.database().ref("/UserProfile");
     let data = {
       email: email,
       password: password,

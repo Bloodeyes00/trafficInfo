@@ -21,12 +21,14 @@ function Footer() {
                     }} >
                       < AiFillHome />
                     </span>
+                    <br />
                     <a type="button"
                       onClick={() => {
                         history.push("./home")
                       }}
                      
                     >
+                    
                       <b  onClick={() => {
                         history.push("./home")
                       }}>Home</b>
