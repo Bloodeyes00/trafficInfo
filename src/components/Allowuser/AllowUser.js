@@ -4,6 +4,7 @@ import { IoMdArrowBack } from "react-icons/io";
 import { useEffect, useState } from 'react';
 import firebase from '../utils/firebase';
 
+
 function AllowUser() {
     let history = useHistory();
     const [usersList, setUsersList] = useState([]);
@@ -16,22 +17,11 @@ function AllowUser() {
                 data = Object.values(data);
                 let keys = Object.keys(snapshot.val());
                 data.map((item, index) => item["key"] = keys[index])
-                console.log("data in allow user page : ", data);
-                console.log("keys in allow user page : ", keys);
-                console.log("Entries in allow user page : ", snapshot.val());
+                // console.log("data in allow user page : ", data);
+                // console.log("keys in allow user page : ", keys);
+                // console.log("Entries in allow user page : ", snapshot.val());
                 setUsersList(data);
             }
-
-            // if (auth?.currentUser?.uid) {
-            //     console.log("auth uids: ", auth.currentUser.uid);
-            //     let currentUserDetails = data.find(item => item.uid == auth?.currentUser.uid);
-            //     console.log("currentUserDetails in profile : ", currentUserDetails);
-            //     setuserdetails(currentUserDetails);
-            //     setLoading(false)
-            //     // setEmail(currentUserDetails.email);
-            //     // setName(currentUserDetails.name);
-
-            // }
         });
     }
 
@@ -53,14 +43,14 @@ function AllowUser() {
                                     <th scope="col">Phone Number</th>
                                     <th scope="col">Company Name</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Allow</th>
-                                    <th scope="col"> Admin</th>
+                                    <th scope="col">User</th>
+                                    <th scope="col">Company Admin</th>
                                     <th scope="col">Super Admin</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {usersList?.length > 0 && usersList?.map(item =>
-                                    < tr >
+                                {usersList?.length > 0 && usersList?.map((item, index) =>
+                                    < tr key={index} >
                                         <th scope="col"> {item?.Name} </th>
                                         <th scope="col">{item?.adress}</th>
                                         <th scope="col">{item?.companyName}</th>
@@ -68,15 +58,21 @@ function AllowUser() {
 
                                         <th scope="col">
                                             <input class="form-check-input" onClick={() => {
-                                                item["role"] = "allow";
+                                                item["role"] = true ? false : true
                                                 firebase.database().ref("UserProfile").child(item.key).update(item);
                                             }} type="checkbox" id="check1" name="option1" value="something" />
                                         </th>
                                         <th scope="col">
-                                            <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" />
+                                            <input class="form-check-input" onClick={() => {
+                                                item["role2"] = true ? false : true;
+                                                firebase.database().ref("UserProfile").child(item.key).update(item);
+                                            }} type="checkbox" id="check1" name="option1" value={item?.role2} />
                                         </th>
                                         <th scope="col">
-                                            <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" />
+                                            <input class="form-check-input" onClick={() => {
+                                                item["role3"] = true ? false : true;
+                                                firebase.database().ref("UserProfile").child(item.key).update(item);
+                                            }} type="checkbox" value={true} />
                                         </th>
                                     </tr >
                                 )}
