@@ -11,7 +11,7 @@ import Agree from '../agreepage/Agree';
 import Logopage from '../Logopage/Logopage';
 import Profile from "../profile/Profile";
 import Registration from '../registration/Registration';
-import Home from '../Home/Home';
+import Home from '../../components/Home/Home';
 import Groupchat from '../groupchat/Groupchat';
 import Chat from '../Chat';
 import CompanyChat from '../company-chat/CompanyChat';
@@ -60,7 +60,7 @@ export default function Routes() {
                 <Route path="/logopage" component={Logopage}/>
                 <Route path="/socialservices" component={Socialservices}/>
                 <Route path="/Agree" component={Agree}/>
-                <Route path ="/" component={Home}/>
+                <Route path="/" component={Home} />
             </Switch>
             <Footer />
         </div>

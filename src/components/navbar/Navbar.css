@@ -24,7 +24,7 @@
 
 
 .rowss {
-  background: linear-gradient(0deg, rgba(195,202,2,1) 0%, rgba(255,120,1,1) 37%, rgba(255,26,26,1) 100%);  
+  background: linear-gradient(0deg, rgba(255,120,1,1) 37%, rgba(255,26,26,1) 100%);  
   width: 102%;
   margin-left: -1%;
   margin-right: 50px;
@@ -48,7 +48,6 @@ h2 {
   margin-top: -7px;
   font-size: 32px;
 }
-
 .sidebar a {
   display: block;
   color: black;

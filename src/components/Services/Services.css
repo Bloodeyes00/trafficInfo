@@ -84,7 +84,7 @@ element.style {
 }
 
 .row-s{
-    background-color: rgb(46, 135, 219);
+    background-color: #599ef1;
     height: 80px;
     top: 0;
     bottom: 0;
@@ -125,6 +125,7 @@ h1{
 }
 h2{
     color: black;
+    text-align: center;
 }
 
 .plus{
