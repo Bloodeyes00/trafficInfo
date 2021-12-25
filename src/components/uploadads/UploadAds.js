@@ -11,7 +11,6 @@ function UploadAds() {
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
   
-  
   const [progress, setProgress] = useState("");
 
   const handleChange = (e, check) => {
@@ -19,7 +18,8 @@ function UploadAds() {
     if (e.target.files[0]) {
       console.log("check2");
       const image = e.target.files[0];
-      
+      // setImage(() => ({ image }));
+      // setImage(image)
       handleUpload(image, check);
     }
   }
@@ -72,7 +72,6 @@ function UploadAds() {
 
   return (
     <div className="container-fluid-uploads">
-      
       <div className="container-uploads">
         <div className="col-camra sm-4">
           <div className="camra d-flex ms-3 mt-4">
