@@ -33,33 +33,32 @@ function CarInput() {
     if (e.target.files[0]) {
       console.log("check2");
       const image = e.target.files[0];
-      // setImage(() => ({ image }));
-      // setImage(image)
-    
-      handleUpload(image, check);
      
-    
+
+      handleUpload(image, check);
+
+
     }
   }
   const handleUpload = (image, check) => {
     const uploadTask = storage.ref(`imges/${image.name}`).put(image);
     uploadTask.on('state_changed',
       (snapshot) => {
-
-        // progrss function ....
+        console.log("check 3")
+       
         const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
         setProgress(progress);
-        // this.setState({ loading: true })
+      
       },
       (error) => {
-        // error function ....
+      
         console.log(error);
       },
       () => {
-        // complete function ....
+      
         storage.ref('imges').child(image.name).getDownloadURL().then(url => {
           console.log(url);
-          console.log("check", check);
+          console.log("check 4", check);
 
           if (check == "first") {
             setUrl(url);
@@ -73,9 +72,7 @@ function CarInput() {
           if (check == "4th") {
             setUrl4(url)
           }
-          // this.props.setCurrentImgUrl(url);
-          // this.ref = "";
-          // this.setState({ loading: false })
+      
         })
       });
 
@@ -120,7 +117,6 @@ function CarInput() {
   };
   return (
     <div className="container-fluid-carinput">
-       {/* <button className="btnsss ms-3 mt-2 "  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
       <h1 style={{ textAlign: "center" }}>POST YOUR AD</h1>
       <div className="container-carinput">
         <div className="row-header ms-3 mt-1">
@@ -302,7 +298,6 @@ function CarInput() {
           </div>
           <div className="col-camra ">
             <div className="camra d-flex ms-3 mt-4">
-              {/* <img style={{height:"60px", width:"60px"}} src={camra} alt="" /> */}
               <input className="input-cars" style={{ height: "100%", width: "100%" }} type="file" onClick={(e) => handleChange(e, "4th")} />
             </div>
           </div>
@@ -322,17 +317,17 @@ function CarInput() {
             handleSendMessage();
 
           }} className="btnnss"><b>Post now</b></button>
-          
+
         </center>
         <br />
-      
+
         <center>
-       
+
         </center>
         <br />
         <br />
-      
-        
+
+
       </div>
       <br />
       <br />

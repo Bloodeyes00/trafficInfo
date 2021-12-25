@@ -52,7 +52,8 @@ const loadProfile =() =>{
     return {
 
     }
-  }, [])
+  },
+   [])
   const handleChange = (e, check) => {
     console.log("check1");
     if (e.target.files[0]) {
