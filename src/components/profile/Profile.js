@@ -195,7 +195,6 @@ export default function Profile() {
                 <b> Save  </b>
               </button>
             </div>
-            {/* <button className="btnsss ms-3 mt-2 mb-2"  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
 
           </div>
         </div>
