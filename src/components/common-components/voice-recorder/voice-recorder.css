@@ -1,4 +1,13 @@
 
+.closebtn{
+    float: right;
+    margin-Top: -28px;
+    border: none;
+    background-Color: #ce2b2b;
+    color: white;
+    border-Radius: 10px 
+}
+
 ._1ceqH ._1lB9c {
  
     background: #ffffff;

@@ -23,6 +23,19 @@
         font-Family:'Anton', sans-serif;
         
     }
+    .btn9{
+        height:"40px";
+        font-Size:14px;
+        width: 30%;
+        font-Family:'Anton', sans-serif;
+        padding: 3px;
+        margin: 3px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        color: #aa6b3b;
+        font-size: 15px;
+        border: 1px solid rgb(153, 150, 150);
+    }
     
    
     .groups{

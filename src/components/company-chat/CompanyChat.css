@@ -6,3 +6,9 @@
     border-Bottom: "solid 0.0px gray"; 
 }
 
+
+.imgcard{
+    height: 270px;
+    width: 270px;
+    border-Radius: 0px
+}

@@ -74,7 +74,7 @@ function CompanyChat() {
                             {photoURL &&
                              <img src={photoURL} alt="" />}
                             {curImageUrl && 
-                            <img className="imgcard" src={curImageUrl} alt="no img" style={{ height: '270px', width: '270px', borderRadius: '0px' }} />}
+                            <img className="imgcard" src={curImageUrl} alt="no img" />}
                             {text != " " && 
                             <p>{text}</p>}
                         </div>}

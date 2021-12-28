@@ -34,9 +34,7 @@ export default function Navbar() {
       }
     });
 
-    // db.collection('messages').orderBy('createdAt').onSnapshot(snapshot => {
-    //   setMessages(snapshot.docs.map(doc => doc.data()))
-    // });
+  
     return {
 
     }

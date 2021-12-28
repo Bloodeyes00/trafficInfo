@@ -22,20 +22,22 @@ import Mainpage from '../main';
 import Services from '../Services/Services';
 import Jobs from '../Jobs/Jobs';
 import Admin from '../admin/Admin';
-import AllowUser from '../Allowuser/AllowUser';
+import ManageUser from '../manageuser/ManageUser';  
 import BlockUser from "../blockuser/BlockUser";
 import UploadAds from "../uploadads/UploadAds";
 import MainPage from '../Services/MainPage';
 import Footer from '../footer/Footer';
+import VehiclesServices from '../Services/VehiclesServices'
 export default function Routes() {
     return (
         <div>
             <Switch>
-            <Route path="/footer" component={Footer} />
-            <Route path="/mainpage" component={MainPage} />
-            <Route path="/uploadads" component={UploadAds} />
+                <Route path="/footer" component={Footer} />
+                <Route path="/VehiclesServices" component={VehiclesServices} />
+                <Route path="/mainpage" component={MainPage} />
+                <Route path="/uploadads" component={UploadAds} />
                 <Route path="/blockuser" component={BlockUser} />
-                <Route path="/allowuser" component={AllowUser} />
+                <Route path="/manageuser" component={ManageUser} />
                 <Route path="/admin" component={Admin} />
                 <Route path="/carinput" component={CarInput}/>    
                 <Route path="/job" component={Job}/>    

@@ -62,7 +62,7 @@ width: 50px;
     color: white;
     border: none;
     border-radius: 5px;
-
+    margin: 10px;
 }
 .btnnss:hover{
     border: 1px solid rgb(3, 3, 3); 
