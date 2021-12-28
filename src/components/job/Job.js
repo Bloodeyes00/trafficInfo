@@ -48,9 +48,7 @@ function Job() {
 
   return (
     <div className="container-fluid-job mt-3">
-      {/* <button className="btnsss ms-3"  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
       <h1 style={{ textAlign: "center" }}>POST YOUR AD</h1>
-      
       <div className="container-job ms-3">
         <div className="row-header ms-3 mt-1">
           <h3 >SELECTED CATEGORY</h3>
@@ -60,7 +58,10 @@ function Job() {
           <h3>INCLUDE SOME DETAILS</h3>
           <div className="form-group">
             <p>Ad title</p>
-            <input className="form-controlsss" id="exampleInputtext" aria-describedby="textHelp" placeholder="" onChange={(e) => {
+            <input className="form-controlsss" id="exampleInputtext"
+             aria-describedby="textHelp" 
+             placeholder="" 
+             onChange={(e) => {
               setTitle(e.target.value);
             }}
             />
@@ -71,8 +72,13 @@ function Job() {
             <p>Description</p>
             <textarea onChange={(e) => {
               setdescription(e.target.value);
-            }} id="description" name="description" spellcheck="false" className="form-contrlsss" maxlength="4096" autocomplete="off"></textarea>
-            <p className="form-text text-muted">Include condition, features and reason for selling</p>
+            }} 
+            id="description" name="description" spellcheck="false" 
+            className="form-contrlsss" maxlength="4096" autocomplete="off">
+          </textarea>
+            <p className="form-text text-muted">
+              Include condition, features and reason for selling
+              </p>
           </div>
 
         </div>
@@ -80,13 +86,19 @@ function Job() {
 
           <p><b>Salary</b></p>
           <p className="form-text text-muted">Salary from</p>
-          <input type="30000-35000" className="form-controlsss"  aria-describedby="textHelp" placeholder="" onChange={(e) => {
+          <input type="30000-35000" 
+          className="form-controlsss" aria-describedby="textHelp" 
+          placeholder="" 
+          onChange={(e) => {
             setSalaryForm(e.target.value);
           }}
           />
 
           <p className="form-text text-muted mt-3">Salary to</p>
-          <input type="30000-35000" className="form-controlsss"  aria-describedby="textHelp" placeholder="" onChange={(e) => {
+          <input type="30000-35000" 
+          className="form-controlsss" aria-describedby="textHelp" 
+          placeholder="" 
+          onChange={(e) => {
             setSalaryTO(e.target.value);
           }} />
 
@@ -94,7 +106,9 @@ function Job() {
         <div className="row-type mt-3 ms-3">
           <div for="Job"><b>Position Type</b></div>
 
-          <select className="selects mt-2" name="Job" id="Job" onChange={(e) => { let value = e.target.value; setPosition(value) }}
+          <select className="selects mt-2" name="Job" id="Job" 
+          onChange={(e) => {
+             let value = e.target.value; setPosition(value) }}
           >
             <option value="other">other</option>
             <option value="Day">Day</option>
@@ -127,20 +141,26 @@ function Job() {
         </div>
         <div className="let mt-3 ms-3">
           <p className="form-text text-muted mt-3">Mobile Phone Number</p>
-          <input type="number" className="form-controlsss" id="exampleInputtext" aria-describedby="textHelp" placeholder="+92" onChange={(e) => {
+          <input type="number" 
+          className="form-controlsss" id="exampleInputtext" aria-describedby="textHelp" 
+          placeholder="+92" 
+          onChange={(e) => {
             setCnumber(e.target.value);
           }}
           />
         </div>
         <center>
-          <button onClick={() => {
+          <button 
+          onClick={() => {
             handleSendMessage();
+            }} 
+            className="btnnss mt-2">
+              <b>Post now</b>
+              </button>
 
-          }} className="btnnss mt-2"><b>Post now</b></button>
-          
         </center>
-        <br/>
-      
+        <br />
+
         <br />
         <br />
 

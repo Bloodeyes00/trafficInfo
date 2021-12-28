@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import firebase from '../utils/firebase';
 
 
-function AllowUser() {
+function ManageUser() {
     let history = useHistory();
     const [usersList, setUsersList] = useState([]);
     const loadProfile = () => {
@@ -17,9 +17,7 @@ function AllowUser() {
                 data = Object.values(data);
                 let keys = Object.keys(snapshot.val());
                 data.map((item, index) => item["key"] = keys[index])
-                // console.log("data in allow user page : ", data);
-                // console.log("keys in allow user page : ", keys);
-                // console.log("Entries in allow user page : ", snapshot.val());
+              
                 setUsersList(data);
             }
         });
@@ -83,8 +81,6 @@ function AllowUser() {
                         </table>
 
                     </div>
-                    {/* <button classNameName="btnsss mt-2 "  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
-
                 </div>
             </div>
         </div >
@@ -92,4 +88,4 @@ function AllowUser() {
     )
 }
 
-export default AllowUser
+export default ManageUser

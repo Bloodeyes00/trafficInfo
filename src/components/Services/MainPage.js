@@ -43,7 +43,8 @@ function MainPage() {
                     <div className='plus '> <TiPlus /></div>
                     <div className='find'><h2>Other Item</h2></div>
                     <div className='imgsss'>
-                    <img  style={{border:"none",borderRadius:"2px",}} src={item} />                    </div>
+                    <img  style={{border:"none",borderRadius:"2px",}} src={item} />   
+                 </div>
                     
                 </div>
 
@@ -51,20 +52,21 @@ function MainPage() {
                     <div className='plus '> <TiPlus /></div>
                     <div className='find'><h2>Information Numbers</h2></div>
                     <div className='imgsss'>
-                    <img  style={{border:"none",borderRadius:"2px",}} src={inumber} />                    </div>
+                    <img  style={{border:"none",borderRadius:"2px",}} src={inumber} />                    
+                    </div>
                     
                 </div>
 
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
-                    <div className='find'><h2></h2></div>
+                    <div className='find'><h2 onClick={() => { history.push("/VehiclesServices") }}>Vehicles Services</h2></div>
                     <div className='imgsss'> </div>
                     
                 </div>
 
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
-                    <div className='find'><h2></h2></div>
+                    <div className='find'><h2>Emergency Services</h2></div>
                     <div className='imgsss'> </div>
                     
                 </div>

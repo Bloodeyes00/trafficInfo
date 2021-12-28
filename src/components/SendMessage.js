@@ -192,37 +192,22 @@ function SendMessage({ scroll }) {
                                         e.preventDefault();
                                         setImage('');
                                     }}
-                                        className="webcam-btn" style={{
-                                            height: "40px", width: "15%", color: "rgb(39, 156, 202)", marginTop: "12px",
-                                            marginLeft: "15px", backgroundColor: "white", borderRadius: "40px", border: "none",
-                                            alignItems: "center", textAlign: "center"
-                                        }}>
-                                        <TiArrowSync /></button> :
-                                    <button style={{
-                                        height: "40px", width: "15%", color: "rgb(39, 156, 202)", marginTop: "12px",
-                                        marginLeft: "15px", backgroundColor: "white", border: "none", borderRadius: "40px",
-                                        alignItems: "center", textAlign: "center"
-                                    }} onClick={(e) => {
+                                        className="webcam-btn">
+                                        <TiArrowSync />
+                                        </button> :
+                                    <button className='ticamra'
+                                    onClick={(e) => {
                                         e.preventDefault();
                                         capture();
-
                                     }}
                                     ><TiCameraOutline /></button>
                                 }
-
                             </div>}
 
-
-
-
-
-
                         {!openCamera &&
-                            <button style={{
-                                height: "40px", width: "15%", color: "rgb(39, 156, 202)", marginTop: "9px",
-                                marginLeft: "4px", backgroundColor: "white", border: "none", borderRadius: "40px",
-                                alignItems: "center", textAlign: "center"
-                            }} className="cemra" onClick={() => { setOpenCamera(true) }}><AiTwotoneCamera /> </button>}
+                            <button className="aicamra" style={{
+                               
+                            }}  onClick={() => { setOpenCamera(true) }}><AiTwotoneCamera /> </button>}
 
 
                         <Sendimage setCurrentImgUrl={setCurrentImgUrl} curImageUrl={curImageUrl} reset={reset} />
@@ -235,23 +220,17 @@ function SendMessage({ scroll }) {
 
                             <br />
 
-                            <textarea style={{
-                                width: '100%', backgroundColor: "white", padding: "0px", fontSize: '15px', fontWeight: '550',
-                                marginTop: '15px', border: "none", borderRadius: "5px", height: "30px", marginRight: "-10px", outline: "none"
-                            }} placeholder='Message...'
-                                type="text" value={msg} onChange={e => setMsg(e.target.value)} />
+                            <textarea className='txtarea'
+                            placeholder='Message...'
+                            type="text" value={msg} 
+                            onChange={e => setMsg(e.target.value)} />
 
-                            <button style={{
-                                width: "11%", marginLeft: "13px", height: "40px", marginTop: "9px", border: "none",
-                                backgroundColor: "white", color: "rgb(39, 156, 202)", borderRadius: "22px"
-                            }}
+                            <button className='voicee'
                                 onClick={() => setRecordVisible(true)}><MdKeyboardVoice /></button>
 
-                            <Button style={{
-                                width: '6%', marginTop: "9px", fontSize: 'px', fontWeight: '550',
-                                maxWidth: '200px', marginRight: "0px", color: "rgb(39, 156, 202)", border: "none",
-                                height: "40px", marginRight: ""
-                            }} type="submit"><IoSend /></Button>
+                            <button className='iosend' style={{
+                               
+                            }} type="submit"><IoSend /></button>
                         </>}
                         <ToastContainer />
 

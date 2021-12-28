@@ -168,23 +168,22 @@ return {
           <Carousel variant="dark">
 
             <Carousel.Item>
-            <center><Card.Img variant="top" src={card.url} style={{ width: '50%', height: '160px', borderRadius: '2px', display: 'flex' }} /></center>
+            <center><Card.Img className='cardimg0' variant="top" src={card.url} /></center>
             </Carousel.Item>
             <Carousel.Item>
-            <center><Card.Img variant="top" src={card.url2} style={{ width: '50%', height: '160px', borderRadius: '2px', display: 'flex' }} /></center>
+            <center><Card.Img className='cardimg0' variant="top" src={card.url2} /></center>
             </Carousel.Item>
             <Carousel.Item>
-            <center><Card.Img variant="top" src={card.url3} style={{ width: '50%', height: '160px', borderRadius: '2px', display: 'flex' }} /></center>
+            <center><Card.Img className='cardimg0' variant="top" src={card.url3} /></center>
              </Carousel.Item>
              <Carousel.Item>
-            <center><Card.Img variant="top" src={card.url4} style={{ width: '50%', height: '160px', borderRadius: '2px', display: 'flex' }} /></center>
+            <center><Card.Img className='cardimg0' variant="top" src={card.url4}  /></center>
              </Carousel.Item>
           </Carousel>
 
         </Carousel>
 
       </div>
-                  {/* <center><Card.Img variant="top" src={car3} style={{ width: '50%', height: '160px', borderRadius: '2px', display: 'flex' }} /></center> */}
                     
                     <Card.Body className="cardbody"> 
                         <Card.Title>
@@ -218,34 +217,25 @@ return {
     }
     return (<div >
 
-{/* <button className="btnsss ms-3 mt-2 mb-2"  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
         <div className="container ">
             {loading && <Loader />}
             <div className='container-fluid-car'>
                 <div className='container-car'>
                     <div className="col">
-                        <Button onClick={() => { history.push("/carinput") }} style={{
-                            marginTop: '14px', paddingRight: "10px",
-                            backgroundColor: "rgb(80 109 139)", borderRadius: '4px', color: 'white'
-                        }}
-                            className="btnsss btn-outline-success  ">Cars</Button>
-                        <Button style={{
-                            marginTop: '14px', backgroundColor: "rgb(80 109 139)",
-                            borderRadius: '4px', color: 'white'
-                        }}
-                            className="btnsss btn-outline-success  ">Other</Button>
-                        <div className="form-control " style={{
-                            width: '40%', float: 'right', paddingTop: '11px',
-                            backgroundColor: "rgb(248, 248, 248)", marginRight: '59px',
-                            borderRadius: "4px"
-                        }}>
+                      <button className='btns'  onClick={() => { history.push("/carinput") }}>Cars</button>
+                        {/* <Button onClick={() => { history.push("/carinput") }}
+                            className="btns ">Cars</Button> */}
+                        <Button
+                        
+                            className="btns  ">Other</Button>
+                        <div className="form-controlsa " >
                             <Input type="search" placeholder=" Search Services" aria-label="Seahrc"></Input>
                            
                             <Button style={{
                                 position: 'absolute', marginBottom: "20px", color: 'white', borderRadius: '4px',
                                 backgroundColor: "rgb(80 109 139)"
                             }}
-                                className="btnsss btn-outline-success  ">Search</Button>
+                                className="btnsss ">Search</Button>
                         </div>
                     </div>
                 </div>

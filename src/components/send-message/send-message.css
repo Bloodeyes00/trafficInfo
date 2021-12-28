@@ -9,9 +9,9 @@
     width: 104px !important;
 }
 
-input[type="file"] {
-    /* width: 98px; */
-    height: 40px;
+.custom-file-input {
+    width: 40px;
+    height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,8 +23,8 @@ input[type="file"] {
     background-size: 30px;
     background-repeat: no-repeat;
     margin-left: -3px;
-    margin-top: 2px;
-    
+    margin-top: 3px;
+    border: none;
     
     
 }
@@ -42,21 +42,8 @@ input[type="file"]::-webkit-file-upload-button {
     /* background-image: url('../../images/ic_input_file.png'); */
 }
 
-.cemra{
-    height: 31px;
-    width: 60px;
-    margin-top: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10x;
-    border: none;
-    text-align: center;
-    /* background-color: rgb(85, 72, 72);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url('../../images/ic_input_file.png'); */
-}
+
+
 .capture{
     margin-top: 10px;
     height: 30px;
@@ -70,3 +57,90 @@ input[type="file"]::-webkit-file-upload-button {
 }
 
 
+.send-image-container{
+    border: none;
+    height:40px;
+    width:12%;
+    margin-Top:12px; 
+    padding-Top:0px;
+    padding-Bottom:10px;
+    margin-Left:0px
+}
+
+
+.webcam-btn{
+    height: 40px;
+    width: 15%; 
+    color: rgb(39, 156, 202); 
+    margin-Top: 12px;
+    margin-Left: 15px; 
+    background-Color: white; 
+    border-Radius: 40px; 
+    border: none;
+    align-Items: center; 
+    text-Align: center
+}
+
+.ticamra{
+    height: 40px; 
+    width: 15%; 
+    color: rgb(39, 156, 202); 
+    margin-Top: 12px;
+    margin-Left: 15px; 
+    background-Color: white; 
+    border: none; 
+    border-Radius: 40px;
+    align-Items: center; 
+    text-Align: center;
+}
+
+.aicamra{
+    height: 40px; 
+    width: 15; 
+    color: rgb(39, 156, 202); 
+    margin-Top: 9px;
+    margin-Left: 4px; 
+    background-Color: white; 
+    border: none; 
+    border-Radius: 40px;
+    align-Items: center; 
+    text-Align: center;
+}
+
+.txtarea{
+    width: 100%; 
+    background-Color: white; 
+    padding: 0px; 
+    font-Size: 15px; 
+    font-Weight: 550;
+    margin-Top: 15px; 
+    border: none; 
+    border-Radius: 5px; 
+    height: 30px; 
+    margin-Right: -10px; 
+    outline: none;
+}
+
+.voicee{
+    width: 11%; 
+    margin-Left: 13px; 
+    height: 40px; 
+    margin-Top: 9px; 
+    border: none;
+    background-Color: white; 
+    color: rgb(39, 156, 202); 
+    border-Radius: 22px
+}
+
+.iosend{
+    width: 6%; 
+    margin-Top: 8px;
+    font-Weight: 550;
+    max-Width: 200px; 
+    margin-Right: 15px; 
+    color: rgb(39, 156, 202); 
+    border: none;
+    height: 40px; 
+    margin-bottom: 0px;
+    background-color: white;
+}

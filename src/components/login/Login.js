@@ -32,42 +32,15 @@ export default function Login(props) {
           console.log("login res : ", res);
           firebase.auth().onAuthStateChanged((user) => {
             if (user) {
-              // let curuserid = firebase?.auth()?.currentUser?.uid;
-              // console.log("curuserid", curuserid);
+             
               toast.success("login Successfully");
-              // setLoggedIn(true);
+             
               setLoading(false);
               history.push('/profile')
-              // notify("Logged In");
-              // firebase
-              //   .database()
-              //   .ref("/userRoles")
-              //   .on("value", (snapshot) => {
-              //     // let main = snapshot.val();
-              //     if (snapshot && snapshot?.val && snapshot?.val() != undefined && snapshot?.val() != null ) {
-              //       Object.values(snapshot?.val());
-              //       console.log("user Roles :", snapshot?.val());
-              //       let checkRole = snapshot?.val().map((role) => {
-              //         console.log("role ", role);
-              //         notify("User data added succefully");
-              //         setLoggedIn(true);
-              //         setLoading(false);
-              //         // if (role.student == email) {
-              //         //   history.push("");
-              //         // }
-              //         // if (role.admin == email) {
-              //         //   history.push("");
-              //         // } else {
-              //         //   return "notfound";
-              //         // }
-              //       });
-              //       console.log("check role ", checkRole);
-              //     }
-              //   });
+          
             }
           });
-          // alert("You have succesfully Logged!")
-          // history.push('/home')
+       
         })
         
         
@@ -83,7 +56,7 @@ export default function Login(props) {
       
   return (
     <div className="container-fluid-login">
-      {/* <ToastContainer /> */}
+     
       
       {loading && <Loader />}
       {curPageLogin && <div className=" col flex-coloumn col-sm-12">
@@ -105,22 +78,7 @@ export default function Login(props) {
                   }}
                 />
               </div>
-              {/* <div className="mb-3">
-                <label for="exampleInputText1" className=" ms-2 form-label float-start ps-1">
-                  <b> Enter Number </b>
-                </label>
-                &nbsp;
-                <input
-                  type="text"
-                  className="input form-control "
-                  id="exampleInputText1"
-                  placeholder="+92-3120908499"
-                  required
-                  onChange={(event) => {
-                    setUserPassword(event.target.value);
-                  }}
-                />
-              </div> */}
+             
               <div className="mb-3">
                 <input
                   type="password" placeholder="Enter Password"
@@ -135,7 +93,7 @@ export default function Login(props) {
               <button
                 onClick={() => login()}
                 className=" Button form-control mt-3 mb-3 "
-              // onClick={notifyf}
+            
 
               >
                 <b>Login</b>

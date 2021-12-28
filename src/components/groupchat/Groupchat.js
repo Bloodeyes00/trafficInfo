@@ -25,7 +25,7 @@ export default function Groupchat() {
           <button className="btn"   type="button">
             <b>Family</b>
           </button>
-          <button className="btn" style={{height:"40px", fontSize:"14px" ,width: "25%", color:"",fontFamily:"'Anton', sans-serif"}} type="button">
+          <button className="btn9" type="button">
             <b>Health Care</b>
           </button>
         </div>

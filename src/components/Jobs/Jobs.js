@@ -57,7 +57,6 @@ const [loading, setLoading] = useState(false)
                     </div>
                 </div>
             </div>
-            {/* <button className="btnsss mt-2 "  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
             <div className=" col-xl-9 col-lg-8" style={{ fontsize: '16px', marginTop: '5px', fontweight: 400, color: '#6f6f6f' }}>
 
                 <div className=" table-job-bx browse-job clearfix" style={{ backgroundColor: 'rgb(233 226 228)' }}>

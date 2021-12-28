@@ -18,7 +18,7 @@ const Home = () => {
 
   let history = useHistory();
 
-  const loadServices = () => {
+  const loadHome = () => {
     console.log("check 1")
     setLoading(true)
     const firestore = firebase.database().ref("/UploadAds");
@@ -34,7 +34,7 @@ const Home = () => {
   }
 
   useEffect(() => {
-    loadServices();
+    loadHome();
     return {
 
     }
@@ -164,19 +164,12 @@ const Home = () => {
               <Carousel variant="dark">
                 {movies.map(card =>
                   <Carousel.Item>
-                    <center><Card.Img variant="top" src={card?.url ? card.url : logo} alt="No Image"
-                      style={{ width: '50%', height: '160px', borderRadius: '2px', display: 'flex' }} /></center>
+                    <center><Card.Img variant="top" src={card?.url ? card.url : logo}
+                     alt="No Image" className="cardimgs1"
+                    />
+                    </center>
                   </Carousel.Item>
                 )}
-                {/* <Carousel.Item>
-                  <center><Card.Img variant="top" src={card.url2} style={{ width: '50%', height: '160px', borderRadius: '2px', display: 'flex' }} /></center>
-                </Carousel.Item>
-                <Carousel.Item>
-                  <center><Card.Img variant="top" src={card.url3} style={{ width: '50%', height: '160px', borderRadius: '2px', display: 'flex' }} /></center>
-                </Carousel.Item>
-                <Carousel.Item>
-                  <center><Card.Img variant="top" src={card.url4} style={{ width: '50%', height: '160px', borderRadius: '2px', display: 'flex' }} /></center>
-                </Carousel.Item> */}
               </Carousel>
 
             </Carousel>
