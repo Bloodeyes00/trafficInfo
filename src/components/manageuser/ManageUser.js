@@ -9,7 +9,6 @@ function ManageUser() {
     let history = useHistory();
     const [usersList, setUsersList] = useState([]);
     const loadProfile = () => {
-        // setLoading(true)
         const firestore = firebase.database().ref("/UserProfile");
         firestore.on('value', (snapshot) => {
             if (snapshot?.val()) {
@@ -17,7 +16,6 @@ function ManageUser() {
                 data = Object.values(data);
                 let keys = Object.keys(snapshot.val());
                 data.map((item, index) => item["key"] = keys[index])
-              
                 setUsersList(data);
             }
         });
@@ -69,7 +67,7 @@ function ManageUser() {
                                             }} type="checkbox" id="check1" name="option1" checked={item?.role2} />
                                         </th>
                                         <th scope="col">
-                                            <input onClick={() => {
+                                            <input className="form-check-input" onClick={() => {
                                                 item["role3"] = !item?.role3;
                                                 firebase.database().ref("UserProfile").child(item.key).update(item);
                                             }} type="checkbox" checked={item?.role3} />

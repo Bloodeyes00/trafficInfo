@@ -26,7 +26,7 @@ function Admin() {
             <div className='col px-0'>
               <button type="button" onClick={() => { history.push("/blockuser") }}
                 className="home-btn btn-primary btn-lg mh-100 w-100" >
-                <b>Block User</b>
+                <b>Manage Company User</b>
               </button>
             </div>
             <div className='col order-last'>
