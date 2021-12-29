@@ -16,7 +16,6 @@ function ManageUser() {
                 data = Object.values(data);
                 let keys = Object.keys(snapshot.val());
                 data.map((item, index) => item["key"] = keys[index])
-
                 setUsersList(data);
             }
         });

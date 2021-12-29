@@ -18,7 +18,7 @@ function Admin() {
         <div className="container">
           <div className="row ">
             <div className='col '>
-              <button type="button" className="home-btn btn-primary btn-lg " onClick={() => { history.push(`/Allowuser`) }}
+              <button type="button" className="home-btn btn-primary btn-lg " onClick={() => { history.push(`/manageuser`) }}
               >
                 <b>Manage Users</b>
               </button>

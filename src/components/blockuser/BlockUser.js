@@ -2,11 +2,13 @@ import React from 'react'
 import { useHistory } from 'react-router'
 import firebase from '../utils/firebase';
 import { useEffect, useState } from 'react';
+import { auth } from '../utils/firebase';
 import { IoMdArrowBack } from "react-icons/io";
 
 function BlockUser() {
     let history = useHistory();
     const [usersList, setUsersList] = useState([]);
+    const [currentUserDetails, setuserdetails] = useState(null);
     const loadProfile = () => {
         const firestore = firebase.database().ref("/UserProfile");
         firestore.on('value', (snapshot) => {
@@ -15,7 +17,12 @@ function BlockUser() {
                 data = Object.values(data);
                 let keys = Object.keys(snapshot.val());
                 data.map((item, index) => item["key"] = keys[index])
-                setUsersList(data);
+                let currentUserDetails = data.find(item => item.uid == auth?.currentUser.uid);
+                setuserdetails(currentUserDetails);
+
+                let companyUsers = data?.filter(item => item?.companyName == currentUserDetails?.companyName);
+                setUsersList(companyUsers);
+                console.log("company users : ", companyUsers);
             }
         });
     }
