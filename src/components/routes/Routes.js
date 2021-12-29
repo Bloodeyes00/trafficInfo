@@ -28,12 +28,15 @@ import UploadAds from "../uploadads/UploadAds";
 import MainPage from '../Services/MainPage';
 import Footer from '../footer/Footer';
 import VehiclesServices from '../Services/VehiclesServices'
+import EmergencyService from '../Services/EmergencyService'
+
 export default function Routes() {
     return (
         <div>
             <Switch>
                 <Route path="/footer" component={Footer} />
                 <Route path="/VehiclesServices" component={VehiclesServices} />
+                <Route path="/EmergencyService" component={EmergencyService} />
                 <Route path="/mainpage" component={MainPage} />
                 <Route path="/uploadads" component={UploadAds} />
                 <Route path="/blockuser" component={BlockUser} />
