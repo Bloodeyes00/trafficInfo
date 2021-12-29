@@ -4,6 +4,7 @@ import findjob from "../../images/findjob.png"
 import carsales from "../../images/carsales.png"
 import item from "../../images/item.png"
 import inumber from "../../images/inumber.png"
+import carser from "../../images/carser.png"
 import { TiPlus } from "react-icons/ti";
 import { useHistory } from 'react-router'
 
@@ -60,13 +61,15 @@ function MainPage() {
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
                     <div className='find'><h2 onClick={() => { history.push("/VehiclesServices") }}>Vehicles Services</h2></div>
-                    <div className='imgsss'> </div>
+                    <div className='imgsss'>
+                    <img  style={{border:"none",borderRadius:"2px",}} src={carser} />  
+                         </div>
                     
                 </div>
 
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
-                    <div className='find'><h2>Emergency Services</h2></div>
+                    <div className='find'><h2 onClick={() => { history.push("/Emergencyservice") }}>Emergency Services</h2></div>
                     <div className='imgsss'> </div>
                     
                 </div>
