@@ -9,7 +9,6 @@ function AllowUser() {
     let history = useHistory();
     const [usersList, setUsersList] = useState([]);
     const loadProfile = () => {
-        // setLoading(true)
         const firestore = firebase.database().ref("/UserProfile");
         firestore.on('value', (snapshot) => {
             if (snapshot?.val()) {
@@ -17,9 +16,6 @@ function AllowUser() {
                 data = Object.values(data);
                 let keys = Object.keys(snapshot.val());
                 data.map((item, index) => item["key"] = keys[index])
-                // console.log("data in allow user page : ", data);
-                // console.log("keys in allow user page : ", keys);
-                // console.log("Entries in allow user page : ", snapshot.val());
                 setUsersList(data);
             }
         });
@@ -71,7 +67,7 @@ function AllowUser() {
                                             }} type="checkbox" id="check1" name="option1" checked={item?.role2} />
                                         </th>
                                         <th scope="col">
-                                            <input onClick={() => {
+                                            <input className="form-check-input" onClick={() => {
                                                 item["role3"] = !item?.role3;
                                                 firebase.database().ref("UserProfile").child(item.key).update(item);
                                             }} type="checkbox" checked={item?.role3} />
