@@ -25,7 +25,7 @@ function Socialservices(props) {
             <div className="row2-branch">
                 <button className="btnn1 ms-3" onClick={() => {
                     setCurrentPage("3")
-                    // history.push("/Agree")
+                    
                 }}><b>Next</b></button>
 
             </div>

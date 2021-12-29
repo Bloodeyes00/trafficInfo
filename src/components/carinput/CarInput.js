@@ -8,6 +8,7 @@ import { IoMdArrowBack } from "react-icons/io";
 import { storage } from '../utils/firebase'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 function CarInput() {
   const history = useHistory();
   const [title, setTitle] = useState("");
@@ -26,9 +27,12 @@ function CarInput() {
   const [url3, setUrl3] = useState("");
   const [url4, setUrl4] = useState("");
   const [image, setImage] = useState("");
+  const [loading, setLoading] = useState(false);
+
 
 
   const handleChange = (e, check) => {
+    setLoading(true)
     console.log("check1");
     if (e.target.files[0]) {
       console.log("check2");
@@ -41,6 +45,7 @@ function CarInput() {
     }
   }
   const handleUpload = (image, check) => {
+    setLoading(false)
     const uploadTask = storage.ref(`imges/${image.name}`).put(image);
     uploadTask.on('state_changed',
       (snapshot) => {
@@ -53,6 +58,7 @@ function CarInput() {
       (error) => {
       
         console.log(error);
+        setLoading(false)
       },
       () => {
       
@@ -283,22 +289,22 @@ function CarInput() {
         <div className="row-camra pb-3 d-flex">
           <div className="col-camra sm-4">
             <div className="camra ms-3 mt-4">
-              <input className="input-cars" style={{ height: "100%", width: "100%", }} type="file" onClick={(e) => handleChange(e, "first")} />
+              <input className={loading ? "loading" : "input-cars"} style={{ height: "100%", width: "100%", }} type="file" onClick={(e) => handleChange(e, "first")} />
             </div>
           </div>
           <div className="col-camra sm-4">
             <div className="camra ms-3 mt-4 ">
-              <input className="input-cars" style={{ height: "100%", width: "100%" }} type="file" onClick={(e) => handleChange(e, "2nd")} />
+              <input className={loading ? "loading" : "input-cars"} style={{ height: "100%", width: "100%" }} type="file" onClick={(e) => handleChange(e, "2nd")} />
             </div>
           </div>
           <div className="col-camra sm-4">
             <div className="camra d-flex ms-3 mt-4">
-              <input className="input-cars" style={{ height: "120%", width: "120%" }} type="file" onClick={(e) => handleChange(e, "3rd")} />
+              <input className={loading ? "loading" : "input-cars"} style={{ height: "120%", width: "120%" }} type="file" onClick={(e) => handleChange(e, "3rd")} />
             </div>
           </div>
           <div className="col-camra ">
             <div className="camra d-flex ms-3 mt-4">
-              <input className="input-cars" style={{ height: "100%", width: "100%" }} type="file" onClick={(e) => handleChange(e, "4th")} />
+              <input className={loading ? "loading" : "input-cars"} style={{ height: "100%", width: "100%" }} type="file" onClick={(e) => handleChange(e, "4th")} />
             </div>
           </div>
         </div>

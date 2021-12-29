@@ -3,6 +3,7 @@ import firebase from 'firebase'
 import { auth } from '../components/utils/firebase'
 import { Button } from '@material-ui/core'
 import { FcGoogle } from 'react-icons/fc'
+import './Sign.css'
 
 function SignIn() {
 
@@ -13,9 +14,13 @@ function SignIn() {
         auth.signInWithPopup(provider)
     }
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', height: '10%', alignItems: 'center' }}>
+        <div className='signin' style={{ }}>
           
-            <Button style={{ padding: '7px', fontSize: '13px', borderRadius: '20px', color:'white',}} onClick={signInWithGoogle}>   <FcGoogle/> &nbsp; Google</Button>
+            <button className='btnsignin'
+            onClick={signInWithGoogle}>  
+             <FcGoogle/> &nbsp;
+             Google
+            </button>
         </div>
     )
 }

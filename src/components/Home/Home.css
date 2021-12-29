@@ -18,6 +18,12 @@
   
 }
 
+.cardimgs1{
+    width: 50%;
+    height: 160px;
+    border-Radius: 2px;
+    display: flex;
+}
 
 
 .btsss{

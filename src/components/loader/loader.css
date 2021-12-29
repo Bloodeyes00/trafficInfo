@@ -1,0 +1,18 @@
+.loaderContainer{
+    top:0;
+    bottom:0;
+    position: absolute;
+    background-Color: rgba(0,0,0,0.5);
+    height: 100vh; 
+    width: 100vw;
+    justify-content: center;
+    align-Items: center;
+    display: flex;
+    border: none;
+}
+
+.loader{
+    border: none;
+    height:40px;
+    width: 40px;
+}

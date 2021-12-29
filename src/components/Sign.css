@@ -1,0 +1,32 @@
+.signout{
+    display: flex; 
+    justify-Content: center; 
+    position: fixed; 
+    width: 100%; 
+    background-Color: #FAFAFA;
+    top: 0; 
+    border-Bottom: solid 1px lightgray; 
+    Index: 10;
+}
+
+.btnsignout{
+    padding: 20px; 
+    font-Size: 15px; 
+    border-Radius: 0; 
+    font-weight: 600; 
+}
+
+.signin{
+    display: flex; 
+    justify-content: center; 
+    height: 10%; 
+    align-Items: center;
+}
+.btnsignin{
+    padding: 7px; 
+    font-Size: 13px; 
+    border-Radius: 20px; 
+    color:white;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}

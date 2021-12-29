@@ -10,10 +10,12 @@ function UploadAds() {
   const history = useHistory();
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
-  
+  const [loading, setLoading] = useState(false);
+
   const [progress, setProgress] = useState("");
 
-  const handleChange = (e, check) => {
+    const handleChange = (e, check) => {
+    setLoading(true);
     console.log("check1");
     if (e.target.files[0]) {
       console.log("check2");
@@ -36,6 +38,7 @@ function UploadAds() {
       },
       (error) => {
         console.log(error);
+        setLoading(false)
       },
       () => {
         // complete function ....
@@ -43,6 +46,7 @@ function UploadAds() {
           console.log(url);
           console.log("check", check);
           setUrl(url);
+          setLoading(false)
         })
       });
 
@@ -53,9 +57,9 @@ function UploadAds() {
     const firestore = firebase.database().ref("/UploadAds");
     let data = {
       url: url ? url : "",
-     
+
     };
-    
+
     console.log("Data pyaload", data);
     firestore
       .push(data)
@@ -75,7 +79,8 @@ function UploadAds() {
       <div className="container-uploads">
         <div className="col-camra sm-4">
           <div className="camra d-flex ms-3 mt-4">
-            <input className="input-cars" style={{ height: "50px", width: "100px", marginLeft: "150px", }} type="file"
+            <input className={loading ? "loading0" : "input-cars"}
+              style={{ height: "50px", width: "100px", marginLeft: "150px", }} type="file"
               onClick={(e) => handleChange(e)} />
           </div>
           <center>

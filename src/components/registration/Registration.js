@@ -110,7 +110,7 @@ export default function Registration(props) {
               <div>
                 <button
                   type="submit"
-                  className=" Btn4  mt-3 mb-3 " style={{ borderRadius: '50px', border: 'none', backgroundColor: "#FF0101", color: 'white', height: "40px", width: "105%" }}
+                  className=" Btn4  mt-3 mb-3 "
                   //    onClick={notify}
                   onClick={() => {
                     signup();

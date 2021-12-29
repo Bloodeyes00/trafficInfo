@@ -17,6 +17,8 @@ export default function Profile() {
   const [userdetails, setuserdetails] = useState("");
   const [companyName, setcompanyName] = useState("");
   const [loading, setLoading] = useState(false);
+  const [imageLoading, setImageLoading] = useState(false);
+
 
   const [progress, setProgress] = useState("");
   let history = useHistory();
@@ -60,6 +62,7 @@ export default function Profile() {
   },
     [])
   const handleChange = (e, check) => {
+    setImageLoading(true)
     console.log("check1");
     if (e.target.files[0]) {
       console.log("check2");
@@ -73,6 +76,7 @@ export default function Profile() {
     }
   }
   const handleUpload = (image, check) => {
+    setImageLoading(false)
     const uploadTask = storage.ref(`imges/${image.name}`).put(image);
     uploadTask.on('state_changed',
       (snapshot) => {
@@ -85,6 +89,7 @@ export default function Profile() {
       (error) => {
         // error function ....
         console.log(error);
+        setImageLoading(false)
       },
       () => {
         // complete function ....
@@ -138,7 +143,7 @@ export default function Profile() {
   return (
     <div>
       {loading && <Loader />}
-      <div className="Profile d-flex flex-column justify-content-center align-items-center pb-5">
+      <div className="Profile d-flex flex-column  align-items-center mt-5 pb-5">
         <div className="prof">
           <div className="Heading d-flex justify-content-center  mt-3">
             <h1>
@@ -147,12 +152,16 @@ export default function Profile() {
           </div>
 
           <div className=" d-flex justify-content-center  shadow-sm p-3 mb-3  rounded-circle ">
-            {/* <ImageUpload /> */}
-            {/* <MdAddAPhoto /> */}
 
-            <input className="input-profile" style={{ height: "60px", backgroundSize: "70px", }} type="file" onClick={(e) => handleChange(e, "first")}></input>
+
+            <input className={imageLoading ? "loading" : "input-profile"}
+             style={{ height: "60px", backgroundSize: "70px", }}
+              type="file" 
+              onClick={(e) => handleChange(e, "first")}>
+
+              </input>
           </div>
-          <div className="Data d-flex justify-content-center  align-items-center py-4 flex-wrap">
+          <div className="Datas d-flex justify-content-center  align-items-center py-4 flex-wrap">
             <div class="mb-3">
 
               <input
@@ -190,7 +199,7 @@ export default function Profile() {
               </div>
             </div>
             <div className="d-flex justify-content-center">
-              <button type="submit" className="Btn4 my-3 " style={{ borderRadius: '50px', border: 'none', backgroundColor: "#FF0101", color: 'white', height: "30px", width: "104%", }}
+              <button type="submit" className="Btn4 my-3 " style={{}}
                 onClick={() => { updateProfile() }}>
                 <b> Save  </b>
               </button>
