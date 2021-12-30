@@ -3,12 +3,16 @@ import { useHistory } from 'react-router'
 import { IoMdArrowBack } from "react-icons/io";
 import { useEffect, useState } from 'react';
 import firebase from '../utils/firebase';
+import Loader from '../loader/Loader';
 
 
 function ManageUser() {
     let history = useHistory();
     const [usersList, setUsersList] = useState([]);
+    const [loading, setLoading] = useState(false);
+
     const loadProfile = () => {
+        setLoading(true)
         const firestore = firebase.database().ref("/UserProfile");
         firestore.on('value', (snapshot) => {
             if (snapshot?.val()) {
@@ -17,6 +21,7 @@ function ManageUser() {
                 let keys = Object.keys(snapshot.val());
                 data.map((item, index) => item["key"] = keys[index])
                 setUsersList(data);
+                setLoading(false)
             }
         });
     }
@@ -29,6 +34,7 @@ function ManageUser() {
 
     return (
         <div className="container-fluid-Allow">
+            {loading && <Loader />}
             <div className="container-Allow ms-4 mt-5">
                 <div className="row-allow ms-1">
                     <div className='table-responsive'>

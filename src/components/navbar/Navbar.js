@@ -18,22 +18,29 @@ import { RiAdminFill } from "react-icons/ri";
 import { auth, db } from "../utils/firebase";
 import firebase from "../utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import Loader from "../loader/Loader";
 export default function Navbar() {
+ 
+const loadNavbar =() => {
+  // setLoading(true)
+  const firestore = firebase.database().ref("/UserProfile");
+  firestore.on('value', (snapshot) => {
+    let data = { ...snapshot.val() };
+    data = Object.values(data);
+    // let uid = auth?.currentUser.uid;
+    if (auth?.currentUser?.uid) {
+      let currentUserDetails = data.find(item => item.uid == auth?.currentUser?.uid);
+      console.log("data : ", data);
+      console.log("currentUserDetails : ", currentUserDetails);
+      setuserdetails(currentUserDetails);
+      setLoading(false)
+    }
+  });
+
+ }
+ 
   useEffect(() => {
-
-    const firestore = firebase.database().ref("/UserProfile");
-    firestore.on('value', (snapshot) => {
-      let data = { ...snapshot.val() };
-      data = Object.values(data);
-      // let uid = auth?.currentUser.uid;
-      if (auth?.currentUser?.uid) {
-        let currentUserDetails = data.find(item => item.uid == auth?.currentUser?.uid);
-        console.log("data : ", data);
-        console.log("currentUserDetails : ", currentUserDetails);
-        setuserdetails(currentUserDetails);
-      }
-    });
-
+  loadNavbar();
   
     return {
 
@@ -41,6 +48,7 @@ export default function Navbar() {
   }, [])
   const [show, setShow] = useState(false);
   const [messages, setMessages] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [userdetails, setuserdetails] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -49,6 +57,7 @@ export default function Navbar() {
   return (
     <>
       <div className="container-fluid-navbar">
+        {loading && <Loader />}
         <div className="container">
           <div className="rowss pt-1 d-flex justify-content-center">
             <div className="col-2  pt-1">

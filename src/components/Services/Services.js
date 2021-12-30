@@ -13,6 +13,8 @@ import car5 from '../Services/car5.jpg';
 import { Carousel } from 'react-bootstrap'
 import Loader from '../loader/Loader';
 import { storage } from '../utils/firebase'
+import trafikinfo from '../../images/trafikinfo.png'
+
 
 const Services = () => {
     const [smShow, setSmShow] = useState(false);
@@ -168,16 +170,16 @@ return {
           <Carousel variant="dark">
 
             <Carousel.Item>
-            <center><Card.Img className='cardimg0' variant="top" src={card.url} /></center>
+            <center><Card.Img className='cardimg0' variant="top" src={card?.url ? card.url: trafikinfo} /></center>
             </Carousel.Item>
             <Carousel.Item>
-            <center><Card.Img className='cardimg0' variant="top" src={card.url2} /></center>
+            <center><Card.Img className='cardimg0' variant="top" src={card?.url2 ? card.url: trafikinfo} /></center>
             </Carousel.Item>
             <Carousel.Item>
-            <center><Card.Img className='cardimg0' variant="top" src={card.url3} /></center>
+            <center><Card.Img className='cardimg0' variant="top" src={card?.url3 ? card.url: trafikinfo} /></center>
              </Carousel.Item>
              <Carousel.Item>
-            <center><Card.Img className='cardimg0' variant="top" src={card.url4}  /></center>
+            <center><Card.Img className='cardimg0' variant="top" src={card?.url4 ? card.url: trafikinfo}  /></center>
              </Carousel.Item>
           </Carousel>
 

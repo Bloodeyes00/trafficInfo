@@ -23,7 +23,7 @@ import Services from '../Services/Services';
 import Jobs from '../Jobs/Jobs';
 import Admin from '../admin/Admin';
 import ManageUser from '../manageuser/ManageUser';  
-import BlockUser from "../blockuser/BlockUser";
+import ManageCompnayUser from "../managecompnayuser/ManageCompnayUser";
 import UploadAds from "../uploadads/UploadAds";
 import MainPage from '../Services/MainPage';
 import Footer from '../footer/Footer';
@@ -39,7 +39,7 @@ export default function Routes() {
                 <Route path="/EmergencyService" component={EmergencyService} />
                 <Route path="/mainpage" component={MainPage} />
                 <Route path="/uploadads" component={UploadAds} />
-                <Route path="/blockuser" component={BlockUser} />
+                <Route path="/ManageCompnayUser" component={ManageCompnayUser} />
                 <Route path="/manageuser" component={ManageUser} />
                 <Route path="/admin" component={Admin} />
                 <Route path="/carinput" component={CarInput}/>    
