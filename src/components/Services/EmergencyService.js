@@ -44,6 +44,8 @@ function VehiclesServices() {
     <Card.Title><h1>Police Helpline</h1></Card.Title>
     <Card.Text>
     <p>The terrorists, militants and criminals use vehicles which are either stolen or having fake number plates, thereby making it difficult for the investigation </p>
+   
+&nbsp;
     </Card.Text>
     <button className='btns1' onClick={handleShow}><b>Help Line</b></button>
   </Card.Body>
@@ -56,8 +58,8 @@ function VehiclesServices() {
   <Card.Body>
     <Card.Title><h1>Traffice Police</h1></Card.Title>
     <Card.Text>
-        &nbsp;
- <p>Get connected to nearest tow truck, track on real time, pay cash less.</p> </Card.Text>
+    
+ <p>Traffic Warden Police Khyber Pakhtunkhwa, License Verification, BRT, Complaints, Mobile Driving Unit, Driving License Procedure, Traffic Education, ...</p> </Card.Text>
     <button className='btns1'  onClick={handleShow}><b>Help Line</b></button>
   </Card.Body>
 </Card>
@@ -74,7 +76,7 @@ function VehiclesServices() {
   <Card.Body>
     <Card.Title><h1>Fire Brigade</h1></Card.Title>
     <Card.Text>
-    <p>The best cleaning your car can get is a careful washing by hand. Unfortunately, that is only the case if done correctly, which most drivers do not.</p>
+    <p>A fire department or fire brigade, also known as a fire authority, fire rescue, fire district, fire & rescue, or fire service in some areas, is an organization that provides firefighting services.</p>
     </Card.Text>
     <button className='btns1'  onClick={handleShow}><b>Help Line</b></button>
   </Card.Body>
@@ -87,7 +89,8 @@ function VehiclesServices() {
   <Card.Body>
     <Card.Title><h1>Hospital</h1></Card.Title>
     <Card.Text>
-    <p>Moin Motor Workshop provides car mechanic services at most affordable prices in Karachi.</p>
+    <p>A hospital is a health care institution providing patient treatment with specialized health science and auxiliary healthcare staff and medical equipment.  </p>
+    <br />
     </Card.Text>
     <button className='btns1'  onClick={handleShow}><b>Help Line</b></button>
   </Card.Body>

@@ -8,6 +8,7 @@ import { useHistory } from 'react-router';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import { Recorder } from 'react-voice-recorder'
 import Loader from './loader/Loader';
+
 function Chat() {
 
     let history = useHistory();
@@ -27,6 +28,7 @@ function Chat() {
             let msgs = snapshot.docs.map(doc => doc.data());
             let lastVisible = msgs.length - 10;
             setMessages(snapshot.docs.map(doc => doc.data()));
+            setLastMessagesLimit();
             setLoading(false)
         })
         // .catch(e =>{
