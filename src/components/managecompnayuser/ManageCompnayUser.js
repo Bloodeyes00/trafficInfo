@@ -4,12 +4,17 @@ import firebase from '../utils/firebase';
 import { useEffect, useState } from 'react';
 import { auth } from '../utils/firebase';
 import { IoMdArrowBack } from "react-icons/io";
+import Loader from "../loader/Loader";
 
-function BlockUser() {
+
+function ManageCompnayUser() {
     let history = useHistory();
     const [usersList, setUsersList] = useState([]);
+    const [loading, setLoading] = useState([]);
+
     const [currentUserDetails, setuserdetails] = useState(null);
     const loadProfile = () => {
+        setLoading(true)
         const firestore = firebase.database().ref("/UserProfile");
         firestore.on('value', (snapshot) => {
             if (snapshot?.val()) {
@@ -19,10 +24,11 @@ function BlockUser() {
                 data.map((item, index) => item["key"] = keys[index])
                 let currentUserDetails = data.find(item => item.uid == auth?.currentUser.uid);
                 setuserdetails(currentUserDetails);
-
+                setLoading(false)
                 let companyUsers = data?.filter(item => item?.companyName == currentUserDetails?.companyName);
                 setUsersList(companyUsers);
                 console.log("company users : ", companyUsers);
+                setLoading(false)
             }
         });
     }
@@ -34,6 +40,8 @@ function BlockUser() {
 
     return (
         <div className="container-fluid-block">
+        {loading && <Loader />  }
+
             <div className="container-block">
                 <div className='table-responsive'>
                     <table class=" table ">
@@ -70,4 +78,4 @@ function BlockUser() {
             </div>
         </div>
     )
-} export default BlockUser
+} export default ManageCompnayUser

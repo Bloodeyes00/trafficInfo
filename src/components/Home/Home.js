@@ -6,7 +6,8 @@ import Button from '@restart/ui/esm/Button';
 import { useEffect, useState } from 'react'
 import firebase from "../utils/firebase";
 import { storage } from '../utils/firebase'
-import logo from "../../assets/logo.png";
+import trafikinfo from '../../images/trafikinfo.png'
+
 
 import { useHistory } from 'react-router'
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
   const [progress, setProgress] = useState()
 
   let history = useHistory();
-
+ 
   const loadHome = () => {
     console.log("check 1")
     setLoading(true)
@@ -164,7 +165,7 @@ const Home = () => {
               <Carousel variant="dark">
                 {movies.map(card =>
                   <Carousel.Item>
-                    <center><Card.Img variant="top" src={card?.url ? card.url : logo}
+                    <center><Card.Img variant="top" src={card?.url ? card.url : trafikinfo}
                      alt="No Image" className="cardimgs1"
                     />
                     </center>

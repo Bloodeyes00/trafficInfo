@@ -21,7 +21,7 @@ class Sendimage extends Component {
     }
     setLoading() {
         // this.setState({ loading: !this.state.loading });
-        this.setState({ loading: true });
+        // this.setState({ loading: true });
     }
     handleChange = e => {
         if (e.target.files[0]) {

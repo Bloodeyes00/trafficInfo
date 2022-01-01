@@ -3,6 +3,8 @@ import './Admin.css';
 import { useHistory } from 'react-router';
 
 function Admin() {
+
+  
   let history = useHistory();
 
   return (
@@ -24,7 +26,7 @@ function Admin() {
               </button>
             </div>
             <div className='col px-0'>
-              <button type="button" onClick={() => { history.push("/blockuser") }}
+              <button type="button" onClick={() => { history.push("/managecompnayuser") }}
                 className="home-btn btn-primary btn-lg mh-100 w-100" >
                 <b>Manage Company User</b>
               </button>

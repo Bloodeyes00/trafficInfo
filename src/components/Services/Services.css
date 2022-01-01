@@ -129,10 +129,11 @@ h2{
 }
 
 .cardimg0{
-    width: 50%;
-    height: 160px; 
+    width: 72%;
+    height: 248px; 
     border-Radius: 2px; 
     display: flex;
+    border: none;
 }
 
 .plus{

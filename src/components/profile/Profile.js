@@ -10,6 +10,8 @@ import { useHistory } from "react-router";
 import { IoMdArrowBack } from "react-icons/io";
 import { storage } from '../utils/firebase'
 import Loader from "../loader/Loader";
+import { toast } from 'react-toastify';
+
 
 export default function Profile() {
   const [Name, setName] = useState("");
@@ -18,6 +20,8 @@ export default function Profile() {
   const [companyName, setcompanyName] = useState("");
   const [loading, setLoading] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
+  const notifyf = () => toast("login succesfully!");
+
 
 
   const [progress, setProgress] = useState("");
@@ -32,23 +36,28 @@ export default function Profile() {
     setLoading(true)
     const firestore = firebase.database().ref("/UserProfile");
     firestore.on('value', (snapshot) => {
-      let data = { ...snapshot.val() };
-      data = Object.values(data);
-      let keys = Object.keys(snapshot.val());
-      data.map((item, index) => {
-        item["key"] = keys[index]
-      })
-      console.log("data updated in profile : ", data);
-      console.log("keys : ", keys);
-
-      if (auth?.currentUser?.uid) {
-        // console.log("auth uids: ", auth.currentUser.uid);
-        let currentUserDetails = data.find(item => item?.uid == auth?.currentUser?.uid);
-        console.log("currentUserDetails in profile : ", currentUserDetails);
-        setuserdetails(currentUserDetails);
-        setLoading(false)
-        // setEmail(currentUserDetails.email);
-        // setName(currentUserDetails.name);
+      if (snapshot.val()) {
+        let data = { ...snapshot?.val() };
+        data = Object?.values(data);
+        let keys = Object?.keys(snapshot?.val());
+        data.map((item, index) => {
+          item["key"] = keys[index]
+        })
+        console.log("data updated in profile : ", data);
+        console.log("keys : ", keys);
+        if (auth?.currentUser?.uid) {
+          // console.log("auth uids: ", auth.currentUser.uid);
+          let currentUserDetails = data.find(item => item?.uid == auth?.currentUser?.uid);
+          console.log("currentUserDetails in profile : ", currentUserDetails);
+          setuserdetails(currentUserDetails);
+          setLoading(false)
+          // setEmail(currentUserDetails.email);
+          // setName(currentUserDetails.name);
+        }
+      }
+      else {
+        setLoading(false);
+        alert("no data found");
 
       }
     });
@@ -130,15 +139,25 @@ export default function Profile() {
       url: url ? url : "",
     };
     console.log("check 2 userdetails", userdetails);
-    firestore.child(userdetails?.key)
-      .update(data)
-      .then((res) => {
-        history.push('/home');
-        console.log("res after registration", res);
+    if (userdetails) {
+      firestore.child(userdetails?.key)
+        .update(data)
+        .then((res) => {
+          history.push('/home');
+          console.log("res after registration", res);
+          toast.success("Profile Updated")
+        })
+        .catch((e) => {
+          console.log("error in pushing data :", e);
+        });
+    } else {
+      firestore.push(data).then(res => {
+        console.log("res : ", res);
+        toast.success("New Profile created.")
+      }).catch(e => {
+        console.log("e", e)
       })
-      .catch((e) => {
-        console.log("error in pushing data :", e);
-      });
+    }
   };
   return (
     <div>
@@ -155,11 +174,11 @@ export default function Profile() {
 
 
             <input className={imageLoading ? "loading" : "input-profile"}
-             style={{ height: "60px", backgroundSize: "70px", }}
-              type="file" 
+              style={{ height: "60px", backgroundSize: "70px", }}
+              type="file"
               onClick={(e) => handleChange(e, "first")}>
 
-              </input>
+            </input>
           </div>
           <div className="Datas d-flex justify-content-center  align-items-center py-4 flex-wrap">
             <div class="mb-3">

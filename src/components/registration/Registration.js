@@ -15,12 +15,14 @@ export default function Registration(props) {
   let { setCurrentPageLogin } = props;
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const SaveUserDetails = (userCredential) => {
     const firestore = firebase.database().ref("/UserProfile");
     let data = {
       email: email,
       password: password,
+      confirmPassword: confirmPassword,
       uid: auth?.currentUser?.uid,
     };
 
@@ -44,7 +46,7 @@ export default function Registration(props) {
         // send verification mail.
         SaveUserDetails();
         // store data in firebase
-
+        history.push('/profile')
 
       })
       .catch((e) => {
@@ -52,6 +54,20 @@ export default function Registration(props) {
       });
 
   };
+  function check() {
+    var password = document.getElementById("exampleInputpassword").value;
+    var confirmPassword = document.getElementById("exampleInputCpassword").value;
+
+    if (password == confirmPassword) {
+      document.getElementById("wrong").innerHTML = "Form is submitted";
+      signup();
+      // return true;
+    }
+    else {
+      document.getElementById("wrong").innerHTML = " Password did not match";
+      return false;
+    }
+  }
 
 
   return (
@@ -79,7 +95,7 @@ export default function Registration(props) {
                 <input
                   type="email" placeholder="Enter Email"
                   className="form-control "
-                  id="exampleInputpassword"
+                  id="exampleInputEpassword"
                   onChange={(e) => { setemail(e.target.value) }}>
                 </input>
 
@@ -100,11 +116,12 @@ export default function Registration(props) {
               <div className="mb-1 input">
 
                 <input
-                  type="password" placeholder="Conform Password"
+                  type="password" placeholder="Confirm Password"
                   className="form-control"
-                  id="exampleInputpassword"
-                  onChange={(e) => { setpassword(e.target.value) }}
+                  id="exampleInputCpassword"
+                  onChange={(e) => { setConfirmPassword(e.target.value) }}
                 />
+                <label id="wrong" style={{ color: "red" }}></label>
 
               </div>
               <div>
@@ -112,14 +129,11 @@ export default function Registration(props) {
                   type="submit"
                   className=" Btn4  mt-3 mb-3 "
                   //    onClick={notify}
-                  onClick={() => {
-                    signup();
-
-                  }}
+                  onClick={() => { check(); }}
                 >
                   Register
                 </button >
-               
+
               </div>
               <br />
               <a type="button"

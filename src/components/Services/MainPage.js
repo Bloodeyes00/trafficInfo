@@ -63,7 +63,7 @@ function MainPage() {
                     <div className='plus '> <TiPlus /></div>
                     <div className='find'><h2 onClick={() => { history.push("/VehiclesServices") }}>Vehicles Services</h2></div>
                     <div className='imgsss'>
-                    <img  style={{border:"none",borderRadius:"2px",}} src={carser} />  
+                    <img onClick={() => { history.push("/VehiclesServices") }}  style={{border:"none",borderRadius:"2px",}} src={carser} />  
                          </div>
                     
                 </div>
@@ -72,7 +72,7 @@ function MainPage() {
                     <div className='plus '> <TiPlus /></div>
                     <div className='find'><h2 onClick={() => { history.push("/Emergencyservice") }}>Emergency Services</h2></div>
                     <div className='imgsss'>
-                    <img  style={{border:"none",borderRadius:"2px",}} src={emergencybtn} />  
+                    <img  onClick={() => { history.push("/Emergencyservice") }} style={{border:"none",borderRadius:"2px",}} src={emergencybtn} />  
                          </div>
                 </div>
                 <div className='row-c'>

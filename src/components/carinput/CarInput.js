@@ -29,7 +29,7 @@ function CarInput() {
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
 
-
+ 
 
   const handleChange = (e, check) => {
     setLoading(true)

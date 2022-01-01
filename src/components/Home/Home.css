@@ -19,10 +19,11 @@
 }
 
 .cardimgs1{
-    width: 50%;
-    height: 160px;
+    width: 72%;
+    height: 248px;
     border-Radius: 2px;
     display: flex;
+    border: none;
 }
 
 
@@ -125,3 +126,15 @@ margin-top: 17px;
       width: 100% !important;
     }
   }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ffffff00;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
