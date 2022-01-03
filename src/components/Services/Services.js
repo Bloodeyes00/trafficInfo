@@ -13,8 +13,7 @@ import car5 from '../Services/car5.jpg';
 import { Carousel } from 'react-bootstrap'
 import Loader from '../loader/Loader';
 import { storage } from '../utils/firebase'
-import trafikinfo from '../../images/trafikinfo.png'
-
+import trafikinfo from '../../images/trafikinfo.png';
 
 const Services = () => {
     const [smShow, setSmShow] = useState(false);
@@ -123,7 +122,7 @@ return {
         return (
             
             <div>
-                <div>
+                   <div>
                     <Modal
                         size="sm"
                         show={smShow}
@@ -218,8 +217,11 @@ return {
         )
     }
     return (<div >
-
-        <div className="container ">
+     
+      <div className="container ">
+      <div className='abc1'>
+            <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
+      </div>
             {loading && <Loader />}
             <div className='container-fluid-car'>
                 <div className='container-car'>

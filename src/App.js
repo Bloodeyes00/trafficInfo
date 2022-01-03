@@ -29,7 +29,7 @@ function App() {
   }, [user, oldUser, oldUserState])
   return (
     <>
-      <div className="container-fluid-home px-0">
+      <div className="container-app px-0">
       <ToastContainer 
       position='top-center'
      />

@@ -162,9 +162,11 @@ export default function Profile() {
   return (
     <div>
       {loading && <Loader />}
-      <div className="Profile d-flex flex-column  align-items-center mt-5 pb-5">
+      <div className="Profile ">
+      <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
+      
         <div className="prof">
-          <div className="Heading d-flex justify-content-center  mt-3">
+          <div className="Heading d-flex justify-content-center">
             <h1>
               <b>Profile</b>
             </h1>

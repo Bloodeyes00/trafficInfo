@@ -4,6 +4,7 @@ import { storage } from '../utils/firebase'
 import { useState } from "react";
 import { useHistory } from "react-router";
 import firebase from "../../components/utils/firebase";
+import { IoMdArrowBack } from "react-icons/io";
 
 
 function UploadAds() {
@@ -76,6 +77,8 @@ function UploadAds() {
 
   return (
     <div className="container-fluid-uploads">
+            <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
+
       <div className="container-uploads">
         <div className="col-camra sm-4">
           <div className="camra d-flex ms-3 mt-4">

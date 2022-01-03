@@ -1,5 +1,6 @@
 .container-fluid-chatroom{
     background-color: rgb(232, 230, 230);
+    height: 100%;
 }
 .main{
     background-color:#ffffff;
@@ -18,4 +19,7 @@ margin-right: 40px;}
     height: 60px;
     width: 60px;
     
+}
+.heading2{
+    margin-top: -20px;
 }

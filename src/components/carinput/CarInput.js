@@ -123,7 +123,8 @@ function CarInput() {
   };
   return (
     <div className="container-fluid-carinput">
-      <h1 style={{ textAlign: "center" }}>POST YOUR AD</h1>
+    <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
+     <h1 style={{ textAlign: "center" }}>POST YOUR AD</h1>
       <div className="container-carinput">
         <div className="row-header ms-3 mt-1">
           <h3 >SELECTED CATEGORY</h3>

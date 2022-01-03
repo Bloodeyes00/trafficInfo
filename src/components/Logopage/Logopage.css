@@ -1,6 +1,6 @@
 .Container-fluid-logopage{
     background-color: #ffffff36;
-    height: 70vh;
+    height: 80vh;
     margin-top: 70px;
  background-size: contain;
  background-repeat: no-repeat;
@@ -20,8 +20,8 @@
 .wtti::after{
     content: "";
     position: absolute;
-    height: 100%;
-    width: 100%;
+    height: 80vh;
+    width: 100vh;
     background: white;
     border-left: 2px solid rgb(255, 255, 255);
     left: 0;
@@ -40,6 +40,7 @@
     text-Align: center;
     align-Items:center;
     height: 45%;
-    width: 45%; 
+    width: 50%; 
+    margin-left: 25%;
     border: none;
 }

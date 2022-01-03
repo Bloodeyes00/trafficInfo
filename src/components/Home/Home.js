@@ -45,8 +45,7 @@ const Home = () => {
     if (e.target.files[0]) {
       console.log("check2");
       const image = e.target.files[0];
-      // setImage(() => ({ image }));
-      // setImage(image)
+     
 
       handleUpload(image, check);
 
@@ -76,18 +75,7 @@ const Home = () => {
           if (check == "first") {
             setUrl(url);
           }
-          // if (check == "2nd") {
-          //   setUrl2(url)
-          // }
-          // if (check == "3rd") {
-          //   setUrl3(url)
-          // }
-          // if (check == "4th") {
-          //   setUrl4(url)
-          // }
-          // this.props.setCurrentImgUrl(url);
-          // this.ref = "";
-          // this.setState({ loading: false })
+         
         })
       });
 
@@ -184,18 +172,9 @@ const Home = () => {
 
   return (
 
-    <div className="container-fluid-home px-0 custom_bg_Home pb-3">
-
-      <div className="row px-0">
-
-        <div onClick={() => { history.push(`/chat/${11}`) }} className="img-logo mt-20">
-
-
-        </div>
-        <div className="container  py-2">
-
-
-          <div className="container">
+    <div className="container-home">
+      <div onClick={() => { history.push(`/chat/${11}`) }} className="img-logo">
+       </div>
             <div className="row ">
               <div className='col '>
                 <button type="button" className="home-btn btn-primary btn-lg " onClick={() => { history.push(`/chatroom`) }}
@@ -217,14 +196,14 @@ const Home = () => {
               </div>
 
             </div>
-          </div>
-          <div className="container-fluid ">
+          
+          <div className="row-ads ">
             <h2 style={{ textAlign: 'center' }}>
               Ads Components
             </h2>
           </div>
-        </div>
-      </div>
+ 
+      
       <div style={{ alignItems: 'center', marginTop: '20px' }}>
         {<RenderCard />}
       </div>

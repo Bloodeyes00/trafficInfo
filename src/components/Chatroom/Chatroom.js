@@ -54,14 +54,16 @@ export default function Chatroom() {
     return (
         <div>
             <div className="container-fluid-chatroom">
+
                 {loading && <Loader />}
-                <div className="main mt-2">
+                <div className="main">
                     {/* <button className="btnsss ms-3 "  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
                     <br />
                     <br />
 
-                    <h2 className="heading2 ps-3 pb-3">
-                        <b style={{ color: "#2C2E43" }}> COMPANY CHAT ROOM </b>
+                    <h2 className="heading2  pb-3">
+            <button className="btnsss " onClick={() => history.goBack()}><IoMdArrowBack /></button>
+             <b style={{ color: "#2C2E43" }}> COMPANY CHAT ROOM </b>
                     </h2>
                 </div>
                 {<div style={userdetails?.companyName !== "Svea Taxi" ? { opacity: 0.5 } : { opacity: 1 }} className="hello mt-5 col-sm-10 offset-1"
@@ -102,7 +104,9 @@ export default function Chatroom() {
                         <p className="taxi ">Description of chatroom Taxi 1212</p></div>
                 </div>}
                 <br />
-
+                <br />
+                <br />
+                <br />
             </div>
         </div >
     )

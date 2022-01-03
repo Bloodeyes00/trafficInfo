@@ -1,6 +1,8 @@
 import React from 'react'
 import './Admin.css';
 import { useHistory } from 'react-router';
+import { IoMdArrowBack } from "react-icons/io";
+
 
 function Admin() {
 
@@ -8,7 +10,9 @@ function Admin() {
   let history = useHistory();
 
   return (
-    <div className="container-fluid-home px-0 custom_bg_Home pb-3">
+    <div className="container-fluid-admin">
+            <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
+
       <div className="row px-0">
         <center>
           <div className="Admintext"><b>Admin</b></div>

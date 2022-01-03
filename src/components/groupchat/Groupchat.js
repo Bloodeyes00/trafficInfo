@@ -4,13 +4,19 @@ import sveaTaxi from '../../assets/images/SveaTaxi.png'
 import microsoftteams from '../../assets/images/MicrosoftTeams.png'
 import sverigetaxi from '../../assets/images/Sverigetaxi.jpg'
 import T1212 from '../../assets/images/T1212.jpg'
+import { IoMdArrowBack } from "react-icons/io";
+import { useHistory } from "react-router-dom";
+
 
 export default function Groupchat() {
+
+let history = useHistory()
+
   return (
     <div className="container-fluid-groupchat">
-
       <div className="header sm">
         <div className="groups sm">
+        <button className="btnsss " onClick={() => history.goBack()}><IoMdArrowBack /></button>
 
           <h3>MY GROUPS</h3>
         </div>
@@ -70,6 +76,9 @@ export default function Groupchat() {
           <p> Doing what you like will always keep you  </p>
         </div>
       </div>
+<br/>
+<br/>
+<br/>
 <br/>
 
 

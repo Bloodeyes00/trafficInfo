@@ -59,7 +59,7 @@ export default function Login(props) {
      
       
       {loading && <Loader />}
-      {curPageLogin && <div className=" col flex-coloumn col-sm-12">
+      {curPageLogin && <div className=" col">
         <div className="Login">
           <div className="Profile d-flex flex-column justify-content-center align-items-center ">
             <div className="Heading d-flex justify-content-center mt-3 mb-5">
@@ -106,7 +106,7 @@ export default function Login(props) {
                 onClick={() => setCurrentPageLogin(false)}
 
               >
-                <h7 className="textss">Don't have an Account?<b className="signup-in"> SignUp</b> </h7>
+                <h6 className="textss">Don't have an Account?<b className="signup-in"> SignUp</b> </h6>
               </a>
             </div>
           </div>

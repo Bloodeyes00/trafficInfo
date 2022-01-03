@@ -39,10 +39,14 @@ const [loading, setLoading] = useState(false)
         <div className="container ">
             {loading && <Loader />}
             <div className='container-fluid-car'>
-                <div className='container-car'>
-                    <div className="col">
+                <div className="abc1" >
+            <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
+                    </div>
+                  <div className='container-car'>
+                      
+                  <div className="col">
                         
-                        <Button onClick={() => { history.push("/Job") }}
+                 <Button onClick={() => { history.push("/Job") }}
                             className="btn-job" >Add Jobs</Button>
 
                         <div className="form-control-job ">
