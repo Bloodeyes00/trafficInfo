@@ -6,6 +6,8 @@ import policehelp from "../../images/policehelp.jpg"
 import trafficpolice from "../../images/trafficpolice.jpg"
 import Hospital from "../../images/Hospital.jpg"
 import firebrigade from "../../images/firebrigade.jpg"
+import { IoMdArrowBack } from "react-icons/io";
+import {useHistory} from "react-router";
 
 function VehiclesServices() {
     const [show, setShow] = useState(false);
@@ -13,8 +15,11 @@ function VehiclesServices() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    let history = useHistory()
+
     return (
         <div className='container-fluid-Vehicles'>
+            <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
 
 <>
    

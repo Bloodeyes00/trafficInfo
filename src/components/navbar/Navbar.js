@@ -19,6 +19,8 @@ import { auth, db } from "../utils/firebase";
 import firebase from "../utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Loader from "../loader/Loader";
+
+
 export default function Navbar() {
  
 const loadNavbar =() => {
@@ -64,15 +66,17 @@ const loadNavbar =() => {
               <a onClick={handleShow}>
                 <span className="navspan">
                   <MdOutlineReorder />
-                </span>
+                  </span>
               </a>
             </div>
 
             <div className="col-10 pt-4">
               <h3 className="info"><b>TRAFFIC INFO</b></h3>
+
             </div>
 
           </div>
+
           <Offcanvas show={show} onHide={handleClose}>
             <Offcanvas.Header>
               <Offcanvas.Title>

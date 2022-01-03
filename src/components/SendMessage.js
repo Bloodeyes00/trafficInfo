@@ -161,7 +161,7 @@ function SendMessage({ scroll }) {
 
     }
     return (
-        <div className="container" style={{}}>
+        <div className="container-sendmessagess">
             <div className="webcam-container">
 
                 {openCamera &&

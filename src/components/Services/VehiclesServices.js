@@ -6,6 +6,8 @@ import servicesonwheel from "../../images/servicesonwheel.jpg"
 import towing from "../../images/towing.jpg"
 import carwashing from "../../images/carwashing.jpg"
 import carmech from "../../images/carmech.jpg"
+import { IoMdArrowBack } from "react-icons/io";
+import { useHistory } from "react-router"
 
 function VehiclesServices() {
     const [show, setShow] = useState(false);
@@ -13,9 +15,13 @@ function VehiclesServices() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    let history = useHistory()
+
     return (
         <div className='container-fluid-Vehicles'>
-
+ 
+            <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
+    
 <>
    
 

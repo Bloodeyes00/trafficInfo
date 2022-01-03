@@ -83,7 +83,7 @@ p {
 }
 
 .sent {
-  background-color: #001d3a;
+  background-color: #f8f9fa;
   color: white;
   /* border-top-right-radius: 1000px; */
   flex-direction: row-reverse;
@@ -111,16 +111,16 @@ p {
 .sendMsg {
   position: fixed;
   display: flex;
-  width: 80%;
+  width: 100%;
   bottom: 10%;
   z-index: 1;
   /* border-top: 2px solid rgb(184, 182, 182); */
-  margin-left: 20px;
+  margin-left: 0px;
 /* 
   padding-bottom: 55px; */
   /* background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(242,241,241,1) 100%); */
   background-color: #ffffff;
-  border-radius: 35px;
+  border-radius: 15px;
   border: 1px solid gray;
   
 }
@@ -179,5 +179,9 @@ p {
  
 }
 
-
+.react-scroll-to-bottom--css-aioqz-1n7m0yu {
+  height: 87%;
+  overflow-y: auto;
+  width: 100%;
+}
 

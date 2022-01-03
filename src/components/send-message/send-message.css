@@ -29,6 +29,10 @@
     
 }
 
+.container-sendmessagess{
+    width: 100%;
+}
+
 
 
 
@@ -144,3 +148,12 @@ input[type="file"]::-webkit-file-upload-button {
     margin-bottom: 0px;
     background-color: white;
 }
+
+.btnsss{
+    border: none;
+    width: 60px;
+    border-radius: 5px;
+    background-color: rgba(112, 209, 247, 0); 
+    color: rgb(0, 0, 0);
+}
+

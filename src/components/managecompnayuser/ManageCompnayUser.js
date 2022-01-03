@@ -41,7 +41,7 @@ function ManageCompnayUser() {
     return (
         <div className="container-fluid-block">
         {loading && <Loader />  }
-
+        <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
             <div className="container-block">
                 <div className='table-responsive'>
                     <table class=" table ">

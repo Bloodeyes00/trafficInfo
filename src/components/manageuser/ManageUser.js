@@ -35,6 +35,7 @@ function ManageUser() {
     return (
         <div className="container-fluid-Allow">
             {loading && <Loader />}
+            <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
             <div className="container-Allow ms-4 mt-5">
                 <div className="row-allow ms-1">
                     <div className='table-responsive'>

@@ -50,7 +50,7 @@ element.style {
     color: white;
     border: 1px solid rgb(179, 179, 179);
     height: 40px;
-    width: 115px;
+    /* width: 115px; */
     border-radius: 10px;
    
 }
@@ -155,11 +155,12 @@ display: flex;
 align-items: center;
 }
 
-.imgsss{
+.imgssss{
     height: 100%;
+    margin-right: 10px;
     display: flex;
     justify-content: center;
-    
+    align-items: center;
 }
 
 .btns{
