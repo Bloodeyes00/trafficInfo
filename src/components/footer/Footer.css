@@ -2,7 +2,7 @@
     height: 10vh;
     width: 100%;
     background-color: rgb(218, 216, 216);
-    position: fixed;
+    position: absolute;
     bottom: 0;
 }
 

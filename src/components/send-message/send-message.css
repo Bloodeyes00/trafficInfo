@@ -23,7 +23,7 @@
     background-size: 30px;
     background-repeat: no-repeat;
     margin-left: -3px;
-    margin-top: 3px;
+    margin-top: 23px;
     border: none;
     
     
@@ -49,13 +49,13 @@ input[type="file"]::-webkit-file-upload-button {
 
 
 .capture{
-    margin-top: 10px;
+    margin-top: 28px;
     height: 30px;
     width: 70px;
     border: none;
 }
 .retake{
-    margin-top: 10px;
+    margin-top: 28px;
     height: 30px;
     width: 70px;
 }
@@ -76,7 +76,7 @@ input[type="file"]::-webkit-file-upload-button {
     height: 40px;
     width: 15%; 
     color: rgb(39, 156, 202); 
-    margin-Top: 12px;
+    margin-Top: 28px;
     margin-Left: 15px; 
     background-Color: white; 
     border-Radius: 40px; 
@@ -89,7 +89,7 @@ input[type="file"]::-webkit-file-upload-button {
     height: 40px; 
     width: 15%; 
     color: rgb(39, 156, 202); 
-    margin-Top: 12px;
+    margin-Top: 28px;
     margin-Left: 15px; 
     background-Color: white; 
     border: none; 
@@ -102,8 +102,8 @@ input[type="file"]::-webkit-file-upload-button {
     height: 40px; 
     width: 15; 
     color: rgb(39, 156, 202); 
-    margin-Top: 9px;
-    margin-Left: 4px; 
+    margin-Top: 28px;
+    margin-Left: 15px; 
     background-Color: white; 
     border: none; 
     border-Radius: 40px;
@@ -112,16 +112,17 @@ input[type="file"]::-webkit-file-upload-button {
 }
 
 .txtarea{
-    width: 100%; 
-    background-Color: white; 
-    padding: 0px; 
-    font-Size: 15px; 
+    width: 100%;
+    background-Color: #f9fafb;
+    padding: 0px;
+    font-Size: 15px;
     font-Weight: 550;
-    margin-Top: 15px; 
-    border: none; 
-    border-Radius: 5px; 
-    height: 30px; 
-    margin-Right: -10px; 
+    margin-Top: 34px;
+    border: solid gray;
+    border-width: 0px 0px 1px 0px;
+    border-Radius: 5px;
+    height: 28px;
+    margin-Right: -10px;
     outline: none;
 }
 
@@ -129,7 +130,7 @@ input[type="file"]::-webkit-file-upload-button {
     width: 11%; 
     margin-Left: 13px; 
     height: 40px; 
-    margin-Top: 9px; 
+    margin-Top: 28px; 
     border: none;
     background-Color: white; 
     color: rgb(39, 156, 202); 
@@ -138,7 +139,7 @@ input[type="file"]::-webkit-file-upload-button {
 
 .iosend{
     width: 6%; 
-    margin-Top: 8px;
+    margin-Top: 28px;
     font-Weight: 550;
     max-Width: 200px; 
     margin-Right: 20px; 

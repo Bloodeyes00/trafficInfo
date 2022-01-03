@@ -70,7 +70,7 @@ function Chat() {
             className={ROOT_CSS} 
             onScroll={(e) => { loadMore(e) }} 
             >
-                <infinite-scroll
+                <infinite-scroll className="chatscroll"
                  pageStart={0} useWindow={false}
                   loadMore={loadMore()} data-height="300" data-threshold="0.8" onScroll={(e) => { loadMore(e) }}
                    >
