@@ -10,7 +10,7 @@ function Agree(props) {
         <div className="container-fluid-agree">
             <div className="row-agree mt-5">
                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc iaculis ipsum vel tincidunt lacinia. Nam porta lectus et dui accumsan consectetur</p>
+                    Nunc iaculis ipsum vel tincidunt lacinia. Nam porta lectus </p>
             </div>
             <div className="row1-agree">
                 <button className="btnn1" onClick={() => {
