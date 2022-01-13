@@ -1,14 +1,14 @@
 .container-fluid-chats{
-    background-color: #ffffff;
-    height: 80vh;
+    background-color        : #3b9bf7;
+    height                  : 80vh;
 }
 .comchats{
-    border-Bottom: "solid 0.0px gray"; 
+    border-Bottom           : "solid 0.0px gray"; 
 }
 
 
 .imgcard{
-    height: 270px;
-    width: 270px;
-    border-Radius: 0px
+    height                  : 270px;
+    width                   : 270px;
+    border-Radius           : 0px
 }

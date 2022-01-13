@@ -1,14 +1,14 @@
 .Admintext{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size:40px;
+    margin-top          : 10px;
+    margin-bottom       : 10px;
+    font-size           :40px;
 }
 .container-fluid-admin{
-    background-image: url(../login/background.png) ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 80vh;
-    width: 100%;
-    padding: 15px;
-    color: #2C2E43 !important
+    background-image    : url(../login/background.png) ;
+    background-repeat   : no-repeat;
+    background-size     : cover;
+    height              : 80vh;
+    width               : 100%;
+    padding             : 15px;
+    color               : #2C2E43 !important
 }

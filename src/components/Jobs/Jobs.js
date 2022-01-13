@@ -36,7 +36,7 @@ const [loading, setLoading] = useState(false)
     }, [])
     const [movies, setMovies] = useState([])
     return (
-        <div className="container ">
+        <div className="container-jobs ">
             {loading && <Loader />}
             <div className='container-fluid-car'>
                 <div className="abc1" >

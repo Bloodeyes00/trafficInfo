@@ -1,99 +1,115 @@
 .container-fluid-footer{
-    height: 10vh;
-    width: 100%;
-    background-color: rgb(218, 216, 216);
-    position: absolute;
-    bottom: 0;
+    height                  : 10vh;
+    width                   : 100%;
+    position                : absolute;
+    bottom                  : 0;
 }
 
 .row-footer{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(218, 216, 216);
+    height                  : 100%;
+    width                   : 100%;
+    display                 : flex;
+    justify-content         : center;
+    align-items             : center;
+    position                : fixed;
+    background-color        : rgb(218, 216, 216);
 
     
 }
 
 .col-a{
-    height: 100%;
-    width: 20%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
+    height                  : 100%;
+    width                   : 20%;
+    justify-content         : center;
+    align-items             : center;
+    text-align              : center;
+    padding                 : 10px;
 }
 
 .col-a:hover{
-    height: 100%;
-    width: 20%;
-    color: rgb(68, 135, 235);
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
+    height                  : 100%;
+    width                   : 20%;
+    color                   : rgb(68, 135, 235);
+    justify-content         : center;
+    align-items             : center;
+    text-align              : center;
+    padding                 : 10px;
 }
 
 .col-b{
-    height: 100%;
-    width: 26%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0px;
-    margin-top: 20px;
+    height                  : 100%;
+    width                   : 26%;
+    justify-content         : center;
+    align-items             : center;
+    text-align              : center;
+    padding                 : 0px;
+    margin-top              : 20px;
 }
 
 .col-b:hover{
-    height: 100%;
-    width: 26%;
-    color: rgb(68, 135, 235);
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0px;
-    margin-top: 20px;
+    height                  : 100%;
+    width                   : 26%;
+    color                   : rgb(68, 135, 235);
+    justify-content         : center;
+    align-items             : center;
+    text-align              : center;
+    padding                 : 0px;
+    margin-top              : 20px;
 }
 
 .col-c{
-    height: 100%;
-    width: 30%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0px;
-    margin-top: 20px;
+    height                  : 100%;
+    width                   : 30%;
+    justify-content         : center;
+    align-items             : center;
+    text-align              : center;
+    padding                 : 0px;
+    margin-top              : 20px;
 }
 .col-c:hover{
-    height: 100%;
-    color: rgb(68, 135, 235);
-    width: 30%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0px;
-    margin-top: 20px;
+    height                  : 100%;
+    color                   : rgb(68, 135, 235);
+    width                   : 30%;
+    justify-content         : center;
+    align-items             : center;
+    text-align              : center;
+    padding                 : 0px;
+    margin-top              : 20px;
 }
 
 .col-d{
-    height: 100%;
-    width: 20%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
+    height                  : 100%;
+    width                   : 20%;
+    justify-content         : center;
+    align-items             : center;
+    text-align              : center;
+    padding                 : 10px;
 }
 
 .col-d:hover{
-    height: 100%;
-    width: 20%;
-    color: rgb(68, 135, 235);
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
+    height                  : 100%;
+    width                   : 20%;
+    color                   : rgb(68, 135, 235);
+    justify-content         : center;
+    align-items             : center;
+    text-align              : center;
+    padding                 : 10px;
 }
 
+.sidebaricon{
+    font-size               : 30px;
+    height                  : 40px;
+    width                   : 40px;
+    /* margin-top              : -26px; */
+}
+
+
+.sidebaricon:hover{
+    color                   : rgb(68, 135, 235);;
+    font-size               : 30px;
+    height                  : 40px;
+    width                   : 40px;
+    /* margin-top              : -26px; */
+}
 
 

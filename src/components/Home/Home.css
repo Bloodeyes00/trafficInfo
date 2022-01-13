@@ -1,36 +1,36 @@
 .container-home {
-    background-image: url(../login/background.png) ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 80vh;
-    width: 100%;
-    padding: 15px;
-    color: #2C2E43 !important; 
+    background-image            : url(../login/background.png) ;
+    background-repeat           : no-repeat;
+    background-size             : cover;
+    height                      : 80vh;
+    width                       : 100%;
+    padding                     : 15px;
+    color                       : #2C2E43 !important; 
 }
 .img-logo{
-    background-image: url(../Home/Trafficinfo.png);
-    background-size: 100px;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 16vh;
-    width: 39%;
-    margin-left: 32vw;
-    display: flex; 
+    background-image            : url(../Home/Trafficinfo.png);
+    background-size             : 100px;
+    background-repeat           : no-repeat;
+    background-position         : center;
+    height                      : 16vh;
+    width                       : 39%;
+    margin-left                 : 28vw;
+    display                     : flex; 
   
 }
 
 .cardimgs1{
-    width: 72%;
-    height: 248px;
-    border-Radius: 2px;
-    display: flex;
-    border: none;
+    width                       : 36%;
+    height                      : 160px;
+    border-Radius               : 2px;
+    display                     : flex;
+    border                      : none;
 }
 
 
 .btsss{
-    display: flex;
-    justify-content: center;
+    display                     : flex;
+    justify-content             : center;
 }
 
 
@@ -38,120 +38,123 @@
 
 
 .img-logo:hover{
-    background-image: url(../Home/Trafficinfo2.png);
-    background-size: 100px;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 16vh;
-    width: 39%;
-    margin-left: 32vw;
-    display: flex;
+    background-image            : url(../Home/Trafficinfo2.png);
+    background-size             : 100px;
+    background-repeat           : no-repeat;
+    background-position         : center;
+    height                      : 16vh;
+    width                       : 39%;
+    margin-left                 : 28vw;
+    display                     : flex;
 }
 
 
 h3 {
-    color: #2C2E43;
+    color                       : #2C2E43;
 }
 .Tlogo{
    
-   background-size: 20px;
+   background-size              : 20px;
 }
 h4 {
-    color: #2C2E43;
+    color                       : #2C2E43;
 }
 .Dat {
-    background-color: rgba(231, 231, 231, 0.288);
-    flex-direction: column;
-    border-radius: 30px;
-    height: 43vh;
-    border: 1px solid gray;
-    box-shadow: black 3px 4px 9px -1
+    background-color            : rgba(231, 231, 231, 0.288);
+    flex-direction              : column;
+    border-radius               : 30px;
+    height                      : 43vh;
+    border                      : 1px solid gray;
+    box-shadow                  : black 3px 4px 9px -1
 
 }
-.row-home{
-    background-image: url(../Home/Trafficinfo.png);
-background-repeat: no-repeat;
-background-size: 100px;
-height: 100px;
-background-position:center ;
-margin-top: 17px;
-}
+
 #Card1 {
    
-    background-size: 10px;
-    background-repeat: no-repeat;
-    color: white;
+    background-size             : 10px;
+    background-repeat           : no-repeat;
+    color                       : white;
 }
 
 #Card2 {
-    background-image: url(../../assets/Home/pic2.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: white;
+    background-image            : url(../../assets/Home/pic2.jpg);
+    background-size             : cover;
+    background-repeat           : no-repeat;
+    color                       : white;
 }
 
 #Card3 {
-    background-image: url(../../assets/Home/taxi1.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: white;
+    background-image            : url(../../assets/Home/taxi1.jpeg);
+    background-size             : cover;
+    background-repeat           : no-repeat;
+    color                       : white;   
 }
 
 #Card4 {
-    background-image: url(../../assets/Home/taxi4.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: white;
+    background-image            : url(../../assets/Home/taxi4.jpeg);
+    background-size             : cover;
+    background-repeat           : no-repeat;
+    color                       : white;
 }
 
 .home-btn{
-    width: 100%; 
-   height: 40px; 
-    background-Color: #1ab9f8;
-    font-Size:11px;
-    border-Radius: 5px;
-    color: white;
-    border: 1px solid rgb(207, 207, 207);
+    width                       : 100%; 
+   height                       : 40px; 
+    background-Color            : #1ab9f8;
+    font-Size                   : 11px;
+    border-Radius               : 5px;
+    color                       : white;
+    border                      : 1px solid rgb(207, 207, 207);
 }
 
 
 @media screen and (max-width:450px) {
 
     .home-btn{
-        width: 100%; 
-       height: 40px; 
-        background-Color: #1ab9f8;
-        font-Size:9px;
-        border-Radius: 5px;
-        color: white;
-        border: 1px solid rgb(207, 207, 207);
+        width                   : 100%; 
+       height                   : 40px; 
+        background-Color        : #1ab9f8;
+        font-Size               :9px;
+        border-Radius           : 5px;
+        color                   : white;
+        border                  : 1px solid rgb(207, 207, 207);
     
 }
 }
 
 .home-btn:hover{
-    background-color:#d1edf8 ;
-    color: black;
+    background-color            :#d1edf8 ;
+    color                       : black;
 }
 
 
 .Home-buttons:hover {
-    background-color: green;
+    background-color            : green;
 }
 @media screen and (max-width: 375px) {
     .custom_btn_company{
-      width: 100% !important;
+      width                     : 100% !important;
     }
   }
 
   .card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #ffffff00;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
+    position                    : relative;
+    display                     : flex;
+    flex-direction              : column;
+    min-width                   : 0;
+    word-wrap                   : break-word;
+    background-color            : #ffffff00;
+    background-clip             : border-box;
+    border                      : 1px solid rgba(0,0,0,.125);
+    border-radius               : .25rem;
 }
+
+/* .logoimgss{
+    height                      : 50%;
+    width                       : 100%; 
+    background-image            : url(../Logopage/trafikinfo.png);
+    background-repeat           : no-repeat;
+    background-size             : contain;
+    background-position         : center;
+} */
+

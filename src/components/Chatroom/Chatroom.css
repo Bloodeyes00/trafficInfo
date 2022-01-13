@@ -1,25 +1,43 @@
 .container-fluid-chatroom{
-    background-color: rgb(232, 230, 230);
-    height: 100%;
+    background-color        : #3b9bf7;
+    height                  : 100%;
 }
 .main{
-    background-color:#ffffff;
-    border-bottom-right-radius: 30px ;
-    border-bottom-left-radius: 30px;
+   margin-right             : 20%;
 }
 .heading{
-    text-align: center;
+    text-align              : center;
 }
 .hello{
-    border-radius: 30px;
-    background-color:white;
-    display: flex;
-margin-right: 40px;}
+    border-radius           : 30px;
+    background-color        :white;
+    display                 : flex;
+margin-right                : 40px;}
 .image{
-    height: 60px;
-    width: 60px;
+    height                  : 60px;
+    width                   : 60px;
     
 }
 .heading2{
-    margin-top: -20px;
+    margin-top              : -20px;
+}
+
+.icnss{
+    margin-left: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.counter{
+    width   	            : 20px;
+    height                  : 20px;
+    background-color        : red;
+    color: white;
+    border-radius           : 50%;
+    padding: 5px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
 }

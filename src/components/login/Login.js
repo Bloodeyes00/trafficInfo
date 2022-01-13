@@ -64,7 +64,7 @@ export default function Login(props) {
           <div className="Profile d-flex flex-column justify-content-center align-items-center ">
             <div className="Heading d-flex justify-content-center mt-3 mb-5">
             </div>
-            <div className="Data d-flex align-items-center  mb-5">
+            <div className="Datass d-flex align-items-center  mb-5">
               <div className="mb-3 ">
                 
                 &nbsp;

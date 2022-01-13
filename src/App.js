@@ -14,8 +14,10 @@ import { ToastContainer } from 'react-toastify';
 import Footer from './components/footer/Footer';
 function App() {
   // const [loggedIn, setLoggedIn] = useState(false);
-  const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth); 
   const [oldUserState, setOlduserState] = useState(false);
+  // const [socket, setSocket] = useState(null);
+
   let oldUser = localStorage.getItem("oldUser");
   useEffect(() => {
     let oldUser = localStorage.getItem("oldUser");

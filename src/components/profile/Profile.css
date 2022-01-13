@@ -1,47 +1,47 @@
 .Profile h1{
-    color: #2C2E43;
-    text-transform: capitalize;
+    color                   : #2C2E43;
+    text-transform          : capitalize;
     
 }
 .ProPic{
-    border-radius: 40px;
-    font-size: 60px;
-    size: 50px;
+    border-radius           : 40px;
+    font-size               : 60px;
+    size                    : 50px;
    
 }
 
 .Profile{
-    /* background-color:rgb(255, 255, 255); */
-    background-image: url(../login/background.png) ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100vw;
-    height: 90vh;
-    margin-top: 0%;
+    /* background-color     :rgb(255, 255, 255); */
+    background-image        : url(../login/background.png) ;
+    background-repeat       : no-repeat;
+    background-size         : cover;
+    width                   : 100vw;
+    height                  : 90vh;
+    margin-top              : 0%;
    
 }
 
 .photoicon a{
-    font-size: 25px;
+    font-size               : 25px;
 }
 .ProPic:hover{
-    border: solid rgb(255, 255, 255);
+    border                  : solid rgb(255, 255, 255);
 }
 
 
 .input-profile{
   
-    width:30%;
-    display:flex;
-    justify-Content:center;
-    align-Items:center;
-    border-Radius:10px;
-    margin-Bottom:5px;
-    text-Align:center;
-    margin-Left:0px;
-    background-image: url('../../images/gallary.png');
-    background-position: center;
-    background-repeat: no-repeat;
+    width                   :30%;
+    display                 :flex;
+    justify-Content         :center;
+    align-Items             :center;
+    border-Radius           :10px;
+    margin-Bottom           :5px;
+    text-Align              :center;
+    margin-Left             :0px;
+    background-image        : url('../../images/gallary.png');
+    background-position     : center;
+    background-repeat       : no-repeat;
     
 }
 
@@ -50,65 +50,65 @@
 
 
 .addcmpny{
-    display: flex;
+    display                 : flex;
 }
 
 .selectws{
-    width: 100%;
-    margin-left: 0px;
-    border-radius: 40px;
+    width                   : 100%;
+    margin-left             : 0px;
+    border-radius           : 40px;
 }
 
 
 
 .Datas{
-    /* background: linear-gradient(0deg, rgba(104,232,198,0.3925945378151261) 0%, rgba(117,221,171,0.6166841736694677) 100%); */
-    color: #2C2E43;
-    background-image: url(../login/login.jpg);
-    background-repeat: no-repeat;
-    background: none;
-    background-size: 300px;
-    background-position: center;
-    box-shadow: rgb(3 3 3) 1px 2px 5px 0px;
-    border: 1px solid #ffffff;
-    margin-left: 0%;
-    border-radius: 30px;
-    flex-direction: column;
-    width: 100%;
-    height: 70%;
+    /* background           : linear-gradient(0deg, rgba(104,232,198,0.3925945378151261) 0%, rgba(117,221,171,0.6166841736694677) 100%); */
+    color                   : #2C2E43;
+    background-image        : url(../login/login.jpg);
+    background-repeat       : no-repeat;
+    background              : none;
+    background-size         : 300px;
+    background-position     : center;
+    box-shadow              : rgb(3 3 3) 1px 2px 5px 0px;
+    border                  : 1px solid #ffffff;
+    margin-left             : 23%;
+    border-radius           : 30px;
+    flex-direction          : column;
+    width                   : 55%;
+    height                  : 70%;
 }
 
 
 .form-control{
-    border-radius: 50px;
-    margin-top: 6px;
-    /* box-shadow: rgb(3 3 3) 1px 2px 5px 0px; */
-    border: none;
+    border-radius           : 50px;
+    margin-top              : 6px;
+    /* box-shadow           : rgb(3 3 3) 1px 2px 5px 0px; */
+    border                  : none;
 }
 .form-control:focus{
-    border-top: aliceblue !important;
-    border-right: yellowgreen !important;
-    border-left: aliceblue !important;
-    outline: none !important;
-    box-shadow: none !important;
+    border-top              : aliceblue !important;
+    border-right            : yellowgreen !important;
+    border-left             : aliceblue !important;
+    outline                 : none !important;
+    box-shadow              : none !important;
 }
 .Data .Button{
-    background-color:#FF0101;
-    border: none;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    width: 34%;
+    background-color        :#FF0101;
+    border                  : none;
+    justify-content         : center;
+    text-align              : center;
+    color                   : white;
+    width                   : 34%;
 }
 .Button:hover{
-    background-color: #5d3db4be;
+    background-color        : #5d3db4be;
 }
 
 .Btn4{
-    border-Radius: 50px;
-    border: none;
-    background-Color: #FF0101;
-    color: white;
-    height: 30px; 
-    width: 104%; 
+    border-Radius           : 50px;
+    border                  : none;
+    background-Color        : #FF0101;
+    color                   : white;
+    height                  : 30px; 
+    width                   : 104%; 
 }

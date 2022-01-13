@@ -79,7 +79,7 @@ function CompanyChat() {
     return (
         <div className="container-fluid-chats" onScroll={(e) => { loadMore(e) }} >
             {loading && <Loader />}
-            {/* <button className="btnsss ms-3 "  onClick={() => history.goBack()}><IoMdArrowBack /></button> */}
+            <button className="btnsss ms-3 "  onClick={() => history.goBack()}><IoMdArrowBack /></button>
             <ScrollToBottom className={ROOT_CSS} onScroll={(e) => { loadMore(e) }}>
                 <div className="msgs" onScroll={(e) => { loadMore(e) }}>
                     {messages?.map(({ id, text, photoURL, curImageUrl, uid }) => (

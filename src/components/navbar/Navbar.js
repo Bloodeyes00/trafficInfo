@@ -1,20 +1,20 @@
 import React, { useEffect } from "react";
 import "react-pro-sidebar/dist/css/styles.css";
-import { Offcanvas } from "react-bootstrap";
+// import { Offcanvas } from "react-bootstrap";
 import { useState, } from "react";
 import "../navbar/Navbar.css";
 import { useHistory } from "react-router-dom";
-import Logo from "../../assets/Navbar/profile.png";
-import { IoIosHome } from "react-icons/io";
-import { MdGroup } from "react-icons/md";
-import { CgProfile } from "react-icons/cg";
-import { BsFillChatDotsFill } from "react-icons/bs";
-import { MdOutlineSupportAgent, MdAppRegistration } from "react-icons/md";
-import { GoSignOut } from "react-icons/go";
-import { IoLogInOutline } from "react-icons/all"
-import { RiInboxArchiveFill } from "react-icons/ri";
-import { MdOutlineReorder } from "react-icons/md";
-import { RiAdminFill } from "react-icons/ri";
+// import Logo from "../../assets/Navbar/profile.png";
+// import { IoIosHome } from "react-icons/io";
+// import { MdGroup } from "react-icons/md";
+// import { CgProfile } from "react-icons/cg";
+// import { BsFillChatDotsFill } from "react-icons/bs";
+// import { MdOutlineSupportAgent, MdAppRegistration } from "react-icons/md";
+// import { GoSignOut } from "react-icons/go";
+// import { IoLogInOutline } from "react-icons/all"
+// import { RiInboxArchiveFill } from "react-icons/ri";
+// import { MdOutlineReorder } from "react-icons/md";
+// import { RiAdminFill } from "react-icons/ri";
 import { auth, db } from "../utils/firebase";
 import firebase from "../utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -48,12 +48,12 @@ const loadNavbar =() => {
 
     }
   }, [])
-  const [show, setShow] = useState(false);
-  const [messages, setMessages] = useState(false);
+  // const [show, setShow] = useState(false);
+  // const [messages, setMessages] = useState(false);
   const [loading, setLoading] = useState(false);
   const [userdetails, setuserdetails] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
   let history = useHistory();
   const [user] = useAuthState(auth);
   return (
@@ -62,13 +62,13 @@ const loadNavbar =() => {
         {loading && <Loader />}
         <div className="container">
           <div className="rowss pt-1 d-flex justify-content-center">
-            <div className="col-2  pt-1">
+            {/* <div className="col-2  pt-1">
               <a onClick={handleShow}>
                 <span className="navspan">
                   <MdOutlineReorder />
                   </span>
               </a>
-            </div>
+            </div> */}
 
             <div className="col-10 pt-4">
               <h3 className="info"><b>TRAFFIC INFO</b></h3>
@@ -77,10 +77,10 @@ const loadNavbar =() => {
 
           </div>
 
-          <Offcanvas show={show} onHide={handleClose}>
+          {/* <Offcanvas show={show} onHide={handleClose}>
             <Offcanvas.Header>
               <Offcanvas.Title>
-                <div className="ms-4 mt-3" style={{}}>
+                <div className="ms-4 mt-3">
                   <img className="off-canvas-image"
                     src={userdetails?.url ? userdetails?.url : Logo}
                   />
@@ -268,7 +268,7 @@ const loadNavbar =() => {
                 </div>
               </div>
             </Offcanvas.Body>
-          </Offcanvas>
+          </Offcanvas> */}
         </div>
       </div>
     </>

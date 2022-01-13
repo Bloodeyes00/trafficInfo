@@ -1,52 +1,56 @@
 .fullwidth .logo-header{
-	margin-right:30px;
+	margin-right			:30px;
 }
 .fullwidth  .header-nav .nav > li{
-	padding:20px 0;
-	margin: 0px 3px;
+	padding					:20px 0;
+	margin					: 0px 3px;
+}
+
+.container-jobs1{
+	background-color		: #3b9bf7;
 }
 .fullwidth .header-nav .nav > li.active > a,
 .fullwidth .header-nav .nav > li:hover > a{
-	background-color:#2e55fa;
-	color:#fff;
+	background-color		:#2e55fa;
+	color					:#fff;
 }
 .extra-nav{
-	padding: 20px 0;
+	padding					: 20px 0;
 }
 .extra-nav .site-button{
-	margin-left:10px;
+	margin-left				:10px;
 }
 .fullwidth  .header-nav .nav > li > a{
-	padding: 10px 15px;
-	border-radius:4px;
+	padding					: 10px 15px;
+	border-radius			:4px;
 }
 .fullwidth .is-fixed .header-nav .nav > li{
-	padding: 13px 0;
+	padding					: 13px 0;
 }
 .fullwidth .is-fixed .extra-nav{
-	padding: 14px 0;
+	padding					: 14px 0;
 }
 .fullwidth .is-fixed .header-nav .nav > li:hover > a,
 .fullwidth .is-fixed .header-nav .nav > li.active > a{
-	color:#fff;
+	color					:#fff;
 }
 .fullwidth .is-fixed .header-nav .nav > li > a{
-	color:#222845;
+	color					:#222845;
 }
 
 /* Job Search Tabs */
 .job-search-tabs .dez-tabs .nav-tabs{
-	border-bottom:0;
+	border-bottom			:0;
 }
 .job-search-tabs .dez-tabs .nav-tabs > li > a{
-	border-radius: 10px 10px 0 0 ;
-	padding: 15px 30px;
-	border: 0;
-	color: #000;
-	font-weight: 700;
-	background-color: #fff;
-	font-size: 14px;
-	margin-bottom: 0;
+	border-radius			: 10px 10px 0 0 ;
+	padding					: 15px 30px;
+	border					: 0;
+	color					: #000;
+	font-weight				: 700;
+	background-color		: #fff;
+	font-size				: 14px;
+	margin-bottom			: 0;
 }
 .job-search-tabs .dez-tabs .nav-tabs li a:hover,
 .job-search-tabs .dez-tabs .nav-tabs li a:active,
@@ -55,123 +59,120 @@
 .job-search-tabs .nav-tabs li a.show:focus,
 .job-search-tabs .nav-tabs li a.show:hover,
 .job-search-tabs .nav-tabs li a.show{
-	padding: 15px 30px;
-	background-color: #FF2A2A;
-	font-weight: 700;
-	color: #fff;
-	border-bottom: 0; 
+	padding					: 15px 30px;
+	background-color		: #FF2A2A;
+	font-weight				: 700;
+	color					: #fff;
+	border-bottom			: 0; 
 }
 .job-search-tabs .form-control,
 .job-search-tabs .bootstrap-select .dropdown-toggle{
-	border: 2px solid #eeeeee !important;
-	font-size: 14px;
-	font-family: Montserrat;
-	border-radius: 4px;
-	font-weight: 400;
-	height: 50px;
-	padding: 10px 20px;
-	color: #606060;
+	border					: 2px solid #eeeeee !important;
+	font-size				: 14px;
+	font-family				: Montserrat;
+	border-radius			: 4px;
+	font-weight				: 400;
+	height					: 50px;
+	padding					: 10px 20px;
+	color					: #606060;
 } 
 .job-search-tabs .form-control::-moz-placeholder{
-	color: #606060;
+	color					: #606060;
 }
 .job-search-tabs .site-button{
-	font-family: Montserrat;
-	font-weight: 500;
-	font-size: 16px;
-	padding: 13px 20px;
+	font-family				: Montserrat;
+	font-weight				: 500;
+	font-size				: 16px;
+	padding					: 13px 20px;
 }
-/* Job Search Tabs End */
 .testimonial-text p{
-	font-style: italic;
-	font-size: 15px;
-	color: #4a4a4a;
-	line-height: 28px;
+	font-style				: italic;
+	font-size				: 15px;
+	color					: #4a4a4a;
+	line-height				: 28px;
 }
-/* Job Search */
 .other-job-list h3{
-	margin-bottom:10px;
+	margin-bottom			:10px;
 }
 .other-job-list .job-box-list {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px 40px;
-    background: #fff;
-    margin-bottom: 10px;
-    transition: .3s;
+    display					: flex;
+    width					: 100%;
+    align-items				: center;
+    justify-content			: space-between;
+    padding					: 30px 40px;
+    background				: #fff;
+    margin-bottom			: 10px;
+    transition				: .3s;
 }
 .info-box{
-	padding: 50px;
+	padding					: 50px;
 }
 .job-info{
-	margin-bottom:0;
+	margin-bottom			:0;
 }
 .job-info li{
-	list-style: none;
-	display: inline-block;
-	margin-right: 10px;
+	list-style				: none;
+	display					: inline-block;
+	margin-right			: 10px;
 }
 .job-info li strong{
-	font-weight: 600;
-	color: #000;
+	font-weight				: 600;
+	color					: #000;
 }
 /* Job Categories */
 .job-categories .icon-bx-wraper{
-	padding: 40px 10px;
-	margin-bottom: 20px;
-	background: #2e55fa;
-	border-radius: 10px;
-	text-align:center;
-	-moz-transition:all 0.5s;
-	-webkit-transition:all 0.5s;
-	-ms-transition:all 0.5s;
-	-o-transition:all 0.5s;
-	transition:all 0.5s;
-	overflow: hidden;
-	box-shadow: 0 0 10px 0 rgba(0,24,128,0.1);
+	padding					: 40px 10px;
+	margin-bottom			: 20px;
+	background				: #2e55fa;
+	border-radius			: 10px;
+	text-align				:center;
+	-moz-transition			:all 0.5s;
+	-webkit-transition		:all 0.5s;
+	-ms-transition			:all 0.5s;
+	-o-transition			:all 0.5s;
+	transition				:all 0.5s;
+	overflow				: hidden;
+	box-shadow				: 0 0 10px 0 rgba(0,24,128,0.1);
 }
 .job-categories .icon-bx-wraper .dez-tilte{
-	display:block;
-	width:100%;
-	color:#000;
-	font-size: 18px;
+	display					:block;
+	width					:100%;
+	color					:#000;
+	font-size				: 18px;
 }
 .job-categories .icon-bx-wraper .icon-content{
-	position: relative;
-	z-index: 1;
+	position				: relative;
+	z-index					: 1;
 }
 .job-categories .icon-bx-wraper .rotate-icon{
-	position: absolute;
-	font-size: 90px;
-	color: #000;
-	bottom: 10px;
-	line-height: 90px;
-	right: 20px;
-	opacity: 0.05;
-	text-align: right;
+	position				: absolute;
+	font-size				: 90px;
+	color					: #000;
+	bottom					: 10px;
+	line-height				: 90px;
+	right					: 20px;
+	opacity					: 0.05;
+	text-align				: right;
 }
 .job-categories .icon-bx-wraper:after {
-	/* background-image: url(../images/categories-bg.png); */
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: bottom;
-	content: "";
-	width: 100%;
-	height: 110px;
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	-moz-transition:all 0.5s;
-	-webkit-transition:all 0.5s;
-	-ms-transition:all 0.5s;
-	-o-transition:all 0.5s;
-	transition:all 0.5s;
+	background-size			: cover;
+	background-repeat		: no-repeat;
+	background-position		: bottom;
+	content					: "";
+	width					: 100%;
+	height					: 110px;
+	display					: block;
+	position				: absolute;
+	top						: 0;
+	left					: 0;
+	-moz-transition			:all 0.5s;
+	-webkit-transition		:all 0.5s;
+	-ms-transition			:all 0.5s;
+	-o-transition			:all 0.5s;
+	transition				:all 0.5s;
 }
 .job-categories .icon-bx-wraper:hover:after {
-	height: 0;
+	height					: 0;
 }
 .job-categories .icon-bx-wraper:hover{
 	background-color:#2e55fa;

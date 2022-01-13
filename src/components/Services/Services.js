@@ -250,7 +250,10 @@ return {
       
         <div style={{ alignItems: 'center', marginTop: '20px' }}>
             {movies.map(renderCard)}
-            
+            <br />
+            <br />
+            <br />
+            <br />
              </div>
              </div>
              )

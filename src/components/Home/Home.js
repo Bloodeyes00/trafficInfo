@@ -175,33 +175,16 @@ const Home = () => {
     <div className="container-home">
       <div onClick={() => { history.push(`/chat/${11}`) }} className="img-logo">
        </div>
-            <div className="row ">
-              <div className='col '>
-                <button type="button" className="home-btn btn-primary btn-lg " onClick={() => { history.push(`/chatroom`) }}
-                >
-                  <b> Company Room</b>
-                </button>
-              </div>
-              <div className='col px-0'>
-                <button type="button" onClick={() => { history.push("/Jobs") }}
-                  className="home-btn btn-primary btn-lg mh-100 w-100" >
-                  <b>Find jobs</b>
-                </button>
-              </div>
-              <div className='col order-last'>
-                <button type="button" onClick={() => { history.push("/Services") }}
-                  className="home-btn btn-success px-0 custom_btn_company mh-100 w-100 ">
-                  <b>Services</b>
-                </button>
-              </div>
+    {/* <button className="bton">traffic</button> */}
 
-            </div>
-          
-          <div className="row-ads ">
+          {/* <div className="row-ads ">
             <h2 style={{ textAlign: 'center' }}>
               Ads Components
             </h2>
-          </div>
+          </div> */}
+          <div>
+  
+</div>
  
       
       <div style={{ alignItems: 'center', marginTop: '20px' }}>

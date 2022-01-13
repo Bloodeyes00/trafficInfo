@@ -1,9 +1,17 @@
 .Data{
-    background-color: rgb(255, 255, 255);
-    flex-direction: column;
+    color: #2C2E43;
+    background-image: url(../login/login.jpg);
+    background-repeat: no-repeat;
+    background: none;
+    background-size: 300px;
+    background-position: center;
+    box-shadow: rgb(3 3 3) 1px 2px 5px 0px;
+    border: 1px solid #ffffff;
+    margin-left: -3%;
     border-radius: 30px;
-    width: 73vw;
-}
+    flex-direction: column;
+    width: 105%;
+    height: 90%}
 .signup-in{
     color: #0583d2; 
     

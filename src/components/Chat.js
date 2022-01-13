@@ -17,7 +17,7 @@ function Chat() {
     const [loading, setLoading] = useState(false);
     const [lastMessagesLimit, setLastMessagesLimit] = useState(20);
     const ROOT_CSS = css({
-        height: "100%",
+        height: "106%",
         width: '100%'
     });
 

@@ -2,7 +2,10 @@
   text-align: center;
 }
 .container-messages{
-  background-color: #61dafb;
+  background-color: #3b9bf7;
+}
+.container-app{
+  background-color: #3b9bf7;
 }
 
 .App-logo {

@@ -1,42 +1,42 @@
 .viewBottom {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    border-top: 1px solid #e8e8e8;
+    display                 : flex;
+    flex-direction          : row;
+    align-items             : center;
+    justify-content         : center;
+    height                  : 50px;
+    border-top              : 1px solid #e8e8e8;
 }
 
 .homecmp-container .webcam-container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 10px 0;
+    display                 : flex;
+    flex-direction          : column;
+    text-align              : center;
+    padding                 : 10px 0;
 }
 
 .homecmp-container .webcam-container .webcam-btn {
-    margin-top: 10px;
-    width: 30%;
+    margin-top              : 10px;
+    width                   : 30%;
 }
 
 .webcam-img {
-    height: 225px;
-    width: 225;
-    border-radius: 2px;
+    height                  : 225px;
+    width                   : 225;
+    border-radius           : 2px;
 }
 
 .webcam-btn {
-    margin-top: 10px;
-    border-radius: 5px;
-    width: 30%;
-    background-image: url('../../images/ic_photo.png');
+    margin-top              : 10px;
+    border-radius           : 5px;
+    width                   : 30%;
+    background-image        : url('../../images/ic_photo.png');
 }
 
 .custom-file-input {
-    width: 50px;
+    width                   : 50px;
 }
 
 .sendbutton:hover {
-    background-color: #279cca;
+    background-color        : #279cca;
 }
 

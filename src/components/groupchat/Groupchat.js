@@ -18,7 +18,7 @@ let history = useHistory()
         <div className="groups sm">
         <button className="btnsss " onClick={() => history.goBack()}><IoMdArrowBack /></button>
 
-          <h3>MY GROUPS</h3>
+          <h3 style={{color:"white",textAlign:"center"}}><b>MY GROUPS</b></h3>
         </div>
 
         <div className="button">
