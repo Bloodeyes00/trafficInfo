@@ -30,6 +30,7 @@
     "react-hooks-firebase": "^1.0.1",
     "react-icons": "^4.3.1",
     "react-infinite-scroller": "^1.2.4",
+    "react-notification-timeline": "0.0.9",
     "react-notifications": "^1.7.2",
     "react-phone-number-input": "^3.1.41",
     "react-pro-sidebar": "^0.7.1",

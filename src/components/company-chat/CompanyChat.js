@@ -54,12 +54,14 @@ function CompanyChat() {
 
         db.collection(company).orderBy('createdAt').limit(lastMessagesLimit).onSnapshot(snapshot => {
             setMessages(snapshot.docs.map(doc => doc.data()));
+            let msgs = snapshot.docs.map(doc => doc.data());
+            localStorage.setItem("msgsLength", msgs.length);
             setLoading(false);
-            console.log("messages in company chat : ", messages);
+            console.log("messages in company chat : ", messages, msgs);
         })
         scroll.current.scrollIntoView({ behavior: 'smooth' });
     }
-    
+
     function loadMore(e) {
         if (window.innerHeight > 700) {
             setLastMessagesLimit(lastMessagesLimit + 20);
@@ -79,16 +81,32 @@ function CompanyChat() {
     return (
         <div className="container-fluid-chats" onScroll={(e) => { loadMore(e) }} >
             {loading && <Loader />}
-            <button className="btnsss ms-3 "  onClick={() => history.goBack()}><IoMdArrowBack /></button>
-            <ScrollToBottom className={ROOT_CSS} onScroll={(e) => { loadMore(e) }}>
-                <div className="msgs" onScroll={(e) => { loadMore(e) }}>
+            <button className="btnsss ms-3 "
+                onClick={() => history.goBack()}>
+                <IoMdArrowBack />
+            </button>
+
+            <ScrollToBottom
+                className={ROOT_CSS}
+                onScroll={(e) => {
+                    loadMore(e)
+                }}>
+
+                <div className="msgs"
+                    onScroll={(e) => {
+                        loadMore(e)
+                    }}>
                     {messages?.map(({ id, text, photoURL, curImageUrl, uid }) => (
+
                         <div className="comchats">
-                            {< div key={id} className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>
+                            {< div key={id}
+                                className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>
                                 {photoURL &&
                                     <img src={photoURL} alt="" />}
                                 {curImageUrl &&
-                                    <img className="imgcard" src={curImageUrl} alt="no img" style={{ height: '270px', width: '270px', borderRadius: '0px' }} />}
+                                    <img className="imgcard"
+                                        src={curImageUrl} alt="no img"
+                                        style={{ height: '270px', width: '270px', borderRadius: '0px' }} />}
                                 {text != " " &&
                                     <p>{text}</p>}
                             </div>}

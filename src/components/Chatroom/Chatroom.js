@@ -7,7 +7,7 @@ import T1212 from '../../assets/images/T1212.jpg'
 import TKurir from '../../assets/images/TKurir.jpg'
 import TSkane from '../../assets/images/TSkane.jpg'
 import { useHistory } from 'react-router';
-import firebase from '../utils/firebase';
+import firebase, { db } from '../utils/firebase';
 import { auth } from '../utils/firebase';
 import { IoMdArrowBack } from "react-icons/io";
 import { IoMdNotifications } from "react-icons/io";
@@ -16,7 +16,8 @@ export default function Chatroom() {
     let history = useHistory();
     const [userdetails, setuserdetails] = useState(null);
     const [loading, setLoading] = useState(false);
-    
+    const [unreadLength, setUnreadLength] = useState(0);
+
 
     const loadChatroom = () => {
         setLoading(true)
@@ -33,6 +34,17 @@ export default function Chatroom() {
                 setuserdetails(currentUserDetails);
                 setLoading(false)
                 // setEmail(currentUserDetails.email);
+                let msgsLength = localStorage.getItem("msgsLength");
+                // db.collection(currentUserDetails?.companyName).onSnapshot(snapshot => {
+                db.collection("Staxicompany").onSnapshot(snapshot => {
+                    let data = snapshot.docs.map(doc => doc.data());
+                    setUnreadLength(data.length - msgsLength);
+                    // console.log("data chat msgs : ", data);
+                    console.log("unreadLength : ", unreadLength);
+                    console.log("unreadLength : ", msgsLength);
+                    console.log("unreadLsdsength : ",  snapshot);
+                    console.log("currentUserDetails?.companyName : ",  currentUserDetails?.companyName);
+                })
             }
         });
     }
@@ -70,8 +82,8 @@ export default function Chatroom() {
                 {<div style={userdetails?.companyName !== "Svea Taxi" ? { opacity: 0.5 } : { opacity: 1 }} className="hello mt-5 col-sm-10 offset-1"
                     onClick={() => { allowuserforchat("Svea Taxi") }}>
                     <div className="img ms-2 mt-4"><img src={sveaTaxi} className="image" /></div>
-                    <div className="col-8 ps-4 pt-3"> 
-                    <h5 className="taxi ">Svea Taxi</h5>
+                    <div className="col-8 ps-4 pt-3">
+                        <h5 className="taxi ">Svea Taxi</h5>
                         <p className="taxi ">Description of Taxi 97</p>
                     </div>
                     <div className='col-2 icnss pt-3 mt-3'>
@@ -84,9 +96,9 @@ export default function Chatroom() {
                     <div className="img ms-2  mt-4"><img src={microsoftteams} className="image" /></div>
                     <div className="col-8 ps-4 pt-3"> <h5 className="taxi ">Microsoft Teams</h5>
                         <p className="taxi ">Description of  Free Akare</p>
-                        </div>
-                        <div className='col-2 icnss pt-3 mt-3'>
-                        <IoMdNotifications  />
+                    </div>
+                    <div className='col-2 icnss pt-3 mt-3'>
+                        <IoMdNotifications />
                         <div className='counter'>2</div>
                     </div>
                 </div>}
@@ -96,9 +108,9 @@ export default function Chatroom() {
                     <div className="img ms-2 mt-4"><img src={sverigetaxi} className="image" /></div>
                     <div className="col-8 ps-4 pt-3"> <h5 className="taxi ">Sverige Taxi</h5>
                         <p className="taxi ">Description of chatroom Taxi 23</p></div>
-                        <div className='col-2 icnss pt-3 mt-3'>
+                    <div className='col-2 icnss pt-3 mt-3'>
                         <IoMdNotifications />
-                        <div className='counter'>2</div>
+                        <div className='counter'>{unreadLength} </div>
                     </div>
                 </div>}
                 {<div style={userdetails?.companyName !== "Taxii 1212" ? { opacity: 0.5 } : { opacity: 1 }} className="hello mt-5 col-sm-10 offset-1"
@@ -106,8 +118,8 @@ export default function Chatroom() {
                     <div className="img ms-2 mt-4"><img src={T1212} className="image" /></div>
                     <div className="col-8 ps-4 pt-3"> <h5 className="taxi ">Taxi 1212</h5>
                         <p className="taxi ">Description of chatroom Taxi 59</p></div>
-                        <div className='col-2 icnss pt-3 mt-3'>
-                        <IoMdNotifications  />
+                    <div className='col-2 icnss pt-3 mt-3'>
+                        <IoMdNotifications />
                         <div className='counter'>2</div>
                     </div>
                 </div>}
@@ -116,8 +128,8 @@ export default function Chatroom() {
                     <div className="img ms-2 mt-4"><img src={TKurir} className="image" /></div>
                     <div className="col-8 ps-4 pt-3"> <h5 className="taxi ">Taxi kurir</h5>
                         <p className="taxi ">Description of chatroom Taxi 1212</p></div>
-                        <div className='col-2 icnss pt-3 mt-3'>
-                        <IoMdNotifications  />
+                    <div className='col-2 icnss pt-3 mt-3'>
+                        <IoMdNotifications />
                         <div className='counter'>2</div>
                     </div>
                 </div>}
@@ -126,10 +138,10 @@ export default function Chatroom() {
                     <div className="img ms-2 mt-4"><img src={TSkane} className="image" /></div>
                     <div className="col-8 ps-4 pt-3"> <h5 className="taxi ">Taxi Skane</h5>
                         <p className="taxi ">Description of chatroom Taxi 1212</p></div>
-                        <div className='col-2 icnss pt-3 mt-3'>
+                    <div className='col-2 icnss pt-3 mt-3'>
                         <IoMdNotifications />
                         <div className='counter'>2</div>
-                    </div>    
+                    </div>
                 </div>}
                 <br />
                 <br />
