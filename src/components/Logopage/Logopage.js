@@ -14,7 +14,7 @@ function Logopage(props) {
                     <h2 className="wtti"><b>Welcome to Trafik info</b></h2>
                     <br />
 
-                    <img className="imgsss" src={trafikinfo} />
+                    <img className="imgsssl" src={trafikinfo} />
                 </div>
                 <br />
                 <br />

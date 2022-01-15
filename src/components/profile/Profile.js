@@ -211,7 +211,8 @@ export default function Profile() {
                 <select className="selectws" onChange={(e) => { let value = e.target.value; setcompanyName(value) }} >
                   <option>Select</option>
                   <option>Svea Taxi</option>
-                  <option>Sverige taxi</option>
+                  <option>Microsoft Teams</option>
+                  <option>Sverige Taxi</option>
                   <option>Taxii 1212</option>
                   <option>Taxi Kurir</option>
                   <option>Taxi Skane</option>

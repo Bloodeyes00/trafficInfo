@@ -158,3 +158,24 @@ h4 {
     background-position         : center;
 } */
 
+.row-home{
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    text-align: center;
+    /* margin-left: 20%; */
+}
+
+.img-icons{
+    margin: 2%;
+    height: 0%;
+    width: 10%;
+    border: none;
+}
+.img-icons:hover{
+    margin: 2%;
+    height: 0%;
+    width: 8%;
+    border: none;
+}
+

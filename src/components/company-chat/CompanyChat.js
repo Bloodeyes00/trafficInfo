@@ -17,7 +17,7 @@ function CompanyChat() {
     const { id } = useParams();
 
     const ROOT_CSS = css({
-        height: 700,
+        height: 618,
         width: '100%'
     });
     const loadCompanyChat = () => {
@@ -56,6 +56,9 @@ function CompanyChat() {
             setMessages(snapshot.docs.map(doc => doc.data()));
             let msgs = snapshot.docs.map(doc => doc.data());
             localStorage.setItem("msgsLength", msgs.length);
+            
+            
+
             setLoading(false);
             console.log("messages in company chat : ", messages, msgs);
         })
@@ -97,7 +100,7 @@ function CompanyChat() {
                         loadMore(e)
                     }}>
                     {messages?.map(({ id, text, photoURL, curImageUrl, uid }) => (
-
+                            
                         <div className="comchats">
                             {< div key={id}
                                 className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>

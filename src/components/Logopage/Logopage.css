@@ -17,7 +17,13 @@
     position: relative;
 }
 
-.wtti::after{
+.imgsssl{
+    border: none;
+    height: 20%;
+    width: 73%;
+}
+
+/* .wtti::after{
     content: "";
     position: absolute;
     height: 80vh;
@@ -25,8 +31,8 @@
     background: white;
     border-left: 2px solid rgb(255, 255, 255);
     left: 0;
-    animation: typing 1.5s steps(20)infinite;
-}
+    animation: typing 1.5s steps(20)infinite; */
+/* } */
 
 @keyframes typing {
     100%{

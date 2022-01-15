@@ -7,6 +7,12 @@ import { useEffect, useState } from 'react'
 import firebase from "../utils/firebase";
 import { storage } from '../utils/firebase'
 import trafikinfo from '../../images/trafikinfo.png'
+import yellow from "../../images/yellow.png"
+import green from "../../images/green.png"
+import red from "../../images/red.png"
+import orange from "../../images/orange.png"  
+import blue from "../../images/blue.png"
+
 
 
 import { useHistory } from 'react-router'
@@ -175,15 +181,13 @@ const Home = () => {
     <div className="container-home">
       <div onClick={() => { history.push(`/chat/${11}`) }} className="img-logo">
        </div>
-    {/* <button className="bton">traffic</button> */}
-
-          {/* <div className="row-ads ">
-            <h2 style={{ textAlign: 'center' }}>
-              Ads Components
-            </h2>
-          </div> */}
-          <div>
   
+          <div className="row-home">
+            <img className="img-icons" src={green} />
+            <img className="img-icons" src={orange} />
+            <img className="img-icons" src={blue} />
+            <img className="img-icons" src={red} />
+            <img className="img-icons" src={yellow} />
 </div>
  
       

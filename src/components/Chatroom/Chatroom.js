@@ -19,6 +19,7 @@ export default function Chatroom() {
     const [unreadLength, setUnreadLength] = useState(0);
 
 
+
     const loadChatroom = () => {
         setLoading(true)
         const firestore = firebase.database().ref("/UserProfile");
@@ -36,14 +37,49 @@ export default function Chatroom() {
                 // setEmail(currentUserDetails.email);
                 let msgsLength = localStorage.getItem("msgsLength");
                 // db.collection(currentUserDetails?.companyName).onSnapshot(snapshot => {
+
+                db.collection("company").onSnapshot(snapshot => {
+                    let data = snapshot.docs.map(doc => doc.data());
+                    if ((data.length - msgsLength) > 0) {
+                        setUnreadLength(data.length - msgsLength);
+                    }
+                    else { setUnreadLength(0) }
+                })
+
+                db.collection("teamcompany").onSnapshot(snapshot => {
+                    let data = snapshot.docs.map(doc => doc.data());
+                    if ((data.length - msgsLength) > 0) {
+                        setUnreadLength(data.length - msgsLength);
+                    } else { setUnreadLength(0) }
+                })
+
                 db.collection("Staxicompany").onSnapshot(snapshot => {
                     let data = snapshot.docs.map(doc => doc.data());
-                    setUnreadLength(data.length - msgsLength);
-                    // console.log("data chat msgs : ", data);
-                    console.log("unreadLength : ", unreadLength);
-                    console.log("unreadLength : ", msgsLength);
-                    console.log("unreadLsdsength : ",  snapshot);
-                    console.log("currentUserDetails?.companyName : ",  currentUserDetails?.companyName);
+                    if ((data.length - msgsLength) > 0) {
+                        setUnreadLength(data.length - msgsLength);
+                    } else { setUnreadLength(0) }
+                })
+
+
+                db.collection("Taxicompany").onSnapshot(snapshot => {
+                    let data = snapshot.docs.map(doc => doc.data());
+                    if ((data.length - msgsLength) > 0) {
+                        setUnreadLength(data.length - msgsLength);
+                    } else { setUnreadLength(0) }
+                })
+
+                db.collection("Kuricompany").onSnapshot(snapshot => {
+                    let data = snapshot.docs.map(doc => doc.data());
+                    if ((data.length - msgsLength) > 0) {
+                        setUnreadLength(data.length - msgsLength);
+                    } else { setUnreadLength(0) }
+                })
+
+                db.collection("Skancompany").onSnapshot(snapshot => {
+                    let data = snapshot.docs.map(doc => doc.data());
+                    if ((data.length - msgsLength) > 0) {
+                        setUnreadLength(data.length - msgsLength);
+                    } else { setUnreadLength(0) }
                 })
             }
         });
@@ -55,9 +91,9 @@ export default function Chatroom() {
 
         }
     }, [])
-    const allowuserforchat = (compName) => {
+    const allowuserforchat = (compName, companyID) => {
         if (userdetails.role && userdetails?.companyName == compName) {
-            userdetails?.companyName == compName && history.push(`/company/${5}`)
+            userdetails?.companyName == compName && history.push(`/company/${companyID}`)
         } else {
             alert("Kindly contact your admin for access. You don't have permission.")
         }
@@ -75,72 +111,153 @@ export default function Chatroom() {
                     <br />
 
                     <h2 className="heading2  pb-3">
-                        <button className="btnsss " onClick={() => history.goBack()}><IoMdArrowBack /></button>
+                        <button
+                            className="btnsss "
+                            onClick={() => history.goBack()}>
+                            <IoMdArrowBack />
+                        </button>
+
                         <b style={{ color: "white" }}> COMPANY CHAT ROOM </b>
                     </h2>
                 </div>
-                {<div style={userdetails?.companyName !== "Svea Taxi" ? { opacity: 0.5 } : { opacity: 1 }} className="hello mt-5 col-sm-10 offset-1"
-                    onClick={() => { allowuserforchat("Svea Taxi") }}>
-                    <div className="img ms-2 mt-4"><img src={sveaTaxi} className="image" /></div>
+                {<div style={userdetails?.companyName !== "Svea Taxi" ?
+                    { opacity: 0.5 } : { opacity: 1 }}
+                    className="hello mt-5 col-sm-10 offset-1"
+                    onClick={() => {
+                        allowuserforchat("Svea Taxi", 2)
+                    }}>
+                    <div className="img ms-2 mt-4">
+                        <img src={sveaTaxi} className="image" />
+                    </div>
                     <div className="col-8 ps-4 pt-3">
                         <h5 className="taxi ">Svea Taxi</h5>
                         <p className="taxi ">Description of Taxi 97</p>
                     </div>
                     <div className='col-2 icnss pt-3 mt-3'>
                         <IoMdNotifications />
-                        <div className='counter'>2</div>
-                    </div>
-                </div>}
-                {<div style={userdetails?.companyName !== "Microsoft Teams" ? { opacity: 0.5 } : { opacity: 1 }} className="hello mt-5 col-sm-10 offset-1"
-                    onClick={() => { allowuserforchat("Microsoft Teams") }}>
-                    <div className="img ms-2  mt-4"><img src={microsoftteams} className="image" /></div>
-                    <div className="col-8 ps-4 pt-3"> <h5 className="taxi ">Microsoft Teams</h5>
-                        <p className="taxi ">Description of  Free Akare</p>
-                    </div>
-                    <div className='col-2 icnss pt-3 mt-3'>
-                        <IoMdNotifications />
-                        <div className='counter'>2</div>
+                        <div className='counter'>{unreadLength}</div>
                     </div>
                 </div>}
 
-                {<div style={userdetails?.companyName !== "Sverige taxi" ? { opacity: 0.5 } : { opacity: 1 }} className="hello mt-5 col-sm-10 offset-1"
-                    onClick={() => { allowuserforchat("Sverige taxi") }}>
-                    <div className="img ms-2 mt-4"><img src={sverigetaxi} className="image" /></div>
-                    <div className="col-8 ps-4 pt-3"> <h5 className="taxi ">Sverige Taxi</h5>
+                {<div style={userdetails?.companyName !== "Microsoft Teams" ?
+                    { opacity: 0.5 } : { opacity: 1 }}
+                    className="hello mt-5 col-sm-10 offset-1"
+                    onClick={() => {
+                        allowuserforchat("Microsoft Teams", 4)
+                    }}>
+
+                    <div
+                        className="img ms-2  mt-4">
+                        <img src={microsoftteams}
+                            className="image" />
+                    </div>
+
+                    <div
+                        className="col-8 ps-4 pt-3">
+                        <h5 className="taxi ">Microsoft Teams</h5>
+                        <p className="taxi ">Description of  Free Akare</p>
+                    </div>
+
+                    <div className='col-2 icnss pt-3 mt-3'>
+                        <IoMdNotifications />
+                        <div className='counter'>{unreadLength}</div>
+                    </div>
+                </div>}
+
+                {<div
+                    style={userdetails?.companyName !== "Sverige Taxi" ?
+                        { opacity: 0.5 } : { opacity: 1 }}
+                    className="hello mt-5 col-sm-10 offset-1"
+                    onClick={() => {
+                        allowuserforchat("Sverige Taxi", 5)
+                    }}>
+
+                    <div
+                        className="img ms-2 mt-4">
+                        <img src={sverigetaxi}
+                            className="image" />
+                    </div>
+
+                    <div
+                        className="col-8 ps-4 pt-3">
+                        <h5 className="taxi ">
+                            Sverige Taxi</h5>
                         <p className="taxi ">Description of chatroom Taxi 23</p></div>
                     <div className='col-2 icnss pt-3 mt-3'>
                         <IoMdNotifications />
-                        <div className='counter'>{unreadLength} </div>
+                        <div className='counter'>{unreadLength}</div>
                     </div>
                 </div>}
-                {<div style={userdetails?.companyName !== "Taxii 1212" ? { opacity: 0.5 } : { opacity: 1 }} className="hello mt-5 col-sm-10 offset-1"
-                    onClick={() => { allowuserforchat("Taxii 1212") }}>
-                    <div className="img ms-2 mt-4"><img src={T1212} className="image" /></div>
-                    <div className="col-8 ps-4 pt-3"> <h5 className="taxi ">Taxi 1212</h5>
-                        <p className="taxi ">Description of chatroom Taxi 59</p></div>
-                    <div className='col-2 icnss pt-3 mt-3'>
+
+                {<div style={userdetails?.companyName !== "Taxii 1212" ?
+                    { opacity: 0.5 } : { opacity: 1 }}
+                    className="hello mt-5 col-sm-10 offset-1"
+                    onClick={() => {
+                        allowuserforchat("Taxii 1212", 6)
+                    }}>
+
+                    <div
+                        className="img ms-2 mt-4">
+                        <img src={T1212} className="image" />
+                    </div>
+
+                    <div
+                        className="col-8 ps-4 pt-3">
+                        <h5 className="taxi ">Taxi 1212</h5>
+                        <p className="taxi ">Description of chatroom Taxi 59</p>
+                    </div>
+
+                    <div
+                        className='col-2 icnss pt-3 mt-3'>
                         <IoMdNotifications />
-                        <div className='counter'>2</div>
+                        <div className='counter'>{unreadLength}</div>
                     </div>
                 </div>}
-                {<div style={userdetails?.companyName !== "Taxi kurir" ? { opacity: 0.5 } : { opacity: 1 }} className="hello mt-5 col-sm-10 offset-1"
-                    onClick={() => { allowuserforchat("Taxi kurir") }}>
-                    <div className="img ms-2 mt-4"><img src={TKurir} className="image" /></div>
-                    <div className="col-8 ps-4 pt-3"> <h5 className="taxi ">Taxi kurir</h5>
-                        <p className="taxi ">Description of chatroom Taxi 1212</p></div>
-                    <div className='col-2 icnss pt-3 mt-3'>
+
+                {<div
+                    style={userdetails?.companyName !== "Taxi Kurir" ?
+                        { opacity: 0.5 } : { opacity: 1 }}
+                    className="hello mt-5 col-sm-10 offset-1"
+                    onClick={() => {
+                        allowuserforchat("Taxi Kurir", 7)
+                    }}>
+
+                    <div
+                        className="img ms-2 mt-4">
+                        <img src={TKurir} className="image" />
+                    </div>
+
+                    <div className="col-8 ps-4 pt-3">
+                        <h5 className="taxi ">Taxi kurir</h5>
+                        <p className="taxi ">Description of chatroom Taxi 1212</p>
+                    </div>
+                    <div
+                        className='col-2 icnss pt-3 mt-3'>
                         <IoMdNotifications />
-                        <div className='counter'>2</div>
+                        <div className='counter'>{unreadLength}</div>
                     </div>
                 </div>}
-                {<div style={userdetails?.companyName !== "Taxi Skane" ? { opacity: 0.5 } : { opacity: 1 }} className="hello mt-5 col-sm-10 offset-1"
-                    onClick={() => { allowuserforchat("Taxi Skane") }}>
-                    <div className="img ms-2 mt-4"><img src={TSkane} className="image" /></div>
-                    <div className="col-8 ps-4 pt-3"> <h5 className="taxi ">Taxi Skane</h5>
-                        <p className="taxi ">Description of chatroom Taxi 1212</p></div>
+
+                {<div style={userdetails?.companyName !== "Taxi Skane" ?
+                    { opacity: 0.5 } : { opacity: 1 }}
+                    className="hello mt-5 col-sm-10 offset-1"
+                    onClick={() => {
+                        allowuserforchat("Taxi Skane", 8)
+                    }}>
+
+                    <div
+                        className="img ms-2 mt-4">
+                        <img src={TSkane}
+                            className="image" />
+                    </div>
+
+                    <div className="col-8 ps-4 pt-3">
+                        <h5 className="taxi ">Taxi Skane</h5>
+                        <p className="taxi ">Description of chatroom Taxi 1212</p>
+                    </div>
                     <div className='col-2 icnss pt-3 mt-3'>
                         <IoMdNotifications />
-                        <div className='counter'>2</div>
+                        <div className='counter'>{unreadLength}</div>
                     </div>
                 </div>}
                 <br />
