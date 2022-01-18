@@ -1,4 +1,5 @@
 import React from 'react'
+import "./ManageCompnayUser"
 import { useHistory } from 'react-router'
 import firebase from '../utils/firebase';
 import { useEffect, useState } from 'react';

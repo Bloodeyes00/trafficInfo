@@ -13,7 +13,8 @@ function Agree(props) {
                     Nunc iaculis ipsum vel tincidunt lacinia. Nam porta lectus </p>
             </div>
             <div className="row1-agree">
-                <button className="btnn1" onClick={() => {
+                <button className="btnn1" 
+                onClick={() => {
                     // history.push("/SignwithPohone");
                     localStorage.setItem("oldUser", true);
                     setOlduserState(true);

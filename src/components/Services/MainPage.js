@@ -9,6 +9,7 @@ import emergencybtn from "../../images/emergencybtn.png"
 import { TiPlus } from "react-icons/ti";
 import { IoMdArrowBack } from "react-icons/io";
 import { useHistory } from 'react-router'
+import Footer from '../footer/Footer';
 
 
 function MainPage() {
@@ -21,10 +22,15 @@ function MainPage() {
         <div className='container-fluid-s'>
             
             <div className='container-s'>
-            <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
            
                 <div className='row-s'>
+                
+                <div className='col-back ' >
+                <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
+                </div>
+                    <div  className='col-s offset-1'>
                     <h1 style={{color:"white"}}><b>SERVICES</b></h1>
+                    </div>
                 </div>
                 <div className='row-c'>
                     <div className='plus'> <TiPlus /></div>
@@ -45,7 +51,7 @@ function MainPage() {
 
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
-                    <div type="button" className='find'><h2>Other Item</h2></div>
+                    <div type="button" className='find'><h2 onClick={()=>{ history.push("/OtherItem")}} >Other Item</h2></div>
                     <div className='imgssss'>
                     <img  style={{border:"none",borderRadius:"2px",}} src={item} />   
                  </div>
@@ -77,7 +83,7 @@ function MainPage() {
 
                 
                   </div>   
-                
+                <Footer />
         </div>  
      
     )

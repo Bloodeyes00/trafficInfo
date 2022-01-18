@@ -1,18 +1,18 @@
 .container-fluid-social{
-    background-color: #3b9bf7;
-    height: 100vh;
+background-color        : #3b9bf7;
+height                  : 100vh;
 }
 
 .imgsss{
- position: inherit;
-height: 100%;
-width: 80%;
-border: none;
+position                : inherit;
+height                  : 100%;
+width                   : 80%;
+border                  : none;
 }
 .socsev{
-    color: #2C2E43
+color                   : #2C2E43
 }
 .row2-branch{
-    display: flex;
-    justify-content: center;
+display                 : flex;
+justify-content         : center;
 }

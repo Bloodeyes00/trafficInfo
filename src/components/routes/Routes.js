@@ -26,15 +26,15 @@ import ManageUser from '../manageuser/ManageUser';
 import ManageCompnayUser from "../managecompnayuser/ManageCompnayUser";
 import UploadAds from "../uploadads/UploadAds";
 import MainPage from '../Services/MainPage';
-import Footer from '../footer/Footer';
 import VehiclesServices from '../Services/VehiclesServices'
 import EmergencyService from '../Services/EmergencyService'
+import OtherItem from '../otheritem/OtherItem'
 
 export default function Routes() {
     return (
         <div>
             <Switch>
-                <Route path="/footer" component={Footer} />
+                <Route path="/otheritem" component={OtherItem} />
                 <Route path="/VehiclesServices" component={VehiclesServices} />
                 <Route path="/EmergencyService" component={EmergencyService} />
                 <Route path="/mainpage" component={MainPage} />
@@ -67,7 +67,9 @@ export default function Routes() {
                 <Route path="/Agree" component={Agree}/>
                 <Route path="/" component={Home} />
             </Switch>
-            <Footer />
+            <Switch>
+                
+            </Switch>
         </div>
     )
 }

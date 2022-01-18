@@ -16,6 +16,7 @@ import blue from "../../images/blue.png"
 
 
 import { useHistory } from 'react-router'
+import Footer from "../footer/Footer";
 const Home = () => {
   const [smShow, setSmShow] = useState(false);
   const [lgShow, setLgShow] = useState(false);
@@ -195,7 +196,7 @@ const Home = () => {
         {<RenderCard />}
       </div>
 
-
+<Footer />
     </div>
   );
 }

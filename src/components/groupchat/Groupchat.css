@@ -10,6 +10,7 @@
         padding                 : 20px;
     border-bottom-right-radius  : 30px ;
     border-bottom-left-radius   : 30px;
+    border-top                  : 1px solid;
         
     }
     .col-8{
@@ -33,7 +34,7 @@
         background-color        : rgb(255, 255, 255);
         border-radius           : 10px;
         color                   : #aa6b3b;
-        font-size               : 15px;
+        font-size               : 13px;
         border                  : 1px solid rgb(153, 150, 150);
     }
     

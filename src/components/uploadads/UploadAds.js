@@ -83,7 +83,7 @@ function UploadAds() {
         <div className="col-camra sm-4">
           <div className="camra d-flex ms-3 mt-4">
             <input className={loading ? "loading0" : "input-cars"}
-              style={{ height: "50px", width: "100px", marginLeft: "150px", }} type="file"
+              style={{ height: "50px", width: "100px", marginLeft: "33%", }} type="file"
               onClick={(e) => handleChange(e)} />
           </div>
           <center>

@@ -3,16 +3,17 @@
     width                   : 100%;
     position                : absolute;
     bottom                  : 0;
+    margin-left             : -18px
 }
 
 .row-footer{
     height                  : 100%;
-    width                   : 100%;
+    width                   : 106%;
     display                 : flex;
     justify-content         : center;
     align-items             : center;
     position                : fixed;
-    background-color        : rgb(218, 216, 216);
+    background-color        : #f8f9fa;
 
     
 }
@@ -24,6 +25,7 @@
     align-items             : center;
     text-align              : center;
     padding                 : 10px;
+    margin-left             : -10px;
 }
 
 .col-a:hover{
@@ -43,7 +45,8 @@
     align-items             : center;
     text-align              : center;
     padding                 : 0px;
-    margin-top              : 20px;
+    margin-top              : 30px;
+    font-size               : 12px
 }
 
 .col-b:hover{
@@ -54,7 +57,8 @@
     align-items             : center;
     text-align              : center;
     padding                 : 0px;
-    margin-top              : 20px;
+    margin-top              : 30px;
+    font-size               : 12px
 }
 
 .col-c{
@@ -64,7 +68,8 @@
     align-items             : center;
     text-align              : center;
     padding                 : 0px;
-    margin-top              : 20px;
+    margin-top              : 30px;
+    font-size               : 12px
 }
 .col-c:hover{
     height                  : 100%;
@@ -74,7 +79,8 @@
     align-items             : center;
     text-align              : center;
     padding                 : 0px;
-    margin-top              : 20px;
+    margin-top              : 30px;
+    font-size               : 12px
 }
 
 .col-d{
@@ -83,7 +89,9 @@
     justify-content         : center;
     align-items             : center;
     text-align              : center;
-    padding                 : 10px;
+    padding                 : 0px;
+    margin-top              : 30px;
+    font-size               : 12px
 }
 
 .col-d:hover{
@@ -93,7 +101,9 @@
     justify-content         : center;
     align-items             : center;
     text-align              : center;
-    padding                 : 10px;
+    padding                 : 0px;
+    margin-top              : 30px;
+    font-size               : 12px
 }
 
 .sidebaricon{
@@ -112,4 +122,20 @@
     /* margin-top              : -26px; */
 }
 
+
+.counters{
+    width   	            : 20px;
+    height                  : 20px;
+    background-color        : red;
+    color                   : white;
+    border-radius           : 50%;
+    padding                 : 5px;
+    font-size               : 12px;
+    margin-left             : 50px;
+    margin-top              : -50px;
+    display                 : flex;
+    align-items             : center;
+    justify-content         : center;
+    position                : absolute;
+}
 

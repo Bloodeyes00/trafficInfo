@@ -46,7 +46,7 @@ export default function Chatroom() {
                     else { setUnreadLength(0) }
                 })
 
-                db.collection("teamcompany").onSnapshot(snapshot => {
+                db.collection("Teamcompany").onSnapshot(snapshot => {
                     let data = snapshot.docs.map(doc => doc.data());
                     if ((data.length - msgsLength) > 0) {
                         setUnreadLength(data.length - msgsLength);
@@ -112,12 +112,12 @@ export default function Chatroom() {
 
                     <h2 className="heading2  pb-3">
                         <button
-                            className="btnsss "
+                            className="btnsss"
                             onClick={() => history.goBack()}>
                             <IoMdArrowBack />
                         </button>
 
-                        <b style={{ color: "white" }}> COMPANY CHAT ROOM </b>
+                        <b style={{ color: "white", fontSize: "18px" }}> COMPANY CHAT ROOM </b>
                     </h2>
                 </div>
                 {<div style={userdetails?.companyName !== "Svea Taxi" ?

@@ -60,7 +60,7 @@ element.style {
     color                   : rgb(0, 0, 0);
     border                  : 1px solid rgb(10, 10, 10);
     height                  : 40px;
-    width                   : 115px;
+    /* width                   : 115px; */
     border-radius           : 10px;
    
 }
@@ -78,7 +78,7 @@ element.style {
     background-size         : cover;
     height                  : 80vh;
 }
-
+ 
 .row-s{
     background-color        : #3b9bf7;
     height                  : 80px;
@@ -89,6 +89,8 @@ element.style {
     display                 : flex;
     border                  : 5px black;
     border-width            : 0px 2px 5px 0px;
+    margin-left             : -30%;
+    border-top              : 1px solid;
    
 }
 

@@ -58,7 +58,11 @@ function Footer() {
   const [user] = useAuthState(auth);
   const handleClose = () => setShow(false);
   const [userdetails, setuserdetails] = useState(false);
+
+
   let history = useHistory()
+
+  
 
   return (
     <div className='container-fluid-footer'>
@@ -283,7 +287,7 @@ function Footer() {
             </Offcanvas.Body>
           </Offcanvas>
         <div className='col-b'>
-          <BsAppIndicator 
+          <AiFillWechat  
           onClick={() => { 
             history.push(`/chatroom`) }} />
           <br />
@@ -291,16 +295,9 @@ function Footer() {
             history.push(`/chatroom`) }}>
               Chat Indicator
               </b>
+              <div className='counters'>0</div>
         </div>
-        <div className='col-c'>
-          <AiFillWechat onClick={() => 
-            { history.push(`/chat/${11}`) }}
-            />
-          <br />
-          <b onClick={() =>
-             { history.push(`/chat/${11}`) }}
-             >Company Chat</b>
-        </div>
+  
         <div className='col-d'>
           <FaServicestack 
           onClick={() => 

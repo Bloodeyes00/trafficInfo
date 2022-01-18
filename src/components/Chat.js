@@ -8,6 +8,11 @@ import { useHistory } from 'react-router';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import { Recorder } from 'react-voice-recorder'
 import Loader from './loader/Loader';
+import yellow from "../images/yellow.png"
+import green from "../images/green.png"
+import red from "../images/red.png"
+import orange from "../images/orange.png"  
+import blue from "../images/blue.png"
 
 function Chat() {
 
@@ -64,7 +69,15 @@ function Chat() {
     return (
 
         <div className="container-fluid-msgs" style={{ height: "70vh" }} onScroll={(e) => { loadMore(e) }} >
-            <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
+            <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack />
+            </button>
+            <div className="row-home">
+            <img className="img-icons" src={green} />
+            <img className="img-icons" src={orange} />
+            <img className="img-icons" src={blue} />
+            <img className="img-icons" src={red} />
+            <img className="img-icons" src={yellow} />
+</div>
             {loading && <Loader />}
             <ScrollToBottom  
             className={ROOT_CSS} 

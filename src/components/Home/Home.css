@@ -6,6 +6,7 @@
     width                       : 100%;
     padding                     : 15px;
     color                       : #2C2E43 !important; 
+    border-top                  : 1px solid;
 }
 .img-logo{
     background-image            : url(../Home/Trafficinfo.png);
@@ -159,23 +160,23 @@ h4 {
 } */
 
 .row-home{
-    display: flex;
-    justify-content: center ;
-    align-items: center;
-    text-align: center;
-    /* margin-left: 20%; */
+    display                     : flex;
+    justify-content             : center ;
+    align-items                 : center;
+    text-align                  : center;
+    /* margin-left              : 20%; */
 }
 
 .img-icons{
-    margin: 2%;
-    height: 0%;
-    width: 10%;
-    border: none;
+    margin                      : 1%;
+    height                      : 0%;
+    width                       : 50px;
+    border                      : none;
 }
 .img-icons:hover{
-    margin: 2%;
-    height: 0%;
-    width: 8%;
-    border: none;
+    margin                      : 1%;
+    height                      : 0%;
+    width                       : 45px;
+    border                      : none;
 }
 
