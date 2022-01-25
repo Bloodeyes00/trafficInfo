@@ -6,6 +6,11 @@ import SendMessage from '../SendMessage'
 import { useHistory, useParams } from 'react-router'
 import { IoMdArrowBack } from "react-icons/io";
 import Loader from "../loader/Loader";
+import yellow from "../../images/yellow.png"
+import green from "../../images/green.png"
+import red from "../../images/red.png"
+import orange from "../../images/orange.png"
+import blue from "../../images/blue.png"
 import './CompanyChat.css';
 function CompanyChat() {
 
@@ -13,18 +18,20 @@ function CompanyChat() {
     const scroll = useRef(null)
     const [messages, setMessages] = useState([])
     const [loading, setLoading] = useState(false)
+    const [shortCut, setShortCut] = useState("");
     const [lastMessagesLimit, setLastMessagesLimit] = useState(20);
+    const [state, setstate] = useState({ data: "" })
     const { id } = useParams();
 
     const ROOT_CSS = css({
-        height: 618,
-        width: '100%'
+        height: 540,
+        width: '100%',
+        backgroundColor: 'white'
     });
     const loadCompanyChat = () => {
         setLoading(true)
         if (scroll) {
             scroll.current.scrollIntoView({
-                // top: 100,
                 behavior: 'smooth',
                 block: 'end',
                 inline: 'nearest'
@@ -49,18 +56,17 @@ function CompanyChat() {
         if (id == '8') {
             company = "Skancompany";
         }
-        console.log("id ", id);
-        console.log("company ", company);
+        
 
         db.collection(company).orderBy('createdAt').limit(lastMessagesLimit).onSnapshot(snapshot => {
             setMessages(snapshot.docs.map(doc => doc.data()));
             let msgs = snapshot.docs.map(doc => doc.data());
             localStorage.setItem("msgsLength", msgs.length);
-            
-            
+
+
 
             setLoading(false);
-            console.log("messages in company chat : ", messages, msgs);
+        
         })
         scroll.current.scrollIntoView({ behavior: 'smooth' });
     }
@@ -68,18 +74,22 @@ function CompanyChat() {
     function loadMore(e) {
         if (window.innerHeight > 700) {
             setLastMessagesLimit(lastMessagesLimit + 20);
-            console.log("more images loaded", lastMessagesLimit);
+        
         }
-        console.log("event : ", e);
-        console.log("window.innerHeight: ", window.innerHeight);
-        console.log(" document.scrollingElement.scrollHeight : ", document.scrollingElement.scrollHeight);
-        console.log("  document.documentElement.scrollTop: ", document.documentElement.scrollTop);
+        
     }
 
     useEffect(() => {
         window.addEventListener('scroll', loadMore());
         loadCompanyChat();
     }, [window.innerHeight, document.scrollingElement.scrollHeight]);
+
+
+    
+
+    const setButton = (setMsg) => {
+        setMsg(shortCut);
+    }
 
     return (
         <div className="container-fluid-chats" onScroll={(e) => { loadMore(e) }} >
@@ -88,7 +98,13 @@ function CompanyChat() {
                 onClick={() => history.goBack()}>
                 <IoMdArrowBack />
             </button>
-
+            <div className="row-compnaychat">
+                <img className="img-icons" src={green} onClick={() =>  setShortCut("data 1") } />
+                <img className="img-icons" src={orange} onClick={() => setShortCut("data 2") } />
+                <img className="img-icons" src={blue} onClick={() => setShortCut("data 3") }/>
+                <img className="img-icons" src={red} onClick={() =>  setShortCut("data 4") }/>
+                <img className="img-icons" src={yellow} onClick={() => setShortCut("data 5") } />
+            </div>
             <ScrollToBottom
                 className={ROOT_CSS}
                 onScroll={(e) => {
@@ -100,7 +116,7 @@ function CompanyChat() {
                         loadMore(e)
                     }}>
                     {messages?.map(({ id, text, photoURL, curImageUrl, uid }) => (
-                            
+
                         <div className="comchats">
                             {< div key={id}
                                 className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>
@@ -118,7 +134,7 @@ function CompanyChat() {
                     ))}
                     <div ref={scroll}></div>
                 </div>
-                <SendMessage scroll={scroll} />
+                <SendMessage setButton={setButton}  scroll={scroll} />
             </ScrollToBottom>
         </div>
     )

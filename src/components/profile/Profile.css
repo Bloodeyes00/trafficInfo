@@ -12,7 +12,7 @@
 
 .Profile{
     /* background-color     :rgb(255, 255, 255); */
-    background-image        : url(../login/background.png) ;
+    background-image        : url(../../images/background.jpg) ;
     background-repeat       : no-repeat;
     background-size         : cover;
     width                   : 100vw;

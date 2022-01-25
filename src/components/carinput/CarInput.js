@@ -29,7 +29,7 @@ function CarInput() {
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
 
- 
+
 
   const handleChange = (e, check) => {
     setLoading(true)
@@ -37,7 +37,7 @@ function CarInput() {
     if (e.target.files[0]) {
       console.log("check2");
       const image = e.target.files[0];
-     
+
 
       handleUpload(image, check);
 
@@ -50,18 +50,18 @@ function CarInput() {
     uploadTask.on('state_changed',
       (snapshot) => {
         console.log("check 3")
-       
+
         const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
         setProgress(progress);
-      
+
       },
       (error) => {
-      
+
         console.log(error);
         setLoading(false)
       },
       () => {
-      
+
         storage.ref('imges').child(image.name).getDownloadURL().then(url => {
           console.log(url);
           console.log("check 4", check);
@@ -78,7 +78,7 @@ function CarInput() {
           if (check == "4th") {
             setUrl4(url)
           }
-      
+
         })
       });
 
@@ -123,8 +123,8 @@ function CarInput() {
   };
   return (
     <div className="container-fluid-carinput">
-    <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
-     <h1 style={{ textAlign: "center" }}>POST YOUR AD</h1>
+      <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
+      <h1 style={{ textAlign: "center" }}>POST YOUR AD</h1>
       <div className="container-carinput">
         <div className="row-header ms-3 mt-1">
           <h3 >SELECTED CATEGORY</h3>

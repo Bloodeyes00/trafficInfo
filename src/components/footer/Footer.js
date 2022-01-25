@@ -25,6 +25,7 @@ import { RiInboxArchiveFill } from "react-icons/ri";
 import Loader from "../loader/Loader";
 
 function Footer() {
+  const [unreadLength, setUnreadLength] = useState(0);
 
   const loadFooter =() => {
   // setLoading(true)
@@ -61,31 +62,80 @@ function Footer() {
 
 
   let history = useHistory()
+  const loadChatroom = () => {
+    setLoading(true)
+    const firestore = firebase.database().ref("/UserProfile");
+    firestore.on('value', (snapshot) => {
+        let data = { ...snapshot.val() };
+        data = Object.values(data);
+        console.log("data : ", data);
 
-  
+        if (auth?.currentUser?.uid) {
+            console.log("auth uids: ", auth.currentUser.uid);
+            let currentUserDetails = data.find(item => item.uid == auth?.currentUser.uid);
+            console.log("currentUserDetails in profile : ", currentUserDetails);
+            setuserdetails(currentUserDetails);
+            setLoading(false)
+            let msgsLength = localStorage.getItem("msgsLength");
+
+            db.collection("company").onSnapshot(snapshot => {
+                let data = snapshot.docs.map(doc => doc.data());
+                if ((data.length - msgsLength) > 0) {
+                    setUnreadLength(data.length - msgsLength);
+                }
+                else { setUnreadLength(0) }
+            })
+
+            db.collection("Teamcompany").onSnapshot(snapshot => {
+                let data = snapshot.docs.map(doc => doc.data());
+                if ((data.length - msgsLength) > 0) {
+                    setUnreadLength(data.length - msgsLength);
+                } else { setUnreadLength(0) }
+            })
+
+            db.collection("Staxicompany").onSnapshot(snapshot => {
+                let data = snapshot.docs.map(doc => doc.data());
+                if ((data.length - msgsLength) > 0) {
+                    setUnreadLength(data.length - msgsLength);
+                } else { setUnreadLength(0) }
+            })
+
+
+            db.collection("Taxicompany").onSnapshot(snapshot => {
+                let data = snapshot.docs.map(doc => doc.data());
+                if ((data.length - msgsLength) > 0) {
+                    setUnreadLength(data.length - msgsLength);
+                } else { setUnreadLength(0) }
+            })
+
+            db.collection("Kuricompany").onSnapshot(snapshot => {
+                let data = snapshot.docs.map(doc => doc.data());
+                if ((data.length - msgsLength) > 0) {
+                    setUnreadLength(data.length - msgsLength);
+                } else { setUnreadLength(0) }
+            })
+
+            db.collection("Skancompany").onSnapshot(snapshot => {
+                let data = snapshot.docs.map(doc => doc.data());
+                if ((data.length - msgsLength) > 0) {
+                    setUnreadLength(data.length - msgsLength);
+                } else { setUnreadLength(0) }
+            })
+        }
+    });
+}
+
+useEffect(() => {
+    loadChatroom();
+    return {
+
+    }
+}, [])
 
   return (
     <div className='container-fluid-footer'>
       <div className='row-footer'>
-        {/* <div className='col-a'>
-                    <span className="" type="button" onClick={() => {
-                      history.push("/home")
-                    }} >
-                      < AiFillHome />
-                    </span>
-                    <br />
-                    <a type="button"
-                      onClick={() => {
-                        history.push("./home")
-                      }}
-                     
-                    >
-                    
-                      <b  onClick={() => {
-                        history.push("./home")
-                      }}>Home</b>
-                    </a>
-                        </div> */}
+    
         <div className="col-a  pt-1">
           
             <span onClick={handleShow} className="navspan">
@@ -295,7 +345,7 @@ function Footer() {
             history.push(`/chatroom`) }}>
               Chat Indicator
               </b>
-              <div className='counters'>0</div>
+              <div className='counters'>{unreadLength}</div>
         </div>
   
         <div className='col-d'>

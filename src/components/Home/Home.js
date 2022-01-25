@@ -183,16 +183,16 @@ const Home = () => {
       <div onClick={() => { history.push(`/chat/${11}`) }} className="img-logo">
        </div>
   
-          <div className="row-home">
-            <img className="img-icons" src={green} />
-            <img className="img-icons" src={orange} />
-            <img className="img-icons" src={blue} />
-            <img className="img-icons" src={red} />
-            <img className="img-icons" src={yellow} />
-</div>
+       {/* <div className="row-homeicon">
+                <img className="img-icons" src={green} />
+                <img className="img-icons" src={orange}  />
+                <img className="img-icons" src={blue}  />
+                <img className="img-icons" src={red}  />
+                <img className="img-icons" src={yellow} />
+            </div> */}
  
-      
-      <div style={{ alignItems: 'center', marginTop: '20px' }}>
+
+      <div className="row-home" style={{ alignItems: 'center', marginTop: '20px', borderRadius:"50px" }}>
         {<RenderCard />}
       </div>
 

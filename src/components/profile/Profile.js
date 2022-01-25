@@ -204,8 +204,8 @@ export default function Profile() {
             </div>
 
             <div class="mb-3">
-              <label className="form-label float-start">
-                <b> Add Company </b>
+              <label className="form-label float-start ms-1" >
+                <b style={{color:"white",fontSize:"15px"}}> Add Company </b>&nbsp;
               </label>
               <div className="addcmpny">
                 <select className="selectws" onChange={(e) => { let value = e.target.value; setcompanyName(value) }} >

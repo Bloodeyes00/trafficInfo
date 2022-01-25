@@ -73,7 +73,7 @@ element.style {
 
 .container-fluid-s{
     background-color        : #3b9bf7;
-    background-image        : url(../login/background.png);
+    /* background-image        : url(../); */
     background-repeat       : no-repeat;
     background-size         : cover;
     height                  : 80vh;

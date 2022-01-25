@@ -29,8 +29,7 @@ export default class VoiceRecorder extends Component {
         uploadTask.on('state_changed',
             (snapshot) => {
                 const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-                // setProgress(progress);
-                // this.setState({ loading: true })
+              
             },
             (error) => {
                 console.log(error);
@@ -61,19 +60,18 @@ export default class VoiceRecorder extends Component {
     render() {
         return (
             <div className=" recorder-main">
+                <button className='closebtn' onClick={() => { this.props.setRecordVisible(false) }}> <VscClose /></button>
 
                 <Recorder
                     record={this.props?.recording}
-                    // title={"New recording"}
                     audioURL={this.state.audioDetails.url}
                     showUIAudio
                     handleAudioStop={data => this.handleAudioStop(data)}
                     handleAudioUpload={data => this.handleAudioUpload(data)}
                     handleReset={() => this.handleReset()}
 
-                    mimeTypeToUseWhenRecording={`audio/webm`} // For specific mimetype.
+                    mimeTypeToUseWhenRecording={`audio/webm`} 
                 />
-                <button className='closebtn' onClick={() => { this.props.setRecordVisible(false) }}> <VscClose /></button>
 
 
             </div>

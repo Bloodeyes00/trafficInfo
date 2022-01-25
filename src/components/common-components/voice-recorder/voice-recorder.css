@@ -67,3 +67,10 @@ margin-left                 : none !important;
         position            : relative;
         margin-left         : 38px;
     }
+
+    .closebtn{
+        margin-top: 10%;
+        position: absolute;
+    }
+
+ 

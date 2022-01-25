@@ -34,9 +34,7 @@ export default function Chatroom() {
                 console.log("currentUserDetails in profile : ", currentUserDetails);
                 setuserdetails(currentUserDetails);
                 setLoading(false)
-                // setEmail(currentUserDetails.email);
                 let msgsLength = localStorage.getItem("msgsLength");
-                // db.collection(currentUserDetails?.companyName).onSnapshot(snapshot => {
 
                 db.collection("company").onSnapshot(snapshot => {
                     let data = snapshot.docs.map(doc => doc.data());
@@ -124,7 +122,7 @@ export default function Chatroom() {
                     { opacity: 0.5 } : { opacity: 1 }}
                     className="hello mt-5 col-sm-10 offset-1"
                     onClick={() => {
-                        allowuserforchat("Svea Taxi", 2)
+                        allowuserforchat("Svea Taxi", 2) 
                     }}>
                     <div className="img ms-2 mt-4">
                         <img src={sveaTaxi} className="image" />

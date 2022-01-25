@@ -16,35 +16,27 @@ import "./send-message/send-message.css"
 import VoiceRecorder from './common-components/voice-recorder/VoiceRecorder'
 import 'react-voice-recorder/dist/index.css'
 
-function SendMessage({ scroll }) {
-
-
+function SendMessage(props) {
+    let { scroll, Ahmad, setButton } = props;
     const webcamRef = React.useRef(null);
     const [image, setImage] = useState('');
     const [progress, setProgress] = useState('');
     const [url, setUrl] = useState('');
     const [recordVisible, setRecordVisible] = useState(false);
-
-    const capture = React.useCallback(
-        () => {
-            const imageSrc = webcamRef.current.getScreenshot();
-            setImage(imageSrc);
-            // handleChange(imageSrc);
-        });
-    const videoConstraints = {
-        width: 1280,
-        height: 720,
-        facingMode: "user"
-    };
     const notify = (message) => toast(message);
     const [msg, setMsg] = useState('');
     const [openCamera, setOpenCamera] = useState(false);
     const [curImageUrl, setCurrentImgUrl] = useState('');
     const { id } = useParams();
 
+    useEffect(() => {
+        setButton(setMsg);
+    }, [
+        
+    ])
+
 
     useEffect(() => {
-        console.log("curImageUrl", curImageUrl);
         if (scroll) {
             scroll?.current?.scrollIntoView({
                 behavior: 'smooth',
@@ -56,14 +48,23 @@ function SendMessage({ scroll }) {
 
     }, [curImageUrl, msg]);
 
+    const capture = React.useCallback(
+        () => {
+            const imageSrc = webcamRef.current.getScreenshot();
+            setImage(imageSrc);
+        });
+    const videoConstraints = {
+        width: 1280,
+        height: 720,
+        facingMode: "user"
+    };
+
     const handleChange = (e, check) => {
         console.log("check1", e);
         console.log("check2", JSON.parse(e));
         if (e.target.files[0]) {
             console.log("check2");
             const image = e.target.files[0];
-            // setImage(() => ({ image }));
-            // setImage(image)
             handleUpload(image, check);
         }
     }
@@ -73,7 +74,6 @@ function SendMessage({ scroll }) {
             (snapshot) => {
                 const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
                 setProgress(progress);
-                // this.setState({ loading: true })
             },
             (error) => {
                 console.log(error);
@@ -88,8 +88,6 @@ function SendMessage({ scroll }) {
                     }
                 })
             });
-
-
     }
 
     async function sendMessage(e, voice) {
@@ -143,10 +141,10 @@ function SendMessage({ scroll }) {
             setCurrentImgUrl("");
             setOpenCamera(false);
             setImage("");
+            setMsg('')
 
             if (scroll) {
                 scroll.current.scrollIntoView({
-                    // top: 100,
                     behavior: 'smooth',
                     block: 'end',
                     inline: 'nearest'
@@ -154,8 +152,8 @@ function SendMessage({ scroll }) {
             }
         }).catch((e) => {
             notify(e.message);
+            setMsg('')
         });
-        setMsg('')
     }
     function reset(ref) {
 
@@ -194,20 +192,20 @@ function SendMessage({ scroll }) {
                                     }}
                                         className="webcam-btn">
                                         <TiArrowSync />
-                                        </button> :
+                                    </button> :
                                     <button className='ticamra'
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        capture();
-                                    }}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            capture();
+                                        }}
                                     ><TiCameraOutline /></button>
                                 }
                             </div>}
 
                         {!openCamera &&
                             <button className="aicamra" style={{
-                               
-                            }}  onClick={() => { setOpenCamera(true) }}><AiTwotoneCamera /> </button>}
+
+                            }} onClick={() => { setOpenCamera(true) }}><AiTwotoneCamera /> </button>}
 
 
                         <Sendimage setCurrentImgUrl={setCurrentImgUrl} curImageUrl={curImageUrl} reset={reset} />
@@ -220,16 +218,20 @@ function SendMessage({ scroll }) {
 
                             <br />
 
-                            <textarea className='txtarea'
-                            placeholder='Message...'
-                            type="text" value={msg} 
-                            onChange={e => setMsg(e.target.value)} />
+
+                            <textarea className="txtarea rounded-0"
+                                placeholder='Message..'
+                                type="text"
+                                value={msg}
+                                onChange={e => setMsg(e.target.value)}
+                                rows="3">
+                            </textarea>
 
                             <button className='voicee'
                                 onClick={() => setRecordVisible(true)}><MdKeyboardVoice /></button>
 
                             <button className='iosend' style={{
-                               
+
                             }} type="submit"><IoSend /></button>
                         </>}
                         <ToastContainer />
