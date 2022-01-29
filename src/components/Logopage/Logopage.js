@@ -23,7 +23,6 @@ function Logopage(props) {
 
 
                 <button onClick={() => {
-                    // history.push("/socialservices")
                     setCurrentPage("2");
                 }} className="btnn1"><b>Next</b></button>
             </div>}

@@ -95,6 +95,7 @@ function CompanyChat() {
         <div className="container-fluid-chats" onScroll={(e) => { loadMore(e) }} >
             {loading && <Loader />}
             <button className="btnsss ms-3 "
+            style={{color:"black",}}
                 onClick={() => history.goBack()}>
                 <IoMdArrowBack />
             </button>

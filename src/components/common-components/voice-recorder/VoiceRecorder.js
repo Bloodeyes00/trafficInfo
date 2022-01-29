@@ -39,7 +39,6 @@ export default class VoiceRecorder extends Component {
                     console.log(url);
                     this.props.sendMessage(null, url);
                     this.props.setRecordVisible(false);
-                    // setUrl(url);
                 })
             });
     }

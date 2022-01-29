@@ -64,7 +64,7 @@ function Chat() {
     return (
 
         <div className="container-fluid-msgs" style={{ height: "70vh" }} onScroll={(e) => { loadMore(e) }} >
-            <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack />
+            <button className="btnsss ms-3 mt-1 mb-1 " style={{color:"black"}} onClick={() => history.goBack()}><IoMdArrowBack />
             </button>
             <div className="row-chats">
             <img className="img-icons" src={green} onClick={() =>  setShortCut("data 1") }/>

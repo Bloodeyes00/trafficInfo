@@ -7,12 +7,6 @@ import { useEffect, useState } from 'react'
 import firebase from "../utils/firebase";
 import { storage } from '../utils/firebase'
 import trafikinfo from '../../images/trafikinfo.png'
-import yellow from "../../images/yellow.png"
-import green from "../../images/green.png"
-import red from "../../images/red.png"
-import orange from "../../images/orange.png"  
-import blue from "../../images/blue.png"
-
 
 
 import { useHistory } from 'react-router'
@@ -27,15 +21,12 @@ const Home = () => {
   let history = useHistory();
  
   const loadHome = () => {
-    console.log("check 1")
     setLoading(true)
     const firestore = firebase.database().ref("/UploadAds");
-    console.log("check 2")
 
     firestore.on('value', (snapshot) => {
       let data = { ...snapshot.val() };
       data = Object.values(data);
-      console.log("data : ", data);
       setMovies(data);
       setLoading(false)
     });
@@ -48,9 +39,7 @@ const Home = () => {
     }
   }, [])
   const handleChange = (e, check) => {
-    console.log("check1");
     if (e.target.files[0]) {
-      console.log("check2");
       const image = e.target.files[0];
      
 
@@ -67,7 +56,6 @@ const Home = () => {
         // progrss function ....
         const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
         setProgress(progress);
-        // this.setState({ loading: true })
       },
       (error) => {
         // error function ....
@@ -154,7 +142,6 @@ const Home = () => {
               infinite={true}
               autoPlay={true}
               autoPlaySpeed={2000}
-              // keyBoardControl={true}
               customTransition="all .5"
               transitionDuration={700}>
               <Carousel variant="dark">
@@ -183,16 +170,7 @@ const Home = () => {
       <div onClick={() => { history.push(`/chat/${11}`) }} className="img-logo">
        </div>
   
-       {/* <div className="row-homeicon">
-                <img className="img-icons" src={green} />
-                <img className="img-icons" src={orange}  />
-                <img className="img-icons" src={blue}  />
-                <img className="img-icons" src={red}  />
-                <img className="img-icons" src={yellow} />
-            </div> */}
- 
-
-      <div className="row-home" style={{ alignItems: 'center', marginTop: '20px', borderRadius:"50px" }}>
+      <div className="row-home" style={{ alignItems: 'center', marginTop: '0px', borderRadius:"50px" }}>
         {<RenderCard />}
       </div>
 

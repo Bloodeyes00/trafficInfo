@@ -79,7 +79,7 @@ export default function Registration(props) {
         <div className="Profile d-flex flex-column justify-content-center align-items-center pb-5">
           <div className="Heading d-flex justify-content-center mt-3">
             <h1>
-              <b>Registration</b>
+              <b style={{color:"white"}}>Registration</b>
             </h1>
           </div>
           <br />

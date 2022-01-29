@@ -63,7 +63,6 @@
     align-items             : center;
     border-radius           : 130x;
     text-align              : center;
-    /* background-color     : rgb(243, 243, 243); */
     background-image        : url('../../components/carinput/camra.png');
     background-size         : contain;
     background-position     : center;
@@ -71,10 +70,8 @@
 }
 
 .loading {
-    /* width                : 980px; */
     height                  : 80px;
     display                 : flex;
-    /* margin-left          : 50px; */
     justify-content         : center;
     align-items             : center;
     border-radius           : 130x;
@@ -83,7 +80,6 @@
     background-size         : contain;
     background-position     : center;
     background-repeat       : no-repeat;
-    /* border               : solid red; */
 
 }
 

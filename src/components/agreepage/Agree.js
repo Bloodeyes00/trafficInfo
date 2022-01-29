@@ -15,7 +15,6 @@ function Agree(props) {
             <div className="row1-agree">
                 <button className="btnn1" 
                 onClick={() => {
-                    // history.push("/SignwithPohone");
                     localStorage.setItem("oldUser", true);
                     setOlduserState(true);
                     console.log("true")
@@ -27,7 +26,6 @@ function Agree(props) {
                 &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
 
                 <button onClick={() => {
-                    // history.push("/SignwithPohone");
                     localStorage.setItem("oldUser", true);
                     setOlduserState(true);
                     console.log("true")

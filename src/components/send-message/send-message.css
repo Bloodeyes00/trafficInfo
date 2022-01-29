@@ -147,7 +147,7 @@ input[type="file"]::-webkit-file-upload-button {
     border: none;
     height: 40px; 
     margin-bottom: 0px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 
 .btnsss{
@@ -155,6 +155,6 @@ input[type="file"]::-webkit-file-upload-button {
     width: 60px;
     border-radius: 5px;
     background-color: rgba(112, 209, 247, 0); 
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 

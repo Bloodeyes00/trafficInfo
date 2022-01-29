@@ -168,7 +168,7 @@ export default function Profile() {
         <div className="prof">
           <div className="Heading d-flex justify-content-center">
             <h1>
-              <b>Profile</b>
+              <b style={{color:"white"}}>Profile</b>
             </h1>
           </div>
 

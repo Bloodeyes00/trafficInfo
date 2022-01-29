@@ -2,7 +2,7 @@
     background-image            : url(../../images/background.jpg) ;
     background-repeat           : no-repeat;
     background-size             : cover;
-    height                      : 90vh;
+    height                      : 80vh;
     width                       : 100%;
     padding                     : 15px;
     color                       : #2C2E43 !important; 
@@ -14,15 +14,15 @@
     background-repeat           : no-repeat;
     background-position         : center;
     height                      : 16vh;
-    width                       : 39%;
+    width                       : 43%;
     margin-left                 : 28vw;
     display                     : flex; 
   
 }
 
 .cardimgs1{
-    width                       : 135px;
-    height                      : 135px;
+    width                       : 120px;
+    height                      : 120px;
     border-Radius               : 2px;
     display                     : flex;
     border                      : none;
@@ -45,7 +45,7 @@
     background-repeat           : no-repeat;
     background-position         : center;
     height                      : 16vh;
-    width                       : 39%;
+    width                       : 43%;
     margin-left                 : 28vw;
     display                     : flex;
 }
@@ -151,25 +151,17 @@ h4 {
     border-radius               : .25rem;
 }
 
-/* .logoimgss{
-    height                      : 50%;
-    width                       : 100%; 
-    background-image            : url(../Logopage/trafikinfo.png);
-    background-repeat           : no-repeat;
-    background-size             : contain;
-    background-position         : center;
-} */
+
 
 .row-home{
     background-image            : url(../../images/backgroundads.png);
     background-position         : center;
-    background-size             : 450px;
+    background-size             : 400px;
     background-repeat           : no-repeat;
     display                     : flex;
     justify-content             : center ;
     align-items                 : center;
     text-align                  : center;
-    /* margin-left              : 20%; */
     height                      : 450px;
 }
 

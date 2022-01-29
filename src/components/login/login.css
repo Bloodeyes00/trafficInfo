@@ -1,33 +1,29 @@
 .container-fluid-login{
 
-    background-image: url(../login/background.png) ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 80vh;
+    background-image        : url(../login/background.png) ;
+    background-repeat       : no-repeat;
+    background-size         : cover;
+    width                   : 100%;
+    height                  : 80vh;
 }
 
 .Datass{
-    color: #2C2E43;
-    background-image: url(../login/login.jpg);
-    background-repeat: no-repeat;
-    background: none;
-    background-size: 300px;
-    background-position: center;
-    box-shadow: rgb(3 3 3) 1px 2px 5px 0px;
-    border: 1px solid #ffffff;
-    margin-left: 0%;
-    border-radius: 30px;
-    flex-direction: column;
-    width: 80%;
-    height: 50%;
+    color                   : #2C2E43;
+    background-image        : url(../login/login.jpg);
+    background-repeat       : no-repeat;
+    background              : none;
+    background-size         : 300px;
+    background-position     : center;
+    box-shadow              : rgb(3 3 3) 1px 2px 5px 0px;
+    border                  : 1px solid #ffffff;
+    margin-left             : 0%;
+    border-radius           : 30px;
+    flex-direction          : column;
+    width                   : 80%;
+    height                  : 50%;
 }
 .Button{
-    width: 150px;
+    width                   : 150px;
     
 }
-
-/* .textss{
-    background-color: rgba(255, 255, 255, 0.452);
-} */
 

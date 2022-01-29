@@ -62,6 +62,3 @@ const movies =[
 export function getJobs(){
     return movies;
 }
-// export function getMovie(id){
-//     return movies.find(m=> m._id === id);
-// }

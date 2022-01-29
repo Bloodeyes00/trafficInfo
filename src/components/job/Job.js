@@ -33,7 +33,6 @@ function Job() {
 
 
     };
-    console.log("Data pyaload", data);
     firestore
       .push(data)
       .then((res) => {
@@ -126,8 +125,6 @@ function Job() {
           <select className="location mt-2" onChange={(e) => {
             let value = e.target.value;
             setState(value);
-            console.log("set state", state);
-            console.log("set state value", value);
           }}
           >
             <option className="abc" value="Khyber Pakhtunkhwa">Select</option>

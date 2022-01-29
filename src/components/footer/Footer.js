@@ -15,7 +15,7 @@ import { auth, db } from "../utils/firebase";
 import { BsFillChatDotsFill } from "react-icons/bs";
 import { RiAdminFill } from "react-icons/ri";
 import { IoLogInOutline } from "react-icons/all"
-import { Offcanvas } from "react-bootstrap";
+import { Offcanvas, NavDropdown, Nav, Form, FormControl } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Logo from "../../assets/Navbar/profile.png";
 import { IoIosHome } from "react-icons/io";
@@ -27,27 +27,27 @@ import Loader from "../loader/Loader";
 function Footer() {
   const [unreadLength, setUnreadLength] = useState(0);
 
-  const loadFooter =() => {
-  // setLoading(true)
-  const firestore = firebase.database().ref("/UserProfile");
-  firestore.on('value', (snapshot) => {
-    let data = { ...snapshot.val() };
-    data = Object.values(data);
-    // let uid = auth?.currentUser.uid;
-    if (auth?.currentUser?.uid) {
-      let currentUserDetails = data.find(item => item.uid == auth?.currentUser?.uid);
-      console.log("data : ", data);
-      console.log("currentUserDetails : ", currentUserDetails);
-      setuserdetails(currentUserDetails);
-      setLoading(false)
-    }
-  });
+  const loadFooter = () => {
+    // setLoading(true)
+    const firestore = firebase.database().ref("/UserProfile");
+    firestore.on('value', (snapshot) => {
+      let data = { ...snapshot.val() };
+      data = Object.values(data);
+      // let uid = auth?.currentUser.uid;
+      if (auth?.currentUser?.uid) {
+        let currentUserDetails = data.find(item => item.uid == auth?.currentUser?.uid);
+        console.log("data : ", data);
+        console.log("currentUserDetails : ", currentUserDetails);
+        setuserdetails(currentUserDetails);
+        setLoading(false)
+      }
+    });
 
- }
- 
+  }
+
   useEffect(() => {
-  loadFooter();
-  
+    loadFooter();
+
     return {
 
     }
@@ -66,102 +66,101 @@ function Footer() {
     setLoading(true)
     const firestore = firebase.database().ref("/UserProfile");
     firestore.on('value', (snapshot) => {
-        let data = { ...snapshot.val() };
-        data = Object.values(data);
-        console.log("data : ", data);
+      let data = { ...snapshot.val() };
+      data = Object.values(data);
 
-        if (auth?.currentUser?.uid) {
-            console.log("auth uids: ", auth.currentUser.uid);
-            let currentUserDetails = data.find(item => item.uid == auth?.currentUser.uid);
-            console.log("currentUserDetails in profile : ", currentUserDetails);
-            setuserdetails(currentUserDetails);
-            setLoading(false)
-            let msgsLength = localStorage.getItem("msgsLength");
+      if (auth?.currentUser?.uid) {
+        console.log("auth uids: ", auth.currentUser.uid);
+        let currentUserDetails = data.find(item => item.uid == auth?.currentUser.uid);
+        console.log("currentUserDetails in profile : ", currentUserDetails);
+        setuserdetails(currentUserDetails);
+        setLoading(false)
+        let msgsLength = localStorage.getItem("msgsLength");
 
-            db.collection("company").onSnapshot(snapshot => {
-                let data = snapshot.docs.map(doc => doc.data());
-                if ((data.length - msgsLength) > 0) {
-                    setUnreadLength(data.length - msgsLength);
-                }
-                else { setUnreadLength(0) }
-            })
+        db.collection("company").onSnapshot(snapshot => {
+          let data = snapshot.docs.map(doc => doc.data());
+          if ((data.length - msgsLength) > 0) {
+            setUnreadLength(data.length - msgsLength);
+          }
+          else { setUnreadLength(0) }
+        })
 
-            db.collection("Teamcompany").onSnapshot(snapshot => {
-                let data = snapshot.docs.map(doc => doc.data());
-                if ((data.length - msgsLength) > 0) {
-                    setUnreadLength(data.length - msgsLength);
-                } else { setUnreadLength(0) }
-            })
+        db.collection("Teamcompany").onSnapshot(snapshot => {
+          let data = snapshot.docs.map(doc => doc.data());
+          if ((data.length - msgsLength) > 0) {
+            setUnreadLength(data.length - msgsLength);
+          } else { setUnreadLength(0) }
+        })
 
-            db.collection("Staxicompany").onSnapshot(snapshot => {
-                let data = snapshot.docs.map(doc => doc.data());
-                if ((data.length - msgsLength) > 0) {
-                    setUnreadLength(data.length - msgsLength);
-                } else { setUnreadLength(0) }
-            })
+        db.collection("Staxicompany").onSnapshot(snapshot => {
+          let data = snapshot.docs.map(doc => doc.data());
+          if ((data.length - msgsLength) > 0) {
+            setUnreadLength(data.length - msgsLength);
+          } else { setUnreadLength(0) }
+        })
 
 
-            db.collection("Taxicompany").onSnapshot(snapshot => {
-                let data = snapshot.docs.map(doc => doc.data());
-                if ((data.length - msgsLength) > 0) {
-                    setUnreadLength(data.length - msgsLength);
-                } else { setUnreadLength(0) }
-            })
+        db.collection("Taxicompany").onSnapshot(snapshot => {
+          let data = snapshot.docs.map(doc => doc.data());
+          if ((data.length - msgsLength) > 0) {
+            setUnreadLength(data.length - msgsLength);
+          } else { setUnreadLength(0) }
+        })
 
-            db.collection("Kuricompany").onSnapshot(snapshot => {
-                let data = snapshot.docs.map(doc => doc.data());
-                if ((data.length - msgsLength) > 0) {
-                    setUnreadLength(data.length - msgsLength);
-                } else { setUnreadLength(0) }
-            })
+        db.collection("Kuricompany").onSnapshot(snapshot => {
+          let data = snapshot.docs.map(doc => doc.data());
+          if ((data.length - msgsLength) > 0) {
+            setUnreadLength(data.length - msgsLength);
+          } else { setUnreadLength(0) }
+        })
 
-            db.collection("Skancompany").onSnapshot(snapshot => {
-                let data = snapshot.docs.map(doc => doc.data());
-                if ((data.length - msgsLength) > 0) {
-                    setUnreadLength(data.length - msgsLength);
-                } else { setUnreadLength(0) }
-            })
-        }
+        db.collection("Skancompany").onSnapshot(snapshot => {
+          let data = snapshot.docs.map(doc => doc.data());
+          if ((data.length - msgsLength) > 0) {
+            setUnreadLength(data.length - msgsLength);
+          } else { setUnreadLength(0) }
+        })
+      }
     });
-}
+  }
 
-useEffect(() => {
+  useEffect(() => {
     loadChatroom();
     return {
 
     }
-}, [])
+  }, [])
 
   return (
     <div className='container-fluid-footer'>
       <div className='row-footer'>
-    
+
         <div className="col-a  pt-1">
-          
-            <span onClick={handleShow} className="navspan">
-              <MdOutlineStorage className='sidebaricon' />
-            </span>
-          
+
+          <span onClick={handleShow} className="navspan">
+            <MdOutlineStorage className='sidebaricon' />
+          </span>
+
         </div>
 
         <Offcanvas show={show} onHide={handleClose}>
-            <Offcanvas.Header>
-              <Offcanvas.Title>
-                <div className="ms-4 mt-3">
-                  <img className="off-canvas-image"
-                    src={userdetails?.url ? userdetails?.url : Logo}
-                  />
-                  <br />
-                  <br />
-                  <h2 style={{marginLeft:'20px' }}>{userdetails?.Name}</h2>
-                </div>
-              </Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-              <div className="container">
-                <div className="row">
-                  <div className="offset-1">
-                    <div className="btn-nav">
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title>
+              <div className="ms-4 mt-3">
+                <img className="off-canvas-image"
+                  src={userdetails?.url ? userdetails?.url : Logo}
+                />
+                <br />
+                <br />
+                <h2 style={{ marginLeft: '20px' }}>{userdetails?.Name}</h2>
+              </div>
+            </Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <div className="container">
+              <div className="row">
+                <div className="offset-1">
+                  <div className="btn-nav">
                     <span className="sidemenu-icons" type="button" onClick={() => {
                       history.push("/home")
                     }} >
@@ -176,9 +175,9 @@ useEffect(() => {
                       &nbsp;&nbsp;
                       HOME
                     </a>
-                    </div>
-                    <br />
-                    <div className="btn-nav">
+                  </div>
+                  <br />
+                  <div className="btn-nav">
                     <span className="sidemenu-icons" type="button" onClick={() => {
                       history.push("/group")
                     }} >
@@ -192,9 +191,9 @@ useEffect(() => {
                     > &nbsp;&nbsp;
                       MY GROUP
                     </a>
-                    </div>
-                    <br />
-                    <div className="btn-nav">
+                  </div>
+                  <br />
+                  <div className="btn-nav">
                     <span className="sidemenu-icons" type="button" onClick={() => {
                       history.push("/groupchat")
 
@@ -210,9 +209,9 @@ useEffect(() => {
                     > &nbsp;&nbsp;
                       PROFILE
                     </a>
-                   </div>
-                    <br />
-                    <div className="btn-nav">
+                  </div>
+                  <br />
+                  <div className="btn-nav">
                     <span className="sidemenu-icons" type="button" onClick={() => {
                       history.push("./inbox")
                     }} >
@@ -227,8 +226,8 @@ useEffect(() => {
                       INBOX
                     </a>
                   </div>
-                    <br />
-                    <div className="btn-nav">
+                  <br />
+                  <div className="btn-nav">
                     <span className="sidemenu-icons" type="button" onClick={() => {
                       history.push("./chatroom")
                     }} >
@@ -238,34 +237,34 @@ useEffect(() => {
                       onClick={() => {
                         history.push("./chatroom")
                       }}
-                      style={{color: "white", textDecoration: "none" }}
+                      style={{ color: "white", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       CHATROOM
                     </a>
                     <br />
                     <br />
-                     <div>
+                    <div>
                       <div className="btn-nav">
-                      <span style={{color:"white"}} className="sidemenu-icons"
-                       type="button" onClick={() => {
-                        history.push("/admin")
-                      }} >
-                        <RiAdminFill />
-                      </span>
-                      <a type="button"
-                        onClick={() => {
-                          history.push("./admin")
-                        }}
-                        style={{ color: "white", textDecoration: "none" }}
-                      > &nbsp;&nbsp;
-                        ADMIN
-                      </a>
+                        <span style={{ color: "white" }} className="sidemenu-icons"
+                          type="button" onClick={() => {
+                            history.push("/admin")
+                          }} >
+                          <RiAdminFill />
+                        </span>
+                        <a type="button"
+                          onClick={() => {
+                            history.push("./admin")
+                          }}
+                          style={{ color: "white", textDecoration: "none" }}
+                        > &nbsp;&nbsp;
+                          ADMIN
+                        </a>
                       </div>
                     </div>
-                    </div>
-                    {!user?.uid && <br />}
-                    {!user?.uid && <div>
-                      <div className="btn-nav">
+                  </div>
+                  {!user?.uid && <br />}
+                  {!user?.uid && <div>
+                    <div className="btn-nav">
                       <span className="sidemenu-icons" type="button" onClick={() => {
                         history.push("/login")
                       }} >
@@ -279,10 +278,10 @@ useEffect(() => {
                       > &nbsp;&nbsp;
                         Login
                       </a>
-                      </div>
-                    </div>}
-                    <br />
-                    <div className="btn-nav">
+                    </div>
+                  </div>}
+                  <br />
+                  <div className="btn-nav">
                     <span className="sidemenu-icons" type="button" onClick={() => {
                       history.push("/registration")
                     }} >
@@ -292,13 +291,13 @@ useEffect(() => {
                       onClick={() => {
                         history.push("/registration")
                       }}
-                      style={{color: "white", textDecoration: "none" }}
+                      style={{ color: "white", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       Registration
                     </a>
-                    </div>
-                    <br />
-                    <div className="btn-nav">
+                  </div>
+                  <br />
+                  <div className="btn-nav">
                     <span className="sidemenu-icons" type="button" onClick={() => {
                       history.push("/support")
                     }} >
@@ -308,14 +307,14 @@ useEffect(() => {
                       onClick={() => {
                         history.push("/support")
                       }}
-                      style={{color: "white", textDecoration: "none" }}
+                      style={{ color: "white", textDecoration: "none" }}
                     > &nbsp;&nbsp;
                       SUPPORT
                     </a>
-                    </div>
-                    <br />
-                    {user && <div>
-                      <div className="btn-nav">
+                  </div>
+                  <br />
+                  {user && <div>
+                    <div className="btn-nav">
                       <span className="sidemenu-icons" type="button" onClick={() => {
                         auth.signOut();
                       }} >
@@ -325,36 +324,48 @@ useEffect(() => {
                         onClick={() => {
                           auth.signOut();
                         }}
-                        style={{color: "white", textDecoration: "none" }}
+                        style={{ color: "white", textDecoration: "none" }}
                       > &nbsp;&nbsp;
                         SIGN OUT
                       </a>
-                      </div>
-                    </div>}
-                  </div>
+                    </div>
+                  </div>}
                 </div>
               </div>
-            </Offcanvas.Body>
-          </Offcanvas>
+            </div>
+
+          </Offcanvas.Body>
+        </Offcanvas>
+
+        <div className='col-d'>
+          <AiFillHome
+            onClick={() => { history.push("/Home") }}
+          />
+          <br />
+          <b onClick={() => { history.push("/Home") }}>Home</b>
+        </div>
+
         <div className='col-b'>
-          <AiFillWechat  
-          onClick={() => { 
-            history.push(`/chatroom`) }} />
+          <AiFillWechat
+            onClick={() => {
+              history.push(`/chatroom`)
+            }} />
+          <br />
+          <b onClick={() => {
+            history.push(`/chatroom`)
+          }}>
+            Company Chat
+          </b>
+          <div className='counters'>{unreadLength}</div>
+        </div>
+
+        <div className='col-d'>
+          <FaServicestack
+            onClick={() => { 
+            history.push("/MainPage") }}/>
           <br />
           <b onClick={() => { 
-            history.push(`/chatroom`) }}>
-              Chat Indicator
-              </b>
-              <div className='counters'>{unreadLength}</div>
-        </div>
-  
-        <div className='col-d'>
-          <FaServicestack 
-          onClick={() => 
-          { history.push("/MainPage") }}
-           />
-          <br />
-          <b onClick={() => { history.push("/MainPage") }}>Services</b>
+            history.push("/MainPage") }}>Services</b>
         </div>
 
       </div>

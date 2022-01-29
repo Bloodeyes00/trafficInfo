@@ -49,6 +49,8 @@ function ManageUser() {
                                     <th scope="col">User</th>
                                     <th scope="col">Company Admin</th>
                                     <th scope="col">Super Admin</th>
+                                    <th scope="col"> Admin</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -60,24 +62,55 @@ function ManageUser() {
                                         <th scope="col">{item?.email}</th>
 
                                         <th scope="col">
-                                            <input className="form-check-input" onClick={() => {
+                                            <input className="form-check-input" 
+                                            onClick={() => {
                                                 item["role"] = !item?.role;
-                                                firebase.database().ref("UserProfile").child(item.key).update(item).then(res => {
-                                                    console.log("res : ", usersList);
-                                                }).catch(e => { console.error(e) });
-                                            }} type="checkbox" checked={item?.role} id="check1" name="option1" />
+                                                firebase.database()
+                                                .ref("UserProfile")
+                                                .child(item.key)
+                                                .update(item)
+                                                .then(res => {
+                                                })
+                                                .catch(e => { 
+                                                    console.error(e) 
+                                                });
+                                            }} 
+                                            type="checkbox" checked={item?.role} 
+                                            id="check1" name="option1" />
                                         </th>
                                         <th scope="col">
-                                            <input className="form-check-input" onClick={() => {
+                                            <input className="form-check-input" 
+                                            onClick={() => {
                                                 item["role2"] = !item?.role2;
-                                                firebase.database().ref("UserProfile").child(item.key).update(item);
-                                            }} type="checkbox" id="check1" name="option1" checked={item?.role2} />
+                                                firebase.database()
+                                                .ref("UserProfile")
+                                                .child(item.key)
+                                                .update(item);
+                                            }} 
+                                            type="checkbox" id="check1" name="option1" 
+                                            checked={item?.role2} />
                                         </th>
                                         <th scope="col">
-                                            <input className="form-check-input" onClick={() => {
+                                            <input className="form-check-input" 
+                                            onClick={() => {
                                                 item["role3"] = !item?.role3;
-                                                firebase.database().ref("UserProfile").child(item.key).update(item);
-                                            }} type="checkbox" checked={item?.role3} />
+                                                firebase.database()
+                                                .ref("UserProfile")
+                                                .child(item.key)
+                                                .update(item);
+                                            }} 
+                                            type="checkbox" checked={item?.role3} />
+                                        </th>
+                                        <th scope="col">
+                                            <input className="form-check-input" 
+                                            onClick={() => {
+                                                item["admin"] = !item?.admin;
+                                                firebase.database()
+                                                .ref("UserProfile")
+                                                .child(item.key)
+                                                .update(item);
+                                            }} 
+                                            type="checkbox" checked={item?.admin} />
                                         </th>
                                     </tr >
                                 )}

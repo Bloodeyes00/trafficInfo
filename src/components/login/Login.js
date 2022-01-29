@@ -106,7 +106,7 @@ export default function Login(props) {
                 onClick={() => setCurrentPageLogin(false)}
 
               >
-                <h6 className="textss">Don't have an Account?<b className="signup-in"> SignUp</b> </h6>
+                <h6 className="textss" style={{color:"white"}}>Don't have an Account?<b className="signup-in"> SignUp</b> </h6>
               </a>
             </div>
           </div>

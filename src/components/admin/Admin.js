@@ -16,7 +16,7 @@ function Admin() {
 
       <div className="row px-0">
         <center>
-          <div className="Admintext"><b>Admin</b></div>
+          <div className="Admintext"><b style={{color:"white"}}>Admin</b></div>
         </center>
       </div>
       <div className="container  py-2">
@@ -54,7 +54,7 @@ function Admin() {
           </div>
         </div>
         <div className="container-fluid ">
-          <h2 style={{ textAlign: 'center' }}>
+          <h2 style={{ textAlign: 'center',color:"white" }}>
             Ads Components
           </h2>
           <div className=" Dat d-flex justify-content-center  align-items-center py-4 flex-wrap">

@@ -11,6 +11,7 @@ import firebase, { db } from '../utils/firebase';
 import { auth } from '../utils/firebase';
 import { IoMdArrowBack } from "react-icons/io";
 import { IoMdNotifications } from "react-icons/io";
+import { ToastContainer, toast } from 'react-toastify';
 import Loader from '../loader/Loader';
 export default function Chatroom() {
     let history = useHistory();
@@ -26,12 +27,9 @@ export default function Chatroom() {
         firestore.on('value', (snapshot) => {
             let data = { ...snapshot.val() };
             data = Object.values(data);
-            console.log("data : ", data);
 
             if (auth?.currentUser?.uid) {
-                console.log("auth uids: ", auth.currentUser.uid);
                 let currentUserDetails = data.find(item => item.uid == auth?.currentUser.uid);
-                console.log("currentUserDetails in profile : ", currentUserDetails);
                 setuserdetails(currentUserDetails);
                 setLoading(false)
                 let msgsLength = localStorage.getItem("msgsLength");
@@ -93,7 +91,7 @@ export default function Chatroom() {
         if (userdetails.role && userdetails?.companyName == compName) {
             userdetails?.companyName == compName && history.push(`/company/${companyID}`)
         } else {
-            alert("Kindly contact your admin for access. You don't have permission.")
+            toast.error("Kindly contact your admin for access. You don't have permission.")
         }
 
     }

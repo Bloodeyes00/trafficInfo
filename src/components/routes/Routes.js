@@ -29,8 +29,10 @@ import MainPage from '../Services/MainPage';
 import VehiclesServices from '../Services/VehiclesServices'
 import EmergencyService from '../Services/EmergencyService'
 import OtherItem from '../otheritem/OtherItem'
-
-export default function Routes() {
+import { SecuredRoute } from '../../App';
+export default function Routes(props) {
+    let {user, isLoggedin} = props
+    
     return (
         <div>
             <Switch>
@@ -38,10 +40,10 @@ export default function Routes() {
                 <Route path="/VehiclesServices" component={VehiclesServices} />
                 <Route path="/EmergencyService" component={EmergencyService} />
                 <Route path="/mainpage" component={MainPage} />
-                <Route path="/uploadads" component={UploadAds} />
-                <Route path="/ManageCompnayUser" component={ManageCompnayUser} />
-                <Route path="/manageuser" component={ManageUser} />
-                <Route path="/admin" component={Admin} />
+                <SecuredRoute path="/uploadads" component={UploadAds} user={user} />
+                <SecuredRoute path="/ManageCompnayUser" component={ManageCompnayUser} user={user} />
+                <SecuredRoute path="/manageuser" component={ManageUser} user={user} />
+                <Route path="/admin" component={Admin}  />
                 <Route path="/carinput" component={CarInput}/>    
                 <Route path="/job" component={Job}/>    
                 <Route path="/Agree" component={Agree}/>
@@ -67,9 +69,7 @@ export default function Routes() {
                 <Route path="/Agree" component={Agree}/>
                 <Route path="/" component={Home} />
             </Switch>
-            <Switch>
-                
-            </Switch>
+           
         </div>
     )
 }
