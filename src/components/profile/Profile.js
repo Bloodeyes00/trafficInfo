@@ -27,10 +27,6 @@ export default function Profile() {
   const [progress, setProgress] = useState("");
   let history = useHistory();
   const [url, setUrl] = useState("");
-  // const [url2, setUrl2] = useState("");
-  // const [url3, setUrl3] = useState("");
-  // const [url4, setUrl4] = useState("");
-  // const [image, setImage] = useState("");
 
   const loadProfile = () => {
     setLoading(true)
@@ -46,13 +42,10 @@ export default function Profile() {
         console.log("data updated in profile : ", data);
         console.log("keys : ", keys);
         if (auth?.currentUser?.uid) {
-          // console.log("auth uids: ", auth.currentUser.uid);
           let currentUserDetails = data.find(item => item?.uid == auth?.currentUser?.uid);
           console.log("currentUserDetails in profile : ", currentUserDetails);
           setuserdetails(currentUserDetails);
           setLoading(false)
-          // setEmail(currentUserDetails.email);
-          // setName(currentUserDetails.name);
         }
       }
       else {
@@ -76,8 +69,6 @@ export default function Profile() {
     if (e.target.files[0]) {
       console.log("check2");
       const image = e.target.files[0];
-      // setImage(() => ({ image }));
-      // setImage(image)
 
       handleUpload(image, check);
 
@@ -90,18 +81,14 @@ export default function Profile() {
     uploadTask.on('state_changed',
       (snapshot) => {
 
-        // progrss function ....
         const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
         setProgress(progress);
-        // this.setState({ loading: true })
       },
       (error) => {
-        // error function ....
         console.log(error);
         setImageLoading(false)
       },
       () => {
-        // complete function ....
         storage.ref('imges').child(image.name).getDownloadURL().then(url => {
           console.log(url);
           console.log("check", check);
@@ -109,18 +96,6 @@ export default function Profile() {
           if (check == "first") {
             setUrl(url);
           }
-          // if (check == "2nd") {
-          //   setUrl2(url)
-          // }
-          // if (check == "3rd") {
-          //   setUrl3(url)
-          // }
-          // if (check == "4th") {
-          //   setUrl4(url)
-          // }
-          // this.props.setCurrentImgUrl(url);
-          // this.ref = "";
-          // this.setState({ loading: false })
         })
       });
 

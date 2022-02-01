@@ -199,7 +199,7 @@ function SendMessage(props) {
                                             capture();
                                         }}
                                     ><TiCameraOutline /></button>
-                                }
+                                } 
                             </div>}
 
                         {!openCamera &&
@@ -230,9 +230,7 @@ function SendMessage(props) {
                             <button className='voicee'
                                 onClick={() => setRecordVisible(true)}><MdKeyboardVoice /></button>
 
-                            <button className='iosend' style={{
-
-                            }} type="submit"><IoSend /></button>
+                            <button className='iosend' type="submit"><IoSend /></button>
                         </>}
                         <ToastContainer />
 

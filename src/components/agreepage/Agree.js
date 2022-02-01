@@ -13,12 +13,12 @@ function Agree(props) {
                     Nunc iaculis ipsum vel tincidunt lacinia. Nam porta lectus </p>
             </div>
             <div className="row1-agree">
-                <button className="btnn1" 
-                onClick={() => {
-                    localStorage.setItem("oldUser", true);
-                    setOlduserState(true);
-                    console.log("true")
-                }} >Dis Agree</button>
+                <button className="btnn1"
+                    onClick={() => {
+                        localStorage.setItem("oldUser", true);
+                        setOlduserState(true);
+                        console.log("true")
+                    }} >Dis Agree</button>
 
                 &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
                 &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;

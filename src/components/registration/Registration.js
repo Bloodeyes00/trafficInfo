@@ -9,7 +9,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import Login from "../login/Login";
 export default function Registration(props) {
 
-  //  const notify = () => toast("loading please wait!");
   const notify = (message) => toast(message);
   const history = useHistory();
   let { setCurrentPageLogin } = props;
@@ -43,9 +42,7 @@ export default function Registration(props) {
   const signup = () => {
     auth.createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
-        // send verification mail.
         SaveUserDetails();
-        // store data in firebase
         history.push('/profile')
 
       })
@@ -61,7 +58,6 @@ export default function Registration(props) {
     if (password == confirmPassword) {
       document.getElementById("wrong").innerHTML = "Form is submitted";
       signup();
-      // return true;
     }
     else {
       document.getElementById("wrong").innerHTML = " Password did not match";
@@ -74,7 +70,6 @@ export default function Registration(props) {
 
 
     <div>
-      {/* <ToastContainer /> */}
       <div className=''>
         <div className="Profile d-flex flex-column justify-content-center align-items-center pb-5">
           <div className="Heading d-flex justify-content-center mt-3">
@@ -128,7 +123,6 @@ export default function Registration(props) {
                 <button
                   type="submit"
                   className=" Btn4  mt-3 mb-3 "
-                  //    onClick={notify}
                   onClick={() => { check(); }}
                 >
                   Register

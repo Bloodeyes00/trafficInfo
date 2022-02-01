@@ -20,7 +20,11 @@ function VehiclesServices() {
     return (
         <div className='container-fluid-Vehicles'>
  
-            <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
+            <button 
+            className="btnsss ms-3 mt-1 mb-1 " 
+            onClick={() => history.goBack()}>
+              <IoMdArrowBack />
+              </button>
     
 <>
    

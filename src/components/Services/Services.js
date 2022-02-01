@@ -50,8 +50,6 @@ return {
         if (e.target.files[0]) {
           console.log("check 2");
           const image = e.target.files[0];
-          // setImage(() => ({ image }));
-          // setImage(image)
     
           handleUpload(image, check);
     
@@ -63,17 +61,13 @@ return {
         uploadTask.on('state_changed',
           (snapshot) => {
     
-            // progrss function ....
             const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
             setProgress(progress);
-            // this.setState({ loading: true })
           },
           (error) => {
-            // error function ....
             console.log(error);
           },
           () => {
-            // complete function ....
             storage.ref('imges').child(image.name).getDownloadURL().then(url => {
               console.log(url);
               console.log("check 5", check);
@@ -81,18 +75,7 @@ return {
               if (check == "first") {
                 setUrl(url);
               }
-              // if (check == "2nd") {
-              //   setUrl2(url)
-              // }
-              // if (check == "3rd") {
-              //   setUrl3(url)
-              // }
-              // if (check == "4th") {
-              //   setUrl4(url)
-              // }
-              // this.props.setCurrentImgUrl(url);
-              // this.ref = "";
-              // this.setState({ loading: false })
+          
             })
           });
     
@@ -102,7 +85,6 @@ return {
     const renderCard = (card, index) => {
         const responsive = {
             superLargeDesktop: {
-              // the naming can be any, depends on you.
               breakpoint: { max: 4000, min: 3000 },
               items: 5
             },
@@ -157,13 +139,11 @@ return {
                 <div className="carousel-container">
         <Carousel swipeable={false}
           draggable={false}
-          // showDots={true}
           responsive={responsive}
-          ssr={true} // means to render carousel on server-side.
+          ssr={true} 
           infinite={true}
           autoPlay={true}
           autoPlaySpeed={2000}
-          // keyBoardControl={true}
           customTransition="all .5"
           transitionDuration={700}>
           <Carousel variant="dark">

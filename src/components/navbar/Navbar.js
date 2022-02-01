@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "react-pro-sidebar/dist/css/styles.css";
-// import { Offcanvas } from "react-bootstrap";
 import { useState, } from "react";
 import "../navbar/Navbar.css";
 import { useHistory } from "react-router-dom";
@@ -13,12 +12,10 @@ import Loader from "../loader/Loader";
 export default function Navbar() {
  
 const loadNavbar =() => {
-  // setLoading(true)
   const firestore = firebase.database().ref("/UserProfile");
   firestore.on('value', (snapshot) => {
     let data = { ...snapshot.val() };
     data = Object.values(data);
-    // let uid = auth?.currentUser.uid;
     if (auth?.currentUser?.uid) {
       let currentUserDetails = data.find(item => item.uid == auth?.currentUser?.uid);
       console.log("data : ", data);

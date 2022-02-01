@@ -16,7 +16,7 @@
     background-repeat       : no-repeat;
     background-size         : cover;
     width                   : 100vw;
-    height                  : 83vh;
+    height                  : 90vh;
     margin-top              : 0%;
     border-top              : 1px solid;
    
@@ -63,7 +63,6 @@
 
 
 .Datas{
-    /* background           : linear-gradient(0deg, rgba(104,232,198,0.3925945378151261) 0%, rgba(117,221,171,0.6166841736694677) 100%); */
     color                   : #2C2E43;
     background-image        : url(../login/login.jpg);
     background-repeat       : no-repeat;
@@ -83,7 +82,6 @@
 .form-control{
     border-radius           : 50px;
     margin-top              : 6px;
-    /* box-shadow           : rgb(3 3 3) 1px 2px 5px 0px; */
     border                  : none;
 }
 .form-control:focus{

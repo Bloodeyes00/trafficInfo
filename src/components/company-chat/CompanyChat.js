@@ -64,7 +64,7 @@ function CompanyChat() {
             localStorage.setItem("msgsLength", msgs.length);
 
 
-
+ 
             setLoading(false);
         
         })

@@ -13,25 +13,25 @@ import Loader from "../loader/Loader";
 
 function Jobs() {
 
-const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     let history = useHistory();
-    
+
     const loadJobs = () => {
         setLoading(true)
         const firestore = firebase.database().ref("/Jobs");
-        
+
         firestore.on('value', (snapshot) => {
             let data = { ...snapshot.val() };
             data = Object.values(data);
-            console.log("data : ", data);   
+            console.log("data : ", data);
             setMovies(data);
             setLoading(false)
         });
     }
 
     useEffect(() => {
-       loadJobs();
+        loadJobs();
 
     }, [])
     const [movies, setMovies] = useState([])
@@ -40,24 +40,30 @@ const [loading, setLoading] = useState(false)
             {loading && <Loader />}
             <div className='container-fluid-car'>
                 <div className="abc1" >
-            <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
-                    </div>
-                  <div className='container-car'>
-                      
-                  <div className="col">
-                        
-                 <Button onClick={() => { history.push("/Job") }}
+                    <button 
+                    style={{color:"black"}}
+                    className="btnsss ms-3 mt-1 mb-1 "
+                        onClick={() => history.goBack()}>
+                        <IoMdArrowBack />
+                    </button>
+
+                </div>
+                <div className='container-car'>
+
+                    <div className="col">
+
+                        <Button onClick={() => { history.push("/Job") }}
                             className="btn-job" >Add Jobs</Button>
 
                         <div className="form-control-job ">
-                            <Input  type="search" placeholder=" Search Services" aria-label="Search"      >
+                            <Input type="search" placeholder=" Search Services" aria-label="Search"      >
 
                             </Input>
                             <Button
-                                className="btn-job-serach btn-outline-success">Search</Button>          
+                                className="btn-job-serach btn-outline-success">Search</Button>
                         </div>
-                        
-                        
+
+
                     </div>
                 </div>
             </div>

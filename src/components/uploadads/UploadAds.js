@@ -21,8 +21,6 @@ function UploadAds() {
     if (e.target.files[0]) {
       console.log("check2");
       const image = e.target.files[0];
-      // setImage(() => ({ image }));
-      // setImage(image)
       handleUpload(image, check);
     }
   }
@@ -32,17 +30,14 @@ function UploadAds() {
     uploadTask.on('state_changed',
       (snapshot) => {
 
-        // progrss function ....
         const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
         setProgress(progress);
-        // this.setState({ loading: true })
       },
       (error) => {
         console.log(error);
         setLoading(false)
       },
       () => {
-        // complete function ....
         storage.ref('imges').child(image.name).getDownloadURL().then(url => {
           console.log(url);
           console.log("check", check);
@@ -65,7 +60,6 @@ function UploadAds() {
     firestore
       .push(data)
       .then((res) => {
-        // history.push('/Home');
         console.log("res after", res);
       })
       .catch((e) => {

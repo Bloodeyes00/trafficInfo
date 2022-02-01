@@ -53,16 +53,13 @@ const Home = () => {
     uploadTask.on('state_changed',
       (snapshot) => {
 
-        // progrss function ....
         const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
         setProgress(progress);
       },
       (error) => {
-        // error function ....
         console.log(error);
       },
       () => {
-        // complete function ....
         storage.ref('imges').child(image.name).getDownloadURL().then(url => {
           console.log(url);
           console.log("check", check);
@@ -81,7 +78,6 @@ const Home = () => {
   const RenderCard = (card, index) => {
     const responsive = {
       superLargeDesktop: {
-        // the naming can be any, depends on you.
         breakpoint: { max: 4000, min: 3000 },
         items: 5
       },
@@ -136,9 +132,8 @@ const Home = () => {
           <div className="carousel-container">
             <Carousel swipeable={false}
               draggable={false}
-              // showDots={true}
               responsive={responsive}
-              ssr={true} // means to render carousel on server-side.
+              ssr={true} 
               infinite={true}
               autoPlay={true}
               autoPlaySpeed={2000}

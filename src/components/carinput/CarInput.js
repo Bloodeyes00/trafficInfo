@@ -123,7 +123,11 @@ function CarInput() {
   };
   return (
     <div className="container-fluid-carinput">
-      <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
+      <button
+       className="btnsss ms-3 mt-1 mb-1 " 
+      onClick={() => history.goBack()}>
+        <IoMdArrowBack />
+        </button>
       <h1 style={{ textAlign: "center" }}>POST YOUR AD</h1>
       <div className="container-carinput">
         <div className="row-header ms-3 mt-1">
@@ -134,35 +138,57 @@ function CarInput() {
           <h3>INCLUDE SOME DETAILS</h3>
           <div className="form-group">
             <p>Ad title</p>
-            <input className="form-controlsss" id="exampleInputtext" aria-describedby="textHelp" placeholder="" onChange={(e) => {
+
+            <input 
+            className="form-controlsss" 
+            id="exampleInputtext" 
+            aria-describedby="textHelp" 
+            placeholder="" onChange={(e) => {
               setTitle(e.target.value);
             }} />
             <p className="form-text text-muted">Mention the key features of your item (e.g. brand, model, age, type)</p>
           </div>
           <div className="form-group">
             <p>Description</p>
+            
             <textarea onChange={(e) => {
               setdescription(e.target.value);
-            }} id="description" name="description"
-              spellcheck="false" className="form-contrlsss" maxlength="4096" autocomplete="off"></textarea>
+            }} 
+            id="description" name="description"
+              spellcheck="false" 
+              className="form-contrlsss" 
+              maxlength="4096" autocomplete="off">
+            </textarea>
+            
             <p className="form-text text-muted">Include condition, features and reason for selling</p>
           </div>
           <p className="form-text text-muted">Year</p>
           <input onChange={(e) => {
             setYear(e.target.value);
-          }} type="" className="form-controlsss" id="exampleInputtext" aria-describedby="textHelp" placeholder="" />
+          }} type="" className="form-controlsss"
+            id="exampleInputtext"
+            aria-describedby="textHelp"
+            placeholder="" />
           <br />
           <br />
           <p className="form-text text-muted">KM's Driven</p>
           <input onChange={(e) => {
             setKm(e.target.value);
-          }} type="" className="form-controlsss" id="exampleInputtext" aria-describedby="textHelp" placeholder="" />
+          }}
+            type="" className="form-controlsss"
+            id="exampleInputtext"
+            aria-describedby="textHelp"
+            placeholder="" />
           <br />
           <br />
           <p className="form-text text-muted">Make</p>
-          <select className="selectes mt-2" name="Job" id="Job" onChange={(e) => {
-            setMake(e.target.value);
-          }}>
+          <select className="selectes mt-2"
+            name="Job"
+            id="Job"
+            onChange={(e) => {
+              setMake(e.target.value);
+            }}>
+
             <option value="other">  </option>
             <option value="Audi">Audi</option>
             <option value="BMW">BMW</option>
@@ -176,9 +202,12 @@ function CarInput() {
           <br />
           <div className="row-Condition mt-3">
             <p className="form-text text-muted">Fuel</p>
-            <select className="Conditions mt-2" name="Job" id="Job" onChange={(e) => {
-              setFuel(e.target.value);
-            }}>
+            <select className="Conditions mt-2"
+              name="Job"
+              id="Job"
+              onChange={(e) => {
+                setFuel(e.target.value);
+              }}>
               <option className="abc" value="other" >  </option>
               <option className="abc" value="CNG">CNG</option>
               <option className="abc" value="Diesel">Diesel</option>
@@ -189,9 +218,11 @@ function CarInput() {
           </div>
           <br />
           <p className="form-text text-muted">Registered in</p>
-          <select className="selectes mt-2" name="Job" id="Job" onChange={(e) => {
-            setRegisteration(e.target.value);
-          }}>
+          <select className="selectes mt-2"
+            name="Job"
+            id="Job" onChange={(e) => {
+              setRegisteration(e.target.value);
+            }}>
             <option value="space">  </option>
             <option value="abbottabad">Abbottabad</option>
             <option value="ahmadpureast">Ahmadpur East</option>
@@ -267,11 +298,15 @@ function CarInput() {
           <br />
           <br />
         </div>
+
         <div className="row-Condition ms-3 mt-3">
           <p className="form-text text-muted">Condition</p>
-          <select className="Conditions mt-2" name="Job" id="Job" onChange={(e) => {
-            setCondition(e.target.value);
-          }}>
+          <select className="Conditions mt-2"
+            name="Job"
+            id="Job"
+            onChange={(e) => {
+              setCondition(e.target.value);
+            }}>
             <option className="abc" value="other">  </option>
             <option className="abc" value="New">New</option>
             <option className="abc" value="Used">Used</option>
@@ -280,61 +315,84 @@ function CarInput() {
         <br />
         <br />
         <h3 className="price ms-3">SET A PRICE</h3>
+
         <div className="form-group ms-3">
           <p>Price</p>
+
           <input onChange={(e) => {
             setPrice(e.target.value);
-          }} className="form-controlsss" id="exampleInputtext" aria-describedby="textHelp" placeholder="Rs" />
+          }}
+            className="form-controlsss"
+            id="exampleInputtext"
+            aria-describedby="textHelp"
+            placeholder="Rs" />
         </div>
+
         <h3 className="upload ms-3 mt-3">UPLOAD UP TO 4 PHOTOS</h3>
+
         <div className="row-camra pb-3 d-flex">
           <div className="col-camra sm-4">
             <div className="camra ms-3 mt-4">
-              <input className={loading ? "loading" : "input-cars"} style={{ height: "100%", width: "100%", }} type="file" onClick={(e) => handleChange(e, "first")} />
+              <input className={loading ? "loading" : "input-cars"}
+                style={{ height: "100%", width: "100%", }}
+                type="file"
+                onClick={(e) => handleChange(e, "first")} />
             </div>
           </div>
+
           <div className="col-camra sm-4">
             <div className="camra ms-3 mt-4 ">
-              <input className={loading ? "loading" : "input-cars"} style={{ height: "100%", width: "100%" }} type="file" onClick={(e) => handleChange(e, "2nd")} />
+              <input className={loading ? "loading" : "input-cars"}
+                style={{ height: "100%", width: "100%" }}
+                type="file"
+                onClick={(e) => handleChange(e, "2nd")} />
             </div>
           </div>
+
           <div className="col-camra sm-4">
             <div className="camra d-flex ms-3 mt-4">
-              <input className={loading ? "loading" : "input-cars"} style={{ height: "120%", width: "120%" }} type="file" onClick={(e) => handleChange(e, "3rd")} />
+              <input className={loading ? "loading" : "input-cars"}
+                style={{ height: "120%", width: "120%" }}
+                type="file"
+                onClick={(e) => handleChange(e, "3rd")} />
             </div>
           </div>
+
           <div className="col-camra ">
             <div className="camra d-flex ms-3 mt-4">
-              <input className={loading ? "loading" : "input-cars"} style={{ height: "100%", width: "100%" }} type="file" onClick={(e) => handleChange(e, "4th")} />
+              <input className={loading ? "loading" : "input-cars"}
+                style={{ height: "100%", width: "100%" }}
+                type="file"
+                onClick={(e) => handleChange(e, "4th")} />
             </div>
           </div>
         </div>
+
         <div className="let mt-3 ms-3">
           <h4>Let's verify your account</h4>
           <p>We will send you a confirmation code by sms on the next step.</p>
 
           <p className="form-text text-muted mt-3">Mobile Phone Number</p>
+
           <input onChange={(e) => {
             setNumber(e.target.value);
-          }} type="number" className="form-controlsss" id="exampleInputtext" aria-describedby="textHelp" placeholder="+92" />
+          }} type="number"
+            className="form-controlsss"
+            id="exampleInputtext"
+            aria-describedby="textHelp"
+            placeholder="+92" />
           <p>Show my phone number in ads</p>
         </div>
+
         <center>
           <button onClick={() => {
             handleSendMessage();
-
           }} className="btnnss"><b>Post now</b></button>
-
         </center>
-        <br />
 
-        <center>
-
-        </center>
         <br />
         <br />
-
-
+        <br />
       </div>
       <br />
       <br />

@@ -15,7 +15,6 @@ const SignwithPohone = () => {
     const [final, setfinal] = useState('');
 
     let history = useHistory();
-    // Sent OTP
     const signin = () => {
 
         if (mynumber === "" || mynumber.length < 10) return;
@@ -33,14 +32,11 @@ const SignwithPohone = () => {
             });
     }
 
-    // Validate OTP
     const ValidateOtp = () => {
         if (otp === null || final === null)
             return;
         final.confirm(otp).then((result) => {
-            // success
             history.push("/profile");
-            // localStorage.setItem("oldUser", true);
         }).catch((err) => {
             alert("Wrong code");
         })
