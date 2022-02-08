@@ -58,7 +58,10 @@ function CompanyChat() {
         }
         
 
-        db.collection(company).orderBy('createdAt').limit(lastMessagesLimit).onSnapshot(snapshot => {
+        db.collection(company)
+        .orderBy('createdAt')
+        .limit(lastMessagesLimit)
+        .onSnapshot(snapshot => {
             setMessages(snapshot.docs.map(doc => doc.data()));
             let msgs = snapshot.docs.map(doc => doc.data());
             localStorage.setItem("msgsLength", msgs.length);
@@ -92,13 +95,15 @@ function CompanyChat() {
     }
 
     return (
-        <div className="container-fluid-chats" onScroll={(e) => { loadMore(e) }} >
+        <div className="container-fluid-chats" 
+             onScroll={(e) => { loadMore(e) }} >
             {loading && <Loader />}
-            <button className="btnsss ms-3 "
-            style={{color:"black",}}
-                onClick={() => history.goBack()}>
-                <IoMdArrowBack />
-            </button>
+                 <button className="btnsss ms-3 "
+                     style={{color:"black",}}
+                     onClick={() => history.goBack()}>
+                    <IoMdArrowBack />
+                    </button>
+        
             <div className="row-compnaychat">
                 <img className="img-icons" src={green} onClick={() =>  setShortCut("data 1") } />
                 <img className="img-icons" src={orange} onClick={() => setShortCut("data 2") } />
@@ -106,35 +111,38 @@ function CompanyChat() {
                 <img className="img-icons" src={red} onClick={() =>  setShortCut("data 4") }/>
                 <img className="img-icons" src={yellow} onClick={() => setShortCut("data 5") } />
             </div>
-            <ScrollToBottom
+
+                <ScrollToBottom
                 className={ROOT_CSS}
                 onScroll={(e) => {
                     loadMore(e)
                 }}>
 
                 <div className="msgs"
-                    onScroll={(e) => {
+                        onScroll={(e) => {
                         loadMore(e)
                     }}>
+
                     {messages?.map(({ id, text, photoURL, curImageUrl, uid }) => (
 
                         <div className="comchats">
-                            {< div key={id}
+                                {< div key={id}
                                 className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>
                                 {photoURL &&
                                     <img src={photoURL} alt="" />}
                                 {curImageUrl &&
-                                    <img className="imgcard"
+                                        <img className="imgcard"
                                         src={curImageUrl} alt="no img"
                                         style={{ height: '270px', width: '270px', borderRadius: '0px' }} />}
                                 {text != " " &&
                                     <p>{text}</p>}
                             </div>}
-
                         </div>
                     ))}
+                
                     <div ref={scroll}></div>
                 </div>
+
                 <SendMessage setButton={setButton}  scroll={scroll} />
             </ScrollToBottom>
         </div>

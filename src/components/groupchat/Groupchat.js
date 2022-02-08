@@ -16,9 +16,15 @@ let history = useHistory()
     <div className="container-fluid-groupchat">
       <div className="header sm">
         <div className="groups sm">
-        <button className="btnsss " onClick={() => history.goBack()}><IoMdArrowBack /></button>
 
-          <h3 style={{color:"white",textAlign:"center"}}><b>MY GROUPS</b></h3>
+        <button className="btnsss " 
+          onClick={() => history.goBack()}>
+          <IoMdArrowBack />
+          </button>
+
+          <h3 style={{color:"white",textAlign:"center"}}>
+            <b>MY GROUPS</b>
+            </h3>
         </div>
 
         <div className="button">
@@ -61,6 +67,7 @@ let history = useHistory()
         <div className="imgs ps-2 pt-2 mt-4">
           <img src={sverigetaxi} className="imges" />
         </div>
+        
         <div className="col-8 ps-2 pt-3">
           <h5 className="text ms-2">Sverige Taxi</h5>
           <p> Doing what you like will always keep you  </p>

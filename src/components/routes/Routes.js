@@ -3,7 +3,6 @@ import { Switch, Route } from "react-router-dom";
 import Login from '../login/Login';
 import Chatroom from '../Chatroom/Chatroom';
 import Socialservices from '../soicialsevices/Socialservices';
-import FindurBranch from '../FindurBranch/FindurBranch';
 import Startnow from '../StartNow/Startnow';
 import CarInput from '../carinput/CarInput'
 import Job from '../job/Job'
@@ -29,6 +28,7 @@ import MainPage from '../Services/MainPage';
 import VehiclesServices from '../Services/VehiclesServices'
 import EmergencyService from '../Services/EmergencyService'
 import OtherItem from '../otheritem/OtherItem'
+import JobInput from '../Services/JobInput'
 import { SecuredRoute } from '../../App';
 export default function Routes(props) {
     let {user, isLoggedin} = props
@@ -36,6 +36,7 @@ export default function Routes(props) {
     return (
         <div>
             <Switch>
+                <Route path="/jobinput" component={JobInput} />   
                 <Route path="/otheritem" component={OtherItem} />
                 <Route path="/VehiclesServices" component={VehiclesServices} />
                 <Route path="/EmergencyService" component={EmergencyService} />
@@ -48,7 +49,6 @@ export default function Routes(props) {
                 <Route path="/job" component={Job}/>    
                 <Route path="/Agree" component={Agree}/>
                 <Route path="/Socialservices" component={Socialservices}/>
-                <Route path="/findurbranch" component={FindurBranch}/>
                 <Route path="/Startnow" component={Startnow}/>  
                 <Route path="/logopage" component={Logopage}/>
                 <Route path="/profile" component={Profile}/>

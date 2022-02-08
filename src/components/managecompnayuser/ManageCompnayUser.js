@@ -42,7 +42,13 @@ function ManageCompnayUser() {
     return (
         <div className="container-fluid-block">
         {loading && <Loader />  }
-        <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
+
+        <button 
+        className="btnsss ms-3 mt-1 mb-1 " 
+        onClick={() => history.goBack()}>
+            <IoMdArrowBack />
+            </button>
+            
             <div className="container-block">
                 <div className='table-responsive'>
                     <table class=" table ">
@@ -60,16 +66,37 @@ function ManageCompnayUser() {
 
                             {usersList?.length > 0 && usersList?.map((item, index) =>
                                 < tr key={index} >
-                                    <th scope="col"> {item?.Name} </th>
-                                    <th scope="col">{item?.adress}</th>
-                                    <th scope="col">{item?.companyName}</th>
-                                    <th scope="col">{item?.email}</th>
                                     <th scope="col">
-                                        <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" />
-                                    </th>
+                                        {item?.Name} 
+                                        </th>
                                     <th scope="col">
-                                        <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" />
+                                        {item?.adress}
+                                        </th>
+                                    <th scope="col">
+                                        {item?.companyName}
+                                        </th>
+                                    <th scope="col">
+                                        {item?.email}
+                                        </th>
+                                   
+                                    <th scope="col">
+                                        <input 
+                                        class="form-check-input" 
+                                        type="checkbox" 
+                                        id="check1" 
+                                        name="option1" 
+                                        value="something" />
                                     </th>
+
+                                    <th scope="col">
+                                        <input 
+                                        class="form-check-input" 
+                                        type="checkbox" 
+                                        id="check1" 
+                                        name="option1" 
+                                        value="something" />
+                                    </th>
+
                                 </tr>
                             )}
                         </tbody>

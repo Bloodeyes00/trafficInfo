@@ -7,8 +7,10 @@ import { TiPlus } from "react-icons/ti";
 import Footer from '../footer/Footer';
 import tire from "../../images/tire.png"
 import appliances from "../../images/appliances.png"
-import watches from "../../images/watches.png"
+import taxi2 from "../../images/taxi2.png"
 import sport from "../../images/sport.png"
+import hammer from "../../images/hammer.png"
+
 
 
 function OtherItem() {
@@ -31,7 +33,7 @@ let history = useHistory()
             </div>
             <div className='row-carss'>
                 <div className='plus'> <TiPlus /></div>
-                <div type="button" className='find'><h2  onClick={() => { history.push() }}>Car Spare Part</h2></div>
+                <div type="button" className='find'><h2  onClick={() => { history.push() }}>Car Parts</h2></div>
                 <div className='imgssss'>
                     <img onClick={() => { history.push() }}  style={{border:"none",borderRadius:"2px",}} src={tire} />
                 </div>
@@ -48,9 +50,9 @@ let history = useHistory()
 
             <div className='row-carss'>
                 <div className='plus '> <TiPlus /></div>
-                <div type="button" className='find'><h2 onClick={()=>{ history.push()}} >Watches & Bags </h2></div>
+                <div type="button" className='find'><h2 onClick={()=>{ history.push()}} >Taxi Related</h2></div>
                 <div className='imgssss'>
-                <img  style={{border:"none",borderRadius:"2px",}} src={watches} />   
+                <img  style={{border:"none",borderRadius:"2px",}} src={taxi2} />   
              </div>
                 
             </div>
@@ -60,6 +62,15 @@ let history = useHistory()
                 <div type="button" className='find'><h2 onClick={() => { history.push() }}>Sport & Outdoor</h2></div>
                 <div className='imgssss'>
                 <img onClick={() => { history.push() }}  style={{border:"none",borderRadius:"2px",}} src={sport} />  
+                     </div>
+                
+            </div>
+
+            <div className='row-carss'>
+                <div className='plus '> <TiPlus /></div>
+                <div type="button" className='find'><h2 onClick={() => { history.push() }}>Electronics & Hardware</h2></div>
+                <div className='imgssss'>
+                <img onClick={() => { history.push() }}  style={{border:"none",borderRadius:"2px",}} src={hammer} />  
                      </div>
                 
             </div>
