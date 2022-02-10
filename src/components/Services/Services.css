@@ -241,3 +241,37 @@ p{
 .modal-backdrop.show {
     opacity                 : -0.5;
 }
+
+
+.container-impotrant{
+    height: 90vh;
+    background-color: white;
+}
+
+.row-important{
+    gap: 1rem;
+    display: flex;
+    margin-right: 50px;
+}
+
+.col-important{
+    height: 100px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    
+}
+
+.imagess{
+    border-radius: 0px;
+    height: 60px;
+    width: 60px;
+    border: none;
+    margin-left: 20px;    
+}
+
+.txts{
+    margin-left: 20px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+}

@@ -30,6 +30,7 @@ import EmergencyService from '../Services/EmergencyService'
 import OtherItem from '../otheritem/OtherItem'
 import JobInput from '../Services/JobInput'
 import { SecuredRoute } from '../../App';
+import ImportantContacts from '../Services/ImportantContacts';
 export default function Routes(props) {
     let {user, isLoggedin} = props
     
@@ -38,6 +39,7 @@ export default function Routes(props) {
             <Switch>
                 <Route path="/jobinput" component={JobInput} />   
                 <Route path="/otheritem" component={OtherItem} />
+                <Route path="/importantcontacts" component={ImportantContacts} />
                 <Route path="/VehiclesServices" component={VehiclesServices} />
                 <Route path="/EmergencyService" component={EmergencyService} />
                 <Route path="/mainpage" component={MainPage} />

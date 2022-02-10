@@ -74,6 +74,15 @@ function MainPage() {
                     <img  onClick={() => { history.push("/Emergencyservice") }} style={{border:"none",borderRadius:"2px",}} src={emergencybtn} />  
                          </div>
                 </div>
+
+                <div className='row-c'>
+                    <div className='plus '> <TiPlus /></div>
+                    <div type="button" className='find'><h2 onClick={() => { history.push("/importantcontacts") }}>Important Contacts</h2></div>
+                    <div className='imgssss'>
+                    <img  onClick={() => { history.push("/Emergencyservice") }} style={{border:"none",borderRadius:"2px",}} src={emergencybtn} />  
+                         </div>
+                </div>
+
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
                     <div className='find'><h2></h2></div>
