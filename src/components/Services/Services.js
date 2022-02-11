@@ -172,8 +172,7 @@ return {
                         {card.title}
                         </Card.Title>
                         <Card.Text>
-                            <div className="conta
-                            iner-title mt-4">
+                            <div className="container-title mt-4">
                                 <div className="row-title d-flex">
                                    <div className="col-title-6">
                                    <div className="col-sm"> Description: {card.description}</div>
@@ -200,7 +199,7 @@ return {
      
       <div className="container ">
       <div className='abc1'>
-            <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
+            <button style={{color:"black"}} className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
       </div>
             {loading && <Loader />}
             <div className='container-fluid-car'>
