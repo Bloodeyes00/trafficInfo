@@ -32,18 +32,11 @@ function MainPage() {
                     <h1 style={{color:"white"}}><b>Input & Find Job</b></h1>
                     </div>
                 </div>
-                {/* <div className='row-c'>
-                    <div className='plus'> <TiPlus /></div>
-                    <div type="button" className='find'><h2  onClick={() => { history.push("/Jobs") }}> Input & Find Job</h2></div>
-                    <div className='imgssss'>
-                        <img onClick={() => { history.push("/Jobs") }}  style={{border:"none",borderRadius:"2px",}} src={findjob} />
-                    </div>
-                    
-                </div> */}
+               
 
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
-                    <div type="button" className='find'><h2 onClick={() => { history.push("/jobs") }}>Taxi Drivers</h2></div>
+                    <div type="button" className='find'><h2 onClick={() => { history.push("/taxijobs") }}>Taxi Drivers</h2></div>
                     <div className='imgssss'>
                     <img onClick={() => { history.push("/jobs") }} style={{border:"none",borderRadius:"2px",}} src={driver} />                    </div>
                     

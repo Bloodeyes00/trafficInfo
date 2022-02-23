@@ -138,12 +138,12 @@ export default function Profile() {
     <div>
       {loading && <Loader />}
       <div className="Profile ">
-      <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
-      
+        <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
+
         <div className="prof">
           <div className="Heading d-flex justify-content-center">
             <h1>
-              <b style={{color:"white"}}>Profile</b>
+              <b style={{ color: "white" }}>Profile</b>
             </h1>
           </div>
 
@@ -180,7 +180,7 @@ export default function Profile() {
 
             <div class="mb-3">
               <label className="form-label float-start ms-1" >
-                <b style={{color:"white",fontSize:"15px"}}> Add Company </b>&nbsp;
+                <b style={{ color: "white", fontSize: "15px" }}> Add Company </b>&nbsp;
               </label>
               <div className="addcmpny">
                 <select className="selectws" onChange={(e) => { let value = e.target.value; setcompanyName(value) }} >

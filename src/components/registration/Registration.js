@@ -6,6 +6,7 @@ import firebase from "../../components/utils/firebase";
 import { useHistory } from "react-router";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { IoMdArrowBack } from "react-icons/io";
 import Login from "../login/Login";
 export default function Registration(props) {
 
@@ -71,10 +72,16 @@ export default function Registration(props) {
 
     <div>
       <div className=''>
+        <button className="btnsss ms-3 mt-1 mb-1 " 
+          onClick={() => history.goBack()}>
+          <IoMdArrowBack />
+          </button>
+
         <div className="Profile d-flex flex-column justify-content-center align-items-center pb-5">
           <div className="Heading d-flex justify-content-center mt-3">
+
             <h1>
-              <b style={{color:"white"}}>Registration</b>
+              <b style={{ color: "white" }}>Registration</b>
             </h1>
           </div>
           <br />
@@ -132,7 +139,11 @@ export default function Registration(props) {
               <br />
               <a type="button"
 
-                onClick={() => setCurrentPageLogin(true)}>Already have an Account?<b className="signup-in" > SignIn</b></a>
+                onClick={() => 
+                setCurrentPageLogin(true)}>
+                  Already have an Account?
+                  <b className="signup-in" > 
+                  SignIn</b></a>
             </div>
           </div>
         </div>
