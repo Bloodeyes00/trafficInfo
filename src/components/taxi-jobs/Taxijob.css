@@ -57,7 +57,7 @@ p{
     display: flex;
 }
 
-.input{
+.inputsss{
     border: 1px solid rgb(39, 39, 39);
     outline: none;
 
@@ -70,10 +70,10 @@ h6{
 }
 
 @media screen and (max-width: 580px) {
-    .input{
+    .inputsss{
         border: 1px solid rgb(39, 39, 39);
         height: 20px;
-        width: 100px;
+        width: 80px;
     
     }
     h6{
@@ -92,7 +92,7 @@ h6{
 
 
 @media screen and (max-width: 390px) {
-    .input{
+    .inputsss{
         border: 1px solid rgb(39, 39, 39);
         height: 20px;
         width: 60px;

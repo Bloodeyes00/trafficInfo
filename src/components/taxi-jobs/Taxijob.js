@@ -53,13 +53,13 @@ let history= useHistory()
                         <div className='col-8'>
                             <div className='contact d-flex'>
                                 <h6>Contact Number</h6> &nbsp;&nbsp;
-                                <input className='input' type="number" />
+                                <input className='inputsss' type="number" />
                             </div>
                             <br />
                             
                             <div className='email d-flex'>
                                 <h6>Email</h6> &nbsp;
-                                <input className='input' type="number" />
+                                <input className='inputsss' type="number" />
                             </div>
                         </div>
                     </div>

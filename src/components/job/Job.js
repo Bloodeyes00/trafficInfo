@@ -90,7 +90,7 @@ function Job() {
 
           <p><b>Salary</b></p>
           <p className="form-text text-muted">Salary from</p>
-          <input type="30000-35000" 
+            <input type="30000-35000" 
           className="form-controlsss" aria-describedby="textHelp" 
           placeholder="" 
           onChange={(e) => {
