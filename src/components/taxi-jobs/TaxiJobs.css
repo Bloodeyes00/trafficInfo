@@ -16,6 +16,7 @@
     height: 100px;
     width: 100px;
     border: none;
+    margin-top: -14px;  
     /* margin-left: -20px; */
 }
 .row-taxijobs{
@@ -26,14 +27,15 @@
     display: flex;
     justify-content: center;
 }
-
-.bt{
-    background-color: #cc0000;
+.btadd{
+    background-color: #13ad2d;
     border: none;
     border-radius: 8px;
     color: white;
     height: 40px;
 }
+
+
 .btntaxi{
     display: flex;
     justify-content: center;
@@ -56,8 +58,9 @@
 }
 .row-taxidetails{
     border: 1px solid rgb(39, 39, 39);
-    height: 350px;
+    height: 390px;
     width: 92%;
+    background-color: #e1dfdf;
 }
 .textarea{
     width: 80%;
@@ -131,5 +134,6 @@ h6{
         width: 70px;
         border: none;
         margin-left: -20px;
+        margin-top: 4px;
     }
 }

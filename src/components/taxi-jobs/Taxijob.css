@@ -10,11 +10,19 @@
     width: 100px;
     border: none;
     margin-left: -50px;
+    margin-top: -14px;
 }
 .bttnss{
     display: flex;
     justify-content: center;
   
+}
+.bt{
+    background-color: #cc0000;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    height: 40px;
 }
 
 .container-taxi{
@@ -28,11 +36,11 @@
     justify-content: center;
 }
 
-.row-taxidetails{
-    border: 1px solid rgb(39, 39, 39);
-    height: 350px;
+.row-taxidetailss{
+   
+ 
     width: 92%;
-    background-color: #e1dfdf;
+
 }
 .textarea{
     width: 80%;
@@ -118,3 +126,34 @@ h6{
         justify-content: left;
     }
 }
+
+.row-taxidetailss {
+    overflow-x: auto;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th,
+  td {
+    text-align: left;
+    padding: 8px 5px;
+  }
+  tr:nth-child(even) {
+    background-color: #e2e2e2;
+  }
+  tr:nth-child(odd) {
+    background-color: #cacaca;
+  }
+
+  @media screen and (max-width: 750px) {
+
+    .bt{
+        background-color: #cc0000;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        height: 40px;
+        font-size: 11px;
+    }
+  }
