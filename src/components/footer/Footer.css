@@ -137,3 +137,9 @@
     position                : absolute;
 }
 
+.jobimags{
+    border: none;
+    border-radius: 0px;
+    height: 34px;
+    width: 34px;
+}

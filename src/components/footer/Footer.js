@@ -23,7 +23,8 @@ import { MdGroup } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { RiInboxArchiveFill } from "react-icons/ri";
 import Loader from "../loader/Loader";
-
+import jobs from "../../images/jobs.png"
+ 
 function Footer() {
   const [unreadLength, setUnreadLength] = useState(0);
 
@@ -244,6 +245,25 @@ function Footer() {
                     <br />
                     <br />
                     <div>
+
+                    <div className="btn-nav">
+                        <span style={{ color: "white" }} className="sidemenu-icons"
+                          type="button" onClick={() => {
+                            history.push("/alljob")
+                          }} >
+                          <img className="jobimags" src={jobs} />
+                        </span>
+                        <a type="button"
+                          onClick={() => {
+                            history.push("./alljob")
+                          }}
+                          style={{ color: "white", textDecoration: "none" }}
+                        > &nbsp;&nbsp;
+                          JOBS
+                        </a>
+                      </div>
+                      <br />
+                   
                       <div className="btn-nav">
                         <span style={{ color: "white" }} className="sidemenu-icons"
                           type="button" onClick={() => {
@@ -329,6 +349,7 @@ function Footer() {
                         SIGN OUT
                       </a>
                     </div>
+                    <br />
                   </div>}
                 </div>
               </div>

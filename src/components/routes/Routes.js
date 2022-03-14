@@ -33,13 +33,18 @@ import { SecuredRoute } from '../../App';
 import ImportantContacts from '../Services/ImportantContacts';
 import TaxiJobs from '../taxi-jobs/TaxiJobs';
 import Taxijob from '../taxi-jobs/Taxijob';
+import TaxiJobSeeker from '../taxi-jobs/TaxiJobSeeker';
+import AllJob from '../../components/alljob/AllJob';
+
 export default function Routes(props) {
     let {user, isLoggedin} = props
     
     return (
         <div>
             <Switch>
-                <Route path="/jobinput" component={JobInput} />   
+                <Route path="/alljob" component={AllJob} />   
+                <Route path="/jobinput" component={JobInput} /> 
+                <Route path="/taxijobSeeker" component={TaxiJobSeeker} /> 
                 <Route path="/taxijobs" component={TaxiJobs} /> 
                 <Route path="/taxijob" component={Taxijob} />   
                 <Route path="/otheritem" component={OtherItem} />

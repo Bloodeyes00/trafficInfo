@@ -6,10 +6,10 @@ import { useHistory } from 'react-router-dom';
 import { IoMdArrowBack } from "react-icons/io";
 import firebase from "../utils/firebase";
 
-function TaxiJobs() {
+function TaxiJobSeeker() {
   const [loading, setLoading] = useState(false);
   const [movies, setMovies] = useState([])
-  const [updatecompanyName, setUpdatecompanyName] = useState("");
+  const [updateexpernices, setupdateexpernices] = useState("");
     const [updatedetail, setUpdateDetail] = useState("");
     const [updatecellnumber, setUpdateCellNumber] = useState("");
     const [updateemail, setUpdateEmail] = useState("");
@@ -17,10 +17,10 @@ function TaxiJobs() {
 
   let history = useHistory()
   const loadServices = () => {
-    console.log("taxii1")
+    console.log("taxii12")
     setLoading(true)
-    const firestore = firebase.database().ref("/TaxiJobs");
-    console.log("taxii")
+    const firestore = firebase.database().ref("/TaxiJobseeker");
+    console.log("taxii33")
 
     firestore.on('value', (snapshot) => {
       let data = { ...snapshot.val() };
@@ -39,9 +39,9 @@ function TaxiJobs() {
   }, [])
 
   const handleUserEdit = () =>{
-    const firestore = firebase.database().ref("/TaxiJob");
+    const firestore = firebase.database().ref("/TaxiJobseeker");
     let data = {
-        updatecompanyName: updatecompanyName,
+        updateexpernices: updateexpernices,
         updatedetail: updatedetail,
         updatecellnumber: updatecellnumber,
         updateemail: updateemail,
@@ -50,7 +50,7 @@ function TaxiJobs() {
   firestore
   .push(data)
   .then((res) => {
-      history.push('/Taxijobs');
+      history.push('/TaxiJobseeker');
       console.log("res after", res);
   })
   .catch((e) => {
@@ -79,7 +79,7 @@ function TaxiJobs() {
               <tr>
                 <th scope="col">Email</th>
                 <th scope="col">Phone Number</th>
-                <th scope="col">Company Name</th>
+                <th scope="col">Expernices</th>
                 <th scope="col">Details</th>
                 <th>User edit</th>
 
@@ -91,7 +91,7 @@ function TaxiJobs() {
                 < tr key={index} >
                   <th scope="col"> {item?.email} </th>
                   <th scope="col">{item?.cellnumber}</th>
-                  <th scope="col">{item?.companyName}</th>
+                  <th scope="col">{item?.expernices}</th>
                   <th scope="col">{item?.detail}</th>
 
                   <th>  <button className='bt' onClick={() => handleUserEdit()}>User Edit</button> </th>
@@ -105,4 +105,4 @@ function TaxiJobs() {
     </div>
   )
 }
-export default TaxiJobs
+export default TaxiJobSeeker
