@@ -86,9 +86,9 @@ function MainPage() {
 
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
-                    <div className='find'><h2  onClick={() => { history.push("/alljob") }}>JOBS</h2></div>
+                    <div className='find' type="button"><h2  onClick={() => { history.push("/alljob") }}>JOBS</h2></div>
                     <div className='imgssss'>
-                    <img  onClick={() => { history.push("/jobs") }} style={{border:"none",borderRadius:"2px",}} src={jobss} /> 
+                    <img  onClick={() => { history.push("/alljob") }} style={{border:"none",borderRadius:"2px",}} src={jobss} /> 
                          </div>
                     
                 </div>

@@ -26,7 +26,7 @@ let history = useHistory()
                 <h1 style={{color:"white"}}><b>JOBS</b></h1>
                 </div>
             </div>
-            <div className='row-carss'>
+            <div className='row-c'>
                 <div className='plus'> <TiPlus /></div>
                 <div type="button" className='find'><h2  onClick={() => { history.push("/taxijob") }}>Job Giver</h2></div>
                 <div className='imgssss'>
@@ -35,9 +35,9 @@ let history = useHistory()
                 
             </div>
 
-            <div className='row-carss'>
+            <div className='row-c'>
                 <div className='plus '> <TiPlus /></div>
-                <div type="button" className='find'><h2 onClick={() => { history.push("/taxijob") }}>Job Seeker</h2></div>
+                <div type="button" className='find'><h2 onClick={() => { history.push("/taxijobseeker") }}>Job Seeker</h2></div>
                 <div className='imgssss'>
                 <img onClick={() => { history.push() }} style={{border:"none",borderRadius:"2px",}} src={jobss} />                    </div>
                 

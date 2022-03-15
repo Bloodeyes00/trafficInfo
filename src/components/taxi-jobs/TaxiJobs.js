@@ -10,81 +10,40 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
+import {db} from './../utils/firebase'
+import JobSeeker from './JobSeeker';
 
 
 
 function TaxiJobs() {
+    
     const [companyName, setcompanyName] = useState("");
     const [detail, setDetail] = useState("");
     const [cellnumber, setCellNumber] = useState("");
     const [email, setEmail] = useState("");
     const [expernices, setExpernices] = useState("");
-
-
-
-
-
     let history = useHistory()
-
-
-    const handleAddUser = () => {
-
-        const firestore = firebase.database().ref("/TaxiJobs");
-        let data = {
-            companyName: companyName,
+   
+    const addDatas = (e) => {
+        // e.preventDefault();
+        db.collection("taxiJob").add({
+           
             detail: detail,
             cellnumber: cellnumber,
-            email: email,
-
-
-
-        };
-        if (!data.companyName && !data.detail) {
-            toast("please fill the filed!")
-            return;
-        }
-        firestore
-            .push(data)
-            .then((res) => {
-                history.push('/Taxijob');
-                console.log("res after", res);
-            })
-            .catch((e) => {
-                console.log("error in pushing data :", e);
-            });
-
-
-    }
-
-
-    const handleAddUsers = () => {
-
-        const firestore = firebase.database().ref("/TaxiJobseeker");
-        let data = {
+           email:email,
             companyName: companyName,
-            detail: detail,
-            cellnumber: cellnumber,
-            email: email,
-            expernices: expernices
+     
+        });
+      
+        setDetail("");
+        setCellNumber("");
+        setEmail("");
+     setcompanyName("");
+
+    };
+    
 
 
-        };
-        if (!data.companyName && !data.detail) {
-            toast("please fill the filed!")
-            return;
-        }
-        firestore
-            .push(data)
-            .then((res) => {
-                history.push('/Taxijobseeker');
-                console.log("res after", res);
-            })
-            .catch((e) => {
-                console.log("error in pushing data :", e);
-            });
-
-
-    }
 
     return (
 
@@ -128,6 +87,7 @@ function TaxiJobs() {
                                         onChange={(e) => {
                                             setDetail(e.target.value);
                                         }}
+                                        value={detail}
 
                                         rows="" cols="">
 
@@ -136,7 +96,7 @@ function TaxiJobs() {
 
                                 <div className='col-4 cmpny'>
                                     <select className="cmpnyname"
-                                        onChange={(e) => { let value = e.target.value; setcompanyName(value) }}>
+                                        onChange={(e) => { let value = e.target.value; setcompanyName(value) }} value={companyName}>
                                         <option>Select</option>
                                         <option>Svea Taxi</option>
                                         <option>Microsoft Teams</option>
@@ -152,7 +112,7 @@ function TaxiJobs() {
                             <div className='row-useredit mt-4'>
                                 <div className='col-4 ms-4 mt-3'>
                                     <button className='btadd' onClick={() => {
-                                        handleAddUser();
+                                        addDatas();
                                     }}>Add User</button>
 
                                 </div>
@@ -163,14 +123,14 @@ function TaxiJobs() {
                                         <h6>Contact Number</h6> &nbsp;&nbsp;
                                         <input onChange={(e) => {
                                             setCellNumber(e.target.value);
-                                        }} className='inputsss' type="number" />
+                                        }} value={cellnumber} className='inputsss' type="number" />
                                     </div>
                                     <br />
                                     <div className='email d-flex'>
                                         <h6>Email</h6> &nbsp;
                                         <input onChange={(e) => {
                                             setEmail(e.target.value);
-                                        }} className='inputsss' type="text" />
+                                        }} value={email} className='inputsss' type="text" />
                                     </div>
                                 </div>
                             </div>
@@ -178,81 +138,7 @@ function TaxiJobs() {
                         </div>
                     </Tab>
                     <Tab eventKey="profile" title="Job Seeker">
-                        <div className='row-taxijobs ms-5 mt-5'>
-
-                            <br />
-                            <br />
-
-                            <div className='col-4 mt-3'>
-                                <button className='btnstaxi' onClick={() => history.push("./taxijobseeker")}>Taxi Jobs</button>
-                            </div>
-                            <div className='col-4 imgcol '>
-                                <img className='imgtxii' src={Trafficinfo1} />
-                            </div>
-
-                        </div>
-
-
-                        <br />
-                        <div className='row-taxidetails ms-3'>
-                            <div className='row-dt ms-5 mt-5'>
-                                <div className='col-8 dt'>
-                                    <p>Details</p>
-                                    <textarea className='textarea'
-                                        id='detail'
-                                        onChange={(e) => {
-                                            setDetail(e.target.value);
-                                        }}
-
-                                        rows="" cols="">
-
-                                    </textarea>
-                                </div>
-
-                                <div className='col-4 cmpny'>
-                                    <p>Expernices</p>
-                                    <textarea className='textarea'
-                                        id='detail'
-                                        onChange={(e) => {
-                                            setExpernices(e.target.value);
-                                        }}
-
-                                        rows="" cols="">
-
-                                    </textarea>
-
-                                </div>
-
-                            </div>
-
-
-                            <div className='row-useredit mt-4'>
-                                <div className='col-4 ms-4 mt-3'>
-                                    <button className='btadd' onClick={() => {
-                                        handleAddUsers();
-                                    }}>Add User</button>
-
-                                </div>
-
-
-                                <div className='col-8'>
-                                    <div className='contact d-flex'>
-                                        <h6>Contact Number</h6> &nbsp;&nbsp;
-                                        <input onChange={(e) => {
-                                            setCellNumber(e.target.value);
-                                        }} className='inputsss' type="number" />
-                                    </div>
-                                    <br />
-                                    <div className='email d-flex'>
-                                        <h6>Email</h6> &nbsp;
-                                        <input onChange={(e) => {
-                                            setEmail(e.target.value);
-                                        }} className='inputsss' type="text" />
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
+                      <JobSeeker />
                     </Tab>
 
                 </Tabs>

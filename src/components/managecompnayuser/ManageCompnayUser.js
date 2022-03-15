@@ -1,5 +1,5 @@
 import React from 'react'
-import "./ManageCompnayUser"
+import "./ManageCompnayUser.css"
 import { useHistory } from 'react-router'
 import firebase from '../utils/firebase';
 import { useEffect, useState } from 'react';
@@ -49,7 +49,7 @@ function ManageCompnayUser() {
             <IoMdArrowBack />
             </button>
             
-            <div className="container-block">
+            <div className="container-block ms-3">
                 <div className='table-responsive'>
                     <table class=" table ">
                         <thead>

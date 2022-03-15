@@ -5,65 +5,56 @@ import "./Taxijob.css"
 import { useHistory } from 'react-router-dom';
 import { IoMdArrowBack } from "react-icons/io";
 import firebase from "../utils/firebase";
+import {db} from './../utils/firebase'
+import {Table} from  'react-bootstrap'
+
 
 function TaxiJobSeeker() {
   const [loading, setLoading] = useState(false);
-  const [movies, setMovies] = useState([])
-  const [updateexpernices, setupdateexpernices] = useState("");
-    const [updatedetail, setUpdateDetail] = useState("");
-    const [updatecellnumber, setUpdateCellNumber] = useState("");
-    const [updateemail, setUpdateEmail] = useState("");
+  const [data, setData] = useState([])
+  const [dataIdToBeUpdated, setDataIdToBeUpdated] = useState("");
+  const [updatedEmail, setUpdatedEmail] = useState("");
+  const [updatedCellNumber, setUpdatedCellNumber] = useState("");
+  const [updatedExperience, setUpdatedExperience] = useState("");
+  const [updatedDetail, setUpdatedDetail] = useState("");
 
 
-  let history = useHistory()
-  const loadServices = () => {
-    console.log("taxii12")
-    setLoading(true)
-    const firestore = firebase.database().ref("/TaxiJobseeker");
-    console.log("taxii33")
-
-    firestore.on('value', (snapshot) => {
-      let data = { ...snapshot.val() };
-      data = Object.values(data);
-      console.log("data : ", data);
-      setMovies(data);
-      setLoading(false)
+  const updateData = (e) => {
+    e.preventDefault();
+    db.collection("JobSeeker").doc(dataIdToBeUpdated).update({
+        email: updatedEmail,
+        detail: updatedDetail,
+        expernices: updatedExperience,
+        cellnumber: updatedCellNumber,
+      
+        // dateAndTime: updatedDateAndTime,
     });
-  }
+    setDataIdToBeUpdated("");
+    setUpdatedEmail("");
+    setUpdatedDetail("");
+    setUpdatedExperience("");
+    setUpdatedCellNumber("");
+
+};
+    
+  let history = useHistory()
 
   useEffect(() => {
-    loadServices();
-    return {
-
-    }
-  }, [])
-
-  const handleUserEdit = () =>{
-    const firestore = firebase.database().ref("/TaxiJobseeker");
-    let data = {
-        updateexpernices: updateexpernices,
-        updatedetail: updatedetail,
-        updatecellnumber: updatecellnumber,
-        updateemail: updateemail,
-
-  };
-  firestore
-  .push(data)
-  .then((res) => {
-      history.push('/TaxiJobseeker');
-      console.log("res after", res);
-  })
-  .catch((e) => {
-      console.log("error in pushing data :", e);
-  });
-
-
-}
-
+    db.collection("JobSeeker").onSnapshot((snapshot) => {
+        setData(
+            snapshot.docs.map((doc) => ({
+                id: doc.id,
+                data: doc.data(),
+            }))
+        );
+    });
+    console.log("job seeker:", data);
+}, []);
 
   return (
 
     <div className='container-taxijobs'>
+        
       <div className='container-taxi'>
         <button style={{ color: "black" }}
           className="btnsss ms-3 mt-1 mb-1 "
@@ -74,32 +65,38 @@ function TaxiJobSeeker() {
 
         <br />
         <div className='row-taxidetailss ms-3'>
-          <table className=" table ">
-            <thead>
-              <tr>
-                <th scope="col">Email</th>
-                <th scope="col">Phone Number</th>
-                <th scope="col">Expernices</th>
-                <th scope="col">Details</th>
-                <th>User edit</th>
+        <Table className='max' id='max' responsive>
+
+<thead>
+    <tr>
+        <th>#</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Expernices</th>
+        <th>Detail</th>
+        {/* <th>User Edit</th> */}
+        
+  
+
+    </tr>
+</thead>
+<tbody>
+    {data.map((item, index) => (
+        <tr key={item.id}>
+            <td>{index + 1}</td>
+            <td>{item.data.email}</td>
+            <td>{item.data.cellnumber}</td>
+            <td>{item.data.expernices}</td>
+            <td>{item.data.detail}</td>
+          
+            {/* <td>  <button className='bt' >User Edit</button></td> */}
+        </tr>
+    ))}
+</tbody>
 
 
-              </tr>
-            </thead>
-            <tbody>
-              {movies?.length > 0 && movies?.map((item, index) =>
-                < tr key={index} >
-                  <th scope="col"> {item?.email} </th>
-                  <th scope="col">{item?.cellnumber}</th>
-                  <th scope="col">{item?.expernices}</th>
-                  <th scope="col">{item?.detail}</th>
 
-                  <th>  <button className='bt' onClick={() => handleUserEdit()}>User Edit</button> </th>
-                </tr >
-              )}
-
-            </tbody>
-          </table>
+</Table>
         </div>
       </div>
     </div>

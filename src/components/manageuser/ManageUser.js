@@ -1,4 +1,5 @@
 import React from 'react'
+import "./ManageUser.css"
 import { useHistory } from 'react-router'
 import { IoMdArrowBack } from "react-icons/io";
 import { useEffect, useState } from 'react';
@@ -36,8 +37,8 @@ function ManageUser() {
         <div className="container-fluid-Allow">
             {loading && <Loader />}
             <button className="btnsss ms-3 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
-            <div className="container-Allow ms-4 mt-5">
-                <div className="row-allow ms-1">
+            <div className="container-Allow ms-3 mt-5">
+                <div className="row-allow">
                     <div className='table-responsive'>
                         <table className=" table ">
                             <thead>

@@ -3,7 +3,7 @@ import firebase from './components/utils/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import Navbar from '../src/components/navbar/Navbar';
 import Routes from '../src/components/routes/Routes';
-import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+import { HashRouter, Route, Redirect } from 'react-router-dom';
 import './App.css';
 import { useEffect, useState } from 'react';
 import SignwithPohone from './components/SignwithPohone';
@@ -83,7 +83,7 @@ function App() {
         <ToastContainer
           position='top-center'
         />
-        <BrowserRouter>
+        <HashRouter>
 
           <Navbar />
 
@@ -92,7 +92,7 @@ function App() {
 
 
 
-        </BrowserRouter>
+        </HashRouter>
 
       </div>
     </>
