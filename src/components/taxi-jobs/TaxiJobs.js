@@ -10,38 +10,37 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
-import {db} from './../utils/firebase'
+import { db } from './../utils/firebase'
 import JobSeeker from './JobSeeker';
 
 
 
 function TaxiJobs() {
-    
+
     const [companyName, setcompanyName] = useState("");
     const [detail, setDetail] = useState("");
     const [cellnumber, setCellNumber] = useState("");
     const [email, setEmail] = useState("");
     const [expernices, setExpernices] = useState("");
     let history = useHistory()
-   
+
     const addDatas = (e) => {
-        // e.preventDefault();
         db.collection("taxiJob").add({
-           
+
             detail: detail,
             cellnumber: cellnumber,
-           email:email,
+            email: email,
             companyName: companyName,
-     
+
         });
-      
+
         setDetail("");
         setCellNumber("");
         setEmail("");
-     setcompanyName("");
+        setcompanyName("");
 
     };
-    
+
 
 
 
@@ -138,7 +137,7 @@ function TaxiJobs() {
                         </div>
                     </Tab>
                     <Tab eventKey="profile" title="Job Seeker">
-                      <JobSeeker />
+                        <JobSeeker />
                     </Tab>
 
                 </Tabs>

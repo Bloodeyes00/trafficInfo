@@ -1,16 +1,62 @@
-.container-taxijobs{
-    background-color: rgb(235, 232, 232);
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.container-taxijob{
+    background-color: rgb(255, 255, 255);
+    height: 100%;
 }
+
+.row-taxijob{
+    height: 100%;
+    width: 90%;
+    background-color: #fffdfd;
+    border-radius: 10px;
+    color: #636364;
+    border: 1px solid lightgray;
+    margin-top: 10px;
+
+}
+
+.jobheader{
+    display: flex;
+    gap: 50%;
+}
+
+.taxijobimage{
+    display: flex;
+    justify-content: end;
+    justify-items: end;
+    width: 80px;
+    height: 80px;
+    border: none;
+}
+
+.rowtext1{
+    text-align: start;
+    margin-left: 15px;
+}
+.rowtext{
+    text-align: start;
+    margin-left: 15px;
+    font-size: 17px;
+    margin-top: 10px;
+    font-family:sans-serif;
+}
+
 .imgtxi{
     height: 100px;
     width: 100px;
     border: none;
     margin-left: -50px;
     margin-top: -14px;
+}
+
+.Tabss{
+    background-color: rgb(255, 255, 255);
+}
+.inputh1{
+    background-color: #ffffff;
+    height: 40px;
+    text-align: start;
+    color: #ffcc00;
+    margin: 0px;
 }
 .bttnss{
     display: flex;

@@ -17,95 +17,137 @@ function MainPage() {
 
     let history = useHistory()
 
-    
+
     return (
         <div className='container-fluid-s'>
-            
+
             <div className='container-s'>
-           
+
                 <div className='row-s'>
-                
-                <div className='col-back ' >
-                <button className="btnsss ms-5 mt-1 mb-1 " onClick={() => history.goBack()}><IoMdArrowBack /></button>
-                </div>
-                    <div  className='col-s '>
-                    <h1 style={{color:"white"}}><b>Input & Find Job</b></h1>
+
+                    <div className='col-back ' >
+                        <button className="btnsss ms-5 mt-1 mb-1 "
+                            onClick={() => history.goBack()}>
+                            <IoMdArrowBack />
+                        </button>
+                    </div>
+                    <div className='col-s '>
+                        <h1 style={{ color: "white" }}><b>Input & Find Job</b></h1>
                     </div>
                 </div>
-               
+
 
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
-                    <div type="button" className='find'><h2 onClick={() => { history.push("/taxijobs") }}>Taxi Drivers</h2></div>
+                    <div type="button" className='find'><h2
+                        onClick={() => { history.push("/taxijobs") }}>
+                        Taxi Drivers</h2>
+                    </div>
                     <div className='imgssss'>
-                    <img onClick={() => { history.push("/jobs") }} style={{border:"none",borderRadius:"2px",}} src={driver} />                    </div>
-                    
+                        <img onClick={() => { history.push("/jobs") }}
+                            style={{ border: "none", borderRadius: "2px", }}
+                            src={driver} />
+                    </div>
+
                 </div>
 
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
-                    <div type="button" className='find'><h2 onClick={()=>{ history.push("/jobs")}} >Truck,Bud,Bus drivers</h2></div>
+                    <div type="button" className='find'>
+                        <h2 onClick={() => { history.push("/jobs") }} >
+                            Truck,Bud,Bus drivers</h2>
+                    </div>
                     <div className='imgssss'>
-                    <img onClick={()=>{ history.push("/jobs")}}  style={{border:"none",borderRadius:"2px",}} src={busdriver} />   
-                 </div>
-                    
+                        <img onClick={() => { history.push("/jobs") }}
+                            style={{ border: "none", borderRadius: "2px", }}
+                            src={busdriver} />
+                    </div>
+
                 </div>
 
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
-                    <div type="button" className='find'><h2 onClick={() => { history.push("/jobs") }}>Mechanic</h2></div>
+                    <div type="button" className='find'>
+                        <h2 onClick={() => { history.push("/jobs") }}>
+                            Mechanic</h2>
+                    </div>
                     <div className='imgssss'>
-                    <img onClick={() => { history.push("/jobs") }}  style={{border:"none",borderRadius:"2px",}} src={carser} />  
-                         </div>
-                    
+                        <img onClick={() => { history.push("/jobs") }}
+                            style={{ border: "none", borderRadius: "2px", }}
+                            src={carser} />
+                    </div>
+
                 </div>
 
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
-                    <div type="button" className='find'><h2 onClick={() => { history.push("/jobs") }}>Factory,Wherehouse Worker</h2></div>
+                    <div type="button" className='find'>
+                        <h2 onClick={() => { history.push("/jobs") }}>
+                            Factory,Wherehouse Worker</h2>
+                    </div>
                     <div className='imgssss'>
-                    <img  onClick={() => { history.push("/jobs") }} style={{border:"none",borderRadius:"2px",}} src={factory} />  
-                         </div>
+                        <img onClick={() => { history.push("/jobs") }}
+                            style={{ border: "none", borderRadius: "2px", }}
+                            src={factory} />
+                    </div>
                 </div>
 
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
-                    <div type="button" className='find'><h2 onClick={() => { history.push("/jobs") }}>Construction, painters</h2></div>
+                    <div type="button" className='find'>
+                        <h2 onClick={() => { history.push("/jobs") }}>
+                            Construction, painters</h2>
+                    </div>
+
                     <div className='imgssss'>
-                    <img  onClick={() => { history.push("/jobs") }} style={{border:"none",borderRadius:"2px",}} src={worker} />  
-                         </div>
+                        <img onClick={() => { history.push("/jobs") }}
+                            style={{ border: "none", borderRadius: "2px", }}
+                            src={worker} />
+                    </div>
                 </div>
 
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
-                    <div type="button" className='find'><h2 onClick={() => { history.push("/jobs") }}>Technicians, IT</h2></div>
+                    <div type="button" className='find'>
+                        <h2 onClick={() => { history.push("/jobs") }}>
+                            Technicians, IT</h2>
+                    </div>
+
                     <div className='imgssss'>
-                    <img  onClick={() => { history.push("/jobs") }} style={{border:"none",borderRadius:"2px",}} src={technician} />  
-                         </div>
+                        <img onClick={() => { history.push("/jobs") }}
+                            style={{ border: "none", borderRadius: "2px", }}
+                            src={technician} />
+                    </div>
                 </div>
 
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
-                    <div className='find' type="button"><h2  onClick={() => { history.push("/alljob") }}>JOBS</h2></div>
+                    <div className='find' type="button">
+                        <h2 onClick={() => { history.push("/alljob") }}>
+                            JOBS</h2>
+                    </div>
+
                     <div className='imgssss'>
-                    <img  onClick={() => { history.push("/alljob") }} style={{border:"none",borderRadius:"2px",}} src={jobss} /> 
-                         </div>
-                    
+                        <img onClick={() => { history.push("/alljob") }}
+                            style={{ border: "none", borderRadius: "2px", }}
+                            src={jobss} />
+                    </div>
+
                 </div>
-                
+
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
                     <div className='find'><h2></h2></div>
-                    <div className='imgssss'> 
+                    <div className='imgssss'>
                     </div>
-                    
+
                 </div>
 
-                
-                  </div>   
-                <Footer />
-        </div>  
-     
+
+            </div>
+            <Footer />
+        </div>
+
     )
 }
 
