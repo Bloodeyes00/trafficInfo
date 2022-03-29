@@ -53,10 +53,12 @@
 }
 .inputh1{
     background-color: #ffffff;
-    height: 40px;
-    text-align: start;
+    height: 50px;
+    text-align: center;
     color: #ffcc00;
     margin: 0px;
+    width: 85%;
+    border-radius: 10px;
 }
 .bttnss{
     display: flex;
@@ -127,7 +129,7 @@ h6{
     .inputsss{
         border: 1px solid rgb(39, 39, 39);
         height: 20px;
-        width: 80px;
+        width: 70px;
     
     }
     h6{
