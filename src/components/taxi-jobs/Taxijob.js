@@ -8,6 +8,7 @@ import { Table } from 'react-bootstrap'
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 import TaxiJobSeeker from './TaxiJobSeeker';
+import JobFooter from '../jobfooter/JobFooter';
 import Trafficinfo1 from "../../images/Trafficinfo1.png"
 
 function TaxiJob() {
@@ -43,18 +44,31 @@ function TaxiJob() {
          onClick={() => history.goBack()}>
          <IoMdArrowBack />
        </button>
-          <div className='jobheader'>
-          <h1 className='inputh1 mt-4'>&nbsp;Input:</h1>
-          <img className='taxijobimage mt-2' src={Trafficinfo1} />
-          </div>
-            <Tabs
+
+  {/* <Tabs
                     defaultActiveKey="home"
                     transition={false}
                     id="noanim-tab-example"
                     className="Tabss"
                 >
-                    <Tab eventKey="home" title="Job Giver">
-                    <h1 className='inputh1 ms-4'>Available Jobs:</h1>
+                    <Tab eventKey="home" title="Post job" onClick={() => { history.push("/taxijob") }}>
+                    
+                    </Tab>
+                    <Tab eventKey="profile" title="Job Seeker">
+                    </Tab>
+
+                </Tabs> */}
+
+          <div className='jobheader ms-3'>
+            <div className='col-8 mt-5'>
+          <h1 className='inputh1'>Available Jobs:</h1>
+          </div>
+          <div className='col-4'>
+          <img className='taxijobimage' src={Trafficinfo1} />
+          </div>
+          </div>
+
+
                     {data.map((item, index) => (
 
                     <div className='row-taxijob ms-3'>
@@ -67,19 +81,15 @@ function TaxiJob() {
                     </div>
 
                        ))}
-
-                   
-
-
-<br />
-                    </Tab>
-                    <Tab eventKey="profile" title="Job Seeker">
-                        <TaxiJobSeeker />
-                    </Tab>
-
-                </Tabs>
+                        <br />
                 <br />
-
+      
+                <TaxiJobSeeker />
+                <br />
+      <br />
+      <br />
+      <br />
+                <JobFooter />
         </div>
   )
 }

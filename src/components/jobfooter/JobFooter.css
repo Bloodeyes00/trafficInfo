@@ -1,0 +1,66 @@
+.container-fluid-jobfooter{
+    height                  : 10%;
+    width                   : 100%;
+    position                : fixed;
+    bottom                  : 0;
+    margin-left             : -18px
+}
+
+.row-jobfooter{
+    height                  : 10%;
+    width                   : 106%;
+    display                 : flex;
+    justify-content         : center;
+    align-items             : center;
+    position                : fixed;
+    background-color        : #f8f9fa;
+
+    
+}
+
+.col-b{
+    height                  : 100%;
+    width                   : 26%;
+    justify-content         : center;
+    align-items             : center;
+    text-align              : center;
+    padding                 : 0px;
+    margin-top              : 30px;
+    font-size               : 12px
+}
+
+.col-b:hover{
+    height                  : 100%;
+    width                   : 26%;
+    color                   : rgb(68, 135, 235);
+    justify-content         : center;
+    align-items             : center;
+    text-align              : center;
+    padding                 : 0px;
+    margin-top              : 30px;
+    font-size               : 12px
+}
+
+.col-d{
+    height                  : 100%;
+    width                   : 26%;
+    justify-content         : center;
+    align-items             : center;
+    text-align              : center;
+    padding                 : 0px;
+    margin-top              : 30px;
+    font-size               : 12px
+}
+
+.col-d:hover{
+    height                  : 100%;
+    width                   : 26%;
+    color                   : rgb(68, 135, 235);
+    justify-content         : center;
+    align-items             : center;
+    text-align              : center;
+    padding                 : 0px;
+    margin-top              : 30px;
+    font-size               : 12px
+}
+

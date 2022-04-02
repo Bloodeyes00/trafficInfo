@@ -16,7 +16,6 @@
 
 .jobheader{
     display: flex;
-    gap: 50%;
 }
 
 .taxijobimage{
@@ -26,6 +25,26 @@
     width: 80px;
     height: 80px;
     border: none;
+}
+
+.btn2job{
+    background-color: #03a9f4;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.btn2job:hover{
+    background-color: #1779a7;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
 }
 
 .rowtext1{
@@ -85,13 +104,11 @@
 }
 
 .row-taxidetailss{
-   
- 
     width: 92%;
-
 }
-.textarea{
-    width: 80%;
+
+.textareas{
+    width: 158%;
     height: 100px;
     border: 1px solid rgb(39, 39, 39);
     outline: none;
@@ -109,18 +126,14 @@ p{
     border: 1px solid rgb(39, 39, 39);
     height: 30px;
 }
-.row-useredit{
-    display: flex;
-}
+
 
 .inputsss{
     border: 1px solid rgb(39, 39, 39);
     outline: none;
 
 }
-.email{
-    margin-left: 5rem;
-}
+
 h6{
     font-size: 15px;
 }
@@ -129,15 +142,13 @@ h6{
     .inputsss{
         border: 1px solid rgb(39, 39, 39);
         height: 20px;
-        width: 70px;
+        width: 100px;
     
     }
     h6{
         font-size: 12px;
     }
-    .contact{
-        margin-left: 13px;
-    }
+   
     .imgtxi{
         height: 100px;
         width: 100px;
@@ -151,18 +162,13 @@ h6{
     .inputsss{
         border: 1px solid rgb(39, 39, 39);
         height: 20px;
-        width: 60px;
+        width: 100px;
     
     }
     h6{
         font-size: 10px;
     }
-    .contact{
-        margin-left: 13px;
-    }
-    .email{
-        margin-left: 68px;
-    }
+  
     .imgtxi{
         height: 100px;
         width: 100px;
@@ -204,4 +210,14 @@ h6{
         height: 40px;
         font-size: 11px;
     }
+  }
+
+  .requestbtn{
+    background-color: rgb(9 161 9);
+    height: 35px;
+    font-size: 15px;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    color: white;
   }

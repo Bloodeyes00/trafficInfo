@@ -40,11 +40,11 @@ function MainPage() {
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
                     <div type="button" className='find'><h2
-                        onClick={() => { history.push("/taxijobs") }}>
+                        onClick={() => { history.push("/taxijob") }}>
                         Taxi Drivers</h2>
                     </div>
                     <div className='imgssss'>
-                        <img onClick={() => { history.push("/jobs") }}
+                        <img onClick={() => { history.push("/taxijob") }}
                             style={{ border: "none", borderRadius: "2px", }}
                             src={driver} />
                     </div>
@@ -120,7 +120,7 @@ function MainPage() {
                     </div>
                 </div>
 
-                <div className='row-c'>
+                {/* <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
                     <div className='find' type="button">
                         <h2 onClick={() => { history.push("/alljob") }}>
@@ -133,7 +133,7 @@ function MainPage() {
                             src={jobss} />
                     </div>
 
-                </div>
+                </div> */}
 
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>

@@ -51,10 +51,11 @@ function TaxiJobSeeker() {
 
   return (
 
-    <div>
-       <h1 className='inputh1 ms-4'>Available Jobs:</h1>
+    <div className='container-taxijobseeker12'>
+     
+       {/* <h1 className='inputh1 ms-4'>Available Jobs:</h1> */}
+    
                     {data.map((item, index) => (
-
                     <div className='row-taxijob ms-3'>
                       <h2 className='rowtext1'>DRIVER</h2>
                       <h5 className='rowtext'>{item.data.detail}</h5>

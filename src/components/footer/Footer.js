@@ -249,13 +249,13 @@ function Footer() {
                     <div className="btn-nav">
                         <span style={{ color: "white" }} className="sidemenu-icons"
                           type="button" onClick={() => {
-                            history.push("/alljob")
+                            history.push("/taxijob")
                           }} >
                           <img className="jobimags" src={jobs} />
                         </span>
                         <a type="button"
                           onClick={() => {
-                            history.push("./alljob")
+                            history.push("/taxijob")
                           }}
                           style={{ color: "white", textDecoration: "none" }}
                         > &nbsp;&nbsp;
@@ -366,6 +366,8 @@ function Footer() {
           <b onClick={() => { history.push("/Home") }}>Home</b>
         </div>
 
+      
+
         <div className='col-b'>
           <AiFillWechat
             onClick={() => {
@@ -375,7 +377,7 @@ function Footer() {
           <b onClick={() => {
             history.push(`/chatroom`)
           }}>
-            Company Chat
+          Compnay Chat
           </b>
           <div className='counters'>{unreadLength}</div>
         </div>

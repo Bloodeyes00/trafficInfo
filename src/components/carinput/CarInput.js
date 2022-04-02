@@ -200,22 +200,7 @@ function CarInput() {
           </select>
           <br />
           <br />
-          <div className="row-Condition mt-3">
-            <p className="form-text text-muted">Fuel</p>
-            <select className="Conditions mt-2"
-              name="Job"
-              id="Job"
-              onChange={(e) => {
-                setFuel(e.target.value);
-              }}>
-              <option className="abc" value="other" >  </option>
-              <option className="abc" value="CNG">CNG</option>
-              <option className="abc" value="Diesel">Diesel</option>
-              <option className="abc" value="Petrol">Petrol</option>
-              <option className="abc" value="Hybrid">Hybrid</option>
-              <option className="abc" value="LPG">LPG</option>
-            </select>
-          </div>
+         .
           <br />
           <p className="form-text text-muted">Registered in</p>
           <select className="selectes mt-2"
@@ -289,8 +274,8 @@ function CarInput() {
             <option value="khushab">Khushab</option>
             <option value="khuzdar">Khuzdar</option>
             <option value="kohat">Kohat</option>
-            <option value="kohistan">Kohistan</option><
-              option value="kot-addu">Kot Addu</option>
+            <option value="kohistan">Kohistan</option>
+            <option value="kot-addu">Kot Addu</option>
             <option value="lahore">Lahore</option>
             <option value="lakkimarwat">Lakki Marwat</option>
             <option value="landikotal">Landi Kotal</option>

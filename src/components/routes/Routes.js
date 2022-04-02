@@ -35,6 +35,7 @@ import TaxiJobs from '../taxi-jobs/TaxiJobs';
 import Taxijob from '../taxi-jobs/Taxijob';
 import TaxiJobSeeker from '../taxi-jobs/TaxiJobSeeker';
 import AllJob from '../../components/alljob/AllJob';
+import JobSeeker from '../taxi-jobs/JobSeeker';
 
 export default function Routes(props) {
     let {user, isLoggedin} = props
@@ -44,6 +45,7 @@ export default function Routes(props) {
             <Switch>
                 <Route path="/alljob" component={AllJob} />   
                 <Route path="/jobinput" component={JobInput} /> 
+                <Route path="/jobseeker" component={JobSeeker} /> 
                 <Route path="/taxijobSeeker" component={TaxiJobSeeker} /> 
                 <Route path="/taxijobs" component={TaxiJobs} /> 
                 <Route path="/taxijob" component={Taxijob} />   
