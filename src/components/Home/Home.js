@@ -128,7 +128,7 @@ const Home = () => {
           </Modal>
         </div>
 
-        <Card style={{ width: '18rem' }} key={index} style={{ display: 'flex', marginBottom: '5px' }}>
+        <Card  key={index} style={{ display: 'flex', marginBottom: '5px', width: '18rem'  }}>
           <div className="carousel-container">
             <Carousel swipeable={false}
               draggable={false}

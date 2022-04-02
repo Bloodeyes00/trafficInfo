@@ -95,7 +95,7 @@
 .container-taxi{
     background-color: rgb(255, 255, 255);
     height: 88vh;
-    width: 90%;
+    width: 100%;
     
 }
 .row-taxijobs{
@@ -108,7 +108,7 @@
 }
 
 .textareas{
-    width: 158%;
+    width: 148%;
     height: 100px;
     border: 1px solid rgb(39, 39, 39);
     outline: none;
@@ -142,7 +142,8 @@ h6{
     .inputsss{
         border: 1px solid rgb(39, 39, 39);
         height: 20px;
-        width: 100px;
+        width: 126px;
+        font-size: 10px;
     
     }
     h6{
@@ -162,7 +163,8 @@ h6{
     .inputsss{
         border: 1px solid rgb(39, 39, 39);
         height: 20px;
-        width: 100px;
+        width: 126px;
+    font-size: 10px;
     
     }
     h6{

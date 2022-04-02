@@ -9,8 +9,14 @@
 .container-taxi{
     background-color: rgb(255, 255, 255);
     height: 88vh;
-    width: 90%;
+    width: 100%;
     
+}
+
+.rowbutton{
+
+    display: flex;
+    justify-content: center;
 }
 .imgtxii{
     height: 100px;
@@ -100,7 +106,8 @@ h6{
     .inputsss{
         border: 1px solid rgb(39, 39, 39);
         height: 20px;
-        width: 100px;
+        width: 126px;
+        font-size: 10px;
     
     }
     h6{
@@ -114,8 +121,8 @@ h6{
     .inputsss{
         border: 1px solid rgb(39, 39, 39);
         height: 20px;
-        width: 60px;
-    
+        width: 126px;
+        font-size: 10px;
     }
     h6{
         font-size: 10px;
@@ -184,3 +191,4 @@ h6{
 .container-jobseeker12{
     background-color: white;
 }
+

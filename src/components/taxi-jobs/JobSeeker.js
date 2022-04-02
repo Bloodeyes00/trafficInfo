@@ -93,7 +93,7 @@ function JobSeeker() {
                             }} value={email} className='inputsss' type="text" />
                     </div>
                 </div>
-                <div className='col-4 ms-4 mt-5'>
+                <div className='rowbutton ms-4 mt-5'>
                         <button style={{fontSize:"12px"}} className='btadd' onClick={()=>{
  addData(); history.push("/taxijob")}}>Request Jobs</button>
 

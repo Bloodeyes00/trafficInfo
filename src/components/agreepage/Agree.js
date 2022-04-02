@@ -17,7 +17,6 @@ function Agree(props) {
                     onClick={() => {
                         localStorage.setItem("oldUser", true);
                         setOlduserState(true);
-                        console.log("true")
                     }} >Dis Agree</button>
 
                 &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
@@ -28,7 +27,6 @@ function Agree(props) {
                 <button onClick={() => {
                     localStorage.setItem("oldUser", true);
                     setOlduserState(true);
-                    console.log("true")
                 }} className="btnn2">Agree</button>
             </div>
         </div>

@@ -99,20 +99,20 @@ function TaxiJobs() {
 
 <div className='row-useredit ms-3 mt-4'>
         <div className='col-6 contact '>
-            <h6>Contact Number</h6> &nbsp;&nbsp;
+            <h6 className='ms-2'>Contact Number</h6> &nbsp;&nbsp;
             <input onChange={(e) => {
                 setCellNumber(e.target.value);
             }} value={cellnumber} className='inputsss' type="number" />
         </div>
         <br />
         <div className='col-6 email'>
-            <h6>Email</h6> &nbsp;
+            <h6 className='ms-1'>Email</h6> &nbsp;
             <input onChange={(e) => {
                 setEmail(e.target.value);
             }} value={email} className='inputsss' type="text" />
         </div>
 </div>
-<div className='col-4 ms-4 mt-5'>
+<div className='rowbutton ms-4 mt-5'>
         <button className='btadd' onClick={()=>{
 addDatas(); history.push("/taxijob")}}>Post Job</button>
 
