@@ -13,7 +13,7 @@ import Trafficinfo1 from "../../images/Trafficinfo1.png"
 import { FaPhoneSquareAlt } from "react-icons/fa";
 import { FaWhatsappSquare } from "react-icons/fa";
 import { ImMail } from "react-icons/im";
-import { IoIosCloseCircle } from "react-icons/io";
+import { AiFillDelete } from "react-icons/ai";
 
 
 
@@ -39,18 +39,13 @@ function TaxiJob() {
     console.log("job giver:", data);
   }, []);
 
-
-
-
-const deleteData = (id) =>{
-  db.collection("taxiJob").doc("id").delete().then(() => {
-    console.log("Document successfully deleted!");
-}).catch((error) => {
-    console.error("Error removing document: ", error);
-});
-}
-
-
+  const deleteData = (id) => {
+    db.collection("taxiJob").doc(id).delete().then(() => {
+      console.log("Document successfully deleted!");
+    }).catch((error) => {
+      console.error("Error removing document: ", error);
+    });
+  }
 
   return (
         <div className='container-taxijob'>
@@ -87,7 +82,7 @@ const deleteData = (id) =>{
                     {data.map((item, index) => (
 
                     <div className='row-taxijob ms-3 '>
-                      <div className='closebtns' onClick={deleteData}><IoIosCloseCircle /></div>
+                      <div className='closebtns' onClick={() => deleteData(item?.id)}><AiFillDelete /></div>
                       
               <h5 className='rowtext1 mt-3 d-flex justify-content-center' style={{ color: "#cc0000" }}> Job Giver</h5>
                       <div className='d-flex'>
@@ -102,7 +97,6 @@ const deleteData = (id) =>{
                       <h5 className='rowtext'>{item.data.email}</h5>
                       <h5 className='rowtext'>{item.data.cellnumber}</h5>
 
-                      <button onClick={deleteData}>click </button>
                       <div className='phoneicon'> <a href="tel:+923439262289"> <FaPhoneSquareAlt /></a> 
                       <a
         href="https://wa.me/923439262289"

@@ -9,7 +9,7 @@ import { Table } from 'react-bootstrap'
 import { FaPhoneSquareAlt } from "react-icons/fa";
 import { FaWhatsappSquare } from "react-icons/fa";
 import { ImMail } from "react-icons/im";
-import { IoIosCloseCircle } from "react-icons/io";
+import { AiFillDelete } from "react-icons/ai";
 
 
 function TaxiJobSeeker() {
@@ -51,7 +51,16 @@ function TaxiJobSeeker() {
       );
     });
     console.log("job seeker:", data);
-  }, []);
+  },
+    []);
+
+  const deleteData = (id) => {
+    db.collection("JobSeeker").doc(id).delete().then(() => {
+      console.log("Document successfully deleted!");
+    }).catch((error) => {
+      console.error("Error removing document: ", error);
+    });
+  }
 
   return (
 
@@ -61,8 +70,8 @@ function TaxiJobSeeker() {
 
       {data.map((item, index) => (
         <div className='row-taxijob ms-3'>
-              <div className='closebtns'><IoIosCloseCircle /></div>
-              <h5 className='rowtext1 mt-3 d-flex justify-content-center' style={{ color: "#cc0000" }}> Job Seeker</h5>
+          <div className='closebtns' onClick={() => deleteData(item?.id)}><AiFillDelete /></div>
+          <h5 className='rowtext1 mt-3 d-flex justify-content-center' style={{ color: "#cc0000" }}> Job Seeker</h5>
           <div className='d-flex'>
             <div className='col-4 mt-2 driver12'>
               <h2 className='rowtext1'>DRIVER</h2>
@@ -76,24 +85,24 @@ function TaxiJobSeeker() {
           <h5 className='rowtext'>{item.data.cellnumber}</h5>
           {/* <br /> */}
           <div className='phoneicon'> <a className="phone_float" href="tel:+923439262289"> <FaPhoneSquareAlt /></a>
-          
-          <a
-        href="https://wa.me/923439262289"
-        className="whatsapp_float"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaWhatsappSquare />
-      </a>
 
-      <a
-        href="mailto:ihteshamu11@gmail.com"
-        className="mail_float"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <ImMail />
-      </a>
+            <a
+              href="https://wa.me/923439262289"
+              className="whatsapp_float"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsappSquare />
+            </a>
+
+            <a
+              href="mailto:ihteshamu11@gmail.com"
+              className="mail_float"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ImMail />
+            </a>
 
 
           </div>
