@@ -6,6 +6,10 @@ import { IoMdArrowBack } from "react-icons/io";
 import firebase from "../utils/firebase";
 import { db } from './../utils/firebase'
 import { Table } from 'react-bootstrap'
+import { FaPhoneSquareAlt } from "react-icons/fa";
+import { FaWhatsappSquare } from "react-icons/fa";
+import { ImMail } from "react-icons/im";
+import { IoIosCloseCircle } from "react-icons/io";
 
 
 function TaxiJobSeeker() {
@@ -52,22 +56,56 @@ function TaxiJobSeeker() {
   return (
 
     <div className='container-taxijobseeker12'>
-     
-       {/* <h1 className='inputh1 ms-4'>Available Jobs:</h1> */}
-    
-                    {data.map((item, index) => (
-                    <div className='row-taxijob ms-3'>
-                      <h2 className='rowtext1'>DRIVER</h2>
-                      <h5 className='rowtext'>{item.data.detail}</h5>
-                      <h5 className='rowtext'>{item.data.expernices}</h5>
-                      <h5 className='rowtext'>{item.data.email}</h5>
-                      <h5 className='rowtext'>{item.data.cellnumber}</h5>
-                      {/* <br /> */}
 
-                    </div>
-                       ))}
+      {/* <h1 className='inputh1 ms-4'>Available Jobs:</h1> */}
+
+      {data.map((item, index) => (
+        <div className='row-taxijob ms-3'>
+              <div className='closebtns'><IoIosCloseCircle /></div>
+              <h5 className='rowtext1 mt-3 d-flex justify-content-center' style={{ color: "#cc0000" }}> Job Seeker</h5>
+          <div className='d-flex'>
+            <div className='col-4 mt-2 driver12'>
+              <h2 className='rowtext1'>DRIVER</h2>
+            </div>
+            <div className='col-6 giver12 offset-3'>
+            </div>
+          </div>
+          <h5 className='rowtext'>{item.data.detail}</h5>
+          <h5 className='rowtext'>{item.data.expernices}</h5>
+          <h5 className='rowtext'>{item.data.email}</h5>
+          <h5 className='rowtext'>{item.data.cellnumber}</h5>
+          {/* <br /> */}
+          <div className='phoneicon'> <a className="phone_float" href="tel:+923439262289"> <FaPhoneSquareAlt /></a>
+          
+          <a
+        href="https://wa.me/923439262289"
+        className="whatsapp_float"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaWhatsappSquare />
+      </a>
+
+      <a
+        href="mailto:ihteshamu11@gmail.com"
+        className="mail_float"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <ImMail />
+      </a>
+
+
+          </div>
+
+          <br />
+
+        </div>
+      ))}
     </div>
 
   )
 }
 export default TaxiJobSeeker
+
+

@@ -102,6 +102,56 @@
     display: flex;
     justify-content: center;
 }
+.giver23{
+    text-align: end;
+}
+.whatsapp_float{
+    color:rgb(41, 226, 41);
+    margin-left: 10px;
+    outline: none;
+}
+.whatsapp_float:hover{
+    color:rgb(92, 196, 92);
+    margin-left: 10px;
+    outline: none;
+}
+
+.mail_float{
+    color:rgb(211, 68, 68);
+    margin-left: 10px;
+    outline: none;
+}
+
+.closebtns{
+    display: flex;
+    justify-content: end;
+    margin-right: 10px;
+    margin-top: 10px;
+    color: #bd1e1e;
+}
+
+.mail_float:hover{
+    color:rgb(218, 28, 28);
+    margin-left: 10px;
+    outline: none;
+}
+.phone_float{
+    color:rgb(37, 103, 245);
+    outline: none;
+}
+.phone_float:hover{
+    color:rgb(9, 83, 243);
+    outline: none;
+
+}
+
+
+.phoneicon{
+    display: flex;
+    justify-content: end;
+    margin-right: 20px;
+    
+}
 
 .row-taxidetailss{
     width: 92%;

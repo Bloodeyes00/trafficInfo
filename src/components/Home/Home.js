@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import firebase from "../utils/firebase";
 import { storage } from '../utils/firebase'
 import trafikinfo from '../../images/trafikinfo.png'
+import areoplane from "../../assets/images/areoplane.png"
 
 
 import { useHistory } from 'react-router'
@@ -162,6 +163,7 @@ const Home = () => {
   return (
 
     <div className="container-home">
+
       <div onClick={() => { history.push(`/chat/${11}`) }} className="img-logo">
        </div>
   

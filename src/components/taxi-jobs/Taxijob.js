@@ -10,6 +10,12 @@ import Tab from 'react-bootstrap/Tab'
 import TaxiJobSeeker from './TaxiJobSeeker';
 import JobFooter from '../jobfooter/JobFooter';
 import Trafficinfo1 from "../../images/Trafficinfo1.png"
+import { FaPhoneSquareAlt } from "react-icons/fa";
+import { FaWhatsappSquare } from "react-icons/fa";
+import { ImMail } from "react-icons/im";
+import { IoIosCloseCircle } from "react-icons/io";
+
+
 
 function TaxiJob() {
   const [loading, setLoading] = useState(false);
@@ -34,6 +40,15 @@ function TaxiJob() {
   }, []);
 
 
+
+
+const deleteData = (id) =>{
+  db.collection("taxiJob").doc("id").delete().then(() => {
+    console.log("Document successfully deleted!");
+}).catch((error) => {
+    console.error("Error removing document: ", error);
+});
+}
 
 
 
@@ -71,13 +86,43 @@ function TaxiJob() {
 
                     {data.map((item, index) => (
 
-                    <div className='row-taxijob ms-3'>
+                    <div className='row-taxijob ms-3 '>
+                      <div className='closebtns' onClick={deleteData}><IoIosCloseCircle /></div>
+                      
+              <h5 className='rowtext1 mt-3 d-flex justify-content-center' style={{ color: "#cc0000" }}> Job Giver</h5>
+                      <div className='d-flex'>
+                        <div className='col-4 mt-2 driver12'>
                       <h2 className='rowtext1'>DRIVER</h2>
+                      </div>
+                      <div className='col-4 giver12 offset-3'>
+                    </div>
+                    </div>
                       <h5 className='rowtext'>{item.data.detail}</h5>
                       <h5 className='rowtext'>{item.data.companyName}</h5>
                       <h5 className='rowtext'>{item.data.email}</h5>
                       <h5 className='rowtext'>{item.data.cellnumber}</h5>
 
+                      <button onClick={deleteData}>click </button>
+                      <div className='phoneicon'> <a href="tel:+923439262289"> <FaPhoneSquareAlt /></a> 
+                      <a
+        href="https://wa.me/923439262289"
+        className="whatsapp_float"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaWhatsappSquare />
+      </a>
+      <a
+        href="mailto:ihteshamu11@gmail.com"
+        className="mail_float"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <ImMail />
+      </a>
+      
+                      </div>
+<br />
                     </div>
 
                        ))}

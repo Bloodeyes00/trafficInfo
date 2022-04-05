@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
-import { Textarea } from 'react-bootstrap-icons'
+// import { Textarea } from 'react-bootstrap-icons'
 import "./TaxiJobs.css"
 import Trafficinfo1 from "../../images/Trafficinfo1.png"
 import { useHistory } from 'react-router-dom';
 import { IoMdArrowBack } from "react-icons/io";
-import firebase from "../../components/utils/firebase";
-import { toast } from 'react-toastify';
-import { useFormik } from "formik";
-import * as yup from "yup";
-import Tabs from 'react-bootstrap/Tabs'
-import Tab from 'react-bootstrap/Tab'
+// import firebase from "../../components/utils/firebase";
+// import { toast } from 'react-toastify';
+// import { useFormik } from "formik";
+// import * as yup from "yup";
+// import Tabs from 'react-bootstrap/Tabs'
+// import Tab from 'react-bootstrap/Tab'
 import { db } from './../utils/firebase'
-import JobSeeker from './JobSeeker';
+// import JobSeeker from './JobSeeker';
 
 
 
@@ -21,7 +21,6 @@ function TaxiJobs() {
     const [detail, setDetail] = useState("");
     const [cellnumber, setCellNumber] = useState("");
     const [email, setEmail] = useState("");
-    const [expernices, setExpernices] = useState("");
 
   
     let history = useHistory()
@@ -64,7 +63,7 @@ function TaxiJobs() {
                 <h2>JOB GIVER</h2>
                 </div>
                 <div className='col3 imgcol ms-3 mt-2 '>
-                    <img className='imgtxii' src={Trafficinfo1} />
+                    <img className="imgtxii" src={Trafficinfo1} />
                 </div>
                 </div>
 
@@ -102,7 +101,7 @@ function TaxiJobs() {
             <h6 className='ms-2'>Contact Number</h6> &nbsp;&nbsp;
             <input onChange={(e) => {
                 setCellNumber(e.target.value);
-            }} value={cellnumber} className='inputsss' type="number" />
+            }} value={cellnumber} className='inputsss' type="numeric" />
         </div>
         <br />
         <div className='col-6 email'>
