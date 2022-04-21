@@ -3,13 +3,15 @@ import { Textarea } from 'react-bootstrap-icons'
 import "./Taxijob.css"
 import { useHistory } from 'react-router-dom';
 import { IoMdArrowBack } from "react-icons/io";
-import firebase from "../utils/firebase";
+// import firebase from "../utils/firebase";
 import { db } from './../utils/firebase'
 import { Table } from 'react-bootstrap'
 import { FaPhoneSquareAlt } from "react-icons/fa";
 import { FaWhatsappSquare } from "react-icons/fa";
 import { ImMail } from "react-icons/im";
 import { AiFillDelete } from "react-icons/ai";
+import firebase from "../../components/utils/firebase";
+import { toast } from 'react-toastify';
 
 
 function TaxiJobSeeker() {
@@ -54,13 +56,19 @@ function TaxiJobSeeker() {
   },
     []);
 
-  const deleteData = (id) => {
-    db.collection("JobSeeker").doc(id).delete().then(() => {
-      console.log("Document successfully deleted!");
-    }).catch((error) => {
-      console.error("Error removing document: ", error);
-    });
-  }
+    const deleteData = (item) => {
+      console.log("item 2:", item);
+      let id = item?.id;
+      if (firebase.auth().currentUser.uid == item.data?.posterdID) {
+        db.collection("JobSeeker").doc(id). delete().then(() => {
+          console.log("Document successfully deleted!");
+        }).catch((error) => {
+          console.error("Error removing document: ", error);
+        });
+      } else {
+        toast.warning("You don't have permission to delete this.")
+      }
+    }
 
   return (
 
@@ -70,7 +78,7 @@ function TaxiJobSeeker() {
 
       {data.map((item, index) => (
         <div className='row-taxijob ms-3'>
-          <div className='closebtns' onClick={() => deleteData(item?.id)}><AiFillDelete /></div>
+          <div className='closebtns' onClick={() => deleteData(item)}><AiFillDelete style={firebase.auth().currentUser.uid !== item?.data?.posterdID && { color: "gray" }}  /></div>
           <h5 className='rowtext1 mt-3 d-flex justify-content-center' style={{ color: "#cc0000" }}> Job Seeker</h5>
           <div className='d-flex'>
             <div className='col-4 mt-2 driver12'>

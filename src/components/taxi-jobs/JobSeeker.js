@@ -3,12 +3,11 @@ import { db } from './../utils/firebase'
 import Trafficinfo1 from "../../images/Trafficinfo1.png"
 import { useHistory } from 'react-router-dom';
 import { IoMdArrowBack } from "react-icons/io";
-
+import { auth } from './../utils/firebase'
 
 function JobSeeker() {
     let history = useHistory()
 
-    const [companyName, setcompanyName] = useState("");
     const [detail, setDetail] = useState("");
     const [cellnumber, setCellNumber] = useState("");
     const [email, setEmail] = useState("");
@@ -22,7 +21,7 @@ function JobSeeker() {
             detail: detail,
             cellnumber: cellnumber,
             email: email,
-
+            posterdID: auth?.currentUser?.uid
 
         });
         setExpernices("");
@@ -34,22 +33,22 @@ function JobSeeker() {
     };
     return (
         <div className='container-jobseeker12'>
-               <div className='d-flex '>
+            <div className='d-flex '>
                 <div className='col-3 mt-4'>
-                <button style={{ color: "black" }}
-                    className="btnsss ms-3 mt-1 mb-1 "
-                    onClick={() => history.goBack()}>
-                    <IoMdArrowBack />
-                </button>
+                    <button style={{ color: "black" }}
+                        className="btnsss ms-3 mt-1 mb-1 "
+                        onClick={() => history.goBack()}>
+                        <IoMdArrowBack />
+                    </button>
                 </div>
                 <br />
                 <div className='col-6 mt-5 '>
                     <h2>JOB SEEKER</h2>
                 </div>
-                <div className='col-3 imgcol mt-2 '>
+                <div className='col-3 imgcol mt-2'>
                     <img className='imgtxii' src={Trafficinfo1} />
                 </div>
-                </div>
+            </div>
             <div className='row-taxijobs ms-5'>
 
                 <br />
@@ -63,7 +62,7 @@ function JobSeeker() {
                 <div className='row-dt ms-4 mt-5'>
                     <div className=' dt'>
                         <p>Details</p>
-                         <textarea className='textareas'
+                        <textarea className='textareas'
                             id='detail'
                             onChange={(e) => {
                                 setDetail(e.target.value);
@@ -79,25 +78,26 @@ function JobSeeker() {
 
 
                 <div className='row-useredit ms-3 mt-4'>
-                        <div className='col-6 contact'>
-                            <h6 className='ms-3'>Contact Number</h6> &nbsp;&nbsp;
-                            <input onChange={(e) => {
-                                setCellNumber(e.target.value);
-                            }} value={cellnumber} className='inputsss' type="number" />
-                        </div>
-                        <br />
-                        <div className='col-6 email'>
-                            <h6 className='ms-3'>Email</h6> &nbsp;
-                            <input onChange={(e) => {
-                                setEmail(e.target.value);
-                            }} value={email} className='inputsss' type="text" />
+                    <div className='col-6 contact'>
+                        <h6 className='ms-3'>Contact Number</h6> &nbsp;&nbsp;
+                        <input onChange={(e) => {
+                            setCellNumber(e.target.value);
+                        }} value={cellnumber} className='inputsss' type="number" />
+                    </div>
+                    <br />
+                    <div className='col-6 email'>
+                        <h6 className='ms-3'>Email</h6> &nbsp;
+                        <input onChange={(e) => {
+                            setEmail(e.target.value);
+                        }} value={email} className='inputsss' type="text" />
                     </div>
                 </div>
                 <div className='rowbutton ms-4 mt-5'>
-                        <button style={{fontSize:"12px"}} className='btadd' onClick={()=>{
- addData(); history.push("/taxijob")}}>Request Jobs</button>
+                    <button style={{ fontSize: "12px" }} className='btadd' onClick={() => {
+                        addData(); history.push("/taxijob")
+                    }}>Request Jobs</button>
 
-                    </div>
+                </div>
             </div>
         </div>
     )
