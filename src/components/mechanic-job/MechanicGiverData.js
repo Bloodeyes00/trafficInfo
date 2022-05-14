@@ -1,11 +1,9 @@
 import React, { isValidElement, useEffect, useState } from 'react'
 import { Textarea } from 'react-bootstrap-icons'
-import "./Taxijob.css"
+import "./MechanicGiver.css"
 import { useHistory } from 'react-router-dom';
 import { IoMdArrowBack } from "react-icons/io";
 import { db } from "../utils/firebase";
-import TaxiJobSeeker from './TaxiJobSeeker';
-import JobFooter from '../jobfooter/JobFooter';
 import Trafficinfo1 from "../../images/Trafficinfo1.png"
 import { FaPhoneSquareAlt } from "react-icons/fa";
 import { FaWhatsappSquare } from "react-icons/fa";
@@ -15,13 +13,10 @@ import firebase from "../../components/utils/firebase";
 import _ from "lodash";
 
 import { toast } from 'react-toastify';
-import BusJobData from '../bus-job/BusJobData';
-import BusSeekerData from '../bus-job/BusSeekerData';
-import MechanicGiverData from '../mechanic-job/MechanicGiverData';
-import MechanicSeekerData from '../mechanic-job/MechanicSeekerData';
+import MechanicGiver from './MechnicGiver';
 
 
-function TaxiJob() {
+function MechanicGiverData() {
   const [loading, setLoading] = useState(false);
   // const [searchValue, setSearchValue] = useState("");
   const [data, setData] = useState([]);
@@ -36,7 +31,7 @@ function TaxiJob() {
 
   useEffect(() => {
     
-    db.collection("taxiJob").onSnapshot((snapshot) => {
+    db.collection("MechanicGiverData").onSnapshot((snapshot) => {
       setData(
         snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -51,7 +46,7 @@ function TaxiJob() {
     console.log("item :", item);
     let id = item?.id;
     if (firebase.auth().currentUser.uid == item.data?.posterdID) {
-      db.collection("taxiJob").doc(id).delete().then(() => {
+      db.collection("MechanicGiverData").doc(id).delete().then(() => {
         console.log("Document successfully deleted!");
       }).catch((error) => {
         console.error("Error removing document: ", error);
@@ -75,33 +70,9 @@ function TaxiJob() {
   // }, [searchValue]);
 
   return (
-    <div className='container-taxijob'>
-      <button style={{ color: "black" }}
-        className="btnsss ms-3 mt-1 mb-1 "
-        onClick={() => history.goBack()}>
-        <IoMdArrowBack />
-      </button>
-
-      <div className='profision mt-1'>
-        <div>
-                        <h5 className='textsearch'>Search profession</h5>
-                        <input type="search" className='profision-input' placeholder=''/>
-                        {/* <input type="search" className='profision-input' placeholder='' onChange={handleSearchFilter} value={searchValue} /> */}
-                        
-                        </div>
-                    </div>
-
-      <div className='jobheader ms-3 mt-3'>
-        <div className='col-8 mt-5'>
-          <h1 className='inputh1'>Available Jobs:</h1>
-        </div>
-        <div className='col-4'>
-          <img className='taxijobimage' src={Trafficinfo1} />
-        </div>
-      </div>
-
+    <div className='container-taxijob '>
       {data.map((item, index) => (
-        <div className='row-taxijob ms-3 '>
+        <div className='row-taxijob ms-3 mt-2 '>
           <div className='closebtns' onClick={() => deleteData(item)}>
             <AiFillDelete style={firebase.auth().currentUser.uid !== item?.data?.posterdID && { color: "gray" }} />
             </div>
@@ -109,7 +80,7 @@ function TaxiJob() {
           <h5 className='rowtext1 mt-3 d-flex justify-content-center' style={{ color: "#cc0000" }}> Job Giver</h5>
           <div className='d-flex'>
             <div className='col-4 mt-2 driver12'>
-              <h2 className='rowtext1' style={{fontSize:"15px",fontWeight:"bold",color:"#ffcc00"}}>TAXI DRIVER</h2>
+              <h2 className='rowtext1'  style={{fontSize:"15px",fontWeight:"bold",color:"#ffcc00",width:"200px"}}>MECHANIC</h2>
             </div>
             <div className='col-4 giver12 offset-3'>
             </div>
@@ -141,22 +112,8 @@ function TaxiJob() {
           <br />
         </div>
 
-      ))}
-      <br />
-      <br />
-
-      <TaxiJobSeeker />
-      <br />
-      <BusJobData />
-      <BusSeekerData />
-      <MechanicGiverData />
-      <MechanicSeekerData />
-      <br />
-      <br />
-      <br />
-      <br />
-      <JobFooter />
+      ))}    
     </div>
   )
 }
-export default TaxiJob
+export default MechanicGiverData

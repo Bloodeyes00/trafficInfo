@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import "./TaxiJobs.css"
+import "./MechanicGiver.css"
 import Trafficinfo1 from "../../images/Trafficinfo1.png"
 import { useHistory } from 'react-router-dom';
 import { IoMdArrowBack } from "react-icons/io";
 import { db, auth } from './../utils/firebase'
+import JobFooterBus from '../jobfooter/JobFooterBus';
 
-function TaxiJobs() {
+function MechanicGiver() {
 
     const [companyName, setcompanyName] = useState("");
     const [detail, setDetail] = useState("");
@@ -16,7 +17,7 @@ function TaxiJobs() {
     let history = useHistory()
 
     const addDatas = (e) => {
-        db.collection("taxiJob").add({
+        db.collection("MechanicGiverData").add({
             profision: profision,
             detail: detail,
             cellnumber: cellnumber,
@@ -61,6 +62,7 @@ function TaxiJobs() {
                 <br />
 
                 <div className='row-taxidetails ms-3'>
+                    <h5 className='ms-2 mt-2'  style={{color:"#af0e0c"}}> Mechanic </h5>
                     <div className='profision mt-3'>
                         <h5 className='textproinput'>Input profession</h5>
                         <input type="text" className='profision-input' placeholder='' onChange={(e) => {
@@ -76,7 +78,7 @@ function TaxiJobs() {
                                 onChange={(e) => {
                                     setDetail(e.target.value);
                                 }}
-                                value={detail}
+                               value={detail}
                                 rows="" cols="">
                             </textarea>
                         </div>
@@ -104,12 +106,13 @@ function TaxiJobs() {
                     </div>
                     <br />
                     <br />
+                    <JobFooterBus />
                     <br />
-                </div>           
+                </div>      
             </div>
         </div>
 
     )
 }
 
-export default TaxiJobs
+export default MechanicGiver

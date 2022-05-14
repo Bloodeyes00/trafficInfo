@@ -1,6 +1,6 @@
 import React, { isValidElement, useEffect, useState } from 'react'
 import { Textarea } from 'react-bootstrap-icons'
-import "./Taxijob.css"
+import "./BusGiver.css"
 import { useHistory } from 'react-router-dom';
 import { IoMdArrowBack } from "react-icons/io";
 import { db } from './../utils/firebase'
@@ -13,7 +13,7 @@ import firebase from "../../components/utils/firebase";
 import { toast } from 'react-toastify';
 
 
-function TaxiJobSeeker() {
+function BusSeekerData() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([])
   const [dataIdToBeUpdated, setDataIdToBeUpdated] = useState("");
@@ -25,7 +25,7 @@ function TaxiJobSeeker() {
 
   const updateData = (e) => {
     e.preventDefault();
-    db.collection("JobSeeker").doc(dataIdToBeUpdated).update({
+    db.collection("BusSeeker").doc(dataIdToBeUpdated).update({
       email: updatedEmail,
       detail: updatedDetail,
       expernices: updatedExperience,
@@ -43,7 +43,7 @@ function TaxiJobSeeker() {
   let history = useHistory()
 
   useEffect(() => {
-    db.collection("JobSeeker").onSnapshot((snapshot) => {
+    db.collection("BusSeeker").onSnapshot((snapshot) => {
       setData(
         snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -59,7 +59,7 @@ function TaxiJobSeeker() {
       console.log("item 2:", item);
       let id = item?.id;
       if (firebase.auth().currentUser.uid == item.data?.posterdID) {
-        db.collection("JobSeeker").doc(id). delete().then(() => {
+        db.collection("BusSeeker").doc(id). delete().then(() => {
           console.log("Document successfully deleted!");
         }).catch((error) => {
           console.error("Error removing document: ", error);
@@ -82,7 +82,7 @@ function TaxiJobSeeker() {
           <h5 className='rowtext1 mt-3 d-flex justify-content-center' style={{ color: "#cc0000" }}> Job Seeker</h5>
           <div className='d-flex'>
             <div className='col-4 mt-2 driver12'>
-              <h2 className='rowtext1'  style={{fontSize:"15px",fontWeight:"bold",color:"#ffcc00"}}>TAXI DRIVER</h2>
+            <h2 className='rowtext1'  style={{fontSize:"15px",fontWeight:"bold",color:"#ffcc00",width:"200px"}}>TRUCK AND BUS DRIVER</h2>
             </div>
             <div className='col-6 giver12 offset-3'>
             </div>
@@ -119,6 +119,6 @@ function TaxiJobSeeker() {
 
   )
 }
-export default TaxiJobSeeker
+export default BusSeekerData
 
 

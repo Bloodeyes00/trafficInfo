@@ -35,13 +35,27 @@ import TaxiJobs from '../taxi-jobs/TaxiJobs';
 import Taxijob from '../taxi-jobs/Taxijob';
 import TaxiJobSeeker from '../taxi-jobs/TaxiJobSeeker';
 import JobSeeker from '../taxi-jobs/JobSeeker';
-
+import BusGiver from "../bus-job/BusGiver"
+import BusJobData from '../bus-job/BusJobData';
+import BusSeeker from '../bus-job/BusSeeker';
+import BusSeekerData from '../bus-job/BusSeekerData';
+import MechanicGiver from '../mechanic-job/MechnicGiver';
+import MechanicGiverData from '../mechanic-job/MechanicGiverData';
+import MechanicSeeker from '../mechanic-job/MechanicSeeker';
+import MechanicSeekerData from '../mechanic-job/MechanicSeekerData';
 export default function Routes(props) {
     let {user, isLoggedin} = props
     
     return (
         <div>
             <Switch>
+                <Route path="/mechanicseekerdata" component={MechanicSeekerData} /> 
+                <Route path="/mechanicseeker" component={MechanicSeeker} /> 
+                <Route path="/mechanicgiver" component={MechanicGiver} /> 
+                <Route path="/busseekerdata" component={BusSeekerData} /> 
+                <Route path="/busseeker" component={BusSeeker} /> 
+                <Route path="/busjobdata" component={BusJobData} /> 
+                <Route path="/busgiver" component={BusGiver} /> 
                 <Route path="/jobinput" component={JobInput} /> 
                 <Route path="/jobseeker" component={JobSeeker} /> 
                 <Route path="/taxijobSeeker" component={TaxiJobSeeker} /> 

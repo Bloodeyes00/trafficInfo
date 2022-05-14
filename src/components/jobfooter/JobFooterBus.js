@@ -6,7 +6,7 @@ import { AiFillHome } from "react-icons/ai";
 import { FaServicestack } from "react-icons/fa";
 
 
-function JobFooter() {
+function JobFooterBus() {
 
   let history = useHistory()
   return (
@@ -23,26 +23,26 @@ function JobFooter() {
       <div className='col-b'>
           <SiAddthis
             onClick={() => {
-              history.push(`/taxijobs`)
+              history.push(`/busgiver`)
             }} />
           <br />
           <b onClick={() => {
-            history.push(`/taxijobs`)
+            history.push(`/busgiver`)
           }}>
-            Post jobs
+            Post jobs1
           </b>
         </div>
 
         <div className='col-b'>
           <SiAddthis
             onClick={() => {
-              history.push(`/jobseeker`)
+              history.push(`/busseeker`)
             }} />
           <br />
           <b onClick={() => {
-            history.push(`/jobseeker`)
+            history.push(`/busseeker`)
           }}>
-            Request Jobs
+            Request Jobs1
           </b>
         </div>
 
@@ -62,4 +62,4 @@ function JobFooter() {
   )
 }
 
-export default JobFooter
+export default JobFooterBus
