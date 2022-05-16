@@ -4,7 +4,7 @@ import Trafficinfo1 from "../../images/Trafficinfo1.png"
 import { useHistory } from 'react-router-dom';
 import { IoMdArrowBack } from "react-icons/io";
 import { db, auth } from './../utils/firebase'
-import JobFooterBus from '../jobfooter/JobFooterBus';
+import JobFooterMechanic from '../jobfooter/JobFooterMechanic';
 
 function MechanicGiver() {
 
@@ -106,10 +106,10 @@ function MechanicGiver() {
                     </div>
                     <br />
                     <br />
-                    <JobFooterBus />
                     <br />
                 </div>      
             </div>
+            <JobFooterMechanic />
         </div>
 
     )

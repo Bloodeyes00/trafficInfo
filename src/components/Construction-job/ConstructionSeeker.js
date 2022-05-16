@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { db } from './../utils/firebase'
+import { db } from '../utils/firebase'
 import Trafficinfo1 from "../../images/Trafficinfo1.png"
 import { useHistory } from 'react-router-dom';
 import { IoMdArrowBack } from "react-icons/io";
-import { auth } from './../utils/firebase'
-import JobFooterMechanic from '../jobfooter/JobFooterMechanic';
+import { auth } from '../utils/firebase'
+import JobFooterConstruction from '../jobfooter/JobFooterConstruction';
 
-function MechanicSeeker() {
+function ConstructionSeeker() {
     let history = useHistory()
 
     const [detail, setDetail] = useState("");
@@ -18,7 +18,7 @@ function MechanicSeeker() {
 
     const addData = (e) => {
         // e.preventDefault();
-        db.collection("MechanicSeeker").add({
+        db.collection("ConstructionSeeker").add({
             profision: profision,
             detail: detail,
             cellnumber: cellnumber,
@@ -61,7 +61,7 @@ function MechanicSeeker() {
             </div>
             <br />
             <div className='row-taxidetails ms-3'>
-            <h5 className='ms-2 mt-2' style={{color:"#af0e0c"}}>Mechanic</h5>
+            <h5 className='ms-2 mt-2' style={{color:"#af0e0c"}}>Construction and Painters</h5>
             <div className='profision mt-3'>
                         <h5 className='textproinput'>Input profession</h5>
                         <input type="text" className='profision-input' placeholder='' onChange={(e) => {
@@ -69,7 +69,7 @@ function MechanicSeeker() {
                             }}    value={profision} />
 
                     </div>
-                <div className='row-dt ms-4 mt-5'>
+                <div className='row-dt ms-4 mt-2'>
                     <div className=' dt'>
                         <p>Details</p>
                         <textarea className='textareas'
@@ -111,9 +111,9 @@ function MechanicSeeker() {
                 <br />
                 <br />
             </div>
-            <JobFooterMechanic />
+            <JobFooterConstruction />
         </div>
     ) 
 }
 
-export default MechanicSeeker
+export default ConstructionSeeker

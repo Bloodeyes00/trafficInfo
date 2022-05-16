@@ -112,7 +112,7 @@ function BusSeeker() {
                 <br />
                 
             </div>
-                <JobFooterBus />
+               <JobFooterBus />
         </div>
     )
 }

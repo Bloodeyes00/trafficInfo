@@ -4,6 +4,7 @@ import Trafficinfo1 from "../../images/Trafficinfo1.png"
 import { useHistory } from 'react-router-dom';
 import { IoMdArrowBack } from "react-icons/io";
 import { db, auth } from './../utils/firebase'
+import JobFooter from '../jobfooter/JobFooter';
 
 function TaxiJobs() {
 
@@ -61,6 +62,8 @@ function TaxiJobs() {
                 <br />
 
                 <div className='row-taxidetails ms-3'>
+            <h5 className='ms-2 mt-2' style={{color:"#af0e0c"}}>Taxi Driver</h5>
+
                     <div className='profision mt-3'>
                         <h5 className='textproinput'>Input profession</h5>
                         <input type="text" className='profision-input' placeholder='' onChange={(e) => {
@@ -107,6 +110,7 @@ function TaxiJobs() {
                     <br />
                 </div>           
             </div>
+            <JobFooter />
         </div>
 
     )

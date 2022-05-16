@@ -32,7 +32,7 @@ function MainPage() {
                         </button>
                     </div>
                     <div className='col-s '>
-                        <h1 style={{ color: "white" }}><b>Input & Find Job</b></h1>
+                        <h1 style={{ color: "white" }}><b>Find Jobs</b></h1>
                     </div>
                 </div>
 
@@ -40,11 +40,11 @@ function MainPage() {
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
                     <div type="button" className='find'><h2
-                        onClick={() => { history.push("/taxijob") }}>
+                        onClick={() => { history.push("/taxijobs") }}>
                         Taxi Drivers</h2>
                     </div>
                     <div className='imgssss'>
-                        <img onClick={() => { history.push("/taxijob") }}
+                        <img onClick={() => { history.push("/taxijobs") }}
                             style={{ border: "none", borderRadius: "2px", }}
                             src={driver} />
                     </div>
@@ -82,11 +82,11 @@ function MainPage() {
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
                     <div type="button" className='find'>
-                        <h2 onClick={() => { history.push("/jobs") }}>
-                            Factory,Wherehouse Worker</h2>
+                        <h2 onClick={() => { history.push("/factorygiver") }}>
+                            Factory,Warehouse Worker</h2>
                     </div>
                     <div className='imgssss'>
-                        <img onClick={() => { history.push("/jobs") }}
+                        <img onClick={() => { history.push("/factorygiver") }}
                             style={{ border: "none", borderRadius: "2px", }}
                             src={factory} />
                     </div>
@@ -95,12 +95,12 @@ function MainPage() {
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
                     <div type="button" className='find'>
-                        <h2 onClick={() => { history.push("/jobs") }}>
+                        <h2 onClick={() => { history.push("/constructiongiver") }}>
                             Construction, painters</h2>
                     </div>
 
                     <div className='imgssss'>
-                        <img onClick={() => { history.push("/jobs") }}
+                        <img onClick={() => { history.push("/constructiongiver") }}
                             style={{ border: "none", borderRadius: "2px", }}
                             src={worker} />
                     </div>
@@ -119,22 +119,6 @@ function MainPage() {
                             src={technician} />
                     </div>
                 </div>
-
-                {/* <div className='row-c'>
-                    <div className='plus '> <TiPlus /></div>
-                    <div className='find' type="button">
-                        <h2 onClick={() => { history.push("/alljob") }}>
-                            JOBS</h2>
-                    </div>
-
-                    <div className='imgssss'>
-                        <img onClick={() => { history.push("/alljob") }}
-                            style={{ border: "none", borderRadius: "2px", }}
-                            src={jobss} />
-                    </div>
-
-                </div> */}
-
                 <div className='row-c'>
                     <div className='plus '> <TiPlus /></div>
                     <div className='find'><h2></h2></div>

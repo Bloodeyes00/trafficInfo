@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import "./BusGiver.css"
+import "./ConstructionGiver.css"
 import Trafficinfo1 from "../../images/Trafficinfo1.png"
 import { useHistory } from 'react-router-dom';
 import { IoMdArrowBack } from "react-icons/io";
-import { db, auth } from './../utils/firebase'
-import JobFooterBus from '../jobfooter/JobFooterBus';
+import { db, auth } from '../utils/firebase'
+import JobFooterConstruction from '../jobfooter/JobFooterConstruction';
 
-function BusGiver() {
+function ConstructionGiver() {
 
     const [companyName, setcompanyName] = useState("");
     const [detail, setDetail] = useState("");
@@ -17,7 +17,7 @@ function BusGiver() {
     let history = useHistory()
 
     const addDatas = (e) => {
-        db.collection("BusJobData").add({
+        db.collection("ConstructionGiverData").add({
             profision: profision,
             detail: detail,
             cellnumber: cellnumber,
@@ -62,7 +62,7 @@ function BusGiver() {
                 <br />
 
                 <div className='row-taxidetails ms-3'>
-                    <h5 className='ms-2 mt-2'  style={{color:"#af0e0c"}}> Truck, Bud and Bus driver</h5>
+                    <h5 className='ms-2 mt-2'  style={{color:"#af0e0c"}}> Construction and Painters </h5>
                     <div className='profision mt-3'>
                         <h5 className='textproinput'>Input profession</h5>
                         <input type="text" className='profision-input' placeholder='' onChange={(e) => {
@@ -107,12 +107,12 @@ function BusGiver() {
                     <br />
                     <br />
                     <br />
-                </div>     
-                <JobFooterBus /> 
+                </div>      
             </div>
+            <JobFooterConstruction />
         </div>
 
     )
 }
 
-export default BusGiver
+export default ConstructionGiver

@@ -13,7 +13,6 @@ import firebase from "../../components/utils/firebase";
 import _ from "lodash";
 
 import { toast } from 'react-toastify';
-import MechanicGiver from './MechnicGiver';
 
 
 function MechanicGiverData() {

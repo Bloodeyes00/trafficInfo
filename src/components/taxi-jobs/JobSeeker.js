@@ -4,6 +4,7 @@ import Trafficinfo1 from "../../images/Trafficinfo1.png"
 import { useHistory } from 'react-router-dom';
 import { IoMdArrowBack } from "react-icons/io";
 import { auth } from './../utils/firebase'
+import JobFooter from '../jobfooter/JobFooter';
 
 function JobSeeker() {
     let history = useHistory()
@@ -60,6 +61,8 @@ function JobSeeker() {
             </div>
             <br />
             <div className='row-taxidetails ms-3'>
+            <h5 className='ms-2 mt-2' style={{color:"#af0e0c"}}>Taxi Driver</h5>
+
             <div className='profision mt-3'>
                         <h5 className='textproinput'>Input profession</h5>
                         <input type="text" className='profision-input' placeholder='' onChange={(e) => {
@@ -100,13 +103,14 @@ function JobSeeker() {
                         }} value={email} className='inputsss' type="text" />
                     </div>
                 </div>
-                <div className='rowbutton ms-4 mt-5'>
+                <div className='rowbutton ms-4 mt-4'>
                     <button style={{ fontSize: "12px" }} className='btadd' onClick={() => {
                         addData(); history.push("/taxijob")
                     }}>Request Jobs</button>
 
                 </div>
             </div>
+            <JobFooter />
         </div>
     )
 }
