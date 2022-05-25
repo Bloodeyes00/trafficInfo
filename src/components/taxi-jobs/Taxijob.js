@@ -118,6 +118,7 @@ function TaxiJob() {
             <div className='col-4 giver12 offset-3'>
             </div>
           </div>
+          <h5 className='rowtext'> <b style={{color:"#3b9bf7"}}>Select Compnay</b>:&nbsp;&nbsp; {item.data.designation}</h5>
           <h5 className='rowtext'> <b style={{color:"#3b9bf7"}}>Profession</b>:&nbsp;&nbsp; {item.data.profision}</h5>
           <h5 className='rowtext' ><b style={{color:"#3b9bf7"}}>Details</b>:&nbsp;&nbsp; {item.data.detail}</h5>
           <h5 className='rowtext'> <b style={{color:"#3b9bf7"}}>Email</b>:&nbsp;&nbsp;{item.data.email}</h5>
@@ -151,14 +152,14 @@ function TaxiJob() {
 
       <TaxiJobSeeker />
       <br />
-      <BusJobData />
+      {/* <BusJobData />
       <BusSeekerData />
       <MechanicGiverData />
       <MechanicSeekerData />
       <FactoryGiverData />
       <FactorySeekerData />
       <ConstructionGiverData />
-      <ConstructionSeekerData />
+      <ConstructionSeekerData /> */}
       <br />
       <br />
       <br />

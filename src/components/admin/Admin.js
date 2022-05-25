@@ -19,7 +19,6 @@ function Admin() {
       </button>
 
       <div className="row px-0">
-
         <center>
           <div className="Admintext">
             <b style={{ color: "white" }}>
@@ -27,11 +26,9 @@ function Admin() {
             </b>
           </div>
         </center>
-
       </div>
+      
       <div className="container  py-2">
-
-
         <div className="container">
           <div className="row ">
             <div className='col '>

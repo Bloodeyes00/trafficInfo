@@ -87,7 +87,8 @@ function TaxiJobSeeker() {
             <div className='col-6 giver12 offset-3'>
             </div>
           </div>
-          <h5 className='rowtext'><b style={{color:"#3b9bf7"}}>Profession 2:</b>:&nbsp;&nbsp; {item.data.profision}</h5>
+          <h5 className='rowtext'><b style={{color:"#3b9bf7"}}>Work As:</b>&nbsp;&nbsp; {item.data.selectcompnay}</h5>
+          <h5 className='rowtext'><b style={{color:"#3b9bf7"}}>Profession 2:</b>&nbsp;&nbsp; {item.data.profision}</h5>
           <h5 className='rowtext'><b style={{color:"#3b9bf7"}}>Details:</b>:&nbsp;&nbsp; {item.data.detail}</h5>
           <h5 className='rowtext'><b style={{color:"#3b9bf7"}}>Email:</b>:&nbsp;&nbsp; {item.data.email}</h5>
           <h5 className='rowtext'><b style={{color:"#3b9bf7"}}>Cell:</b>:&nbsp;&nbsp; {item.data.cellnumber}</h5>

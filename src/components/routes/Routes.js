@@ -35,25 +35,25 @@ import TaxiJobs from '../taxi-jobs/TaxiJobs';
 import Taxijob from '../taxi-jobs/Taxijob';
 import TaxiJobSeeker from '../taxi-jobs/TaxiJobSeeker';
 import JobSeeker from '../taxi-jobs/JobSeeker';
-import BusGiver from "../bus-job/BusGiver"
-import BusJobData from '../bus-job/BusJobData';
-import BusSeeker from '../bus-job/BusSeeker';
-import BusSeekerData from '../bus-job/BusSeekerData';
-import MechanicGiver from '../mechanic-job/MechnicGiver';
-import MechanicSeeker from '../mechanic-job/MechanicSeeker';
-import MechanicSeekerData from '../mechanic-job/MechanicSeekerData';
-import FactoryGiver from '../factory-job/FactoryGiver';
-import FactorySeeker from '../factory-job/FactorySeeker';
-import ConstructionGiver from '../Construction-job/ConstructionGiver';
-import ConstructionSeeker from '../Construction-job/ConstructionSeeker';
-import ConstructionSeekerData from '../Construction-job/ConstructionSeekerData';
+// import BusGiver from "../bus-job/BusGiver"
+// import BusJobData from '../bus-job/BusJobData';
+// import BusSeeker from '../bus-job/BusSeeker';
+// import BusSeekerData from '../bus-job/BusSeekerData';
+// import MechanicGiver from '../mechanic-job/MechnicGiver';
+// import MechanicSeeker from '../mechanic-job/MechanicSeeker';
+// import MechanicSeekerData from '../mechanic-job/MechanicSeekerData';
+// import FactoryGiver from '../factory-job/FactoryGiver';
+// import FactorySeeker from '../factory-job/FactorySeeker';
+// import ConstructionGiver from '../Construction-job/ConstructionGiver';
+// import ConstructionSeeker from '../Construction-job/ConstructionSeeker';
+// import ConstructionSeekerData from '../Construction-job/ConstructionSeekerData';
 export default function Routes(props) {
     let {user, isLoggedin} = props
     
     return (
         <div>
             <Switch>
-                <Route path="/constructionseekerdata" component={ConstructionSeekerData} /> 
+                {/* <Route path="/constructionseekerdata" component={ConstructionSeekerData} /> 
                 <Route path="/constructionSeeker" component={ConstructionSeeker} /> 
                 <Route path="/constructiongiver" component={ConstructionGiver} /> 
                 <Route path="/factoryseeker" component={FactorySeeker} /> 
@@ -64,7 +64,7 @@ export default function Routes(props) {
                 <Route path="/busseekerdata" component={BusSeekerData} /> 
                 <Route path="/busseeker" component={BusSeeker} /> 
                 <Route path="/busjobdata" component={BusJobData} /> 
-                <Route path="/busgiver" component={BusGiver} /> 
+                <Route path="/busgiver" component={BusGiver} />  */}
                 <Route path="/jobinput" component={JobInput} /> 
                 <Route path="/jobseeker" component={JobSeeker} /> 
                 <Route path="/taxijobSeeker" component={TaxiJobSeeker} /> 

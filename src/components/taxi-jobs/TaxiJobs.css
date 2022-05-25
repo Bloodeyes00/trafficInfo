@@ -8,9 +8,78 @@
 
 .container-taxi{
     background-color: rgb(255, 255, 255);
-    height: 88vh;
+    height: 90vh;
     width: 100%;
     
+}
+
+.DropDownButton {
+    margin: 50px 50px;
+    font-Size: 1.125rem;
+    width: 320px;
+    height: 60px;
+    display: flex;
+    align-Items: center;
+    justify-Content: space-between;
+    border: 2px solid #007bff;
+    border-Radius: 10px;
+    background-Color: white;
+    cursor: pointer;
+    padding: 0px 20px;
+
+  }
+
+  .inputRoot {
+    color: inherit;
+    width: 100%;
+  
+}
+
+  .search {
+    position: relative;
+    /* border-Radius: theme shape border Radius; */
+    margin-Right: 20px;
+    margin-Left: 0;
+    width: 100%;
+  }
+
+  .searchIcon {
+    padding: 0, 2;
+    height: 100%;
+    position: absolute;
+    pointer-Events: none;
+    display: flex;
+    align-Items: center;
+    justify-Content: center
+  }
+  .searchBarContainer {
+    min-Width: inherit;
+    display: flex;
+    justify-Content: space-evenly;
+    cursor: default;
+    border: black 2px solid;
+    
+  }
+
+  .menuDivider {
+    margin: 0, 20px;
+  }
+
+.addcmpny{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 200px;
+    }
+
+.workas{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    margin-top: -10px;
+}
+.btnsearch{
 }
 
 .rowbutton{
@@ -62,6 +131,18 @@ margin-right: 20px;
     font-family: 'Lucida Sans',;
 }
 
+.work{
+    display: flex;
+    
+}
+
+.selectws{
+    width                   : 100%;
+    margin-left             : 0px;
+    border-radius           : 40px;
+}
+
+
 .btntaxi{
     display: flex;
     justify-content: center;
@@ -83,10 +164,10 @@ margin-right: 20px;
     box-shadow: 2px 4px 4px 0px rgb(73, 73, 73);
 }
 .row-taxidetails{
-    border: 1px solid rgb(39, 39, 39);
+    border: 1px solid rgb(228 226 226);
     height: 470px;
     width: 92%;
-    background-color: #e1dfdf;
+    background-color: #fafafa;
     margin-top: -50px;
 }
 .textarea{
