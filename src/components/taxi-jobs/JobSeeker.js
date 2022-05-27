@@ -6,6 +6,73 @@ import { IoMdArrowBack } from "react-icons/io";
 import { auth } from './../utils/firebase'
 import JobFooter from '../jobfooter/JobFooter';
 import "./TaxiJobs.css"
+import SearchIcon from "@mui/icons-material/Search";
+import { MenuItem, InputBase, Menu, Divider } from "@material-ui/core";
+import CheckIcon from "@material-ui/icons/Check";
+import { useEffect } from "react";
+import { Button } from "reactstrap";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { makeStyles } from "@material-ui/core/styles";
+
+
+
+const useStyles = makeStyles((theme) => ({
+
+    inputInput: {
+      padding: theme.spacing(1, 1, 1, 0),
+      paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+      transition: theme.transitions.create("width"),
+      width: "100%",
+    },
+  
+    dashboardSelectMenu: {
+      "& .MuiPopover-paper": {
+        minWidth: "380px",
+        maxWidth: "fit-content"
+      }
+    },
+    externalLinkIcon: {
+      borderLeft: "1px solid var(--color-gray-eighty-five)",
+      padding: "10px 0px 10px 10px",
+      color: "var(--color-primary)",
+      cursor: "pointer"
+    },
+    checkedItem: {
+      color: "indigo"
+    }
+  }));
+  
+  const options = [
+    {
+      value: "Taxi Driver",
+      label: "Taxi Driver"
+    },
+  
+    {
+      value: "Truck, Bud and Bus Driver ",
+      label: "Truck, Bud and Bus Driver"
+    },
+  
+    {
+      value: "Mechanic",
+      label: "Mechanic"
+    },
+  
+    {
+      value: "Factory, Warehouse Worker",
+      label: "Factory, Warehouse Worker"
+    },
+  
+    {
+      value: "Construction and painters ",
+      label: "Construction and painters"
+    },
+  
+    {
+      value: "Technicians and IT",
+      label: "Technicians and IT"
+    },
+  ];
 
 function JobSeeker() {
     let history = useHistory()
@@ -16,6 +83,11 @@ function JobSeeker() {
     const [expernices, setExpernices] = useState("");
     const [profision, setProfision] = useState("");
     const [selectcompnay, setSelectCompnay] = useState("");
+    const [selection, setSelection] = useState("");
+    const [anchorEl, setAnchorEl] = useState(null);
+    const classes = useStyles();
+    const [searchText, setSearchText] = useState("");
+
 
 
 
@@ -27,17 +99,79 @@ function JobSeeker() {
             cellnumber: cellnumber,
             email: email,
             selectcompnay: selectcompnay,
-            posterdID: auth?.currentUser?.uid
+            posterdID: auth?.currentUser?.uid,
+            designation: selection
 
-        });
+        }).then(res => {
+          history.push("/taxijob");
+        })
+        
         setSelectCompnay("");
         setProfision("");
         setDetail("");
         setCellNumber("");
         setEmail("");
-
+        setSelection("");
 
     };
+
+    useEffect(() => {
+        setSelection(options[0].label);
+      }, []);
+    
+      const handleMenuOpen = (event) => {
+        console.log("adfdasf dfj ;asd", event.currentTarget)
+    
+        setAnchorEl(event.currentTarget);
+      };
+    
+      const handleClose = (e) => {
+        if (e.target.innerText !== selection && e.target.innerText !== "") {
+          console.log("e target", e.target.innerText)
+          setSelection(e.target.innerText);
+        }
+        setSearchText("");
+        setAnchorEl(null);
+      };
+    
+      const handleSearchChange = (e) => {
+        setSearchText(e.target.value);
+      };
+      return (
+        <div className='' >
+          <Button
+            style={{ position: "fixed", marginTop: "160px", marginLeft: "60px", width: "250px" }}
+            type="button"
+            className={classes.DropDownButton}
+            onClick={handleMenuOpen}
+          >
+            {selection}
+            <KeyboardArrowDownIcon />
+          </Button>
+          {renderDashboardMenu()}
+        </div>
+      );
+      function renderDashboardMenu() {
+        const displayOptions = options
+          .map((item) => {
+            if (item.label.toLowerCase().includes(searchText.toLowerCase())) {
+              return item;
+            }
+            return undefined;
+          })
+          .filter((item) => item !== undefined);
+    
+        function renderOption(value) {
+          if (selection === value) {
+            return (
+              <div className={classes.checkedItem}>
+                <CheckIcon />
+                {value}
+              </div>
+            );
+          }
+          return value;
+        }
     return (
         <div className='container-jobseeker12'>
             <div className='d-flex '>
@@ -69,26 +203,71 @@ function JobSeeker() {
                 <h5 className='ms-2 mt-2' style={{ color: "#af0e0c" }}>Taxi Driver</h5>
 
                 <div className='profision '>
-                    <div className="work mt-1">
-                        <div className="addcmpny d-flex"  >
-                            <p className='textproinput'>Work As</p>
-                            <select className="workas" onChange={(e) => { let value = e.target.value; setSelectCompnay(value) }} >
-                                <option>Taxi Driver</option>
-                                <option>Truck, Bud and Bus Driver</option>
-                                <option>Mechanic</option>
-                                <option>Factory, Warehouse and Worker</option>
-                                <option>Construction and Painters</option>
-                                <option>Technicians and IT</option>
-                            </select>
+                <Menu
+                style={{ width: "80%", height: "100%", marginLeft: "65px", marginTop: "180px" }}
+                anchorEl={anchorEl}
+                keepMounted={true}
+                open={!!anchorEl}
+                onClose={handleClose}
+                className={classes.dashboardSelectMenu}
+                anchorReference="anchorPosition"
+                anchorPosition={{ top: 110, left: 240 }}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "center"
+                }}
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "center"
+                }}
 
-                        </div>
+              >
+                <MenuItem
+                  style={{}}
+                  className={classes.searchBarContainer}
+                  disableTouchRipple={true}
+                >
+                  <div
+                    style={{}}
+
+                    className={classes.search}>
+                    <div className={classes.searchIcon}>
+                      <SearchIcon />
                     </div>
-                    <h5 className='textproinput mt-1'>Input profession</h5>
-                    <input type="text" className='profision-input' placeholder='' onChange={(e) => {
-                        setProfision(e.target.value);
-                    }} value={profision} />
+                    <InputBase
+                      placeholder="SEARCH..."
+                      classes={{
+                        root: classes.inputRoot,
+                        input: classes.inputInput
+                      }}
+                      onChange={handleSearchChange}
+                      value={searchText}
+                    />
+                  </div>
+                </MenuItem>
+                <Divider />
+                {displayOptions.map((item, index) => {
+                  return (
+                    <div
+                      style={{}}
+                      key={index}>
+                      <MenuItem
+                        style={{}}
+                        onClick={(e) => handleClose(e)}>
+                        {renderOption(item.label)}
+                      </MenuItem>
+                      <Divider
+                        className={classes.menuDivider} />
+                    </div>
+                  );
+                })}
+              </Menu>
+
+               
                 </div>
 
+                <br />
+                <br />
                 <div className='row-dt ms-4'>
                     <div className=' dt'>
                         <p>Details</p>
@@ -102,6 +281,7 @@ function JobSeeker() {
                         </textarea>
                     </div>
                 </div>
+                <br />
 
                 <div className='row-useredit ms-3 mt-1'>
                     <div className='col-6 contact'>
@@ -118,9 +298,11 @@ function JobSeeker() {
                         }} value={email} className='inputsss' type="text" />
                     </div>
                 </div>
+<br />
+
                 <div className='rowbutton ms-4 mt-2'>
                     <button style={{ fontSize: "12px" }} className='btadd' onClick={() => {
-                        addData(); history.push("/taxijob")
+                        addData(); 
                     }}>Request Jobs</button>
 
                 </div>
@@ -128,6 +310,7 @@ function JobSeeker() {
             <JobFooter />
         </div>
     )
+}
 }
 
 export default JobSeeker

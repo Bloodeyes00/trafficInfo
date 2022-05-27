@@ -13,33 +13,15 @@ import { ImMail } from "react-icons/im";
 import { AiFillDelete } from "react-icons/ai";
 import firebase from "../../components/utils/firebase";
 import _ from "lodash";
-
 import { toast } from 'react-toastify';
-import BusJobData from '../bus-job/BusJobData';
-import BusSeekerData from '../bus-job/BusSeekerData';
-import MechanicGiverData from '../mechanic-job/MechanicGiverData';
-import MechanicSeekerData from '../mechanic-job/MechanicSeekerData';
-import FactoryGiverData from '../factory-job/FactoryGiverData';
-import FactorySeekerData from '../factory-job/FactorySeekerData';
-import ConstructionGiverData from '../Construction-job/ConstructionGiverData';
-import ConstructionSeekerData from '../Construction-job/ConstructionSeekerData';
 
 
 function TaxiJob() {
   const [loading, setLoading] = useState(false);
-  // const [searchValue, setSearchValue] = useState("");
   const [data, setData] = useState([]);
-  // const [filteredUsers, setFilteredUsers] = useState(data);
   let history = useHistory();
 
-  // const handleSearchFilter = (e) => {
-  //   setSearchValue(e.target.value);
-  // };
-
-
-
   useEffect(() => {
-    
     db.collection("taxiJob").onSnapshot((snapshot) => {
       setData(
         snapshot.docs.map((doc) => ({
@@ -64,20 +46,6 @@ function TaxiJob() {
       toast.warning("You don't have permission to delete this.")
     }
   }
-
-  // useEffect(() => {
-  //   const timeout = setTimeout(() => {
-  //     const filter = _.filter(data, (user) => {
-  //       return _.includes(
-  //         _.lowerCase(JSON.stringify(_.values(user))),
-  //         _.lowerCase(searchValue)
-  //       );
-  //     });
-  //     setFilteredUsers(filter);
-  //   }, 500);
-  //   return () => clearTimeout(timeout);
-  // }, [searchValue]);
-
   return (
     <div className='container-taxijob'>
       <button style={{ color: "black" }}
@@ -90,8 +58,6 @@ function TaxiJob() {
         <div>
                         <h5 className='textsearch'>Search profession</h5>
                         <input type="search" className='profision-input' placeholder=''/>
-                        {/* <input type="search" className='profision-input' placeholder='' onChange={handleSearchFilter} value={searchValue} /> */}
-                        
                         </div>
                     </div>
 
@@ -113,17 +79,15 @@ function TaxiJob() {
           <h5 className='rowtext1 mt-3 d-flex justify-content-center' style={{ color: "#cc0000" }}> Job Giver</h5>
           <div className='d-flex'>
             <div className='col-4 mt-2 driver12'>
-              <h2 className='rowtext1' style={{fontSize:"15px",fontWeight:"bold",color:"#ffcc00"}}>TAXI DRIVER</h2>
+              {/* <h2 className='rowtext1' style={{fontSize:"15px",fontWeight:"bold",color:"#ffcc00"}}>TAXI DRIVER</h2> */}
             </div>
             <div className='col-4 giver12 offset-3'>
             </div>
           </div>
-          <h5 className='rowtext'> <b style={{color:"#3b9bf7"}}>Select Compnay</b>:&nbsp;&nbsp; {item.data.designation}</h5>
-          <h5 className='rowtext'> <b style={{color:"#3b9bf7"}}>Profession</b>:&nbsp;&nbsp; {item.data.profision}</h5>
+          <h5 className='rowtext'> <b style={{color:"#3b9bf7"}}>Designation</b>:&nbsp;&nbsp; {item.data.designation}</h5>
           <h5 className='rowtext' ><b style={{color:"#3b9bf7"}}>Details</b>:&nbsp;&nbsp; {item.data.detail}</h5>
           <h5 className='rowtext'> <b style={{color:"#3b9bf7"}}>Email</b>:&nbsp;&nbsp;{item.data.email}</h5>
           <h5 className='rowtext'> <b style={{color:"#3b9bf7"}}>Cell</b>:&nbsp;&nbsp;{item.data.cellnumber}</h5>
-
           <div className='phoneicon'> <a href="tel:+923439262289"> <FaPhoneSquareAlt /></a>
             <a
               href="https://wa.me/923439262289"
@@ -141,25 +105,14 @@ function TaxiJob() {
             >
               <ImMail />
             </a>
-
           </div>
           <br />
         </div>
-
       ))}
       <br />
       <br />
-
       <TaxiJobSeeker />
       <br />
-      {/* <BusJobData />
-      <BusSeekerData />
-      <MechanicGiverData />
-      <MechanicSeekerData />
-      <FactoryGiverData />
-      <FactorySeekerData />
-      <ConstructionGiverData />
-      <ConstructionSeekerData /> */}
       <br />
       <br />
       <br />

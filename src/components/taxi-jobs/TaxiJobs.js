@@ -14,65 +14,14 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import SearchIcon from "@mui/icons-material/Search";
 
 const useStyles = makeStyles((theme) => ({
-  // DropDownButton: {
-  //   margin: "50px 50px",
-  //   fontSize: "1.125rem",
-  //   width: "320px",
-  //   height: "60px",
-  //   display: "flex",
-  //   alignItems: "center",
-  //   justifyContent: "space-between",
-  //   border: "2px solid #007bff",
-  //   borderRadius: "10px",
-  //   backgroundColor: "white",
-  //   cursor: "pointer",
-  //   padding: "0px 20px",
-  //   border:"green 2px solid",
 
-  // },
-  // inputRoot: {
-  //   color: "inherit",
-  //   width: "100%"
-  // },
-  // search: {
-  //   position: "relative",
-  //   borderRadius: theme.shape.borderRadius,
-  //   marginRight: "20px",
-  //   marginLeft: 0,
-  //   width: "100%",
-  //   border: "1px solid grey"
-  // },
-  // searchIcon: {
-  //   padding: theme.spacing(0, 2),
-  //   height: "100%",
-  //   position: "absolute",
-  //   pointerEvents: "none",
-  //   display: "flex",
-  //   alignItems: "center",
-  //   justifyContent: "center"
-  // },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create("width"),
     width: "100%",
   },
-  // searchBarContainer: {
-  //   minWidth: "inherit",
-  //   display: "flex",
-  //   justifyContent: "space-evenly",
-  //   cursor: "default",
-  //   border:"green 2px solid",
-  //   "&.MuiListItem-button": {
-  //     "&:hover": {
-  //       backgroundColor: "white",
 
-  //     }
-  //   }
-  // },
-  // menuDivider: {
-  //   margin: "0 20px"
-  // },
   dashboardSelectMenu: {
     "& .MuiPopover-paper": {
       minWidth: "380px",
@@ -252,20 +201,6 @@ function TaxiJobs() {
             <h5 className='ms-2 mt-2' style={{ color: "#af0e0c" }}>Taxi Driver</h5>
 
             <div className='profision '>
-              {/* <div className="work mt-1">
-                        <div className="addcmpny d-flex"  >
-                            <p className='textproinput'>Work As</p>
-                            <select className="workas" onChange={(e) => { let value = e.target.value; setSelectCompnay(value) }} >
-                                <option>Taxi Driver</option>
-                                <option>Truck, Bud and Bus Driver</option>
-                                <option>Mechanic</option>
-                                <option>Factory, Warehouse and Worker</option>
-                                <option>Construction and Painters</option>
-                                <option>Technicians and IT</option>
-                            </select>
-                        </div>
-                    </div> */}
-
               <Menu
                 style={{ width: "80%", height: "100%", marginLeft: "65px", marginTop: "180px" }}
                 anchorEl={anchorEl}
@@ -327,12 +262,13 @@ function TaxiJobs() {
               </Menu>
 
 
-              <h5 className='textproinput mt-5'>Input profession</h5>
+              {/* <h5 className='textproinput mt-5'>Input profession</h5>
               <input type="text" className='profision-input' placeholder='' onChange={(e) => {
                 setProfision(e.target.value);
-              }} value={profision} />
+              }} value={profision} /> */}
             </div>
-
+<br />
+<br />
             <div className='row-dt ms-4'>
               <div className=' dt'>
                 <p>Details</p>
@@ -346,6 +282,7 @@ function TaxiJobs() {
                 </textarea>
               </div>
             </div>
+            <br />
 
             <div className='row-useredit ms-3 mt-1'>
               <div className='col-6 contact '>
@@ -362,6 +299,7 @@ function TaxiJobs() {
                 }} value={email} className='inputsss' type="text" />
               </div>
             </div>
+            <br />
             <div className='rowbutton ms-4 mt-2'>
               <button className='btadd' onClick={() => {
                 addDatas();
