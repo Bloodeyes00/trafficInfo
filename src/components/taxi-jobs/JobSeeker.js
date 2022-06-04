@@ -140,7 +140,7 @@ function JobSeeker() {
       return (
         <div className='' >
           <Button
-            style={{ position: "fixed", marginTop: "160px", marginLeft: "60px", width: "250px" }}
+            style={{ position: "absolute", marginTop: "160px", marginLeft: "60px", width: "250px" }}
             type="button"
             className={classes.DropDownButton}
             onClick={handleMenuOpen}
