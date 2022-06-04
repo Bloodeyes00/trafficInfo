@@ -36,7 +36,7 @@ function MainPage() {
                     <div className='plus'> <TiPlus /></div>
                     <div type="button" className='find'><h2  onClick={() => { history.push("/taxijob") }}>Find and input Jobs</h2></div>
                     <div className='imgssss'>
-                        <img onClick={() => { history.push("/taxijoby") }}  style={{border:"none",borderRadius:"2px",}} src={findjob} />
+                        <img onClick={() => { history.push("/taxijob") }}  style={{border:"none",borderRadius:"2px",}} src={findjob} />
                     </div>
                     
                 </div>
